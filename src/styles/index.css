@@ -573,6 +573,63 @@ body {
   margin: 0 0 10px;
 }
 
+/* Practical guidance */
+.guidance {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.guidance .detail__section-title {
+  margin-bottom: 8px;
+}
+.guidance__rationale {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.guidance__why {
+  font-weight: 700;
+  color: var(--ink);
+}
+.guidance__block {
+  margin-top: 8px;
+}
+.guidance__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 4px;
+}
+.guidance__block--do .guidance__label {
+  color: var(--ok, #1a7f37);
+}
+.guidance__block--do .guidance__label::before {
+  content: '✓';
+}
+.guidance__block--dont .guidance__label {
+  color: var(--danger, #b3261e);
+}
+.guidance__block--dont .guidance__label::before {
+  content: '✕';
+}
+.guidance__list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.guidance__list li {
+  margin: 2px 0;
+}
+
 /* Mapping list */
 .mapping {
   list-style: none;
@@ -822,6 +879,43 @@ body {
   color: var(--accent-ink);
   text-decoration: underline;
 }
+.app__meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.app__meta-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--line-strong);
+}
+.app__repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.app__repo-icon {
+  width: 14px;
+  height: 14px;
+}
+.app__license {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 2px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.app__license:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
 
 /* ---------- Disclaimer ---------- */
 .disclaimer {
@@ -847,6 +941,19 @@ body {
 }
 .disclaimer__text:last-child {
   margin-bottom: 0;
+}
+.disclaimer__privacy {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.disclaimer__privacy-icon {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  color: var(--accent-ink);
 }
 
 :focus-visible {

@@ -29,6 +29,10 @@ export const ui = {
     a5Badge: 'A5-meerwaarde',
     measures: 'maatregelen',
     microsoftMapping: 'Microsoft-koppeling',
+    guidanceTitle: 'Praktische richtlijnen',
+    guidanceWhy: 'Waarom dit belangrijk is',
+    guidanceDo: 'Wel doen',
+    guidanceDont: 'Niet doen',
     noMapping: 'Nog geen Microsoft-koppeling toegevoegd.',
     standardsTitle: 'Koppeling met standaarden',
     standardsNote:
@@ -41,6 +45,8 @@ export const ui = {
     filterLabel: 'Filteren',
     clearFilters: 'Wissen',
     sourcePdf: 'Bron: officiële GRIP-matrix (PDF)',
+    repoLink: 'Broncode op GitHub',
+    licenseMit: 'MIT-licentie',
     langLabel: 'Taal',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -51,6 +57,8 @@ export const ui = {
       'Werk steeds samen met je Microsoft-accountteam of een erkende reseller vóór je een aankoopbeslissing neemt.',
     disclaimerTranslation:
       'De vertaling van deze website werd met AI uitgevoerd. De Nederlandstalige GRIP-tekst is de bron; bij twijfel geldt het originele Nederlands.',
+    disclaimerPrivacy:
+      'Al je gegevens blijven in je browser. Deze visualizer draait volledig in je browser (client-side); er worden geen gegevens naar een server verzonden.',
   },
   en: {
     appTitle: 'GRIP Visualizer',
@@ -80,6 +88,10 @@ export const ui = {
     a5Badge: 'A5 value-add',
     measures: 'measures',
     microsoftMapping: 'Microsoft mapping',
+    guidanceTitle: 'Practical guidance',
+    guidanceWhy: 'Why it matters',
+    guidanceDo: 'Do',
+    guidanceDont: "Don't",
     noMapping: 'No Microsoft mapping added yet.',
     standardsTitle: 'Standards mapping',
     standardsNote:
@@ -92,6 +104,8 @@ export const ui = {
     filterLabel: 'Filter',
     clearFilters: 'Clear',
     sourcePdf: 'Source: official GRIP matrix (PDF)',
+    repoLink: 'Source code on GitHub',
+    licenseMit: 'MIT licensed',
     langLabel: 'Language',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -102,6 +116,8 @@ export const ui = {
       'Always work with your Microsoft account team or an authorised reseller before making a purchasing decision.',
     disclaimerTranslation:
       'The translation of this website was performed with AI. The Dutch GRIP text is the source; in case of doubt, the original Dutch prevails.',
+    disclaimerPrivacy:
+      'All your data stays in your browser. This visualizer runs entirely in your browser (client-side); nothing is ever sent to a server.',
   },
   fr: {
     appTitle: 'GRIP Visualizer',
@@ -131,6 +147,10 @@ export const ui = {
     a5Badge: 'Valeur ajoutée A5',
     measures: 'mesures',
     microsoftMapping: 'Correspondance Microsoft',
+    guidanceTitle: 'Conseils pratiques',
+    guidanceWhy: "Pourquoi c'est important",
+    guidanceDo: 'À faire',
+    guidanceDont: 'À éviter',
     noMapping: 'Aucune correspondance Microsoft ajoutée pour le moment.',
     standardsTitle: 'Correspondance avec les normes',
     standardsNote:
@@ -144,6 +164,8 @@ export const ui = {
     filterLabel: 'Filtrer',
     clearFilters: 'Effacer',
     sourcePdf: 'Source : matrice officielle GRIP (PDF)',
+    repoLink: 'Code source sur GitHub',
+    licenseMit: 'Sous licence MIT',
     langLabel: 'Langue',
     disclaimerTitle: 'Avertissement',
     disclaimerUnofficial:
@@ -154,6 +176,8 @@ export const ui = {
       "Collaborez toujours avec votre équipe de compte Microsoft ou un revendeur agréé avant de prendre une décision d'achat.",
     disclaimerTranslation:
       "La traduction de ce site web a été réalisée à l'aide de l'IA. Le texte GRIP néerlandais fait foi ; en cas de doute, la version néerlandaise originale prévaut.",
+    disclaimerPrivacy:
+      "Toutes vos données restent dans votre navigateur. Ce visualiseur fonctionne entièrement dans votre navigateur (côté client) ; aucune donnée n'est jamais envoyée à un serveur.",
   },
 };
 

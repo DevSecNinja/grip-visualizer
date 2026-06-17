@@ -1,0 +1,34 @@
+# lychee link checker configuration
+# https://github.com/lycheeverse/lychee
+
+# Treat these HTTP status codes as success (in addition to 2xx).
+# 429 (Too Many Requests) is common from Microsoft Learn / rate-limited hosts.
+accept = [200, 206, 429]
+
+# Retry + timeout tuning to reduce false positives from flaky/slow hosts.
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+max_concurrency = 8
+
+# Send a real browser-like UA; some docs sites block default clients.
+user_agent = "Mozilla/5.0 (compatible; lychee link checker)"
+
+# Don't fail on mailto: or other non-http schemes.
+scheme = ["https", "http"]
+
+# Allowlist: hosts/paths that are known-flaky, rate-limited, or require auth.
+# These are skipped rather than reported as broken.
+exclude = [
+  # Service Trust Portal frequently rate-limits / requires sign-in.
+  "^https://servicetrust\\.microsoft\\.com",
+  # Local/dev and example URLs.
+  "^https?://localhost",
+  "^https?://127\\.0\\.0\\.1",
+  "example\\.com",
+]
+
+# Exclude private/internal IPs.
+exclude_private = true
+exclude_link_local = true
+exclude_loopback = true

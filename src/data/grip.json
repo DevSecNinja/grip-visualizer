@@ -144,7 +144,7 @@
         {
           "name": "Microsoft Planner / Microsoft 365",
           "tier": "A1",
-          "docsUrl": "https://learn.microsoft.com/microsoft-365/planner/",
+          "docsUrl": "https://learn.microsoft.com/planner/planner-for-admins",
           "a5Adds": false
         }
       ]
@@ -170,7 +170,7 @@
         {
           "name": "Microsoft Entra ID — Registered devices",
           "tier": "A1",
-          "docsUrl": "https://learn.microsoft.com/entra/identity/devices/device-registration",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/devices/concept-device-registration",
           "a5Adds": false
         },
         {
@@ -253,6 +253,44 @@
           "PR.AA-01",
           "PR.AA-03"
         ]
+      },
+            "guidance": {
+        "nl": {
+          "rationale": "Wachtwoorden alleen worden routineus gephisht en hergebruikt. Een duidelijk authenticatiebeleid met phishingbestendige MFA en voorwaardelijke toegang vermindert accountovername drastisch.",
+          "do": [
+            "Vereis MFA voor alle gebruikers; geef de voorkeur aan phishingbestendige methoden (passkeys/FIDO2).",
+            "Gebruik voorwaardelijke toegang voor risicogebaseerde controles.",
+            "Documenteer het beleid en herzie het periodiek."
+          ],
+          "dont": [
+            "Vertrouw niet op wachtwoorden alleen en sta geen MFA-uitzonderingen toe zonder herziening.",
+            "Gebruik sms niet als enige tweede factor waar sterkere opties bestaan."
+          ]
+        },
+        "en": {
+          "rationale": "Passwords alone are routinely phished and reused. A clear authentication policy with phishing-resistant MFA and conditional access dramatically reduces account takeover.",
+          "do": [
+            "Require MFA for all users; prefer phishing-resistant methods (passkeys/FIDO2).",
+            "Use conditional access for risk-based controls.",
+            "Document the policy and review it periodically."
+          ],
+          "dont": [
+            "Don't rely on passwords alone or allow MFA exemptions without review.",
+            "Don't use SMS as your only second factor where stronger options exist."
+          ]
+        },
+        "fr": {
+          "rationale": "Les mots de passe seuls sont régulièrement hameçonnés et réutilisés. Une politique d'authentification claire avec une MFA résistante à l'hameçonnage et un accès conditionnel réduit fortement les piratages de comptes.",
+          "do": [
+            "Exigez la MFA pour tous les utilisateurs ; privilégiez les méthodes résistantes à l'hameçonnage (passkeys/FIDO2).",
+            "Utilisez l'accès conditionnel pour des contrôles basés sur le risque.",
+            "Documentez la politique et révisez-la périodiquement."
+          ],
+          "dont": [
+            "Ne vous fiez pas aux seuls mots de passe et n'autorisez pas d'exemptions de MFA sans révision.",
+            "N'utilisez pas le SMS comme unique second facteur là où des options plus robustes existent."
+          ]
+        }
       }
     },
     {
@@ -353,6 +391,44 @@
         "nistCsf": [
           "PR.AA-01"
         ]
+      },
+            "guidance": {
+        "nl": {
+          "rationale": "Een eigen, geverifieerd domein geeft je controle over je identiteit en de levenscyclus ervan. Leun je op een gratis of gedeeld domein van een provider, dan kun je MFA/voorwaardelijke toegang niet afdwingen, mis je SPF/DKIM/DMARC tegen phishing en spoofing, en verlies je accounts als je van provider wisselt.",
+          "do": [
+            "Registreer en verifieer je eigen domein en gebruik het voor identiteiten en e-mail.",
+            "Configureer SPF, DKIM en DMARC om spoofing te voorkomen.",
+            "Houd domeinregistratie en DNS in beheer van de organisatie, niet van één persoon."
+          ],
+          "dont": [
+            "Bouw je identiteit niet op een gratis of gedeeld providerdomein dat je niet beheert.",
+            "Laat domein- of DNS-eigenaarschap niet zonder toezicht bij één individu of externe partij liggen."
+          ]
+        },
+        "en": {
+          "rationale": "Your own verified domain gives you control over your identity and its lifecycle. Relying on a free or shared provider domain means you can't enforce MFA/conditional access, you miss SPF/DKIM/DMARC against phishing and spoofing, and you lose accounts if you switch providers.",
+          "do": [
+            "Register and verify your own domain and use it for identities and email.",
+            "Configure SPF, DKIM and DMARC to prevent spoofing.",
+            "Keep domain registration and DNS under organisational control, not a personal account."
+          ],
+          "dont": [
+            "Don't build your identity on a free or shared provider domain you don't control.",
+            "Don't let domain or DNS ownership sit with one individual or an external party without oversight."
+          ]
+        },
+        "fr": {
+          "rationale": "Un domaine vérifié qui vous appartient vous donne le contrôle de votre identité et de son cycle de vie. S'appuyer sur un domaine gratuit ou partagé d'un fournisseur empêche d'imposer la MFA/l'accès conditionnel, prive de SPF/DKIM/DMARC contre l'hameçonnage et l'usurpation, et fait perdre les comptes en cas de changement de fournisseur.",
+          "do": [
+            "Enregistrez et vérifiez votre propre domaine et utilisez-le pour les identités et la messagerie.",
+            "Configurez SPF, DKIM et DMARC pour empêcher l'usurpation.",
+            "Gardez l'enregistrement du domaine et le DNS sous le contrôle de l'organisation, pas d'un compte personnel."
+          ],
+          "dont": [
+            "Ne fondez pas votre identité sur un domaine gratuit ou partagé que vous ne contrôlez pas.",
+            "Ne laissez pas la propriété du domaine ou du DNS à une seule personne ou à un tiers sans supervision."
+          ]
+        }
       }
     },
     {
@@ -381,6 +457,44 @@
         "nistCsf": [
           "PR.AA-01"
         ]
+      },
+            "guidance": {
+        "nl": {
+          "rationale": "Persoonlijke of gedeelde mailboxen vertroebelen de verantwoordelijkheid en kun je niet centraal beheren. E-mail op je eigen domein laat je MFA, voorwaardelijke toegang, bewaarbeleid en offboarding consistent toepassen, en maakt communicatie aantoonbaar afkomstig van je organisatie.",
+          "do": [
+            "Geef elke medewerker en leerling een adres op je eigen domein.",
+            "Beheer mailboxen centraal zodat je beveiligingsbeleid toepast en vertrekkers offboardt.",
+            "Gebruik rol- of gedeelde mailboxen voor functies in plaats van persoonlijke accounts."
+          ],
+          "dont": [
+            "Gebruik geen persoonlijke webmail voor communicatie van de organisatie.",
+            "Deel geen enkele login tussen personen — dat ondermijnt verantwoordelijkheid en MFA."
+          ]
+        },
+        "en": {
+          "rationale": "Personal or shared mailboxes blur accountability and can't be governed centrally. Email on your own domain lets you apply MFA, conditional access, retention and offboarding consistently, and makes communication verifiably from your organisation.",
+          "do": [
+            "Issue every staff member and student an address on your own domain.",
+            "Manage mailboxes centrally so you can apply security policy and offboard leavers.",
+            "Use role or shared mailboxes for functions instead of personal accounts."
+          ],
+          "dont": [
+            "Don't use personal webmail for organisational communication.",
+            "Don't share a single login across people — it breaks accountability and MFA."
+          ]
+        },
+        "fr": {
+          "rationale": "Les boîtes aux lettres personnelles ou partagées brouillent la responsabilité et ne peuvent pas être gérées de façon centralisée. La messagerie sur votre propre domaine permet d'appliquer MFA, accès conditionnel, rétention et départ des utilisateurs de manière cohérente, et rend la communication vérifiablement issue de votre organisation.",
+          "do": [
+            "Attribuez à chaque membre du personnel et élève une adresse sur votre propre domaine.",
+            "Gérez les boîtes aux lettres de façon centralisée pour appliquer la politique de sécurité et gérer les départs.",
+            "Utilisez des boîtes de rôle ou partagées pour les fonctions plutôt que des comptes personnels."
+          ],
+          "dont": [
+            "N'utilisez pas de messagerie personnelle pour la communication de l'organisation.",
+            "Ne partagez pas un identifiant unique entre plusieurs personnes — cela casse la responsabilité et la MFA."
+          ]
+        }
       }
     },
     {
@@ -677,6 +791,44 @@
         "nistCsf": [
           "PR.DS-11"
         ]
+      },
+            "guidance": {
+        "nl": {
+          "rationale": "Bewaartermijnen of synchronisatie zijn geen back-up. Ransomware en per ongeluk wissen vereisen herstelbare, geïsoleerde kopieën. Volg 3-2-1 (3 kopieën, 2 media, 1 offsite/onveranderbaar) en test vooral je herstel.",
+          "do": [
+            "Volg de 3-2-1-regel en houd minstens één onveranderbare of offline kopie.",
+            "Test herstel regelmatig — een ongeteste back-up is geen back-up.",
+            "Dek data, applicaties én apparaatconfiguratie, niet alleen bestanden."
+          ],
+          "dont": [
+            "Beschouw prullenbak-bewaring of bestandssynchronisatie niet als back-up.",
+            "Bewaar niet elke kopie op dezelfde plek of in hetzelfde account waar ransomware bij kan."
+          ]
+        },
+        "en": {
+          "rationale": "Retention or sync is not a backup. Ransomware and accidental deletion need restorable, isolated copies. Follow 3-2-1 (3 copies, 2 media, 1 offsite/immutable) and, above all, test your restores.",
+          "do": [
+            "Follow the 3-2-1 rule and keep at least one immutable or offline copy.",
+            "Test restores regularly — an untested backup is not a backup.",
+            "Cover data, applications and device configuration, not just files."
+          ],
+          "dont": [
+            "Don't treat recycle-bin retention or file sync as a backup.",
+            "Don't keep every copy in the same place or account where ransomware could reach it."
+          ]
+        },
+        "fr": {
+          "rationale": "La rétention ou la synchronisation n'est pas une sauvegarde. Les rançongiciels et les suppressions accidentelles exigent des copies isolées et restaurables. Suivez la règle 3-2-1 (3 copies, 2 supports, 1 hors site/immuable) et, surtout, testez vos restaurations.",
+          "do": [
+            "Suivez la règle 3-2-1 et conservez au moins une copie immuable ou hors ligne.",
+            "Testez régulièrement les restaurations — une sauvegarde non testée n'est pas une sauvegarde.",
+            "Couvrez les données, les applications et la configuration des appareils, pas seulement les fichiers."
+          ],
+          "dont": [
+            "Ne considérez pas la rétention de la corbeille ou la synchronisation de fichiers comme une sauvegarde.",
+            "Ne conservez pas toutes les copies au même endroit ou dans le même compte accessible à un rançongiciel."
+          ]
+        }
       }
     },
     {
