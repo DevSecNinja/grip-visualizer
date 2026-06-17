@@ -1,0 +1,34 @@
+import { describe, it, expect } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import App from './App.jsx';
+
+describe('App', () => {
+  it('renders the matrix with all six Basis columns by default', () => {
+    render(<App />);
+    expect(screen.getByRole('region', { name: 'Matrix' })).toBeInTheDocument();
+    expect(screen.getAllByText('Basis')).toHaveLength(6);
+  });
+
+  it('opens the detail panel with the Microsoft mapping when a measure is clicked', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
+  });
+
+  it('switches to the journey view', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('tab', { name: 'Groeitraject' }));
+    expect(screen.getByRole('region', { name: 'Groeitraject' })).toBeInTheDocument();
+  });
+
+  it('switches the UI language to English', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'EN' }));
+    expect(screen.getByRole('tab', { name: 'Journey' })).toBeInTheDocument();
+  });
+});

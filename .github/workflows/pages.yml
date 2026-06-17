@@ -1,0 +1,45 @@
+---
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pages:
+    uses: DevSecNinja/.github/.github/workflows/pages.yml@8487f36bfcc8b040e5541937ba450411f6993e2b # v1.6.1
+    permissions:
+      contents: read
+      deployments: write
+      id-token: write
+      issues: write
+      pages: write
+      pull-requests: write
+    with:
+      # renovate: datasource=node-version depName=node
+      node-version: "24"
+      node-cache: npm
+      # renovate: datasource=npm depName=wrangler
+      wrangler-version: "4.100.0"
+      install-command: npm ci
+      test-command: npm test
+      build-command: npm run build
+      artifact-path: dist
+    secrets:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

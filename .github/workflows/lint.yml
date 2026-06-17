@@ -1,0 +1,24 @@
+---
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    uses: DevSecNinja/.github/.github/workflows/lint.yml@8487f36bfcc8b040e5541937ba450411f6993e2b # v1.6.1
+    permissions:
+      contents: read
+      security-events: write
+    with:
+      # renovate: datasource=github-releases depName=jdx/mise
+      mise-version: "2026.5.16"
+      # renovate: datasource=github-releases depName=golangci/golangci-lint
+      golangci-lint-version: "v2.12.2"
+      lint-go: false
