@@ -1,7 +1,7 @@
-import { highestTier, hasA5Value } from '../data/grip.js';
+import { highestTier, hasA5Value, localized } from '../data/grip.js';
 
 export default function MeasureCard({ measure, lang, selected, dimmed, onSelect }) {
-  const title = lang === 'en' ? measure.title_en : measure.title_nl;
+  const title = localized(measure, 'title', lang);
   const tier = highestTier(measure);
   const a5 = hasA5Value(measure);
 

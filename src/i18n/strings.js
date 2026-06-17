@@ -1,4 +1,4 @@
-export const LANGS = ['nl', 'en'];
+export const LANGS = ['nl', 'en', 'fr'];
 
 export const ui = {
   nl: {
@@ -35,6 +35,8 @@ export const ui = {
       'Deze website is mede met behulp van AI gemaakt (GitHub Copilot met Claude Opus 4.8). Controleer de inhoud, de productkoppelingen en de licentievereisten (A1/A3/A5) altijd zelf tegen de actuele officiële Microsoft- en GRIP-documentatie.',
     disclaimerAdvice:
       'Werk steeds samen met je Microsoft-accountteam of een erkende reseller vóór je een aankoopbeslissing neemt.',
+    disclaimerTranslation:
+      'De vertaling van deze website werd met AI uitgevoerd. De Nederlandstalige GRIP-tekst is de bron; bij twijfel geldt het originele Nederlands.',
   },
   en: {
     appTitle: 'GRIP Visualizer',
@@ -70,6 +72,46 @@ export const ui = {
       'This website was created with the help of AI (GitHub Copilot with Claude Opus 4.8). Always verify the content, the product mappings and the license requirements (A1/A3/A5) yourself against the current official Microsoft and GRIP documentation.',
     disclaimerAdvice:
       'Always work with your Microsoft account team or an authorised reseller before making a purchasing decision.',
+    disclaimerTranslation:
+      'The translation of this website was performed with AI. The Dutch GRIP text is the source; in case of doubt, the original Dutch prevails.',
+  },
+  fr: {
+    appTitle: 'GRIP Visualizer',
+    appSubtitle: 'Associer les mesures GRIP flamandes à la pile Microsoft A3/A5',
+    viewMatrix: 'Matrice',
+    viewJourney: 'Parcours',
+    matrixHint: 'Cliquez sur une mesure pour voir la correspondance Microsoft.',
+    journeyHint: 'Suivez le parcours de progression de Basis 1 à Basis 6.',
+    basis: 'Basis',
+    organisational: 'Organisationnel',
+    technical: 'Technique',
+    license: 'Licence',
+    showA5: 'Mettre en évidence la valeur A5',
+    a5Only: 'A5 uniquement',
+    a5Badge: 'Valeur ajoutée A5',
+    measure: 'Mesure',
+    measures: 'mesures',
+    microsoftMapping: 'Correspondance Microsoft',
+    noMapping: 'Aucune correspondance Microsoft ajoutée pour le moment.',
+    openDocs: 'Ouvrir la documentation',
+    close: 'Fermer',
+    selectMeasure: 'Sélectionnez une mesure',
+    selectMeasureHint:
+      'Choisissez une mesure GRIP pour voir les solutions Microsoft correspondantes.',
+    type: 'Type',
+    legend: 'Légende',
+    a5Highlight: 'A5 ajoute',
+    sourcePdf: 'Source : matrice officielle GRIP (PDF)',
+    langLabel: 'Langue',
+    disclaimerTitle: 'Avertissement',
+    disclaimerUnofficial:
+      "Ceci est un outil indépendant et non officiel. Il n'est ni soutenu, ni approuvé, ni maintenu par Microsoft ou par le gouvernement flamand, et aucune garantie n'est donnée ni implicite. La correspondance entre les mesures GRIP et les produits Microsoft est notre propre interprétation, dérivée de sources publiques, et ne représente ni Microsoft ni le gouvernement flamand.",
+    disclaimerAi:
+      "Ce site web a été créé avec l'aide de l'IA (GitHub Copilot avec Claude Opus 4.8). Vérifiez toujours vous-même le contenu, les correspondances de produits et les exigences de licence (A1/A3/A5) au regard de la documentation officielle et actuelle de Microsoft et de GRIP.",
+    disclaimerAdvice:
+      "Collaborez toujours avec votre équipe de compte Microsoft ou un revendeur agréé avant de prendre une décision d'achat.",
+    disclaimerTranslation:
+      "La traduction de ce site web a été réalisée à l'aide de l'IA. Le texte GRIP néerlandais fait foi ; en cas de doute, la version néerlandaise originale prévaut.",
   },
 };
 

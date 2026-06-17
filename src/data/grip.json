@@ -2,8 +2,19 @@
   "meta": {
     "source": "Overzicht Groeipad informatieveiligheid en privacy (GRIP) voor het Vlaamse onderwijs",
     "sourceUrl": "https://assets.vlaanderen.be/image/upload/v1770992646/repositories-prd/Overzicht_Groeipad_informatieveiligheid_en_privacy_GRIP_voor_het_Vlaamse_onderwijs_r0a7v2.pdf",
-    "tiers": ["A1", "A3", "A5"],
-    "basisLevels": [1, 2, 3, 4, 5, 6]
+    "tiers": [
+      "A1",
+      "A3",
+      "A5"
+    ],
+    "basisLevels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
   },
   "measures": [
     {
@@ -12,11 +23,23 @@
       "type": "O",
       "title_nl": "Informeer je over de begrippen 'informatieveiligheid' en 'privacy' en begrijp ze",
       "title_en": "Learn and understand the concepts of 'information security' and 'privacy'",
+      "title_fr": "Informez-vous sur les notions de « sécurité de l'information » et de « vie privée » et comprenez-les",
       "summary_nl": "Bouw basiskennis op over informatieveiligheid en privacy bij beleidsmakers en medewerkers.",
       "summary_en": "Build foundational awareness of information security and privacy among leadership and staff.",
+      "summary_fr": "Développez des connaissances de base sur la sécurité de l'information et la vie privée auprès de la direction et du personnel.",
       "microsoft": [
-        { "name": "Microsoft Service Trust Portal", "tier": "A1", "docsUrl": "https://servicetrust.microsoft.com/", "a5Adds": false },
-        { "name": "Microsoft Learn — Security & compliance training", "tier": "A1", "docsUrl": "https://learn.microsoft.com/training/", "a5Adds": false }
+        {
+          "name": "Microsoft Service Trust Portal",
+          "tier": "A1",
+          "docsUrl": "https://servicetrust.microsoft.com/",
+          "a5Adds": false
+        },
+        {
+          "name": "Microsoft Learn — Security & compliance training",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/training/",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -25,11 +48,23 @@
       "type": "O",
       "title_nl": "Stel een DPO en andere persona's aan m.b.t. informatieveiligheid en privacy",
       "title_en": "Appoint a DPO and other personas for information security and privacy",
+      "title_fr": "Désignez un DPD et d'autres personas en matière de sécurité de l'information et de vie privée",
       "summary_nl": "Wijs rollen en verantwoordelijkheden toe, waaronder een functionaris voor gegevensbescherming (DPO).",
       "summary_en": "Assign roles and responsibilities, including a Data Protection Officer (DPO).",
+      "summary_fr": "Attribuez les rôles et responsabilités, y compris un délégué à la protection des données (DPD).",
       "microsoft": [
-        { "name": "Microsoft Entra ID — Roles & administrative units", "tier": "A1", "docsUrl": "https://learn.microsoft.com/entra/identity/role-based-access-control/custom-overview", "a5Adds": false },
-        { "name": "Privileged Identity Management (PIM)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure", "a5Adds": true }
+        {
+          "name": "Microsoft Entra ID — Roles & administrative units",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/role-based-access-control/custom-overview",
+          "a5Adds": false
+        },
+        {
+          "name": "Privileged Identity Management (PIM)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -38,10 +73,17 @@
       "type": "O",
       "title_nl": "Onderschrijf de beleidsverklaring en ontwikkel een beleidsplan voor I&P",
       "title_en": "Endorse the policy statement and develop an information security & privacy policy plan",
+      "title_fr": "Adhérez à la déclaration de politique et élaborez un plan de politique en matière de S&V",
       "summary_nl": "Leg het beleid voor informatieveiligheid en privacy formeel vast en laat het bekrachtigen.",
       "summary_en": "Formally document and have leadership endorse the information security and privacy policy.",
+      "summary_fr": "Documentez formellement la politique de sécurité de l'information et de vie privée et faites-la approuver.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -50,11 +92,23 @@
       "type": "O",
       "title_nl": "Voorzie een actieplan om je beleid te implementeren en te evalueren",
       "title_en": "Provide an action plan to implement and evaluate your policy",
+      "title_fr": "Prévoyez un plan d'action pour mettre en œuvre et évaluer votre politique",
       "summary_nl": "Vertaal het beleid naar concrete acties, eigenaars en evaluatiemomenten.",
       "summary_en": "Translate policy into concrete actions, owners and review moments.",
+      "summary_fr": "Traduisez la politique en actions concrètes, avec des responsables et des moments d'évaluation.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager — Improvement actions", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-improvement-actions", "a5Adds": false },
-        { "name": "Microsoft Planner / Microsoft 365", "tier": "A1", "docsUrl": "https://learn.microsoft.com/microsoft-365/planner/", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager — Improvement actions",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-improvement-actions",
+          "a5Adds": false
+        },
+        {
+          "name": "Microsoft Planner / Microsoft 365",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/microsoft-365/planner/",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -63,12 +117,29 @@
       "type": "O",
       "title_nl": "Maak een inventaris van alle apparaten",
       "title_en": "Create an inventory of all devices",
+      "title_fr": "Établissez un inventaire de tous les appareils",
       "summary_nl": "Houd een actueel overzicht bij van alle toestellen die toegang hebben tot informatie.",
       "summary_en": "Maintain an up-to-date overview of all devices that access information.",
+      "summary_fr": "Tenez à jour un aperçu de tous les appareils qui accèdent à l'information.",
       "microsoft": [
-        { "name": "Microsoft Intune — Device inventory", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/device-inventory", "a5Adds": false },
-        { "name": "Microsoft Entra ID — Registered devices", "tier": "A1", "docsUrl": "https://learn.microsoft.com/entra/identity/devices/device-registration", "a5Adds": false },
-        { "name": "Defender for Endpoint — Device inventory", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview", "a5Adds": true }
+        {
+          "name": "Microsoft Intune — Device inventory",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/device-inventory",
+          "a5Adds": false
+        },
+        {
+          "name": "Microsoft Entra ID — Registered devices",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/devices/device-registration",
+          "a5Adds": false
+        },
+        {
+          "name": "Defender for Endpoint — Device inventory",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -77,12 +148,29 @@
       "type": "O",
       "title_nl": "Maak een inventaris van alle applicaties",
       "title_en": "Create an inventory of all applications",
+      "title_fr": "Établissez un inventaire de toutes les applications",
       "summary_nl": "Breng alle gebruikte applicaties en cloud-apps in kaart, inclusief shadow IT.",
       "summary_en": "Map all applications and cloud apps in use, including shadow IT.",
+      "summary_fr": "Recensez toutes les applications et applications cloud utilisées, y compris le shadow IT.",
       "microsoft": [
-        { "name": "Microsoft Entra ID — Enterprise applications", "tier": "A1", "docsUrl": "https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-application-management", "a5Adds": false },
-        { "name": "Defender for Cloud Apps — App discovery", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-cloud-apps/discovered-apps", "a5Adds": true },
-        { "name": "Intune — Discovered apps", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/apps/app-discovered-apps", "a5Adds": false }
+        {
+          "name": "Microsoft Entra ID — Enterprise applications",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-application-management",
+          "a5Adds": false
+        },
+        {
+          "name": "Defender for Cloud Apps — App discovery",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-cloud-apps/discovered-apps",
+          "a5Adds": true
+        },
+        {
+          "name": "Intune — Discovered apps",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/apps/app-discovered-apps",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -91,12 +179,29 @@
       "type": "O",
       "title_nl": "Stel een authenticatiebeleid op",
       "title_en": "Establish an authentication policy",
+      "title_fr": "Établissez une politique d'authentification",
       "summary_nl": "Bepaal hoe gebruikers zich aanmelden, met sterke authenticatie en MFA.",
       "summary_en": "Define how users sign in, with strong authentication and MFA.",
+      "summary_fr": "Définissez la manière dont les utilisateurs se connectent, avec une authentification forte et la MFA.",
       "microsoft": [
-        { "name": "Microsoft Entra ID — Multifactor authentication", "tier": "A1", "docsUrl": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks", "a5Adds": false },
-        { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview", "a5Adds": false },
-        { "name": "Entra ID Protection — Risk-based Conditional Access", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks", "a5Adds": true }
+        {
+          "name": "Microsoft Entra ID — Multifactor authentication",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks",
+          "a5Adds": false
+        },
+        {
+          "name": "Conditional Access",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
+          "a5Adds": false
+        },
+        {
+          "name": "Entra ID Protection — Risk-based Conditional Access",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -105,11 +210,23 @@
       "type": "O",
       "title_nl": "Stel een privacyverklaring op en implementeer beleid om verzoeken van betrokkenen te behandelen",
       "title_en": "Draft a privacy statement and implement a process to handle data subject requests",
+      "title_fr": "Rédigez une déclaration de confidentialité et mettez en œuvre une procédure pour traiter les demandes des personnes concernées",
       "summary_nl": "Publiceer een privacyverklaring en richt een proces in voor rechten van betrokkenen (DSR).",
       "summary_en": "Publish a privacy statement and set up a process for data subject rights requests (DSR).",
+      "summary_fr": "Publiez une déclaration de confidentialité et mettez en place un processus pour les droits des personnes concernées (DSR).",
       "microsoft": [
-        { "name": "Microsoft Priva — Subject Rights Requests", "tier": "A5", "docsUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests", "a5Adds": true },
-        { "name": "Microsoft Purview — eDiscovery", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/ediscovery", "a5Adds": false }
+        {
+          "name": "Microsoft Priva — Subject Rights Requests",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests",
+          "a5Adds": true
+        },
+        {
+          "name": "Microsoft Purview — eDiscovery",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/ediscovery",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -118,10 +235,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -130,24 +254,42 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     },
-
     {
       "code": "T1",
       "basis": 2,
       "type": "T",
       "title_nl": "Voorzie een eigen domeinnaam",
       "title_en": "Provide your own domain name",
+      "title_fr": "Prévoyez votre propre nom de domaine",
       "summary_nl": "Gebruik een eigen, geverifieerde domeinnaam voor je digitale identiteit.",
       "summary_en": "Use your own verified domain name for your digital identity.",
+      "summary_fr": "Utilisez votre propre nom de domaine vérifié pour votre identité numérique.",
       "microsoft": [
-        { "name": "Microsoft 365 — Add a custom domain", "tier": "A1", "docsUrl": "https://learn.microsoft.com/microsoft-365/admin/setup/add-domain", "a5Adds": false }
+        {
+          "name": "Microsoft 365 — Add a custom domain",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/microsoft-365/admin/setup/add-domain",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -156,10 +298,17 @@
       "type": "O",
       "title_nl": "Gebruik domeingebonden e-mailadressen",
       "title_en": "Use domain-bound email addresses",
+      "title_fr": "Utilisez des adresses e-mail liées au domaine",
       "summary_nl": "Geef medewerkers en leerlingen e-mailadressen op het eigen domein.",
       "summary_en": "Provide staff and students with email addresses on your own domain.",
+      "summary_fr": "Attribuez au personnel et aux élèves des adresses e-mail sur votre propre domaine.",
       "microsoft": [
-        { "name": "Exchange Online", "tier": "A1", "docsUrl": "https://learn.microsoft.com/exchange/exchange-online", "a5Adds": false }
+        {
+          "name": "Exchange Online",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/exchange/exchange-online",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -168,12 +317,29 @@
       "type": "O",
       "title_nl": "Stel een autorisatiebeleid op volgens least privilege",
       "title_en": "Establish an authorization policy based on least privilege",
+      "title_fr": "Établissez une politique d'autorisation selon le moindre privilège",
       "summary_nl": "Ken toegang toe op basis van noodzaak en minimaliseer privileges.",
       "summary_en": "Grant access on a need-to-know basis and minimize privileges.",
+      "summary_fr": "Accordez l'accès en fonction du besoin d'en connaître et minimisez les privilèges.",
       "microsoft": [
-        { "name": "Microsoft Entra ID — RBAC", "tier": "A1", "docsUrl": "https://learn.microsoft.com/entra/identity/role-based-access-control/custom-overview", "a5Adds": false },
-        { "name": "Privileged Identity Management (PIM)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure", "a5Adds": true },
-        { "name": "Entra ID Governance — Access reviews", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview", "a5Adds": true }
+        {
+          "name": "Microsoft Entra ID — RBAC",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/role-based-access-control/custom-overview",
+          "a5Adds": false
+        },
+        {
+          "name": "Privileged Identity Management (PIM)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
+          "a5Adds": true
+        },
+        {
+          "name": "Entra ID Governance — Access reviews",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -182,10 +348,17 @@
       "type": "T",
       "title_nl": "Beveilig de fysieke toegang tot belangrijke apparaten en informatie",
       "title_en": "Secure physical access to important devices and information",
+      "title_fr": "Sécurisez l'accès physique aux appareils et informations importants",
       "summary_nl": "Bescherm servers, netwerkapparatuur en gevoelige informatie tegen fysieke toegang.",
       "summary_en": "Protect servers, network equipment and sensitive information from physical access.",
+      "summary_fr": "Protégez les serveurs, les équipements réseau et les informations sensibles contre l'accès physique.",
       "microsoft": [
-        { "name": "BitLocker via Intune (device encryption)", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices", "a5Adds": false }
+        {
+          "name": "BitLocker via Intune (device encryption)",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -194,11 +367,23 @@
       "type": "O",
       "title_nl": "Stel een procedure op voor medewerkers en leerlingen die in- en uitstromen",
       "title_en": "Establish a joiner/leaver procedure for staff and students",
+      "title_fr": "Établissez une procédure pour les membres du personnel et les élèves entrants et sortants",
       "summary_nl": "Beheer toegang bij in-, door- en uitstroom (lifecycle management).",
       "summary_en": "Manage access during onboarding, moves and offboarding (lifecycle management).",
+      "summary_fr": "Gérez l'accès lors de l'arrivée, des changements et du départ (gestion du cycle de vie).",
       "microsoft": [
-        { "name": "Entra ID Governance — Lifecycle Workflows", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows", "a5Adds": true },
-        { "name": "Entra ID — Dynamic groups & provisioning (SDS)", "tier": "A1", "docsUrl": "https://learn.microsoft.com/schooldatasync/", "a5Adds": false }
+        {
+          "name": "Entra ID Governance — Lifecycle Workflows",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows",
+          "a5Adds": true
+        },
+        {
+          "name": "Entra ID — Dynamic groups & provisioning (SDS)",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/schooldatasync/",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -207,10 +392,17 @@
       "type": "T",
       "title_nl": "Beveilig en beheer de toegang tot je draadloos netwerk",
       "title_en": "Secure and manage access to your wireless network",
+      "title_fr": "Sécurisez et gérez l'accès à votre réseau sans fil",
       "summary_nl": "Beheer Wi-Fi-toegang met certificaten en beleid; vermijd gedeelde wachtwoorden.",
       "summary_en": "Manage Wi-Fi access with certificates and policy; avoid shared passwords.",
+      "summary_fr": "Gérez l'accès Wi-Fi avec des certificats et des politiques ; évitez les mots de passe partagés.",
       "microsoft": [
-        { "name": "Intune — Wi-Fi configuration profiles", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/configuration/wi-fi-settings-configure", "a5Adds": false }
+        {
+          "name": "Intune — Wi-Fi configuration profiles",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/configuration/wi-fi-settings-configure",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -219,11 +411,23 @@
       "type": "T",
       "title_nl": "Antivirus-, antispyware- en andere antimalwareprogramma's zijn geïnstalleerd en bijgewerkt",
       "title_en": "Antivirus, antispyware and other antimalware are installed and up to date",
+      "title_fr": "Des programmes antivirus, antispyware et autres antimalwares sont installés et à jour",
       "summary_nl": "Zorg voor actuele endpointbescherming op alle toestellen.",
       "summary_en": "Ensure up-to-date endpoint protection on all devices.",
+      "summary_fr": "Assurez une protection des terminaux à jour sur tous les appareils.",
       "microsoft": [
-        { "name": "Microsoft Defender Antivirus (via Intune)", "tier": "A3", "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-antivirus-windows", "a5Adds": false },
-        { "name": "Defender for Endpoint Plan 2 (EDR)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint", "a5Adds": true }
+        {
+          "name": "Microsoft Defender Antivirus (via Intune)",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-antivirus-windows",
+          "a5Adds": false
+        },
+        {
+          "name": "Defender for Endpoint Plan 2 (EDR)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -232,10 +436,17 @@
       "type": "T",
       "title_nl": "Voer beveiligingsupdates uit voor alle applicaties en apparaten",
       "title_en": "Apply security updates for all applications and devices",
+      "title_fr": "Effectuez les mises à jour de sécurité pour toutes les applications et tous les appareils",
       "summary_nl": "Houd besturingssystemen en applicaties up-to-date met patchbeleid.",
       "summary_en": "Keep operating systems and applications current with patch policies.",
+      "summary_fr": "Maintenez les systèmes d'exploitation et les applications à jour grâce à une politique de correctifs.",
       "microsoft": [
-        { "name": "Intune — Windows Update for Business", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/protect/windows-update-for-business-configure", "a5Adds": false }
+        {
+          "name": "Intune — Windows Update for Business",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/protect/windows-update-for-business-configure",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -244,11 +455,23 @@
       "type": "O",
       "title_nl": "Meld datalek(ken) volgens een vastgelegde procedure",
       "title_en": "Report data breaches according to a defined procedure",
+      "title_fr": "Signalez les fuites de données selon une procédure établie",
       "summary_nl": "Detecteer, onderzoek en meld datalekken binnen de wettelijke termijn.",
       "summary_en": "Detect, investigate and report data breaches within the legal timeframe.",
+      "summary_fr": "Détectez, examinez et signalez les fuites de données dans le délai légal.",
       "microsoft": [
-        { "name": "Microsoft Defender XDR — Incidents", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview", "a5Adds": true },
-        { "name": "Microsoft Purview — Audit (Standard)", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/audit-solutions-overview", "a5Adds": false }
+        {
+          "name": "Microsoft Defender XDR — Incidents",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview",
+          "a5Adds": true
+        },
+        {
+          "name": "Microsoft Purview — Audit (Standard)",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/audit-solutions-overview",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -257,10 +480,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -269,25 +499,48 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     },
-
     {
       "code": "O15",
       "basis": 3,
       "type": "O",
       "title_nl": "Beoordeel gegevensverwerkingen, definieer de rol van de onderwijsinstelling en zorg voor overeenkomsten met derden",
       "title_en": "Assess data processing, define the institution's role and ensure agreements with third parties",
+      "title_fr": "Évaluez les traitements de données, définissez le rôle de l'établissement et assurez des accords avec les tiers",
       "summary_nl": "Bepaal verwerkersrollen en sluit verwerkersovereenkomsten met leveranciers.",
       "summary_en": "Determine processing roles and establish data processing agreements with vendors.",
+      "summary_fr": "Déterminez les rôles de traitement et concluez des accords de traitement avec les fournisseurs.",
       "microsoft": [
-        { "name": "Microsoft Service Trust Portal — DPA / contracts", "tier": "A1", "docsUrl": "https://servicetrust.microsoft.com/", "a5Adds": false },
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Service Trust Portal — DPA / contracts",
+          "tier": "A1",
+          "docsUrl": "https://servicetrust.microsoft.com/",
+          "a5Adds": false
+        },
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -296,10 +549,17 @@
       "type": "O",
       "title_nl": "Prioriteer je activa op basis van classificatie, kriticiteit en bedrijfswaarde",
       "title_en": "Prioritize assets based on classification, criticality and business value",
+      "title_fr": "Priorisez vos actifs selon la classification, la criticité et la valeur métier",
       "summary_nl": "Classificeer informatie en bepaal prioriteit op basis van waarde en risico.",
       "summary_en": "Classify information and prioritize based on value and risk.",
+      "summary_fr": "Classifiez l'information et établissez les priorités en fonction de la valeur et du risque.",
       "microsoft": [
-        { "name": "Microsoft Purview Information Protection — Sensitivity labels", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/sensitivity-labels", "a5Adds": true }
+        {
+          "name": "Microsoft Purview Information Protection — Sensitivity labels",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/sensitivity-labels",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -308,11 +568,23 @@
       "type": "T",
       "title_nl": "Stel een back-up procedure op voor data, applicaties en apparaten",
       "title_en": "Establish a backup procedure for data, applications and devices",
+      "title_fr": "Établissez une procédure de sauvegarde pour les données, applications et appareils",
       "summary_nl": "Voorzie betrouwbare back-ups; let op het verschil tussen retentie en echte back-up.",
       "summary_en": "Provide reliable backups; mind the difference between retention and true backup.",
+      "summary_fr": "Prévoyez des sauvegardes fiables ; attention à la différence entre rétention et véritable sauvegarde.",
       "microsoft": [
-        { "name": "Microsoft Purview — Data Lifecycle Management (retention)", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management", "a5Adds": false },
-        { "name": "SharePoint/OneDrive retention & versioning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/sharepoint/retention-and-deletion", "a5Adds": false }
+        {
+          "name": "Microsoft Purview — Data Lifecycle Management (retention)",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management",
+          "a5Adds": false
+        },
+        {
+          "name": "SharePoint/OneDrive retention & versioning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/sharepoint/retention-and-deletion",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -321,11 +593,23 @@
       "type": "T",
       "title_nl": "Zorg voor een beveiligde toegang tot je netwerk op afstand",
       "title_en": "Ensure secure remote access to your network",
+      "title_fr": "Assurez un accès sécurisé à votre réseau à distance",
       "summary_nl": "Beveilig toegang op afstand met moderne, identiteitsgebaseerde controls.",
       "summary_en": "Secure remote access with modern, identity-based controls.",
+      "summary_fr": "Sécurisez l'accès à distance avec des contrôles modernes basés sur l'identité.",
       "microsoft": [
-        { "name": "Microsoft Entra Private Access", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/concept-private-access", "a5Adds": true },
-        { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview", "a5Adds": false }
+        {
+          "name": "Microsoft Entra Private Access",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/concept-private-access",
+          "a5Adds": true
+        },
+        {
+          "name": "Conditional Access",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -334,10 +618,17 @@
       "type": "T",
       "title_nl": "Installeer firewalls op maat van jouw school",
       "title_en": "Install firewalls tailored to your school",
+      "title_fr": "Installez des pare-feux adaptés à votre école",
       "summary_nl": "Beheer host- en netwerkfirewalls afgestemd op de behoeften van de school.",
       "summary_en": "Manage host and network firewalls tailored to the school's needs.",
+      "summary_fr": "Gérez les pare-feux hôtes et réseau adaptés aux besoins de l'école.",
       "microsoft": [
-        { "name": "Intune — Microsoft Defender Firewall policy", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/protect/endpoint-security-firewall-policy", "a5Adds": false }
+        {
+          "name": "Intune — Microsoft Defender Firewall policy",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/protect/endpoint-security-firewall-policy",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -346,11 +637,23 @@
       "type": "T",
       "title_nl": "Installeer web- en e-mailfilters",
       "title_en": "Install web and email filters",
+      "title_fr": "Installez des filtres web et e-mail",
       "summary_nl": "Filter schadelijke websites en e-mail met geavanceerde bescherming.",
       "summary_en": "Filter malicious websites and email with advanced protection.",
+      "summary_fr": "Filtrez les sites web et e-mails malveillants grâce à une protection avancée.",
       "microsoft": [
-        { "name": "Microsoft Defender for Office 365", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/mdo-about", "a5Adds": true },
-        { "name": "Defender SmartScreen / Web content filtering", "tier": "A3", "docsUrl": "https://learn.microsoft.com/defender-endpoint/web-content-filtering", "a5Adds": false }
+        {
+          "name": "Microsoft Defender for Office 365",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/mdo-about",
+          "a5Adds": true
+        },
+        {
+          "name": "Defender SmartScreen / Web content filtering",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/defender-endpoint/web-content-filtering",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -359,11 +662,23 @@
       "type": "O",
       "title_nl": "Identificeer de processen waarin persoonsgegevens of vertrouwelijke informatie worden verwerkt en voorzie een proceseigenaar",
       "title_en": "Identify processes handling personal or confidential data and assign a process owner",
+      "title_fr": "Identifiez les processus traitant des données à caractère personnel ou confidentielles et désignez un propriétaire de processus",
       "summary_nl": "Breng verwerkingsprocessen in kaart en wijs eigenaars toe.",
       "summary_en": "Map data-processing activities and assign owners.",
+      "summary_fr": "Cartographiez les activités de traitement de données et désignez des responsables.",
       "microsoft": [
-        { "name": "Microsoft Purview — Data Map & data discovery", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/concept-elastic-data-map", "a5Adds": true },
-        { "name": "Content explorer / Activity explorer", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/data-classification-content-explorer", "a5Adds": true }
+        {
+          "name": "Microsoft Purview — Data Map & data discovery",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/concept-elastic-data-map",
+          "a5Adds": true
+        },
+        {
+          "name": "Content explorer / Activity explorer",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/data-classification-content-explorer",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -372,10 +687,17 @@
       "type": "O",
       "title_nl": "Onderzoek bedreigingen en kwetsbaarheden van je apparaten, applicaties en procedures",
       "title_en": "Investigate threats and vulnerabilities of your devices, applications and procedures",
+      "title_fr": "Examinez les menaces et vulnérabilités de vos appareils, applications et procédures",
       "summary_nl": "Identificeer en prioriteer kwetsbaarheden op basis van risico.",
       "summary_en": "Identify and prioritize vulnerabilities based on risk.",
+      "summary_fr": "Identifiez et priorisez les vulnérabilités en fonction du risque.",
       "microsoft": [
-        { "name": "Microsoft Defender Vulnerability Management", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-vulnerability-management/defender-vulnerability-management", "a5Adds": true }
+        {
+          "name": "Microsoft Defender Vulnerability Management",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-vulnerability-management/defender-vulnerability-management",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -384,10 +706,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -396,25 +725,48 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     },
-
     {
       "code": "O19",
       "basis": 4,
       "type": "O",
       "title_nl": "Stel een verwerkingsregister op en houd dit actueel",
       "title_en": "Establish and maintain a record of processing activities",
+      "title_fr": "Établissez un registre des traitements et tenez-le à jour",
       "summary_nl": "Houd een actueel register van verwerkingsactiviteiten (art. 30 AVG).",
       "summary_en": "Maintain an up-to-date record of processing activities (GDPR art. 30).",
+      "summary_fr": "Tenez à jour un registre des activités de traitement (art. 30 RGPD).",
       "microsoft": [
-        { "name": "Microsoft Priva — Privacy Risk Management", "tier": "A5", "docsUrl": "https://learn.microsoft.com/privacy/priva/risk-management", "a5Adds": true },
-        { "name": "Microsoft Purview — Records management", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/records-management", "a5Adds": true }
+        {
+          "name": "Microsoft Priva — Privacy Risk Management",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/privacy/priva/risk-management",
+          "a5Adds": true
+        },
+        {
+          "name": "Microsoft Purview — Records management",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/records-management",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -423,10 +775,17 @@
       "type": "O",
       "title_nl": "Toets ieder voornemen om persoonsgegevens aan een derde partij te verstrekken aan de relevante wet- en regelgeving",
       "title_en": "Assess every intent to share personal data with a third party against relevant legislation",
+      "title_fr": "Évaluez toute intention de communiquer des données à caractère personnel à un tiers au regard de la législation applicable",
       "summary_nl": "Beoordeel doorgiften aan derden tegen de geldende wetgeving.",
       "summary_en": "Evaluate disclosures to third parties against applicable legislation.",
+      "summary_fr": "Évaluez les communications à des tiers au regard de la législation en vigueur.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager — Assessments", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-assessments", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager — Assessments",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-assessments",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -435,11 +794,23 @@
       "type": "O",
       "title_nl": "Stel een bewaar- en vernietigingsbeleid op voor gegevens en apparaten",
       "title_en": "Establish a retention and destruction policy for data and devices",
+      "title_fr": "Établissez une politique de conservation et de destruction des données et des appareils",
       "summary_nl": "Bepaal bewaartermijnen en vernietig gegevens en toestellen veilig.",
       "summary_en": "Define retention periods and securely destroy data and devices.",
+      "summary_fr": "Définissez des durées de conservation et détruisez les données et appareils en toute sécurité.",
       "microsoft": [
-        { "name": "Microsoft Purview — Data Lifecycle Management", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management", "a5Adds": false },
-        { "name": "Intune — Device wipe / retire", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/devices-wipe", "a5Adds": false }
+        {
+          "name": "Microsoft Purview — Data Lifecycle Management",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management",
+          "a5Adds": false
+        },
+        {
+          "name": "Intune — Device wipe / retire",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/devices-wipe",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -448,10 +819,17 @@
       "type": "T",
       "title_nl": "Deel je netwerk op om gebruikersgroepen, data en apparaten van elkaar te scheiden",
       "title_en": "Segment your network to separate user groups, data and devices",
+      "title_fr": "Segmentez votre réseau pour séparer les groupes d’utilisateurs, les données et les appareils",
       "summary_nl": "Pas netwerksegmentatie toe om groepen en systemen te isoleren.",
       "summary_en": "Apply network segmentation to isolate groups and systems.",
+      "summary_fr": "Appliquez la segmentation réseau pour isoler les groupes et les systèmes.",
       "microsoft": [
-        { "name": "Microsoft Entra — Global Secure Access (segmentation)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access", "a5Adds": true }
+        {
+          "name": "Microsoft Entra — Global Secure Access (segmentation)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -460,10 +838,17 @@
       "type": "O",
       "title_nl": "Waarborg een passend beschermingsniveau bij de doorgifte van persoonsgegevens buiten de EER",
       "title_en": "Ensure an adequate protection level when transferring personal data outside the EEA",
+      "title_fr": "Garantissez un niveau de protection adéquat lors du transfert de données à caractère personnel hors de l'EEE",
       "summary_nl": "Borg passende waarborgen bij internationale gegevensdoorgifte.",
       "summary_en": "Ensure appropriate safeguards for international data transfers.",
+      "summary_fr": "Assurez des garanties appropriées pour les transferts internationaux de données.",
       "microsoft": [
-        { "name": "Microsoft EU Data Boundary", "tier": "A1", "docsUrl": "https://learn.microsoft.com/privacy/eudb/eu-data-boundary-learn", "a5Adds": false }
+        {
+          "name": "Microsoft EU Data Boundary",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/privacy/eudb/eu-data-boundary-learn",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -472,10 +857,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -484,25 +876,48 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     },
-
     {
       "code": "O23",
       "basis": 5,
       "type": "O",
       "title_nl": "Voer risicobeoordelingen uit",
       "title_en": "Conduct risk assessments",
+      "title_fr": "Réalisez des évaluations des risques",
       "summary_nl": "Voer systematische risicobeoordelingen uit en volg op.",
       "summary_en": "Perform systematic risk assessments and follow up.",
+      "summary_fr": "Effectuez des évaluations systématiques des risques et assurez le suivi.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false },
-        { "name": "Microsoft Secure Score", "tier": "A3", "docsUrl": "https://learn.microsoft.com/defender-xdr/microsoft-secure-score", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        },
+        {
+          "name": "Microsoft Secure Score",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/defender-xdr/microsoft-secure-score",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -511,10 +926,17 @@
       "type": "O",
       "title_nl": "Stel eisen voor het privacydesign van diensten, apparaten en applicaties (privacy by default)",
       "title_en": "Set requirements for privacy design of services, devices and applications (privacy by default)",
+      "title_fr": "Définissez des exigences pour la conception respectueuse de la vie privée des services, appareils et applications (privacy by default)",
       "summary_nl": "Borg privacy by design en by default in aankoop en ontwikkeling.",
       "summary_en": "Embed privacy by design and by default in procurement and development.",
+      "summary_fr": "Intégrez la protection de la vie privée dès la conception et par défaut dans les achats et le développement.",
       "microsoft": [
-        { "name": "Microsoft Priva", "tier": "A5", "docsUrl": "https://learn.microsoft.com/privacy/priva/priva-overview", "a5Adds": true }
+        {
+          "name": "Microsoft Priva",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/privacy/priva/priva-overview",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -523,11 +945,23 @@
       "type": "T",
       "title_nl": "Logs van firewall, antivirus, … worden bewaard en geanalyseerd i.f.v. de opvolgfrequentie",
       "title_en": "Logs from firewall, antivirus, … are retained and analysed per the monitoring frequency",
+      "title_fr": "Les journaux du pare-feu, de l’antivirus, … sont conservés et analysés selon la fréquence de suivi",
       "summary_nl": "Bewaar en analyseer beveiligingslogs voor detectie en opvolging.",
       "summary_en": "Retain and analyse security logs for detection and follow-up.",
+      "summary_fr": "Conservez et analysez les journaux de sécurité pour la détection et le suivi.",
       "microsoft": [
-        { "name": "Microsoft Sentinel", "tier": "A5", "docsUrl": "https://learn.microsoft.com/azure/sentinel/overview", "a5Adds": true },
-        { "name": "Microsoft Purview — Audit (Premium)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/audit-premium", "a5Adds": true }
+        {
+          "name": "Microsoft Sentinel",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/azure/sentinel/overview",
+          "a5Adds": true
+        },
+        {
+          "name": "Microsoft Purview — Audit (Premium)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/audit-premium",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -536,12 +970,29 @@
       "type": "T",
       "title_nl": "Beveilig gevoelige gegevens en apparaten met encryptie",
       "title_en": "Protect sensitive data and devices with encryption",
+      "title_fr": "Protégez les données et appareils sensibles par chiffrement",
       "summary_nl": "Versleutel data in rust en onderweg, en pas labelgebaseerde encryptie toe.",
       "summary_en": "Encrypt data at rest and in transit, and apply label-based encryption.",
+      "summary_fr": "Chiffrez les données au repos et en transit, et appliquez le chiffrement basé sur les étiquettes.",
       "microsoft": [
-        { "name": "BitLocker via Intune", "tier": "A3", "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices", "a5Adds": false },
-        { "name": "Purview — Encryption with sensitivity labels", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels", "a5Adds": true },
-        { "name": "Double Key Encryption (DKE)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/purview/double-key-encryption", "a5Adds": true }
+        {
+          "name": "BitLocker via Intune",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
+          "a5Adds": false
+        },
+        {
+          "name": "Purview — Encryption with sensitivity labels",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels",
+          "a5Adds": true
+        },
+        {
+          "name": "Double Key Encryption (DKE)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/double-key-encryption",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -550,10 +1001,17 @@
       "type": "T",
       "title_nl": "Maak gebruik van testomgevingen bij ontwikkeling van nieuwe software en bij aanpassingen",
       "title_en": "Use test environments when developing or modifying software",
+      "title_fr": "Utilisez des environnements de test lors du développement ou de la modification de logiciels",
       "summary_nl": "Scheid test en productie en bescherm testdata.",
       "summary_en": "Separate test and production and protect test data.",
+      "summary_fr": "Séparez les environnements de test et de production et protégez les données de test.",
       "microsoft": [
-        { "name": "Microsoft 365 — Test/dev tenants & environments", "tier": "A1", "docsUrl": "https://learn.microsoft.com/microsoft-365/test-base/overview", "a5Adds": false }
+        {
+          "name": "Microsoft 365 — Test/dev tenants & environments",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/microsoft-365/test-base/overview",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -562,10 +1020,17 @@
       "type": "O",
       "title_nl": "Voer een DPIA uit op verwerkingen met een hoog risico",
       "title_en": "Conduct a DPIA on high-risk processing activities",
+      "title_fr": "Réalisez une AIPD sur les traitements à haut risque",
       "summary_nl": "Voer een gegevensbeschermingseffectbeoordeling uit bij hoog risico.",
       "summary_en": "Carry out a Data Protection Impact Assessment for high-risk processing.",
+      "summary_fr": "Réalisez une analyse d'impact relative à la protection des données pour les traitements à haut risque.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager — DPIA templates", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-templates", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager — DPIA templates",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-templates",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -574,10 +1039,17 @@
       "type": "O",
       "title_nl": "Voorzie procedures voor het bekendmaken en aanvechten van geautomatiseerde besluitvorming",
       "title_en": "Provide procedures to disclose and contest automated decision-making",
+      "title_fr": "Prévoyez des procédures pour divulguer et contester la prise de décision automatisée",
       "summary_nl": "Wees transparant over geautomatiseerde besluitvorming en voorzie bezwaar.",
       "summary_en": "Be transparent about automated decision-making and provide a means to object.",
+      "summary_fr": "Soyez transparent sur la prise de décision automatisée et prévoyez un moyen de s'y opposer.",
       "microsoft": [
-        { "name": "Microsoft Responsible AI Standard & guidance", "tier": "A1", "docsUrl": "https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai", "a5Adds": false }
+        {
+          "name": "Microsoft Responsible AI Standard & guidance",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -586,10 +1058,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -598,25 +1077,48 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     },
-
     {
       "code": "O27",
       "basis": 6,
       "type": "O",
       "title_nl": "Voorzie een crisismanagementplan",
       "title_en": "Provide a crisis management plan",
+      "title_fr": "Prévoyez un plan de gestion de crise",
       "summary_nl": "Bereid je voor op incidenten met een crisis- en continuïteitsplan.",
       "summary_en": "Prepare for incidents with a crisis and continuity plan.",
+      "summary_fr": "Préparez-vous aux incidents avec un plan de crise et de continuité.",
       "microsoft": [
-        { "name": "Microsoft Defender XDR — Incident response", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview", "a5Adds": true },
-        { "name": "Microsoft Sentinel — SOAR playbooks", "tier": "A5", "docsUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation", "a5Adds": true }
+        {
+          "name": "Microsoft Defender XDR — Incident response",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview",
+          "a5Adds": true
+        },
+        {
+          "name": "Microsoft Sentinel — SOAR playbooks",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -625,10 +1127,17 @@
       "type": "O",
       "title_nl": "Analyseer het incident en de gevolgde procedures en stuur bij waar nodig",
       "title_en": "Analyse the incident and procedures followed, and adjust where necessary",
+      "title_fr": "Analysez l’incident et les procédures suivies, et ajustez si nécessaire",
       "summary_nl": "Voer een post-incidentanalyse uit en verbeter processen.",
       "summary_en": "Perform a post-incident review and improve processes.",
+      "summary_fr": "Réalisez une analyse post-incident et améliorez les processus.",
       "microsoft": [
-        { "name": "Microsoft Defender XDR — Advanced hunting", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-xdr/advanced-hunting-overview", "a5Adds": true }
+        {
+          "name": "Microsoft Defender XDR — Advanced hunting",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-xdr/advanced-hunting-overview",
+          "a5Adds": true
+        }
       ]
     },
     {
@@ -637,10 +1146,17 @@
       "type": "O",
       "title_nl": "Communiceer na een incident met je medewerkers en leerlingen om te leren uit het incident",
       "title_en": "Communicate after an incident with staff and students to learn from it",
+      "title_fr": "Communiquez après un incident avec le personnel et les élèves afin d’en tirer des leçons",
       "summary_nl": "Communiceer transparant na incidenten en deel lessen.",
       "summary_en": "Communicate transparently after incidents and share lessons learned.",
+      "summary_fr": "Communiquez de manière transparente après les incidents et partagez les enseignements.",
       "microsoft": [
-        { "name": "Microsoft Teams / Viva Engage", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/engage/overview", "a5Adds": false }
+        {
+          "name": "Microsoft Teams / Viva Engage",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/engage/overview",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -649,10 +1165,17 @@
       "type": "O",
       "title_nl": "Veranker het beleid",
       "title_en": "Embed the policy",
+      "title_fr": "Ancrez la politique",
       "summary_nl": "Anker het beleid structureel in de organisatie en herhaal dit op elk Basisniveau.",
       "summary_en": "Embed the policy structurally in the organization, reinforced at each Basis level.",
+      "summary_fr": "Ancrez la politique de manière structurelle dans l'organisation, renforcée à chaque niveau Basis.",
       "microsoft": [
-        { "name": "Microsoft Purview Compliance Manager", "tier": "A3", "docsUrl": "https://learn.microsoft.com/purview/compliance-manager", "a5Adds": false }
+        {
+          "name": "Microsoft Purview Compliance Manager",
+          "tier": "A3",
+          "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
+          "a5Adds": false
+        }
       ]
     },
     {
@@ -661,11 +1184,23 @@
       "type": "O",
       "title_nl": "Geef opleiding, training en voorlichting",
       "title_en": "Provide education, training and awareness",
+      "title_fr": "Proposez de la formation, de l’entraînement et de la sensibilisation",
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
+      "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
-        { "name": "Attack Simulation Training (Defender for Office 365)", "tier": "A5", "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started", "a5Adds": true },
-        { "name": "Viva Learning", "tier": "A1", "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning", "a5Adds": false }
+        {
+          "name": "Attack Simulation Training (Defender for Office 365)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
+          "a5Adds": true
+        },
+        {
+          "name": "Viva Learning",
+          "tier": "A1",
+          "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
+          "a5Adds": false
+        }
       ]
     }
   ]

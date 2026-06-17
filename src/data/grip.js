@@ -18,6 +18,12 @@ export function findMeasure(code) {
   return grip.measures.find((m) => m.code === code) ?? null;
 }
 
+// Pick a localized field (e.g. 'title', 'summary') for the given language,
+// falling back to Dutch (the GRIP source of truth) when a translation is absent.
+export function localized(measure, field, lang) {
+  return measure[`${field}_${lang}`] || measure[`${field}_nl`];
+}
+
 // Tier ordering helper: A1 < A3 < A5
 const TIER_RANK = { A1: 1, A3: 2, A5: 3 };
 

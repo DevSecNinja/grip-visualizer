@@ -31,4 +31,11 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: 'EN' }));
     expect(screen.getByRole('tab', { name: 'Journey' })).toBeInTheDocument();
   });
+
+  it('switches the UI language to French', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'FR' }));
+    expect(screen.getByRole('tab', { name: 'Parcours' })).toBeInTheDocument();
+  });
 });

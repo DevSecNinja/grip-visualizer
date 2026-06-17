@@ -87,6 +87,9 @@ export default function App() {
         <h2 className="disclaimer__title">{t(lang, 'disclaimerTitle')}</h2>
         <p className="disclaimer__text">{t(lang, 'disclaimerUnofficial')}</p>
         <p className="disclaimer__text">{t(lang, 'disclaimerAi')}</p>
+        {lang !== 'nl' && (
+          <p className="disclaimer__text">{t(lang, 'disclaimerTranslation')}</p>
+        )}
         <p className="disclaimer__text">{t(lang, 'disclaimerAdvice')}</p>
       </section>
     </div>

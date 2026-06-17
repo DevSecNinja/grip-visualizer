@@ -30,12 +30,14 @@ describe('GRIP dataset integrity', () => {
     }
   });
 
-  it('provides bilingual titles and summaries for every measure', () => {
+  it('provides trilingual titles and summaries for every measure', () => {
     for (const m of measures) {
       expect(m.title_nl?.length).toBeGreaterThan(0);
       expect(m.title_en?.length).toBeGreaterThan(0);
+      expect(m.title_fr?.length).toBeGreaterThan(0);
       expect(m.summary_nl?.length).toBeGreaterThan(0);
       expect(m.summary_en?.length).toBeGreaterThan(0);
+      expect(m.summary_fr?.length).toBeGreaterThan(0);
     }
   });
 });

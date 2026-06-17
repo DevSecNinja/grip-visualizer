@@ -1,4 +1,5 @@
 import { t } from '../i18n/strings.js';
+import { localized } from '../data/grip.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
 export default function MeasureDetailPanel({ measure, lang, onClose, showA5 }) {
@@ -11,8 +12,8 @@ export default function MeasureDetailPanel({ measure, lang, onClose, showA5 }) {
     );
   }
 
-  const title = lang === 'en' ? measure.title_en : measure.title_nl;
-  const summary = lang === 'en' ? measure.summary_en : measure.summary_nl;
+  const title = localized(measure, 'title', lang);
+  const summary = localized(measure, 'summary', lang);
   const typeLabel =
     measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
 
