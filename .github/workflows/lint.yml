@@ -22,3 +22,7 @@ jobs:
       # renovate: datasource=github-releases depName=golangci/golangci-lint
       golangci-lint-version: "v2.12.2"
       lint-go: false
+      # No shell scripts in this repo; skip shell linters that otherwise fail
+      # when invoked with zero files.
+      lint-shellcheck: false
+      lint-shfmt: false

@@ -65,24 +65,42 @@ export default function App() {
       </div>
 
       <footer className="app__footer">
-        <div className="legend" role="group" aria-label={t(lang, 'filters')}>
-          <button
-            type="button"
-            className={`legend__item legend__item--btn${typeFilter === 'O' ? ' is-active' : ''}`}
-            aria-pressed={typeFilter === 'O'}
-            onClick={() => setTypeFilter((v) => (v === 'O' ? null : 'O'))}
-          >
-            <span className="legend__swatch legend__swatch--org" /> {t(lang, 'organisational')}
-          </button>
-          <button
-            type="button"
-            className={`legend__item legend__item--btn${typeFilter === 'T' ? ' is-active' : ''}`}
-            aria-pressed={typeFilter === 'T'}
-            onClick={() => setTypeFilter((v) => (v === 'T' ? null : 'T'))}
-          >
-            <span className="legend__swatch legend__swatch--tech" /> {t(lang, 'technical')}
-          </button>
-          <span className="legend__item legend__item--tiers">
+        <div className="filters" role="group" aria-label={t(lang, 'filters')}>
+          <span className="filters__label">
+            <svg className="filters__icon" viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M1.5 3h13M4 8h8M6.5 13h3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+            {t(lang, 'filterLabel')}
+          </span>
+
+          <div className="filters__group">
+            <button
+              type="button"
+              className={`filters__chip${typeFilter === 'O' ? ' is-active' : ''}`}
+              aria-pressed={typeFilter === 'O'}
+              onClick={() => setTypeFilter((v) => (v === 'O' ? null : 'O'))}
+            >
+              <span className="filters__swatch filters__swatch--org" /> {t(lang, 'organisational')}
+            </button>
+            <button
+              type="button"
+              className={`filters__chip${typeFilter === 'T' ? ' is-active' : ''}`}
+              aria-pressed={typeFilter === 'T'}
+              onClick={() => setTypeFilter((v) => (v === 'T' ? null : 'T'))}
+            >
+              <span className="filters__swatch filters__swatch--tech" /> {t(lang, 'technical')}
+            </button>
+          </div>
+
+          <span className="filters__divider" aria-hidden="true" />
+
+          <div className="filters__group">
             {['A1', 'A3', 'A5'].map((tierName) => (
               <button
                 key={tierName}
@@ -94,7 +112,20 @@ export default function App() {
                 {tierName}
               </button>
             ))}
-          </span>
+          </div>
+
+          {(typeFilter || tierFilter) && (
+            <button
+              type="button"
+              className="filters__clear"
+              onClick={() => {
+                setTypeFilter(null);
+                setTierFilter(null);
+              }}
+            >
+              {t(lang, 'clearFilters')} ×
+            </button>
+          )}
         </div>
         <a className="app__source" href={meta.sourceUrl} target="_blank" rel="noreferrer noopener">
           {t(lang, 'sourcePdf')} ↗
