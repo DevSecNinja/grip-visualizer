@@ -92,3 +92,14 @@ Official GRIP matrix:
 
 > The Microsoft mapping is an informative starting point for webinars, not licensing advice.
 > Always validate capability/tier availability against current Microsoft licensing.
+
+## Contributing
+
+Contributions are very welcome — bug reports, fixes, new mappings, translations and docs.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to set up locally, where translations live
+(`src/i18n/strings.js`, Dutch is the source of truth) and how to edit the mapping data
+(`src/data/grip.json`).
+
+## License
+
+Released under the [MIT License](LICENSE).

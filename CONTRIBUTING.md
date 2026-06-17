@@ -1,0 +1,123 @@
+# Contributing to GRIP Visualizer
+
+First off — **thank you for being here!** Contributions are very much encouraged and
+genuinely appreciated, whether that's a bug report, a fix, a new or improved Microsoft
+mapping, a translation tweak, or a documentation improvement. No contribution is too small.
+
+This project is an independent, unofficial visualizer that maps the Flemish **GRIP** growth
+path (_Groeipad informatieveiligheid en privacy voor het Vlaamse onderwijs_) to the
+**Microsoft A3/A5** stack. It is built with **React + Vite**, tested with **Vitest**, and
+deployed as a static site.
+
+## Ways to contribute
+
+- 🐛 **Report bugs** or unexpected behaviour via [issues](https://github.com/DevSecNinja/grip-visualizer/issues).
+- 🌍 **Improve translations** (Dutch / English / French).
+- 🔗 **Add or correct mappings** between GRIP measures and Microsoft products/features.
+- 📝 **Improve docs** (this file, the README, in-app copy).
+- ✨ **Propose features** — open an issue first so we can discuss scope.
+
+## Project overview
+
+- **UI** — `src/components/`, `src/App.jsx`
+- **Mapping data** — `src/data/grip.json`
+- **Translations / copy** — `src/i18n/strings.js`
+- **Styles** — `src/styles/index.css`
+- **Tests** — `src/**/*.test.{js,jsx}`
+
+## Getting started
+
+The quickest path is a **Dev Container / GitHub Codespaces** (config in `.devcontainer/`),
+which gives you Node and all tooling preinstalled. Otherwise, with Node 24+ locally:
+
+```bash
+npm install
+npm run dev       # start the dev server (http://localhost:5173)
+npm run build     # production build into dist/
+npm run preview   # preview the production build
+npm run lint      # eslint
+npm run format    # prettier (JS/CSS) — markdown is formatted with dprint
+npm test          # vitest
+```
+
+## Translations
+
+All UI copy lives in [`src/i18n/strings.js`](src/i18n/strings.js), organised by language
+under the `ui` object. The project ships three languages: **Dutch (`nl`)**, **English
+(`en`)** and **French (`fr`)**.
+
+- **Dutch is the source of truth.** The GRIP material is Dutch; non-Dutch strings are
+  translations and should preserve the Dutch meaning. When in doubt, the original Dutch wins.
+- The `t(lang, key)` helper falls back to Dutch when a key is missing in another language, so
+  **always add new keys to `nl` first**, then `en` and `fr`.
+- Aim for clear, concise copy aligned with the Microsoft writing style (see #23).
+
+### Adding a new language
+
+1. Add the language code to the `LANGS` array in `src/i18n/strings.js`.
+2. Add a matching block under `ui` with translations for every key (copy the `nl` block as a
+   starting point so no keys are missed).
+3. Make sure the language toggle in the header renders and switches correctly.
+
+## Mapping data
+
+Measures live in [`src/data/grip.json`](src/data/grip.json). Each measure looks like:
+
+```jsonc
+{
+  "code": "O7",             // GRIP code (O = Organisatorisch, T = Technisch)
+  "basis": 1,               // Basis maturity level 1–6
+  "type": "O",
+  "horizon": "short",       // implementation effort: short | medium | long
+  "title_nl": "...",
+  "title_en": "...",
+  "title_fr": "...",
+  "summary_nl": "...",
+  "summary_en": "...",
+  "summary_fr": "...",
+  "microsoft": [
+    { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
+  ]
+}
+```
+
+Guidelines when editing mappings:
+
+- Only map to a Microsoft product/feature where a **defensible** relationship exists — avoid
+  forced or misleading mappings.
+- Set `tier` to the lowest licence that delivers the capability (`A1` / `A3` / `A5`).
+- Use `a5Adds: true` for capabilities unlocked specifically by A5 (these feed the A3 vs A5
+  view).
+- Keep `docsUrl` pointing at current, official Microsoft documentation.
+- The Microsoft mapping is an **informative** starting point, not licensing advice.
+
+## Quality gates
+
+Before opening a PR, please run:
+
+```bash
+npm run lint
+npm run format
+npm test
+```
+
+- Git hooks (lefthook) will run these automatically once #17 lands.
+- A broken-links checker validates documentation and `docsUrl`/`sourceUrl` links (see #24).
+
+## Pull request guidelines
+
+- Keep PRs **small and focused** — one logical change per PR.
+- **Update docs and tests** alongside code changes.
+- **Link the related issue** (e.g. `Closes #123`).
+- Use clear, conventional commit messages (the repo uses semantic commits, e.g.
+  `feat: ...`, `fix: ...`, `docs: ...`).
+- Make sure lint, build and tests pass.
+
+## Code of conduct & licensing
+
+Please be kind and constructive in all interactions. By contributing, you agree that your
+contributions are licensed under the project's [MIT License](LICENSE).
+
+---
+
+Thanks again for helping improve GRIP Visualizer! 💙
