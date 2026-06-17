@@ -18,6 +18,16 @@ describe('App', () => {
     expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
   });
 
+  it('shows the practical guidance section for a seeded measure', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    expect(within(panel).getByText('Praktische richtlijnen')).toBeInTheDocument();
+    expect(within(panel).getByText('Wel doen')).toBeInTheDocument();
+    expect(within(panel).getByText('Niet doen')).toBeInTheDocument();
+  });
+
   it('switches to the journey view', async () => {
     const user = userEvent.setup();
     render(<App />);
