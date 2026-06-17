@@ -774,6 +774,43 @@ body {
   color: var(--accent-ink);
   text-decoration: underline;
 }
+.app__meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.app__meta-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--line-strong);
+}
+.app__repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.app__repo-icon {
+  width: 14px;
+  height: 14px;
+}
+.app__license {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 2px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.app__license:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
 
 /* ---------- Disclaimer ---------- */
 .disclaimer {
