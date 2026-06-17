@@ -61,8 +61,8 @@ Each measure in `src/data/grip.json`:
     { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
   ],
   "standards": {           // optional: mapping to common control frameworks
-    "iso27002": ["5.17", "8.5"],
-    "nistCsf": ["PR.AA-01"]
+    "nis2": ["21(2)(i)", "21(2)(j)"],
+    "cisV8": ["6.3", "6.5"]
   },
   "guidance": {            // optional: practical, actionable advice (per language)
     "nl": {

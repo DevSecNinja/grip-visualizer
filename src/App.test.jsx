@@ -24,8 +24,8 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: /O7/ }));
     const panel = screen.getByText('Microsoft-koppeling').closest('aside');
     expect(within(panel).getByText('Koppeling met standaarden')).toBeInTheDocument();
-    expect(within(panel).getByText(/ISO\/IEC 27002/)).toBeInTheDocument();
-    expect(within(panel).getByText('5.17')).toBeInTheDocument();
+    expect(within(panel).getByText(/CIS Controls v8/)).toBeInTheDocument();
+    expect(within(panel).getByText('6.3')).toBeInTheDocument();
   });
 
   it('shows the practical guidance section for a seeded measure', async () => {

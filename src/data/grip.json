@@ -22,14 +22,14 @@
     ],
     "standards": [
       {
-        "id": "iso27002",
-        "label": "ISO/IEC 27002:2022",
-        "url": "https://www.iso.org/standard/75652.html"
+        "id": "nis2",
+        "label": "NIS2 Directive (EU) 2022/2555",
+        "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
       },
       {
-        "id": "nistCsf",
-        "label": "NIST CSF 2.0",
-        "url": "https://www.nist.gov/cyberframework"
+        "id": "cisV8",
+        "label": "CIS Controls v8",
+        "url": "https://www.cisecurity.org/controls/v8"
       }
     ]
   },
@@ -60,11 +60,11 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "6.3"
+        "nis2": [
+          "21(2)(g)"
         ],
-        "nistCsf": [
-          "PR.AT-01"
+        "cisV8": [
+          "14.1"
         ]
       }
     },
@@ -94,12 +94,8 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "5.2",
-          "5.3"
-        ],
-        "nistCsf": [
-          "GV.RR-02"
+        "nis2": [
+          "20"
         ]
       }
     },
@@ -245,16 +241,16 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "5.17",
-          "8.5"
+        "nis2": [
+          "21(2)(i)",
+          "21(2)(j)"
         ],
-        "nistCsf": [
-          "PR.AA-01",
-          "PR.AA-03"
+        "cisV8": [
+          "6.3",
+          "6.5"
         ]
       },
-            "guidance": {
+      "guidance": {
         "nl": {
           "rationale": "Wachtwoorden alleen worden routineus gephisht en hergebruikt. Een duidelijk authenticatiebeleid met phishingbestendige MFA en voorwaardelijke toegang vermindert accountovername drastisch.",
           "do": [
@@ -385,14 +381,11 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "5.16"
-        ],
-        "nistCsf": [
-          "PR.AA-01"
+        "nis2": [
+          "21(2)(i)"
         ]
       },
-            "guidance": {
+      "guidance": {
         "nl": {
           "rationale": "Een eigen, geverifieerd domein geeft je controle over je identiteit en de levenscyclus ervan. Leun je op een gratis of gedeeld domein van een provider, dan kun je MFA/voorwaardelijke toegang niet afdwingen, mis je SPF/DKIM/DMARC tegen phishing en spoofing, en verlies je accounts als je van provider wisselt.",
           "do": [
@@ -451,14 +444,14 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "5.16"
+        "nis2": [
+          "21(2)(i)"
         ],
-        "nistCsf": [
-          "PR.AA-01"
+        "cisV8": [
+          "5.1"
         ]
       },
-            "guidance": {
+      "guidance": {
         "nl": {
           "rationale": "Persoonlijke of gedeelde mailboxen vertroebelen de verantwoordelijkheid en kun je niet centraal beheren. E-mail op je eigen domein laat je MFA, voorwaardelijke toegang, bewaarbeleid en offboarding consistent toepassen, en maakt communicatie aantoonbaar afkomstig van je organisatie.",
           "do": [
@@ -785,14 +778,15 @@
         }
       ],
       "standards": {
-        "iso27002": [
-          "8.13"
+        "nis2": [
+          "21(2)(c)"
         ],
-        "nistCsf": [
-          "PR.DS-11"
+        "cisV8": [
+          "11.1",
+          "11.2"
         ]
       },
-            "guidance": {
+      "guidance": {
         "nl": {
           "rationale": "Bewaartermijnen of synchronisatie zijn geen back-up. Ransomware en per ongeluk wissen vereisen herstelbare, geïsoleerde kopieën. Volg 3-2-1 (3 kopieën, 2 media, 1 offsite/onveranderbaar) en test vooral je herstel.",
           "do": [
