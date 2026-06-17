@@ -1,13 +1,6 @@
 import { t, LANGS } from '../i18n/strings.js';
 
-export default function AppHeader({
-  lang,
-  setLang,
-  view,
-  setView,
-  a5Only,
-  setA5Only,
-}) {
+export default function AppHeader({ lang, setLang, views, view, setView }) {
   return (
     <header className="app-header">
       <div className="app-header__brand">
@@ -24,35 +17,20 @@ export default function AppHeader({
 
       <div className="app-header__controls">
         <div className="seg" role="tablist" aria-label="view">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={view === 'matrix'}
-            className={`seg__btn${view === 'matrix' ? ' is-active' : ''}`}
-            onClick={() => setView('matrix')}
-          >
-            {t(lang, 'viewMatrix')}
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={view === 'journey'}
-            className={`seg__btn${view === 'journey' ? ' is-active' : ''}`}
-            onClick={() => setView('journey')}
-          >
-            {t(lang, 'viewJourney')}
-          </button>
+          {views.map((v) => (
+            <button
+              key={v.id}
+              type="button"
+              role="tab"
+              aria-selected={view === v.id}
+              className={`seg__btn${view === v.id ? ' is-active' : ''}`}
+              onClick={() => setView(v.id)}
+              title={t(lang, v.hint)}
+            >
+              {t(lang, v.label)}
+            </button>
+          ))}
         </div>
-
-        <label className="switch">
-          <input
-            type="checkbox"
-            checked={a5Only}
-            onChange={(e) => setA5Only(e.target.checked)}
-          />
-          <span className="switch__track" aria-hidden="true" />
-          <span className="switch__label">{t(lang, 'showA5')}</span>
-        </label>
 
         <div className="seg seg--lang" role="group" aria-label={t(lang, 'langLabel')}>
           {LANGS.map((l) => (

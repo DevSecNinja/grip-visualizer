@@ -6,19 +6,29 @@ EDU **Microsoft Elevate** customers in Flanders, and reusable across organisatio
 
 ## Features
 
-- **Matrix view** — the 42 GRIP measures across the 6 _Basis_ levels, faithful to the official PDF.
+Four views, all powered by the single dataset in `src/data/grip.json`:
+
+- **Matrix view** — the 42 GRIP measures (52 instances) across the 6 _Basis_ levels, faithful to
+  the official PDF.
 - **Journey view** — the same data as a progressive roadmap from Basis 1 → 6.
+- **A3 vs A5 view** — what A5 adds on top of A3, with A5-only capabilities grouped per Microsoft
+  product (sub-features merged into one card; license plans kept separate).
+- **Prioritize view** — measures grouped by implementation horizon (short / medium / long term),
+  with a "achievable with A3 today" indicator to help organisations sequence the work.
+
+Plus:
+
 - **Measure detail panel** — matching Microsoft products/features, license tier (A1/A3/A5) and
   documentation links per measure.
-- **A3 vs A5 toggle** — highlights what A5 adds on top of A3.
-- **Bilingual UI** — Dutch / English toggle (GRIP wording stays Dutch as source of truth).
+- **Type & tier filters** — dim the Matrix/Journey by Organisational/Technical or by A1/A3/A5.
+- **Trilingual UI** — Dutch / English / French toggle (GRIP wording stays Dutch as source of
+  truth; non-Dutch translations are AI-generated, as noted in the in-app disclaimer).
 - **Color-coded by Basis maturity level**, with Organisational (O) vs Technical (T) accents.
-
-One dataset (`src/data/grip.json`) powers both views.
 
 ## Tech stack
 
-React + Vite, Vitest for tests, ESLint + Prettier. Deploys as a static site to GitHub Pages.
+React + Vite, Vitest for tests, ESLint + Prettier. Deploys as a static site (Cloudflare Pages /
+GitHub Pages) via the central `DevSecNinja/.github` reusable workflows.
 
 ## Getting started
 
@@ -37,20 +47,25 @@ Each measure in `src/data/grip.json`:
 
 ```jsonc
 {
-  "code": "O7",            // GRIP code (O = Organisatorisch, T = Technisch)
+  "code": "O7",             // GRIP code (O = Organisatorisch, T = Technisch)
   "basis": 1,               // Basis maturity level 1–6
   "type": "O",
+  "horizon": "short",       // implementation effort: short | medium | long
   "title_nl": "...",
   "title_en": "...",
+  "title_fr": "...",
   "summary_nl": "...",
   "summary_en": "...",
+  "summary_fr": "...",
   "microsoft": [
     { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
   ]
 }
 ```
 
-`a5Adds: true` marks capabilities unlocked by A5 — these drive the A3/A5 highlight.
+- `horizon` drives the Prioritize view (effort/timeline, independent of the Basis sequence).
+- `a5Adds: true` marks capabilities unlocked by A5 — these feed the A3 vs A5 view.
+- `title_fr` / `summary_fr` are AI-generated translations; Dutch remains the source of truth.
 
 ## Deployment (Cloudflare Pages)
 

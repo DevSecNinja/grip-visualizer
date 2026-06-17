@@ -1,6 +1,7 @@
 import grip from './grip.json';
 
 export const BASIS_LEVELS = grip.meta.basisLevels;
+export const HORIZONS = grip.meta.horizons;
 
 export function getMeasures() {
   return grip.measures;
@@ -31,8 +32,4 @@ export function highestTier(measure) {
   return measure.microsoft.reduce((acc, item) => {
     return TIER_RANK[item.tier] > TIER_RANK[acc] ? item.tier : acc;
   }, 'A1');
-}
-
-export function hasA5Value(measure) {
-  return measure.microsoft.some((item) => item.a5Adds || item.tier === 'A5');
 }

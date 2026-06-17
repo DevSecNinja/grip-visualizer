@@ -2,7 +2,7 @@ import { t } from '../i18n/strings.js';
 import { localized } from '../data/grip.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
-export default function MeasureDetailPanel({ measure, lang, onClose, showA5 }) {
+export default function MeasureDetailPanel({ measure, lang, onClose }) {
   if (!measure) {
     return (
       <aside className="detail detail--empty" aria-live="polite">
@@ -42,32 +42,28 @@ export default function MeasureDetailPanel({ measure, lang, onClose, showA5 }) {
         <p className="detail__empty-hint">{t(lang, 'noMapping')}</p>
       ) : (
         <ul className="mapping">
-          {measure.microsoft
-            .filter((item) => (showA5 ? item.a5Adds || item.tier === 'A5' : true))
-            .map((item) => (
-              <li
-                className={`mapping__item${item.a5Adds ? ' mapping__item--a5' : ''}`}
-                key={item.name}
-              >
-                <div className="mapping__top">
-                  <span className="mapping__name">{item.name}</span>
-                  <LicenseBadge tier={item.tier} a5Adds={item.a5Adds} lang={lang} />
-                </div>
-                {item.a5Adds && (
-                  <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>
-                )}
-                {item.docsUrl && (
-                  <a
-                    className="mapping__link"
-                    href={item.docsUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    {t(lang, 'openDocs')} ↗
-                  </a>
-                )}
-              </li>
-            ))}
+          {measure.microsoft.map((item) => (
+            <li
+              className={`mapping__item${item.a5Adds ? ' mapping__item--a5' : ''}`}
+              key={item.name}
+            >
+              <div className="mapping__top">
+                <span className="mapping__name">{item.name}</span>
+                <LicenseBadge tier={item.tier} a5Adds={item.a5Adds} lang={lang} />
+              </div>
+              {item.a5Adds && <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>}
+              {item.docsUrl && (
+                <a
+                  className="mapping__link"
+                  href={item.docsUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {t(lang, 'openDocs')} ↗
+                </a>
+              )}
+            </li>
+          ))}
         </ul>
       )}
     </aside>

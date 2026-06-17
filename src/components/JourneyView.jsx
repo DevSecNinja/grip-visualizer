@@ -1,8 +1,11 @@
-import { BASIS_LEVELS, measuresByBasis, hasA5Value } from '../data/grip.js';
+import { BASIS_LEVELS, measuresByBasis, highestTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 import MeasureCard from './MeasureCard.jsx';
 
-export default function JourneyView({ lang, selectedCode, onSelect, a5Only }) {
+export default function JourneyView({ lang, selectedCode, onSelect, typeFilter, tierFilter }) {
+  const isDimmed = (m) =>
+    (typeFilter && m.type !== typeFilter) || (tierFilter && highestTier(m) !== tierFilter);
+
   return (
     <div className="journey" role="region" aria-label={t(lang, 'viewJourney')}>
       <div className="journey__track" aria-hidden="true" />
@@ -29,7 +32,7 @@ export default function JourneyView({ lang, selectedCode, onSelect, a5Only }) {
                     measure={m}
                     lang={lang}
                     selected={m.code === selectedCode}
-                    dimmed={a5Only && !hasA5Value(m)}
+                    dimmed={isDimmed(m)}
                     onSelect={onSelect}
                   />
                 ))}

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import grip from './grip.json';
-import { getMeasures, measuresByBasis, findMeasure, highestTier, hasA5Value } from './grip.js';
+import { getMeasures, measuresByBasis, findMeasure, highestTier } from './grip.js';
 
 describe('GRIP dataset integrity', () => {
   const measures = getMeasures();
@@ -40,6 +40,12 @@ describe('GRIP dataset integrity', () => {
       expect(m.summary_fr?.length).toBeGreaterThan(0);
     }
   });
+
+  it('assigns a valid implementation horizon to every measure', () => {
+    for (const m of measures) {
+      expect(grip.meta.horizons).toContain(m.horizon);
+    }
+  });
 });
 
 describe('selectors', () => {
@@ -50,10 +56,5 @@ describe('selectors', () => {
 
   it('computes the highest tier', () => {
     expect(highestTier(findMeasure('O7'))).toBe('A5');
-  });
-
-  it('detects A5 value-add', () => {
-    expect(hasA5Value(findMeasure('O7'))).toBe(true);
-    expect(hasA5Value(findMeasure('T1'))).toBe(false);
   });
 });

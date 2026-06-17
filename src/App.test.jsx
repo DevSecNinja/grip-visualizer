@@ -38,4 +38,13 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: 'FR' }));
     expect(screen.getByRole('tab', { name: 'Parcours' })).toBeInTheDocument();
   });
+
+  it('renders the Prioritize view with three horizon columns', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('tab', { name: 'Prioriteren' }));
+    expect(screen.getByText('Korte termijn')).toBeInTheDocument();
+    expect(screen.getByText('Middellange termijn')).toBeInTheDocument();
+    expect(screen.getByText('Lange termijn')).toBeInTheDocument();
+  });
 });
