@@ -25,6 +25,14 @@ export function localized(measure, field, lang) {
   return measure[`${field}_${lang}`] || measure[`${field}_nl`];
 }
 
+// Practical implementation guidance is an optional, per-language structured
+// object: { rationale, do: [], dont: [] }. Falls back to Dutch (source of
+// truth) and returns null when no guidance exists for the measure.
+export function localizedGuidance(measure, lang) {
+  if (!measure.guidance) return null;
+  return measure.guidance[lang] || measure.guidance.nl || null;
+}
+
 // Tier ordering helper: A1 < A3 < A5
 const TIER_RANK = { A1: 1, A3: 2, A5: 3 };
 

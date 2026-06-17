@@ -59,12 +59,23 @@ Each measure in `src/data/grip.json`:
   "summary_fr": "...",
   "microsoft": [
     { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
-  ]
+  ],
+  "guidance": {            // optional: practical, actionable advice (per language)
+    "nl": {
+      "rationale": "Waarom dit belangrijk is ...",
+      "do": ["Wel doen ..."],
+      "dont": ["Niet doen ..."]
+    },
+    "en": { "rationale": "...", "do": ["..."], "dont": ["..."] },
+    "fr": { "rationale": "...", "do": ["..."], "dont": ["..."] }
+  }
 }
 ```
 
 - `horizon` drives the Prioritize view (effort/timeline, independent of the Basis sequence).
 - `a5Adds: true` marks capabilities unlocked by A5 — these feed the A3 vs A5 view.
+- `guidance` is **optional**; when present, the detail pane renders a "Practical guidance"
+  section (rationale + do/don't). It's localized (NL/EN/FR), falling back to Dutch.
 - `title_fr` / `summary_fr` are AI-generated translations; Dutch remains the source of truth.
 
 ## Deployment (Cloudflare Pages)

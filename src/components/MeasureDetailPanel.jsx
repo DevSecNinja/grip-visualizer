@@ -1,5 +1,5 @@
 import { t } from '../i18n/strings.js';
-import { localized } from '../data/grip.js';
+import { localized, localizedGuidance } from '../data/grip.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
 export default function MeasureDetailPanel({ measure, lang, onClose }) {
@@ -14,6 +14,7 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
 
   const title = localized(measure, 'title', lang);
   const summary = localized(measure, 'summary', lang);
+  const guidance = localizedGuidance(measure, lang);
   const typeLabel =
     measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
 
@@ -36,6 +37,38 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
 
       <h2 className="detail__title">{title}</h2>
       <p className="detail__summary">{summary}</p>
+
+      {guidance && (
+        <section className="guidance">
+          <h3 className="detail__section-title">{t(lang, 'guidanceTitle')}</h3>
+          {guidance.rationale && (
+            <p className="guidance__rationale">
+              <span className="guidance__why">{t(lang, 'guidanceWhy')}:</span>{' '}
+              {guidance.rationale}
+            </p>
+          )}
+          {guidance.do && guidance.do.length > 0 && (
+            <div className="guidance__block guidance__block--do">
+              <h4 className="guidance__label">{t(lang, 'guidanceDo')}</h4>
+              <ul className="guidance__list">
+                {guidance.do.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {guidance.dont && guidance.dont.length > 0 && (
+            <div className="guidance__block guidance__block--dont">
+              <h4 className="guidance__label">{t(lang, 'guidanceDont')}</h4>
+              <ul className="guidance__list">
+                {guidance.dont.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
 
       <h3 className="detail__section-title">{t(lang, 'microsoftMapping')}</h3>
       {measure.microsoft.length === 0 ? (
