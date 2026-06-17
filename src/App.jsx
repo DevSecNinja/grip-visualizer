@@ -140,6 +140,19 @@ export default function App() {
           <p className="disclaimer__text">{t(lang, 'disclaimerTranslation')}</p>
         )}
         <p className="disclaimer__text">{t(lang, 'disclaimerAdvice')}</p>
+        <p className="disclaimer__text disclaimer__privacy">
+          <svg className="disclaimer__privacy-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path
+              d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2M3.5 7h9v6h-9z"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          {t(lang, 'disclaimerPrivacy')}
+        </p>
       </section>
     </div>
   );

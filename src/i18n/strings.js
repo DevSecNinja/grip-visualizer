@@ -48,6 +48,8 @@ export const ui = {
       'Werk steeds samen met je Microsoft-accountteam of een erkende reseller vóór je een aankoopbeslissing neemt.',
     disclaimerTranslation:
       'De vertaling van deze website werd met AI uitgevoerd. De Nederlandstalige GRIP-tekst is de bron; bij twijfel geldt het originele Nederlands.',
+    disclaimerPrivacy:
+      'Al je gegevens blijven in je browser. Deze visualizer draait volledig in je browser (client-side); er worden geen gegevens naar een server verzonden.',
   },
   en: {
     appTitle: 'GRIP Visualizer',
@@ -96,6 +98,8 @@ export const ui = {
       'Always work with your Microsoft account team or an authorised reseller before making a purchasing decision.',
     disclaimerTranslation:
       'The translation of this website was performed with AI. The Dutch GRIP text is the source; in case of doubt, the original Dutch prevails.',
+    disclaimerPrivacy:
+      'All your data stays in your browser. This visualizer runs entirely in your browser (client-side); nothing is ever sent to a server.',
   },
   fr: {
     appTitle: 'GRIP Visualizer',
@@ -145,6 +149,8 @@ export const ui = {
       "Collaborez toujours avec votre équipe de compte Microsoft ou un revendeur agréé avant de prendre une décision d'achat.",
     disclaimerTranslation:
       "La traduction de ce site web a été réalisée à l'aide de l'IA. Le texte GRIP néerlandais fait foi ; en cas de doute, la version néerlandaise originale prévaut.",
+    disclaimerPrivacy:
+      "Toutes vos données restent dans votre navigateur. Ce visualiseur fonctionne entièrement dans votre navigateur (côté client) ; aucune donnée n'est jamais envoyée à un serveur.",
   },
 };
 
