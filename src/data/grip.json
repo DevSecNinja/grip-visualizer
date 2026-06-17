@@ -115,7 +115,7 @@
         {
           "name": "Microsoft Planner / Microsoft 365",
           "tier": "A1",
-          "docsUrl": "https://learn.microsoft.com/microsoft-365/planner/",
+          "docsUrl": "https://learn.microsoft.com/planner/planner-for-admins",
           "a5Adds": false
         }
       ]
@@ -141,7 +141,7 @@
         {
           "name": "Microsoft Entra ID — Registered devices",
           "tier": "A1",
-          "docsUrl": "https://learn.microsoft.com/entra/identity/devices/device-registration",
+          "docsUrl": "https://learn.microsoft.com/entra/identity/devices/concept-device-registration",
           "a5Adds": false
         },
         {

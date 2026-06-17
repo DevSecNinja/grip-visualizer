@@ -50,6 +50,6 @@ jobs:
         with:
           title: "Broken links detected by the scheduled link checker"
           content-filepath: ./lychee/out.md
-          labels: |
+          labels: |-
             broken-links
             automated
