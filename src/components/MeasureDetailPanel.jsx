@@ -1,5 +1,5 @@
 import { t } from '../i18n/strings.js';
-import { localized } from '../data/grip.js';
+import { localized, standardsFor } from '../data/grip.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
 export default function MeasureDetailPanel({ measure, lang, onClose }) {
@@ -14,6 +14,7 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
 
   const title = localized(measure, 'title', lang);
   const summary = localized(measure, 'summary', lang);
+  const standards = standardsFor(measure);
   const typeLabel =
     measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
 
@@ -65,6 +66,34 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
             </li>
           ))}
         </ul>
+      )}
+
+      {standards.length > 0 && (
+        <section className="standards">
+          <h3 className="detail__section-title">{t(lang, 'standardsTitle')}</h3>
+          <ul className="standards__list">
+            {standards.map((std) => (
+              <li className="standards__item" key={std.id}>
+                <a
+                  className="standards__name"
+                  href={std.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {std.label} ↗
+                </a>
+                <span className="standards__controls">
+                  {std.controls.map((control) => (
+                    <span className="standards__chip" key={control}>
+                      {control}
+                    </span>
+                  ))}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="standards__note">{t(lang, 'standardsNote')}</p>
+        </section>
       )}
     </aside>
   );

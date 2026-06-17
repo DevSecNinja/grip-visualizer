@@ -59,12 +59,19 @@ Each measure in `src/data/grip.json`:
   "summary_fr": "...",
   "microsoft": [
     { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
-  ]
+  ],
+  "standards": {           // optional: mapping to common control frameworks
+    "iso27002": ["5.17", "8.5"],
+    "nistCsf": ["PR.AA-01"]
+  }
 }
 ```
 
 - `horizon` drives the Prioritize view (effort/timeline, independent of the Basis sequence).
 - `a5Adds: true` marks capabilities unlocked by A5 — these feed the A3 vs A5 view.
+- `standards` is **optional** and **many-to-many**; when present, the detail pane shows a
+  "Standards mapping" section. The available standards (id, label, url) are declared in
+  `meta.standards`. Only map where a defensible relationship exists; omit otherwise.
 - `title_fr` / `summary_fr` are AI-generated translations; Dutch remains the source of truth.
 
 ## Deployment (Cloudflare Pages)

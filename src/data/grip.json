@@ -19,6 +19,18 @@
       "short",
       "medium",
       "long"
+    ],
+    "standards": [
+      {
+        "id": "iso27002",
+        "label": "ISO/IEC 27002:2022",
+        "url": "https://www.iso.org/standard/75652.html"
+      },
+      {
+        "id": "nistCsf",
+        "label": "NIST CSF 2.0",
+        "url": "https://www.nist.gov/cyberframework"
+      }
     ]
   },
   "measures": [
@@ -46,7 +58,15 @@
           "docsUrl": "https://learn.microsoft.com/training/",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "6.3"
+        ],
+        "nistCsf": [
+          "PR.AT-01"
+        ]
+      }
     },
     {
       "code": "O2",
@@ -72,7 +92,16 @@
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
           "a5Adds": true
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "5.2",
+          "5.3"
+        ],
+        "nistCsf": [
+          "GV.RR-02"
+        ]
+      }
     },
     {
       "code": "O3",
@@ -214,7 +243,17 @@
           "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks",
           "a5Adds": true
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "5.17",
+          "8.5"
+        ],
+        "nistCsf": [
+          "PR.AA-01",
+          "PR.AA-03"
+        ]
+      }
     },
     {
       "code": "O8",
@@ -306,7 +345,15 @@
           "docsUrl": "https://learn.microsoft.com/microsoft-365/admin/setup/add-domain",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "5.16"
+        ],
+        "nistCsf": [
+          "PR.AA-01"
+        ]
+      }
     },
     {
       "code": "O11",
@@ -326,7 +373,15 @@
           "docsUrl": "https://learn.microsoft.com/exchange/exchange-online",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "5.16"
+        ],
+        "nistCsf": [
+          "PR.AA-01"
+        ]
+      }
     },
     {
       "code": "O12",
@@ -614,7 +669,15 @@
           "docsUrl": "https://learn.microsoft.com/sharepoint/retention-and-deletion",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "iso27002": [
+          "8.13"
+        ],
+        "nistCsf": [
+          "PR.DS-11"
+        ]
+      }
     },
     {
       "code": "T7",

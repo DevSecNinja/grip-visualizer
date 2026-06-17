@@ -30,6 +30,9 @@ export const ui = {
     measures: 'maatregelen',
     microsoftMapping: 'Microsoft-koppeling',
     noMapping: 'Nog geen Microsoft-koppeling toegevoegd.',
+    standardsTitle: 'Koppeling met standaarden',
+    standardsNote:
+      'Indicatieve koppeling met veelgebruikte controlekaders; geen 1-op-1-relatie en niet uitputtend.',
     openDocs: 'Documentatie openen',
     close: 'Sluiten',
     selectMeasure: 'Selecteer een maatregel',
@@ -78,6 +81,9 @@ export const ui = {
     measures: 'measures',
     microsoftMapping: 'Microsoft mapping',
     noMapping: 'No Microsoft mapping added yet.',
+    standardsTitle: 'Standards mapping',
+    standardsNote:
+      'Indicative mapping to common control frameworks; not a 1:1 relationship and not exhaustive.',
     openDocs: 'Open documentation',
     close: 'Close',
     selectMeasure: 'Select a measure',
@@ -126,6 +132,9 @@ export const ui = {
     measures: 'mesures',
     microsoftMapping: 'Correspondance Microsoft',
     noMapping: 'Aucune correspondance Microsoft ajoutée pour le moment.',
+    standardsTitle: 'Correspondance avec les normes',
+    standardsNote:
+      'Correspondance indicative avec des cadres de contrôle courants ; relation non biunivoque et non exhaustive.',
     openDocs: 'Ouvrir la documentation',
     close: 'Fermer',
     selectMeasure: 'Sélectionnez une mesure',

@@ -18,6 +18,16 @@ describe('App', () => {
     expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
   });
 
+  it('shows the standards mapping for a mapped measure', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    expect(within(panel).getByText('Koppeling met standaarden')).toBeInTheDocument();
+    expect(within(panel).getByText(/ISO\/IEC 27002/)).toBeInTheDocument();
+    expect(within(panel).getByText('5.17')).toBeInTheDocument();
+  });
+
   it('switches to the journey view', async () => {
     const user = userEvent.setup();
     render(<App />);
