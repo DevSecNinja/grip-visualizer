@@ -387,7 +387,7 @@ body {
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 16px;
-  padding: 6px 0 18px;
+  padding: 0 0 18px;
 }
 .journey__marker {
   display: flex;
@@ -426,7 +426,7 @@ body {
   content: '';
   position: absolute;
   left: 27px;
-  top: 50px;
+  top: 46px;
   bottom: -6px;
   width: 2px;
   background: linear-gradient(var(--line-strong), transparent);
