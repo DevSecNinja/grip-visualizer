@@ -38,6 +38,8 @@ export const ui = {
     filterLabel: 'Filteren',
     clearFilters: 'Wissen',
     sourcePdf: 'Bron: officiële GRIP-matrix (PDF)',
+    repoLink: 'Broncode op GitHub',
+    licenseMit: 'MIT-licentie',
     langLabel: 'Taal',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -86,6 +88,8 @@ export const ui = {
     filterLabel: 'Filter',
     clearFilters: 'Clear',
     sourcePdf: 'Source: official GRIP matrix (PDF)',
+    repoLink: 'Source code on GitHub',
+    licenseMit: 'MIT licensed',
     langLabel: 'Language',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -135,6 +139,8 @@ export const ui = {
     filterLabel: 'Filtrer',
     clearFilters: 'Effacer',
     sourcePdf: 'Source : matrice officielle GRIP (PDF)',
+    repoLink: 'Code source sur GitHub',
+    licenseMit: 'Sous licence MIT',
     langLabel: 'Langue',
     disclaimerTitle: 'Avertissement',
     disclaimerUnofficial:
