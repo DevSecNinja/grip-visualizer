@@ -30,7 +30,7 @@
     {
       "label": "Open web page",
       "type": "shell",
-      "command": "\"$BROWSER\" http://localhost:5173/grip-visualizer/",
+      "command": "\"$BROWSER\" http://localhost:5173/",
       "dependsOn": "Start web server",
       "problemMatcher": [],
       "options": {

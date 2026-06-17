@@ -52,11 +52,23 @@ Each measure in `src/data/grip.json`:
 
 `a5Adds: true` marks capabilities unlocked by A5 — these drive the A3/A5 highlight.
 
-## Deployment (GitHub Pages)
+## Deployment (Cloudflare Pages)
 
-The `.github/workflows/deploy.yml` workflow builds and publishes `dist/` to GitHub Pages on every
-push to `main`. The Vite `base` defaults to `/grip-visualizer/`; override with the `BASE_PATH`
-env var if hosting elsewhere. Enable **Settings → Pages → Source: GitHub Actions** once.
+Deployment runs through the central **`DevSecNinja/.github`** reusable Pages workflow
+(`.github/workflows/pages.yml`). On every push to `main` it runs `npm ci`, `npm test`,
+`npm run build` and deploys `dist/` to **Cloudflare Pages**.
+
+Cloudflare serves the site from the **root**, so the Vite `base` defaults to `/`. When hosting
+under a sub-path instead (e.g. a GitHub Pages project site at `/grip-visualizer/`), set the
+`BASE_PATH` env var at build time.
+
+Required repository secrets (**Settings → Secrets and variables → Actions**):
+
+- `CLOUDFLARE_ACCOUNT_ID` — the 32-character account ID from the Cloudflare dashboard
+  (Account Home → **Account ID**, or the hex segment in the dashboard URL).
+- `CLOUDFLARE_API_TOKEN` — a token with the **Account → Cloudflare Pages → Edit** permission.
+
+The Cloudflare Pages project name defaults to the repository name (`grip-visualizer`).
 
 ## Source
 
