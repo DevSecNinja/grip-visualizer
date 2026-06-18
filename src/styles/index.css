@@ -644,6 +644,64 @@ body {
   flex-direction: column;
   gap: 9px;
 }
+/* Standards mapping */
+.standards {
+  margin-top: 18px;
+}
+.standards__why {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.standards__why-label {
+  font-weight: 700;
+  color: var(--ink);
+}
+.standards__list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.standards__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.standards__name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+.standards__name:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+.standards__controls {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.standards__chip {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.standards__note {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
 .mapping__item {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);

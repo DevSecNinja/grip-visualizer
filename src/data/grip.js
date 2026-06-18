@@ -11,6 +11,27 @@ export function getMeta() {
   return grip.meta;
 }
 
+// Registry of risk/control standards the measures are mapped against.
+export function getStandards() {
+  return grip.meta.standards ?? [];
+}
+
+// Returns [{ id, label, url, controls: [...] }] for a measure's standard
+// mappings, or an empty array when the measure has no mappings.
+export function standardsFor(measure) {
+  if (!measure.standards) return [];
+  return getStandards()
+    .map((std) => ({ ...std, controls: measure.standards[std.id] ?? [] }))
+    .filter((std) => std.controls.length > 0);
+}
+
+// Localized rationale ("why") explaining why a measure maps to its standards.
+// Falls back to Dutch (source of truth) and returns null when absent.
+export function localizedStandardsWhy(measure, lang) {
+  if (!measure.standardsWhy) return null;
+  return measure.standardsWhy[lang] || measure.standardsWhy.nl || null;
+}
+
 export function measuresByBasis(basis) {
   return grip.measures.filter((m) => m.basis === basis);
 }

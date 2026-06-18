@@ -60,6 +60,15 @@ Each measure in `src/data/grip.json`:
   "microsoft": [
     { "name": "Conditional Access", "tier": "A3", "docsUrl": "https://...", "a5Adds": false }
   ],
+  "standards": {           // optional: mapping to common control frameworks
+    "nis2": ["21(2)(i)", "21(2)(j)"],
+    "cisV8": ["6.3", "6.5"]
+  },
+  "standardsWhy": {        // optional: localized rationale for the mapping above
+    "nl": "Waarom deze koppeling bestaat ...",
+    "en": "Why this mapping exists ...",
+    "fr": "Pourquoi cette correspondance existe ..."
+  },
   "guidance": {            // optional: practical, actionable advice (per language)
     "nl": {
       "rationale": "Waarom dit belangrijk is ...",
@@ -74,6 +83,11 @@ Each measure in `src/data/grip.json`:
 
 - `horizon` drives the Prioritize view (effort/timeline, independent of the Basis sequence).
 - `a5Adds: true` marks capabilities unlocked by A5 — these feed the A3 vs A5 view.
+- `standards` is **optional** and **many-to-many**; when present, the detail pane shows a
+  "Standards mapping" section. The available standards (id, label, url) are declared in
+  `meta.standards`. Only map where a defensible relationship exists; omit otherwise.
+- `standardsWhy` is **optional** and localized (NL/EN/FR, falling back to Dutch); when present,
+  it renders above the control chips to explain **why** the measure maps to those controls.
 - `guidance` is **optional**; when present, the detail pane renders a "Practical guidance"
   section (rationale + do/don't). It's localized (NL/EN/FR), falling back to Dutch.
 - `title_fr` / `summary_fr` are AI-generated translations; Dutch remains the source of truth.

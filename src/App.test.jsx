@@ -18,6 +18,17 @@ describe('App', () => {
     expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
   });
 
+  it('shows the standards mapping for a mapped measure', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    expect(within(panel).getByText('Koppeling met standaarden')).toBeInTheDocument();
+    expect(within(panel).getByText(/CIS Controls v8/)).toBeInTheDocument();
+    expect(within(panel).getByText('6.3')).toBeInTheDocument();
+    expect(within(panel).getByText('Waarom deze koppeling:')).toBeInTheDocument();
+  });
+
   it('shows the practical guidance section for a seeded measure', async () => {
     const user = userEvent.setup();
     render(<App />);
