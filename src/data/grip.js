@@ -25,6 +25,13 @@ export function standardsFor(measure) {
     .filter((std) => std.controls.length > 0);
 }
 
+// Localized rationale ("why") explaining why a measure maps to its standards.
+// Falls back to Dutch (source of truth) and returns null when absent.
+export function localizedStandardsWhy(measure, lang) {
+  if (!measure.standardsWhy) return null;
+  return measure.standardsWhy[lang] || measure.standardsWhy.nl || null;
+}
+
 export function measuresByBasis(basis) {
   return grip.measures.filter((m) => m.basis === basis);
 }

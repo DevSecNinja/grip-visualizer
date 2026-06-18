@@ -66,6 +66,11 @@
         "cisV8": [
           "14.1"
         ]
+      },
+      "standardsWhy": {
+        "nl": "Inzicht in de basisbegrippen van informatieveiligheid en privacy is de basis voor cyberhygiëne en bewustwording die NIS2 21(2)(g) en CIS Control 14 als minimum vragen.",
+        "en": "Understanding the core concepts of information security and privacy is the foundation of the cyber-hygiene and awareness that NIS2 21(2)(g) and CIS Control 14 require as a baseline.",
+        "fr": "Comprendre les concepts de base de la sécurité de l'information et de la vie privée est le socle de l'hygiène cyber et de la sensibilisation exigées par NIS2 21(2)(g) et le contrôle CIS 14."
       }
     },
     {
@@ -97,6 +102,11 @@
         "nis2": [
           "20"
         ]
+      },
+      "standardsWhy": {
+        "nl": "Het benoemen van een DPO en verantwoordelijke rollen is een governancemaatregel: NIS2 art. 20 maakt het bestuur expliciet verantwoordelijk voor het beheer van cyberbeveiligingsrisico's.",
+        "en": "Appointing a DPO and accountable roles is a governance measure: NIS2 Art. 20 makes management explicitly responsible for overseeing cybersecurity risk management.",
+        "fr": "Désigner un DPO et des rôles responsables relève de la gouvernance : l'article 20 de NIS2 rend la direction explicitement responsable de la gestion des risques de cybersécurité."
       }
     },
     {
@@ -250,6 +260,11 @@
           "6.5"
         ]
       },
+      "standardsWhy": {
+        "nl": "Een authenticatiebeleid met (phishingbestendige) MFA realiseert de toegangsbeheer- en MFA-eisen van NIS2 21(2)(i)/(j) en de CIS-safeguards 6.3 en 6.5.",
+        "en": "An authentication policy with (phishing-resistant) MFA implements the access-control and MFA requirements of NIS2 21(2)(i)/(j) and CIS safeguards 6.3 and 6.5.",
+        "fr": "Une politique d'authentification avec MFA (résistante à l'hameçonnage) met en œuvre les exigences de contrôle d'accès et de MFA de NIS2 21(2)(i)/(j) et des mesures CIS 6.3 et 6.5."
+      },
       "guidance": {
         "nl": {
           "rationale": "Wachtwoorden alleen worden routineus gephisht en hergebruikt. Een duidelijk authenticatiebeleid met phishingbestendige MFA en voorwaardelijke toegang vermindert accountovername drastisch.",
@@ -359,7 +374,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     },
     {
       "code": "T1",
@@ -384,6 +413,11 @@
         "nis2": [
           "21(2)(i)"
         ]
+      },
+      "standardsWhy": {
+        "nl": "Een eigen, geverifieerd domein is de basis voor identiteits- en toegangsbeheer, en daarmee voor de toegangsbeheermaatregelen die NIS2 21(2)(i) verwacht.",
+        "en": "Your own verified domain underpins identity and access management, and therefore the access-control measures NIS2 21(2)(i) expects.",
+        "fr": "Un domaine vérifié qui vous appartient est le socle de la gestion des identités et des accès, et donc des mesures de contrôle d'accès attendues par NIS2 21(2)(i)."
       },
       "guidance": {
         "nl": {
@@ -450,6 +484,11 @@
         "cisV8": [
           "5.1"
         ]
+      },
+      "standardsWhy": {
+        "nl": "Domeingebonden accounts maken centraal identiteitsbeheer mogelijk (CIS 5.1) en ondersteunen het toegangsbeheer dat NIS2 21(2)(i) verwacht.",
+        "en": "Domain-bound accounts enable central identity governance (CIS 5.1) and support the access control NIS2 21(2)(i) expects.",
+        "fr": "Les comptes liés au domaine permettent une gestion centralisée des identités (CIS 5.1) et soutiennent le contrôle d'accès attendu par NIS2 21(2)(i)."
       },
       "guidance": {
         "nl": {
@@ -704,7 +743,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     },
     {
       "code": "O15",
@@ -785,6 +838,11 @@
           "11.1",
           "11.2"
         ]
+      },
+      "standardsWhy": {
+        "nl": "Een geteste back-upprocedure levert de bedrijfscontinuïteit en gegevensherstelcapaciteit van NIS2 21(2)(c) en de CIS-safeguards 11.1 en 11.2.",
+        "en": "A tested backup procedure delivers the business-continuity and data-recovery capability of NIS2 21(2)(c) and CIS safeguards 11.1 and 11.2.",
+        "fr": "Une procédure de sauvegarde testée fournit la continuité d'activité et la capacité de restauration des données de NIS2 21(2)(c) et des mesures CIS 11.1 et 11.2."
       },
       "guidance": {
         "nl": {
@@ -987,7 +1045,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     },
     {
       "code": "O19",
@@ -1145,7 +1217,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     },
     {
       "code": "O23",
@@ -1355,7 +1441,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     },
     {
       "code": "O27",
@@ -1467,7 +1567,21 @@
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
           "a5Adds": false
         }
-      ]
+      ],
+      "standards": {
+        "nis2": [
+          "21(2)(g)"
+        ],
+        "cisV8": [
+          "14.1",
+          "14.2"
+        ]
+      },
+      "standardsWhy": {
+        "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
+        "en": "Ongoing end-user education and awareness is exactly the cyber-hygiene and security training mandated by NIS2 21(2)(g) and operationalised by CIS Control 14 (14.1/14.2).",
+        "fr": "La formation et la sensibilisation continues des utilisateurs finaux correspondent précisément à la formation à l'hygiène cyber et à la sécurité imposée par NIS2 21(2)(g) et déclinée par le contrôle CIS 14 (14.1/14.2)."
+      }
     }
   ]
 }

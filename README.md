@@ -64,6 +64,11 @@ Each measure in `src/data/grip.json`:
     "nis2": ["21(2)(i)", "21(2)(j)"],
     "cisV8": ["6.3", "6.5"]
   },
+  "standardsWhy": {        // optional: localized rationale for the mapping above
+    "nl": "Waarom deze koppeling bestaat ...",
+    "en": "Why this mapping exists ...",
+    "fr": "Pourquoi cette correspondance existe ..."
+  },
   "guidance": {            // optional: practical, actionable advice (per language)
     "nl": {
       "rationale": "Waarom dit belangrijk is ...",
@@ -81,6 +86,8 @@ Each measure in `src/data/grip.json`:
 - `standards` is **optional** and **many-to-many**; when present, the detail pane shows a
   "Standards mapping" section. The available standards (id, label, url) are declared in
   `meta.standards`. Only map where a defensible relationship exists; omit otherwise.
+- `standardsWhy` is **optional** and localized (NL/EN/FR, falling back to Dutch); when present,
+  it renders above the control chips to explain **why** the measure maps to those controls.
 - `guidance` is **optional**; when present, the detail pane renders a "Practical guidance"
   section (rationale + do/don't). It's localized (NL/EN/FR), falling back to Dutch.
 - `title_fr` / `summary_fr` are AI-generated translations; Dutch remains the source of truth.

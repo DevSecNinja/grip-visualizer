@@ -37,6 +37,7 @@ export const ui = {
     guidanceDont: 'Niet doen',
     noMapping: 'Nog geen Microsoft-koppeling toegevoegd.',
     standardsTitle: 'Koppeling met standaarden',
+    standardsWhy: 'Waarom deze koppeling',
     standardsNote:
       'Indicatieve koppeling met veelgebruikte controlekaders; geen 1-op-1-relatie en niet uitputtend.',
     openDocs: 'Documentatie openen',
@@ -101,6 +102,7 @@ export const ui = {
     guidanceDont: "Don't",
     noMapping: 'No Microsoft mapping added yet.',
     standardsTitle: 'Standards mapping',
+    standardsWhy: 'Why this mapping',
     standardsNote:
       'Indicative mapping to common control frameworks; not a 1:1 relationship and not exhaustive.',
     openDocs: 'Open documentation',
@@ -165,6 +167,7 @@ export const ui = {
     guidanceDont: 'À éviter',
     noMapping: 'Aucune correspondance Microsoft ajoutée pour le moment.',
     standardsTitle: 'Correspondance avec les normes',
+    standardsWhy: 'Pourquoi cette correspondance',
     standardsNote:
       'Correspondance indicative avec des cadres de contrôle courants ; relation non biunivoque et non exhaustive.',
     openDocs: 'Ouvrir la documentation',

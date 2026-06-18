@@ -26,6 +26,7 @@ describe('App', () => {
     expect(within(panel).getByText('Koppeling met standaarden')).toBeInTheDocument();
     expect(within(panel).getByText(/CIS Controls v8/)).toBeInTheDocument();
     expect(within(panel).getByText('6.3')).toBeInTheDocument();
+    expect(within(panel).getByText('Waarom deze koppeling:')).toBeInTheDocument();
   });
 
   it('shows the practical guidance section for a seeded measure', async () => {
