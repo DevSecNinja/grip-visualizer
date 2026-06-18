@@ -166,6 +166,15 @@ export default function App() {
           </a>
           <span className="app__meta-divider" aria-hidden="true" />
           <a
+            className="app__source"
+            href="https://m365maps.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {t(lang, 'm365MapsLink')} ↗
+          </a>
+          <span className="app__meta-divider" aria-hidden="true" />
+          <a
             className="app__source app__repo"
             href={REPO_URL}
             target="_blank"

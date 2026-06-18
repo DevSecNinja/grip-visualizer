@@ -745,6 +745,31 @@ body {
   text-decoration: underline;
 }
 
+/* Further reading / references */
+.references {
+  margin-top: 18px;
+}
+.references__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.references__item {
+  line-height: 1.35;
+}
+.references__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.references__link:hover {
+  text-decoration: underline;
+}
+
 /* Tier badge (shared) */
 .tier {
   font-size: 11px;

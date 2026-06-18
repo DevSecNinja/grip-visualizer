@@ -250,6 +250,14 @@
           "a5Adds": true
         }
       ],
+      "references": [
+        {
+          "label_nl": "Microsoft 365 Education: wachtwoordloze authenticatie voor leerlingen",
+          "label_en": "Microsoft 365 Education: passwordless authentication for students",
+          "label_fr": "Microsoft 365 Education : authentification sans mot de passe pour les élèves",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/education/guide/1-reference/protect-passwordless-students"
+        }
+      ],
       "standards": {
         "nis2": [
           "21(2)(i)",
