@@ -1306,3 +1306,204 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Network Map ──────────────────────────────────────────────────────── */
+.network-map {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  user-select: none;
+}
+
+.network-map__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.network-map__svg:active {
+  cursor: grabbing;
+}
+
+/* Edges */
+.nm-edge {
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.nm-edge--hi {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+/* Nodes */
+.nm-node {
+  transition: opacity 0.15s;
+}
+
+.nm-node--measure {
+  cursor: pointer;
+}
+
+.nm-node--product {
+  cursor: grab;
+}
+
+.nm-circle {
+  stroke: none;
+  transition:
+    filter 0.1s,
+    stroke-width 0.1s;
+}
+
+.nm-circle--org {
+  fill: var(--org);
+}
+
+.nm-circle--tech {
+  fill: var(--tech);
+}
+
+.nm-circle--a1 {
+  fill: var(--a1);
+  opacity: 0.8;
+}
+
+.nm-circle--a3 {
+  fill: var(--a3);
+  opacity: 0.75;
+}
+
+.nm-circle--a5 {
+  fill: var(--a5);
+  opacity: 0.75;
+}
+
+.nm-circle--selected {
+  stroke: var(--ink);
+  stroke-width: 3;
+  opacity: 1 !important;
+  filter: brightness(1.1);
+}
+
+.nm-circle--hovered {
+  filter: brightness(1.18) drop-shadow(0 0 6px rgba(47, 109, 246, 0.4));
+}
+
+/* Labels inside measure circles */
+.nm-label--measure {
+  fill: #fff;
+  font-family: var(--font);
+  font-size: 8px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Hint bar at bottom-left */
+.nm-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  margin: 0;
+  font-size: 11px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+/* Tooltip */
+.nm-tooltip {
+  position: fixed;
+  z-index: 200;
+  max-width: 320px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  font-size: 12px;
+  color: var(--ink);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Legend */
+.nm-legend {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.nm-legend__heading {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.nm-legend__sep {
+  width: 1px;
+  height: 14px;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+.nm-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nm-legend__dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nm-legend__dot--org {
+  background: var(--org);
+}
+
+.nm-legend__dot--tech {
+  background: var(--tech);
+}
+
+.nm-legend__dot--a1 {
+  background: var(--a1);
+}
+
+.nm-legend__dot--a3 {
+  background: var(--a3);
+}
+
+.nm-legend__dot--a5 {
+  background: var(--a5);
+}
+
+@media (max-width: 600px) {
+  .network-map {
+    height: 480px;
+  }
+
+  .nm-hint {
+    display: none;
+  }
+}
