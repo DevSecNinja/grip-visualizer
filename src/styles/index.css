@@ -1399,7 +1399,7 @@ body {
 
 /* Labels inside measure circles */
 .nm-label--measure {
-  fill: #fff;
+  fill: var(--surface);
   font-family: var(--font);
   font-size: 8px;
   font-weight: 700;
