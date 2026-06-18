@@ -1,0 +1,52 @@
+# Git hooks managed by lefthook (https://lefthook.dev).
+# Mirrors the repo's CI quality gates so issues are caught before they reach CI.
+# Node tooling (ESLint, Prettier, Vitest) runs via npx; mise-pinned linters run
+# via `mise exec --`. Install the hooks with: mise exec -- lefthook install
+
+[pre-commit]
+parallel = true
+
+[pre-commit.commands.eslint]
+run = "npx --no-install eslint --fix {staged_files}"
+glob = ["*.js", "*.jsx"]
+stage_fixed = true
+
+[pre-commit.commands.prettier]
+run = "npx --no-install prettier --write --ignore-unknown {staged_files}"
+glob = ["*.js", "*.jsx", "*.css", "*.json", "*.html"]
+stage_fixed = true
+
+[pre-commit.commands.dprint]
+run = "mise exec -- dprint fmt {staged_files}"
+glob = ["**/*.md"]
+stage_fixed = true
+
+[pre-commit.commands.format-yaml]
+run = "mise exec -- yamlfmt {staged_files}"
+glob = ["**/*.yaml", "**/*.yml"]
+stage_fixed = true
+
+[pre-commit.commands.yamllint]
+run = "mise exec -- yamllint {staged_files}"
+glob = ["**/*.yaml", "**/*.yml"]
+
+[pre-commit.commands.actionlint]
+run = "mise exec -- actionlint {staged_files}"
+glob = [".github/workflows/*.yml", ".github/workflows/*.yaml"]
+
+[pre-commit.commands.zizmor]
+run = "mise exec -- zizmor {staged_files}"
+glob = [".github/workflows/*.yml", ".github/workflows/*.yaml"]
+
+[pre-commit.commands.gitleaks]
+run = "mise exec -- gitleaks protect --staged --redact"
+
+# Slower, project-wide checks run on push for fast commit feedback.
+[pre-push]
+parallel = true
+
+[pre-push.commands.lint]
+run = "npm run lint"
+
+[pre-push.commands.test]
+run = "npm test"

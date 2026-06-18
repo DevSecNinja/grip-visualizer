@@ -101,7 +101,27 @@ npm run format
 npm test
 ```
 
-- Git hooks (lefthook) will run these automatically once #17 lands.
+### Git hooks (lefthook)
+
+This repo uses [lefthook](https://lefthook.dev) to run the linters, formatters and tests
+automatically. Inside the **Dev Container / Codespaces** the hooks are installed for you by
+`.devcontainer/post-create.sh`. For a local setup:
+
+```bash
+npm install                     # installs ESLint, Prettier, Vitest
+mise install                    # installs the pinned CI linters + lefthook (see .mise.toml)
+mise exec -- lefthook install   # wires up the git hooks
+```
+
+What runs:
+
+- **pre-commit** (on staged files) — ESLint `--fix`, Prettier, dprint (Markdown), yamlfmt +
+  yamllint, actionlint, zizmor and gitleaks. Auto-fixable changes are re-staged for you.
+- **pre-push** — `npm run lint` and `npm test` across the whole project.
+
+Run the full pre-commit suite on demand with `mise exec -- lefthook run pre-commit`. To bypass
+hooks in an emergency, use `git commit --no-verify` (please don't make a habit of it).
+
 - A broken-links checker validates documentation and `docsUrl`/`sourceUrl` links (see #24).
 
 ## Pull request guidelines
