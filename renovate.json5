@@ -13,4 +13,17 @@
     "github>DevSecNinja/.github//.renovate/packageRules.json5",
     "github>DevSecNinja/.github//.renovate/semanticCommits.json5",
   ],
+  packageRules: [
+    {
+      // vite, @vitejs/* and vitest share vite as a (peer) dependency and
+      // their majors are interdependent — e.g. vite@8 requires
+      // @vitejs/plugin-react@6, which in turn drops support for vite<8.
+      // Updating them separately leaves package.json and the lockfile out
+      // of sync (Renovate "Artifact file update failure"), so group them
+      // into a single PR.
+      description: "Group the Vite ecosystem (vite, @vitejs/*, vitest)",
+      groupName: "vite",
+      matchPackageNames: ["vite", "@vitejs/**", "vitest", "@vitest/**"],
+    },
+  ],
 }
