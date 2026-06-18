@@ -4,6 +4,7 @@ export const ui = {
   nl: {
     appTitle: 'GRIP Visualizer',
     appSubtitle: 'Koppel de Vlaamse GRIP-maatregelen aan de Microsoft A3/A5-stack',
+    logoAlt: 'GRIP Visualizer — GRIP gekoppeld aan Microsoft A3/A5',
     viewMatrix: 'Matrix',
     viewJourney: 'Groeitraject',
     matrixHint: 'Klik op een maatregel voor de Microsoft-koppeling.',
@@ -71,6 +72,7 @@ export const ui = {
   en: {
     appTitle: 'GRIP Visualizer',
     appSubtitle: 'Mapping the Flemish GRIP measures to the Microsoft A3/A5 stack',
+    logoAlt: 'GRIP Visualizer — GRIP mapped to Microsoft A3/A5',
     viewMatrix: 'Matrix',
     viewJourney: 'Journey',
     matrixHint: 'Click a measure to see its Microsoft mapping.',
@@ -137,6 +139,7 @@ export const ui = {
   fr: {
     appTitle: 'GRIP Visualizer',
     appSubtitle: 'Associer les mesures GRIP flamandes à la pile Microsoft A3/A5',
+    logoAlt: 'GRIP Visualizer — GRIP associé à Microsoft A3/A5',
     viewMatrix: 'Matrice',
     viewJourney: 'Parcours',
     matrixHint: 'Cliquez sur une mesure pour voir la correspondance Microsoft.',
