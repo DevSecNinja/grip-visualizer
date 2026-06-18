@@ -18,6 +18,13 @@ echo 'eval "$(~/.local/bin/mise activate bash)"' >>~/.bashrc
 ~/.local/bin/mise install
 
 ########################################
+# Git — mark the workspace as a safe directory
+# Avoids "detected dubious ownership" failures when git runs in the
+# bind-mounted workspace (owned by a different uid than the container user).
+########################################
+git config --global --add safe.directory "$(pwd)"
+
+########################################
 # Lefthook — git hooks
 ########################################
 ~/.local/bin/mise exec -- lefthook install

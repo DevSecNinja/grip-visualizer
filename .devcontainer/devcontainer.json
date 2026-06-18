@@ -1,7 +1,10 @@
 {
   "name": "GRIP Visualizer",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24@sha256:21f15d367bfc5ceadabb9989be48029cba1e6bd80da323405232614a267a9c45",
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postCreateCommand": "sudo chown node:node node_modules && bash .devcontainer/post-create.sh",
+  "mounts": [
+    "source=grip-visualizer-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:/home/node/.local/bin"
   },
