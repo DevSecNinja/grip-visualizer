@@ -23,16 +23,16 @@ translations.
 Always run `npm install` (or `npm ci`) once before any other command in a fresh checkout.
 `node_modules` is already present in this dev container, so installation is usually unnecessary.
 
-| Purpose | Command | Notes |
-| --- | --- | --- |
-| Install deps | `npm install` / `npm ci` | Required before lint/test/build in a clean checkout. |
-| Dev server | `npm run dev` | Vite on http://localhost:5173 (host enabled, polling watch). |
-| Lint | `npm run lint` | Runs `eslint .`. **Validated: passes.** Fast. |
-| Test | `npm test` | Runs `vitest run`. **Validated: 15 tests pass.** Takes ~60s (slow jsdom setup) — be patient, do not assume a hang. |
-| Test (watch) | `npm run test:watch` | Interactive; do not use in automation. |
-| Format | `npm run format` | `prettier --write .` — see warning below. |
-| Build | `npm run build` | `vite build` → `dist/`. **Fails locally in this dev container — see below.** |
-| Preview | `npm run preview` | Serves a prior `dist/` build. |
+| Purpose      | Command                  | Notes                                                                                                              |
+| ------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Install deps | `npm install` / `npm ci` | Required before lint/test/build in a clean checkout.                                                               |
+| Dev server   | `npm run dev`            | Vite on http://localhost:5173 (host enabled, polling watch).                                                       |
+| Lint         | `npm run lint`           | Runs `eslint .`. **Validated: passes.** Fast.                                                                      |
+| Test         | `npm test`               | Runs `vitest run`. **Validated: 15 tests pass.** Takes ~60s (slow jsdom setup) — be patient, do not assume a hang. |
+| Test (watch) | `npm run test:watch`     | Interactive; do not use in automation.                                                                             |
+| Format       | `npm run format`         | `prettier --write .` — see warning below.                                                                          |
+| Build        | `npm run build`          | `vite build` → `dist/`. **Fails locally in this dev container — see below.**                                       |
+| Preview      | `npm run preview`        | Serves a prior `dist/` build.                                                                                      |
 
 ### Known build failure in this environment (important)
 
@@ -75,8 +75,9 @@ workflows:
 
 To replicate CI gates locally before opening a PR: `npm run lint` and `npm test` (the build is
 covered by CI given the local EPERM limitation). Keep PRs small and focused; update tests/docs
-alongside code. **There is no local pre-commit hook yet** (lefthook is planned, not configured) —
-run lint and tests manually.
+alongside code. Local **lefthook** git hooks (`.lefthook.toml`) run these automatically —
+pre-commit lints/formats staged files, pre-push runs `npm run lint` and `npm test`. Install them
+with `mise exec -- lefthook install` (done automatically in the Dev Container).
 
 ## Repository conventions (org-wide `DevSecNinja` defaults)
 
@@ -111,6 +112,7 @@ Repository root files of note:
 - `eslint.config.js` — flat ESLint config (React, hooks, refresh; `react/prop-types` off).
 - `.prettierrc.json` — singleQuote, semi, printWidth 90, tabWidth 2. `.prettierignore` excludes md.
 - `dprint.json` — markdown formatting.
+- `.lefthook.toml` — local git hooks (pre-commit lint/format, pre-push lint/test).
 - `.mise.toml` — pins tool versions used by CI linters (node 24, dprint, yamllint, etc.).
 - `index.html` — Vite entry HTML. `public/` — static assets (favicon). `assets/` — repo media.
 - `lychee.toml` — link-checker config. `renovate.json5` — dependency automation.
