@@ -35,7 +35,7 @@ jobs:
       node-version: "24"
       node-cache: npm
       # renovate: datasource=npm depName=wrangler
-      wrangler-version: "4.100.0"
+      wrangler-version: "4.101.0"
       install-command: npm ci
       test-command: npm test
       build-command: npm run build
