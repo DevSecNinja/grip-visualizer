@@ -5,7 +5,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default [
-  { ignores: ['dist', 'node_modules', 'coverage', '.vite'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'coverage',
+      '.vite',
+      'playwright-report',
+      'test-results',
+    ],
+  },
   js.configs.recommended,
   {
     files: ['**/*.{js,jsx}'],

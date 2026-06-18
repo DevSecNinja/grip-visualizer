@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grip.ravensberg.org/sitemap.xml

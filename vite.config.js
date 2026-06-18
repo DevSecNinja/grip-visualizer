@@ -71,5 +71,8 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/test/setup.js',
     css: false,
+    // Unit/component tests live under src/. Playwright E2E specs live in e2e/
+    // and are run separately via `npm run test:e2e`.
+    include: ['src/**/*.{test,spec}.{js,jsx}'],
   },
 });

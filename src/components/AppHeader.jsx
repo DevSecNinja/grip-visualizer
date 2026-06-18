@@ -4,10 +4,31 @@ export default function AppHeader({ lang, setLang, views, view, setView }) {
   return (
     <header className="app-header">
       <div className="app-header__brand">
-        <span className="app-header__logo" aria-hidden="true">
-          <span className="app-header__logo-grip">GRIP</span>
-          <span className="app-header__logo-x">×</span>
-          <span className="app-header__logo-ms">MSFT</span>
+        <span className="app-header__logo" role="img" aria-label={t(lang, 'logoAlt')}>
+          <svg
+            className="app-header__logo-mark"
+            viewBox="0 0 64 64"
+            width="40"
+            height="40"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <linearGradient id="appHeaderLogoGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#2f6df6" />
+                <stop offset="1" stopColor="#7c3aed" />
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="14" fill="url(#appHeaderLogoGradient)" />
+            <path
+              d="M40 22a12 12 0 1 0 3 9h-9"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </span>
         <div className="app-header__titles">
           <h1 className="app-header__title">{t(lang, 'appTitle')}</h1>

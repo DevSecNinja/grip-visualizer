@@ -30,14 +30,21 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
       <header className="detail__head">
         <div className="detail__head-meta">
           <span className="detail__code">{measure.code}</span>
-          <span className={`detail__type detail__type--${measure.type === 'T' ? 'tech' : 'org'}`}>
+          <span
+            className={`detail__type detail__type--${measure.type === 'T' ? 'tech' : 'org'}`}
+          >
             {typeLabel}
           </span>
           <span className="detail__basis">
             {t(lang, 'basis')} {measure.basis}
           </span>
         </div>
-        <button type="button" className="detail__close" onClick={onClose} aria-label={t(lang, 'close')}>
+        <button
+          type="button"
+          className="detail__close"
+          onClick={onClose}
+          aria-label={t(lang, 'close')}
+        >
           ×
         </button>
       </header>
@@ -91,7 +98,9 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
                 <span className="mapping__name">{item.name}</span>
                 <LicenseBadge tier={item.tier} a5Adds={item.a5Adds} lang={lang} />
               </div>
-              {item.a5Adds && <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>}
+              {item.a5Adds && (
+                <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>
+              )}
               {item.docsUrl && (
                 <a
                   className="mapping__link"
@@ -138,6 +147,26 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
             ))}
           </ul>
           <p className="standards__note">{t(lang, 'standardsNote')}</p>
+        </section>
+      )}
+
+      {measure.references && measure.references.length > 0 && (
+        <section className="references">
+          <h3 className="detail__section-title">{t(lang, 'referencesTitle')}</h3>
+          <ul className="references__list">
+            {measure.references.map((ref) => (
+              <li className="references__item" key={ref.url}>
+                <a
+                  className="references__link"
+                  href={ref.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {localized(ref, 'label', lang)} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
     </aside>

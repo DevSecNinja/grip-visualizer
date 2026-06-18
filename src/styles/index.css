@@ -96,23 +96,15 @@ body {
 .app-header__logo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-  padding: 8px 12px;
+  justify-content: center;
+  flex: none;
+}
+.app-header__logo-mark {
+  display: block;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), #6aa0ff);
-  color: #fff;
-  font-size: 15px;
-}
-.app-header__logo-x {
-  opacity: 0.8;
-  font-weight: 500;
-}
-.app-header__logo-ms {
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 6px;
-  padding: 1px 6px;
+  box-shadow: var(--shadow-sm);
 }
 
 .app-header__titles {
@@ -742,6 +734,31 @@ body {
   text-decoration: none;
 }
 .mapping__link:hover {
+  text-decoration: underline;
+}
+
+/* Further reading / references */
+.references {
+  margin-top: 18px;
+}
+.references__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.references__item {
+  line-height: 1.35;
+}
+.references__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.references__link:hover {
   text-decoration: underline;
 }
 
