@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.1.0...v0.2.0) (2026-06-18)
+
+
+### Features
+
+* map measures to a common risk/control standard ([#38](https://github.com/DevSecNinja/grip-visualizer/issues/38)) ([da26d5a](https://github.com/DevSecNinja/grip-visualizer/commit/da26d5a0963a7b67f06dc0f1716dfc1ef3acbd13))
+* measure references, M365 Maps link, SEO metadata, Playwright E2E and a new header logo ([#66](https://github.com/DevSecNinja/grip-visualizer/issues/66)) ([4a60101](https://github.com/DevSecNinja/grip-visualizer/commit/4a6010178ebdff9e4bfac5314ecd19e97727fb55))
+
 ## [0.1.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.1.0...v0.1.0) (2026-06-18)
 
 
