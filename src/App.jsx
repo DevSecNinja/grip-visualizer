@@ -187,19 +187,18 @@ export default function App() {
           >
             {t(lang, 'licenseMit')}
           </a>
-          {(import.meta.env.PROD && import.meta.env.APP_VERSION) ||
-          import.meta.env.APP_COMMIT_SHA_SHORT ? (
+          {import.meta.env.APP_RELEASE_TAG || import.meta.env.APP_COMMIT_SHA_SHORT ? (
             <span className="app__meta-divider" aria-hidden="true" />
           ) : null}
-          {import.meta.env.PROD && import.meta.env.APP_VERSION ? (
+          {import.meta.env.APP_RELEASE_TAG ? (
             <a
               className="app__build"
-              href={`${REPO_URL}/releases/tag/v${import.meta.env.APP_VERSION}`}
+              href={`${REPO_URL}/releases/tag/${import.meta.env.APP_RELEASE_TAG}`}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label={`${t(lang, 'releaseVersionAria')} v${import.meta.env.APP_VERSION}`}
+              aria-label={`${t(lang, 'releaseVersionAria')} ${import.meta.env.APP_RELEASE_TAG}`}
             >
-              v{import.meta.env.APP_VERSION}
+              {import.meta.env.APP_RELEASE_TAG}
             </a>
           ) : null}
           {import.meta.env.APP_COMMIT_SHA_SHORT ? (
