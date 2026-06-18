@@ -129,9 +129,46 @@ hooks in an emergency, use `git commit --no-verify` (please don't make a habit o
 - Keep PRs **small and focused** — one logical change per PR.
 - **Update docs and tests** alongside code changes.
 - **Link the related issue** (e.g. `Closes #123`).
-- Use clear, conventional commit messages (the repo uses semantic commits, e.g.
-  `feat: ...`, `fix: ...`, `docs: ...`).
+- Use [Conventional Commits](#conventional-commits--releases) for commit messages.
 - Make sure lint, build and tests pass.
+
+## Conventional Commits & releases
+
+Releases are automated with
+[release-please](https://github.com/googleapis/release-please): it derives the next
+[semantic version](https://semver.org/), updates `package.json` and `CHANGELOG.md`, and
+creates the Git tag and GitHub Release. This only works if commits follow the
+[Conventional Commits](https://www.conventionalcommits.org/) specification.
+
+Each commit message should be of the form `type(optional scope): description`, e.g.
+`feat(i18n): add Spanish translations` or `fix: correct A5 tier on Conditional Access`.
+
+Common types and their effect on the version bump:
+
+| Type        | Use for                                                 | Version bump |
+| ----------- | ------------------------------------------------------- | ------------ |
+| `feat:`     | A new feature                                           | minor        |
+| `fix:`      | A bug fix                                               | patch        |
+| `docs:`     | Documentation-only changes                              | none         |
+| `chore:`    | Tooling, deps, housekeeping                             | none         |
+| `ci:`       | CI / workflow changes                                   | none         |
+| `refactor:` | Code change that neither fixes a bug nor adds a feature | none         |
+| `test:`     | Adding or fixing tests                                  | none         |
+| `perf:`     | A performance improvement                               | patch        |
+
+For a **breaking change**, append `!` after the type (e.g. `feat!: drop A1 view`) or add a
+`BREAKING CHANGE:` footer. While the project is pre-`1.0.0`, breaking changes bump the
+**minor** version.
+
+### How a release happens
+
+1. You merge Conventional Commits (e.g. `feat:` / `fix:`) into `main`.
+2. release-please opens or updates a `chore(main): release vX.Y.Z` PR with the version bump
+   and changelog entries.
+3. Once that PR is reviewed and merged, the tag and GitHub Release are created automatically.
+
+> Tip: when a change spans multiple commits, the **PR title** should also follow the
+> Conventional Commits format, since PRs are typically squash-merged.
 
 ## Code of conduct & licensing
 
