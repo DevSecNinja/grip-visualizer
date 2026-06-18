@@ -8,13 +8,39 @@ import MeasureDetailPanel from './components/MeasureDetailPanel.jsx';
 import { findMeasure, getMeta } from './data/grip.js';
 import { t } from './i18n/strings.js';
 
+const REPO_URL = 'https://github.com/DevSecNinja/grip-visualizer';
+
 // All views share one dataset. `filterable` marks the views that respond to
 // the footer type/tier filters (the faithful Matrix and Journey layouts).
 const VIEWS = [
-  { id: 'matrix', label: 'viewMatrix', hint: 'matrixHint', Component: MatrixView, filterable: true },
-  { id: 'journey', label: 'viewJourney', hint: 'journeyHint', Component: JourneyView, filterable: true },
-  { id: 'v1', label: 'vName_v1', hint: 'vHint_v1', Component: ValueA3A5View, filterable: false },
-  { id: 'prioritize', label: 'vName_prioritize', hint: 'vHint_prioritize', Component: PrioritizeView, filterable: false },
+  {
+    id: 'matrix',
+    label: 'viewMatrix',
+    hint: 'matrixHint',
+    Component: MatrixView,
+    filterable: true,
+  },
+  {
+    id: 'journey',
+    label: 'viewJourney',
+    hint: 'journeyHint',
+    Component: JourneyView,
+    filterable: true,
+  },
+  {
+    id: 'v1',
+    label: 'vName_v1',
+    hint: 'vHint_v1',
+    Component: ValueA3A5View,
+    filterable: false,
+  },
+  {
+    id: 'prioritize',
+    label: 'vName_prioritize',
+    hint: 'vHint_prioritize',
+    Component: PrioritizeView,
+    filterable: false,
+  },
 ];
 
 export default function App() {
@@ -86,7 +112,8 @@ export default function App() {
               aria-pressed={typeFilter === 'O'}
               onClick={() => setTypeFilter((v) => (v === 'O' ? null : 'O'))}
             >
-              <span className="filters__swatch filters__swatch--org" /> {t(lang, 'organisational')}
+              <span className="filters__swatch filters__swatch--org" />{' '}
+              {t(lang, 'organisational')}
             </button>
             <button
               type="button"
@@ -94,7 +121,8 @@ export default function App() {
               aria-pressed={typeFilter === 'T'}
               onClick={() => setTypeFilter((v) => (v === 'T' ? null : 'T'))}
             >
-              <span className="filters__swatch filters__swatch--tech" /> {t(lang, 'technical')}
+              <span className="filters__swatch filters__swatch--tech" />{' '}
+              {t(lang, 'technical')}
             </button>
           </div>
 
@@ -139,7 +167,7 @@ export default function App() {
           <span className="app__meta-divider" aria-hidden="true" />
           <a
             className="app__source app__repo"
-            href="https://github.com/DevSecNinja/grip-visualizer"
+            href={REPO_URL}
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -153,16 +181,46 @@ export default function App() {
           </a>
           <a
             className="app__license"
-            href="https://github.com/DevSecNinja/grip-visualizer/blob/main/LICENSE"
+            href={`${REPO_URL}/blob/main/LICENSE`}
             target="_blank"
             rel="noreferrer noopener"
           >
             {t(lang, 'licenseMit')}
           </a>
+          {(import.meta.env.PROD && import.meta.env.APP_VERSION) ||
+          import.meta.env.APP_COMMIT_SHA_SHORT ? (
+            <span className="app__meta-divider" aria-hidden="true" />
+          ) : null}
+          {import.meta.env.PROD && import.meta.env.APP_VERSION ? (
+            <a
+              className="app__build"
+              href={`${REPO_URL}/releases/tag/v${import.meta.env.APP_VERSION}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`${t(lang, 'releaseVersionAria')} v${import.meta.env.APP_VERSION}`}
+            >
+              v{import.meta.env.APP_VERSION}
+            </a>
+          ) : null}
+          {import.meta.env.APP_COMMIT_SHA_SHORT ? (
+            <a
+              className="app__build app__commit"
+              href={`${REPO_URL}/commit/${import.meta.env.APP_COMMIT_SHA}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`${t(lang, 'commitAria')} ${import.meta.env.APP_COMMIT_SHA_SHORT}`}
+            >
+              {import.meta.env.APP_COMMIT_SHA_SHORT}
+            </a>
+          ) : null}
         </div>
       </footer>
 
-      <section className="disclaimer" role="contentinfo" aria-label={t(lang, 'disclaimerTitle')}>
+      <section
+        className="disclaimer"
+        role="contentinfo"
+        aria-label={t(lang, 'disclaimerTitle')}
+      >
         <h2 className="disclaimer__title">{t(lang, 'disclaimerTitle')}</h2>
         <p className="disclaimer__text">{t(lang, 'disclaimerUnofficial')}</p>
         <p className="disclaimer__text">{t(lang, 'disclaimerAi')}</p>
@@ -171,7 +229,11 @@ export default function App() {
         )}
         <p className="disclaimer__text">{t(lang, 'disclaimerAdvice')}</p>
         <p className="disclaimer__text disclaimer__privacy">
-          <svg className="disclaimer__privacy-icon" viewBox="0 0 16 16" aria-hidden="true">
+          <svg
+            className="disclaimer__privacy-icon"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
             <path
               d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2M3.5 7h9v6h-9z"
               fill="none"

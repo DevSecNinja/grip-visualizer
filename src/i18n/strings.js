@@ -11,11 +11,13 @@ export const ui = {
     vName_v1: 'A3 vs A5',
     vHint_v1: 'Wat A5 toevoegt bovenop A3.',
     vName_prioritize: 'Prioriteren',
-    vHint_prioritize: 'Maatregelen gegroepeerd op implementatietermijn: quick wins, projecten en programma\u0027s.',
+    vHint_prioritize:
+      'Maatregelen gegroepeerd op implementatietermijn: quick wins, projecten en programma\u0027s.',
     hz_short: 'Korte termijn',
     hz_medium: 'Middellange termijn',
     hz_long: 'Lange termijn',
-    hzDesc_short: 'Quick wins: configuratie of documentatie, met reeds gelicentieerde tooling.',
+    hzDesc_short:
+      'Quick wins: configuratie of documentatie, met reeds gelicentieerde tooling.',
     hzDesc_medium: 'Projecten: uitrol of procesontwerp, vaak teamoverschrijdend.',
     hzDesc_long: 'Programma\u0027s: doorlopend beheer, hoge complexiteit of governance.',
     a3ReadyHint: 'haalbaar met A3 vandaag',
@@ -37,13 +39,16 @@ export const ui = {
     openDocs: 'Documentatie openen',
     close: 'Sluiten',
     selectMeasure: 'Selecteer een maatregel',
-    selectMeasureHint: 'Kies een GRIP-maatregel om de bijpassende Microsoft-oplossingen te zien.',
+    selectMeasureHint:
+      'Kies een GRIP-maatregel om de bijpassende Microsoft-oplossingen te zien.',
     filters: 'Filters',
     filterLabel: 'Filteren',
     clearFilters: 'Wissen',
     sourcePdf: 'Bron: officiële GRIP-matrix (PDF)',
     repoLink: 'Broncode op GitHub',
     licenseMit: 'MIT-licentie',
+    releaseVersionAria: 'Releaseversie op GitHub:',
+    commitAria: 'Commit op GitHub:',
     langLabel: 'Taal',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -67,11 +72,13 @@ export const ui = {
     vName_v1: 'A3 vs A5',
     vHint_v1: 'What A5 adds on top of A3.',
     vName_prioritize: 'Prioritize',
-    vHint_prioritize: 'Measures grouped by implementation horizon: quick wins, projects and programmes.',
+    vHint_prioritize:
+      'Measures grouped by implementation horizon: quick wins, projects and programmes.',
     hz_short: 'Short term',
     hz_medium: 'Medium term',
     hz_long: 'Long term',
-    hzDesc_short: 'Quick wins: configuration or documentation, using already-licensed tooling.',
+    hzDesc_short:
+      'Quick wins: configuration or documentation, using already-licensed tooling.',
     hzDesc_medium: 'Projects: rollout or process design, often cross-team.',
     hzDesc_long: 'Programmes: ongoing governance, high complexity or maturity.',
     a3ReadyHint: 'achievable with A3 today',
@@ -100,6 +107,8 @@ export const ui = {
     sourcePdf: 'Source: official GRIP matrix (PDF)',
     repoLink: 'Source code on GitHub',
     licenseMit: 'MIT licensed',
+    releaseVersionAria: 'Release version on GitHub:',
+    commitAria: 'Commit on GitHub:',
     langLabel: 'Language',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
@@ -123,12 +132,15 @@ export const ui = {
     vName_v1: 'A3 vs A5',
     vHint_v1: "Ce qu'A5 ajoute par rapport à A3.",
     vName_prioritize: 'Prioriser',
-    vHint_prioritize: 'Mesures regroupées par horizon de mise en œuvre : gains rapides, projets et programmes.',
+    vHint_prioritize:
+      'Mesures regroupées par horizon de mise en œuvre : gains rapides, projets et programmes.',
     hz_short: 'Court terme',
     hz_medium: 'Moyen terme',
     hz_long: 'Long terme',
-    hzDesc_short: 'Gains rapides : configuration ou documentation, avec des outils déjà sous licence.',
-    hzDesc_medium: 'Projets : déploiement ou conception de processus, souvent inter-équipes.',
+    hzDesc_short:
+      'Gains rapides : configuration ou documentation, avec des outils déjà sous licence.',
+    hzDesc_medium:
+      'Projets : déploiement ou conception de processus, souvent inter-équipes.',
     hzDesc_long: 'Programmes : gouvernance continue, forte complexité ou maturité.',
     a3ReadyHint: "réalisable avec A3 aujourd'hui",
     a3included: 'Réalisable avec A3',
@@ -157,6 +169,8 @@ export const ui = {
     sourcePdf: 'Source : matrice officielle GRIP (PDF)',
     repoLink: 'Code source sur GitHub',
     licenseMit: 'Sous licence MIT',
+    releaseVersionAria: 'Version de la release sur GitHub:',
+    commitAria: 'Commit sur GitHub:',
     langLabel: 'Langue',
     disclaimerTitle: 'Avertissement',
     disclaimerUnofficial:
