@@ -1,6 +1,13 @@
 import { highestTier, localized } from '../data/grip.js';
 
-export default function MeasureCard({ measure, lang, selected, dimmed, onSelect }) {
+export default function MeasureCard({
+  measure,
+  lang,
+  selected,
+  dimmed,
+  onSelect,
+  status,
+}) {
   const title = localized(measure, 'title', lang);
   const tier = highestTier(measure);
 
@@ -22,8 +29,18 @@ export default function MeasureCard({ measure, lang, selected, dimmed, onSelect 
     >
       <span className="measure-card__head">
         <span className="measure-card__code">{measure.code}</span>
-        <span className={`measure-card__tier measure-card__tier--${tier.toLowerCase()}`}>
-          {tier}
+        <span className="measure-card__head-right">
+          {status && (
+            <span
+              className={`measure-card__status-dot measure-card__status-dot--${status.replace(/_/g, '-')}`}
+              aria-hidden="true"
+            />
+          )}
+          <span
+            className={`measure-card__tier measure-card__tier--${tier.toLowerCase()}`}
+          >
+            {tier}
+          </span>
         </span>
       </span>
       <span className="measure-card__title">{title}</span>

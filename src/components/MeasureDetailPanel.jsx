@@ -5,9 +5,17 @@ import {
   localizedStandardsWhy,
   localizedGuidance,
 } from '../data/grip.js';
+import { ASSESSMENT_STATUSES } from '../data/assessment.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
-export default function MeasureDetailPanel({ measure, lang, onClose }) {
+export default function MeasureDetailPanel({
+  measure,
+  lang,
+  onClose,
+  assessmentEntry,
+  onStatusChange,
+  onNoteChange,
+}) {
   if (!measure) {
     return (
       <aside className="detail detail--empty" aria-live="polite">
@@ -51,6 +59,40 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
 
       <h2 className="detail__title">{title}</h2>
       <p className="detail__summary">{summary}</p>
+
+      {onStatusChange && (
+        <section className="assessment-entry">
+          <h3 className="detail__section-title">{t(lang, 'assessmentStatusLabel')}</h3>
+          <div
+            className="assessment-entry__statuses"
+            role="group"
+            aria-label={t(lang, 'assessmentStatusLabel')}
+          >
+            {ASSESSMENT_STATUSES.map((s) => (
+              <button
+                key={s}
+                type="button"
+                className={`assessment-status-btn assessment-status-btn--${s.replace(/_/g, '-')}${assessmentEntry?.status === s ? ' is-active' : ''}`}
+                onClick={() => onStatusChange(measure.code, s)}
+                aria-pressed={assessmentEntry?.status === s}
+              >
+                {t(lang, `status_${s}`)}
+              </button>
+            ))}
+          </div>
+          <label className="assessment-entry__note-label" htmlFor="assessment-note">
+            {t(lang, 'assessmentNoteLabel')}
+          </label>
+          <textarea
+            id="assessment-note"
+            className="assessment-entry__note"
+            value={assessmentEntry?.note ?? ''}
+            placeholder={t(lang, 'assessmentNotePlaceholder')}
+            onChange={(e) => onNoteChange(measure.code, e.target.value)}
+            rows={3}
+          />
+        </section>
+      )}
 
       {guidance && (
         <section className="guidance">
