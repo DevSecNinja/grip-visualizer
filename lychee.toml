@@ -3,7 +3,8 @@
 
 # Treat these HTTP status codes as success (in addition to 2xx).
 # 429 (Too Many Requests) is common from Microsoft Learn / rate-limited hosts.
-accept = [200, 206, 429]
+# 202 (Accepted) is returned by some hosts (e.g. EUR-Lex) for valid pages.
+accept = [200, 202, 206, 429]
 
 # Retry + timeout tuning to reduce false positives from flaky/slow hosts.
 max_retries = 3
