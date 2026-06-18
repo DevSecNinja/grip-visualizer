@@ -73,6 +73,30 @@ describe('parseImport', () => {
     // All 52 known codes are missing
     expect(warnings.missing.length).toBe(52);
   });
+
+  it('normalizes invalid status and note values to safe defaults', () => {
+    const payload = JSON.stringify({
+      schema: 'grip-assessment',
+      version: 1,
+      measures: {
+        O7: { status: { nested: true }, note: 42 },
+      },
+    });
+    const { measures } = parseImport(payload);
+    expect(measures.O7.status).toBe('not_started');
+    expect(measures.O7.note).toBe('');
+  });
+
+  it('ignores a non-object measures field without throwing', () => {
+    const payload = JSON.stringify({
+      schema: 'grip-assessment',
+      version: 1,
+      measures: ['not', 'an', 'object'],
+    });
+    const { measures, warnings } = parseImport(payload);
+    expect(measures).toEqual({});
+    expect(warnings.unknown).toHaveLength(0);
+  });
 });
 
 describe('exportAssessment', () => {

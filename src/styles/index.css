@@ -1015,6 +1015,12 @@ body {
   --status-in-progress: #f59e0b;
   --status-done: #10b981;
   --status-na: var(--ink-faint);
+  /* Darker variants used as backgrounds behind white text so the selected
+     status buttons meet WCAG AA contrast (>= 4.5:1). */
+  --status-not-started-strong: #5a6478;
+  --status-in-progress-strong: #b45309;
+  --status-done-strong: #047857;
+  --status-na-strong: #5a6478;
 }
 
 /* Status dot on measure cards */
@@ -1080,23 +1086,23 @@ body {
   color: var(--ink);
 }
 .assessment-status-btn--not-started.is-active {
-  background: var(--ink-faint);
-  border-color: var(--ink-faint);
+  background: var(--status-not-started-strong);
+  border-color: var(--status-not-started-strong);
   color: #fff;
 }
 .assessment-status-btn--in-progress.is-active {
-  background: var(--status-in-progress);
-  border-color: var(--status-in-progress);
+  background: var(--status-in-progress-strong);
+  border-color: var(--status-in-progress-strong);
   color: #fff;
 }
 .assessment-status-btn--done.is-active {
-  background: var(--status-done);
-  border-color: var(--status-done);
+  background: var(--status-done-strong);
+  border-color: var(--status-done-strong);
   color: #fff;
 }
 .assessment-status-btn--not-applicable.is-active {
-  background: var(--status-na);
-  border-color: var(--status-na);
+  background: var(--status-na-strong);
+  border-color: var(--status-na-strong);
   color: #fff;
 }
 .assessment-entry__note-label {

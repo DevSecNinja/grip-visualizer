@@ -8,6 +8,37 @@ export const ASSESSMENT_STATUSES = [
   'not_applicable',
 ];
 
+const STATUS_SET = new Set(ASSESSMENT_STATUSES);
+const DEFAULT_STATUS = 'not_started';
+
+function isPlainObject(value) {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+// Coerce a status value to a supported status, defaulting to 'not_started'.
+function normalizeStatus(status) {
+  return STATUS_SET.has(status) ? status : DEFAULT_STATUS;
+}
+
+// Coerce an arbitrary entry into a safe { status, note } shape.
+function normalizeEntry(entry) {
+  const source = isPlainObject(entry) ? entry : {};
+  return {
+    status: normalizeStatus(source.status),
+    note: typeof source.note === 'string' ? source.note : '',
+  };
+}
+
+// Normalize a measures map so every entry has a valid status/note shape.
+function normalizeMeasures(measures) {
+  if (!isPlainObject(measures)) return {};
+  const result = {};
+  for (const code of Object.keys(measures)) {
+    result[code] = normalizeEntry(measures[code]);
+  }
+  return result;
+}
+
 // Derive a short fingerprint of the current measure set so the localStorage
 // key changes automatically when the dataset is updated (dataset evolution
 // detection). Uses a djb2-XOR hash (djb2a variant) over the sorted measure codes.
@@ -38,7 +69,7 @@ function loadFromStorage() {
     if (!raw) return emptyState();
     const parsed = JSON.parse(raw);
     if (parsed?.version !== SCHEMA_VERSION) return emptyState();
-    return parsed;
+    return { version: SCHEMA_VERSION, measures: normalizeMeasures(parsed.measures) };
   } catch {
     return emptyState();
   }
@@ -93,11 +124,11 @@ export function useAssessment() {
   }
 
   function getStatus(code) {
-    return state.measures[code]?.status ?? 'not_started';
+    return normalizeStatus(state.measures[code]?.status);
   }
 
   function getEntry(code) {
-    return state.measures[code] ?? { status: 'not_started', note: '' };
+    return normalizeEntry(state.measures[code]);
   }
 
   return { state, setStatus, setNote, reset, importMeasures, getStatus, getEntry };
@@ -139,14 +170,17 @@ export function parseImport(jsonText) {
     throw new Error('invalidSchema');
   }
 
-  const importedMeasures = parsed.measures ?? {};
+  const importedMeasures = isPlainObject(parsed.measures) ? parsed.measures : {};
   const importedCodes = Object.keys(importedMeasures);
   const unknown = importedCodes.filter((c) => !knownCodes.has(c));
   const missing = [...knownCodes].filter((c) => !importedCodes.includes(c));
 
-  // Strip codes not in the current dataset to avoid stale entries
+  // Strip codes not in the current dataset to avoid stale entries and
+  // normalize each entry so a malformed file cannot store invalid shapes.
   const filteredMeasures = Object.fromEntries(
-    importedCodes.filter((c) => knownCodes.has(c)).map((c) => [c, importedMeasures[c]])
+    importedCodes
+      .filter((c) => knownCodes.has(c))
+      .map((c) => [c, normalizeEntry(importedMeasures[c])])
   );
 
   return { measures: filteredMeasures, warnings: { unknown, missing } };
