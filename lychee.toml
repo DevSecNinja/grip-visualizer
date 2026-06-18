@@ -26,6 +26,11 @@ exclude = [
   "^https?://localhost",
   "^https?://127\\.0\\.0\\.1",
   "example\\.com",
+  # release-please writes release/compare/tag URLs for the version being
+  # released into CHANGELOG.md, but the tag/release only exists once the
+  # release PR is merged — so they 404 during the PR's link check.
+  "^https://github\\.com/DevSecNinja/grip-visualizer/releases/tag/",
+  "^https://github\\.com/DevSecNinja/grip-visualizer/compare/",
 ]
 
 # Exclude private/internal IPs.
