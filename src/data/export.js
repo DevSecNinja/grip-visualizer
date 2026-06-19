@@ -1,11 +1,19 @@
 import PptxGenJS from 'pptxgenjs';
-import { getMeasures, localized } from './grip.js';
+import {
+  getMeasures,
+  localized,
+  highestTier,
+  standardsFor,
+  localizedStandardsWhy,
+  localizedGuidance,
+} from './grip.js';
 import { t } from '../i18n/strings.js';
 
 // ─── Colour palette (mirrors CSS variables) ──────────────────────────────────
 const COLORS = {
   bg: 'F6F8FB',
   accent: '2F6DF6',
+  accentInk: '1B4FD1',
   a1: '64748B',
   a3: '2F6DF6',
   a5: '7C3AED',
@@ -13,11 +21,13 @@ const COLORS = {
   tech: 'F5871F',
   ink: '1A2233',
   inkSoft: '5A6478',
+  inkFaint: '8A93A6',
   surface: 'FFFFFF',
   line: 'E3E8F0',
+  do: '0EA5A3',
+  dont: 'DC2626',
 };
 
-// Tier colours
 function tierColor(tier) {
   return COLORS[tier.toLowerCase()] ?? COLORS.a1;
 }
@@ -25,8 +35,10 @@ function tierColor(tier) {
 // ─── PDF export ───────────────────────────────────────────────────────────────
 
 /**
- * Triggers the browser print dialog so the user can save a PDF.
- * Print-specific CSS (defined in index.css under @media print) controls layout.
+ * Triggers the browser print dialog so the user can save a PDF. The printed
+ * output is produced by the always-rendered (screen-hidden) PrintDocument
+ * component plus the `@media print` rules in index.css, giving one fully
+ * detailed page per GRIP measure.
  */
 export function exportPDF() {
   window.print();
@@ -34,10 +46,184 @@ export function exportPDF() {
 
 // ─── PPTX export ─────────────────────────────────────────────────────────────
 
+// Builds the stacked text runs for the left "guidance" column.
+function guidanceRuns(measure, lang) {
+  const guidance = localizedGuidance(measure, lang);
+  const runs = [
+    {
+      text: t(lang, 'guidanceTitle'),
+      options: { bold: true, fontSize: 13, color: COLORS.accentInk, breakLine: true },
+    },
+  ];
+
+  if (!guidance) {
+    runs.push({
+      text: '—',
+      options: { fontSize: 11, color: COLORS.inkFaint, breakLine: true },
+    });
+    return runs;
+  }
+
+  if (guidance.rationale) {
+    runs.push({
+      text: `${t(lang, 'guidanceWhy')}: `,
+      options: { bold: true, fontSize: 11, color: COLORS.ink },
+    });
+    runs.push({
+      text: guidance.rationale,
+      options: {
+        fontSize: 11,
+        color: COLORS.inkSoft,
+        breakLine: true,
+        paraSpaceAfter: 6,
+      },
+    });
+  }
+
+  if (guidance.do && guidance.do.length > 0) {
+    runs.push({
+      text: t(lang, 'guidanceDo'),
+      options: { bold: true, fontSize: 11.5, color: COLORS.do, breakLine: true },
+    });
+    guidance.do.forEach((item) => {
+      runs.push({
+        text: item,
+        options: { fontSize: 10.5, color: COLORS.ink, bullet: true, breakLine: true },
+      });
+    });
+  }
+
+  if (guidance.dont && guidance.dont.length > 0) {
+    runs.push({
+      text: t(lang, 'guidanceDont'),
+      options: {
+        bold: true,
+        fontSize: 11.5,
+        color: COLORS.dont,
+        breakLine: true,
+        paraSpaceBefore: 4,
+      },
+    });
+    guidance.dont.forEach((item) => {
+      runs.push({
+        text: item,
+        options: { fontSize: 10.5, color: COLORS.ink, bullet: true, breakLine: true },
+      });
+    });
+  }
+
+  return runs;
+}
+
+// Builds the stacked text runs for the right "mapping + standards" column.
+function mappingRuns(measure, lang) {
+  const runs = [
+    {
+      text: t(lang, 'microsoftMapping'),
+      options: { bold: true, fontSize: 13, color: COLORS.accentInk, breakLine: true },
+    },
+  ];
+
+  if (measure.microsoft.length === 0) {
+    runs.push({
+      text: t(lang, 'noMapping'),
+      options: { fontSize: 11, color: COLORS.inkFaint, breakLine: true },
+    });
+  } else {
+    measure.microsoft.forEach((ms) => {
+      runs.push({
+        text: ms.name,
+        options: { bold: true, fontSize: 11, color: COLORS.ink },
+      });
+      runs.push({
+        text: `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
+        options: { bold: true, fontSize: 10, color: tierColor(ms.tier), breakLine: true },
+      });
+      if (ms.docsUrl) {
+        runs.push({
+          text: ms.docsUrl,
+          options: {
+            fontSize: 8.5,
+            color: COLORS.inkSoft,
+            breakLine: true,
+            paraSpaceAfter: 4,
+          },
+        });
+      }
+    });
+  }
+
+  // Standards mapping
+  const standards = standardsFor(measure);
+  if (standards.length > 0) {
+    runs.push({
+      text: t(lang, 'standardsTitle'),
+      options: {
+        bold: true,
+        fontSize: 13,
+        color: COLORS.accentInk,
+        breakLine: true,
+        paraSpaceBefore: 8,
+      },
+    });
+
+    const standardsWhy = localizedStandardsWhy(measure, lang);
+    if (standardsWhy) {
+      runs.push({
+        text: `${t(lang, 'standardsWhy')}: `,
+        options: { bold: true, fontSize: 10.5, color: COLORS.ink },
+      });
+      runs.push({
+        text: standardsWhy,
+        options: {
+          fontSize: 10.5,
+          color: COLORS.inkSoft,
+          breakLine: true,
+          paraSpaceAfter: 4,
+        },
+      });
+    }
+
+    standards.forEach((std) => {
+      runs.push({
+        text: std.label,
+        options: { bold: true, fontSize: 10.5, color: COLORS.ink },
+      });
+      runs.push({
+        text: `  ${std.controls.join(', ')}`,
+        options: { fontSize: 10.5, color: COLORS.inkSoft, breakLine: true },
+      });
+    });
+  }
+
+  // Further reading
+  if (measure.references && measure.references.length > 0) {
+    runs.push({
+      text: t(lang, 'referencesTitle'),
+      options: {
+        bold: true,
+        fontSize: 13,
+        color: COLORS.accentInk,
+        breakLine: true,
+        paraSpaceBefore: 8,
+      },
+    });
+    measure.references.forEach((ref) => {
+      runs.push({
+        text: localized(ref, 'label', lang),
+        options: { fontSize: 10, color: COLORS.inkSoft, bullet: true, breakLine: true },
+      });
+    });
+  }
+
+  return runs;
+}
+
 /**
- * Builds and downloads a PPTX file containing:
- *   - A title slide
- *   - One slide per GRIP measure (code, title, summary, Microsoft mappings)
+ * Builds and downloads a PPTX file containing a title slide plus one slide per
+ * GRIP measure. Each measure slide carries the full detail shown in the app:
+ * title, summary, practical guidance (why/do/don't), the Microsoft mapping with
+ * documentation links, and the standards mapping with control references.
  *
  * @param {string} lang  Active UI language ('nl' | 'en' | 'fr')
  */
@@ -53,7 +239,6 @@ export async function exportPPTX(lang) {
   const titleSlide = pptx.addSlide();
   titleSlide.background = { color: COLORS.bg };
 
-  // Accent bar on left
   titleSlide.addShape(pptx.ShapeType.rect, {
     x: 0,
     y: 0,
@@ -83,7 +268,8 @@ export async function exportPPTX(lang) {
     fontFace: 'Segoe UI',
   });
 
-  const today = new Date().toLocaleDateString(lang === 'fr' ? 'fr-BE' : lang === 'en' ? 'en-GB' : 'nl-BE', {
+  const locale = { fr: 'fr-BE', en: 'en-GB', nl: 'nl-BE' }[lang] || 'nl-BE';
+  const today = new Date().toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -104,6 +290,7 @@ export async function exportPPTX(lang) {
     slide.background = { color: COLORS.surface };
 
     const typeColor = measure.type === 'T' ? COLORS.tech : COLORS.org;
+    const tier = highestTier(measure);
 
     // Top accent bar
     slide.addShape(pptx.ShapeType.rect, {
@@ -130,143 +317,96 @@ export async function exportPPTX(lang) {
       rectRadius: 0.05,
     });
 
-    // Basis badge
-    slide.addText(`Basis ${measure.basis}`, {
-      x: 1.35,
-      y: 0.22,
-      w: 1.1,
-      h: 0.32,
-      fontSize: 11,
-      bold: true,
-      color: COLORS.inkSoft,
-      fontFace: 'Segoe UI',
-    });
+    // Type + Basis
+    slide.addText(
+      `${measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational')}  ·  Basis ${measure.basis}`,
+      {
+        x: 1.35,
+        y: 0.22,
+        w: 4.5,
+        h: 0.32,
+        fontSize: 11,
+        bold: true,
+        color: COLORS.inkSoft,
+        valign: 'middle',
+        fontFace: 'Segoe UI',
+      }
+    );
 
-    // Tier badge
-    const tier = measure.microsoft.reduce((best, ms) => {
-      const rank = { A1: 1, A3: 2, A5: 3 };
-      return rank[ms.tier] > rank[best] ? ms.tier : best;
-    }, 'A1');
-
+    // Tier badge (top-right)
     slide.addText(tier, {
-      x: 2.55,
-      y: 0.22,
-      w: 0.7,
+      x: 12.4,
+      y: 0.2,
+      w: 0.6,
       h: 0.32,
       fontSize: 11,
       bold: true,
       color: COLORS.surface,
       fill: { color: tierColor(tier) },
       align: 'center',
+      valign: 'middle',
+      shape: pptx.ShapeType.roundRect,
+      rectRadius: 0.05,
       fontFace: 'Segoe UI',
     });
 
-    // Measure title
-    const title = localized(measure, 'title', lang);
-    slide.addText(title, {
+    // Title
+    slide.addText(localized(measure, 'title', lang), {
       x: 0.35,
-      y: 0.72,
+      y: 0.66,
       w: 12.6,
-      h: 1.0,
+      h: 0.7,
       fontSize: 18,
       bold: true,
       color: COLORS.ink,
       fontFace: 'Segoe UI',
-      wrap: true,
+      valign: 'top',
+      fit: 'shrink',
     });
 
     // Summary
-    const summary = localized(measure, 'summary', lang);
-    slide.addText(summary, {
+    slide.addText(localized(measure, 'summary', lang), {
       x: 0.35,
-      y: 1.82,
+      y: 1.38,
       w: 12.6,
-      h: 0.9,
+      h: 0.62,
       fontSize: 12,
       color: COLORS.inkSoft,
       fontFace: 'Segoe UI',
-      wrap: true,
+      valign: 'top',
+      fit: 'shrink',
     });
 
-    // Microsoft mapping header
-    slide.addText(t(lang, 'microsoftMapping'), {
+    // Left column — practical guidance
+    slide.addText(guidanceRuns(measure, lang), {
       x: 0.35,
-      y: 2.85,
-      w: 12.6,
-      h: 0.3,
-      fontSize: 11,
-      bold: true,
-      color: COLORS.inkSoft,
+      y: 2.12,
+      w: 6.1,
+      h: 5.2,
       fontFace: 'Segoe UI',
+      valign: 'top',
+      fit: 'shrink',
     });
 
-    // Divider line
-    slide.addShape(pptx.ShapeType.line, {
-      x: 0.35,
-      y: 3.18,
-      w: 12.6,
-      h: 0,
-      line: { color: COLORS.line, width: 0.5 },
+    // Right column — Microsoft mapping + standards + references
+    slide.addText(mappingRuns(measure, lang), {
+      x: 6.65,
+      y: 2.12,
+      w: 6.3,
+      h: 5.2,
+      fontFace: 'Segoe UI',
+      valign: 'top',
+      fit: 'shrink',
     });
 
-    // Microsoft tools (up to 6 per row, 2 rows)
-    const tools = measure.microsoft.slice(0, 12);
-    const colCount = Math.min(tools.length, 4);
-    const colW = 12.6 / colCount;
-
-    tools.forEach((ms, idx) => {
-      const col = idx % colCount;
-      const row = Math.floor(idx / colCount);
-      const x = 0.35 + col * colW;
-      const y = 3.28 + row * 1.05;
-
-      // Card background
-      slide.addShape(pptx.ShapeType.roundRect, {
-        x,
-        y,
-        w: colW - 0.12,
-        h: 0.9,
-        fill: { color: ms.a5Adds ? 'F1E9FF' : 'F2F5FA' },
-        line: { color: ms.a5Adds ? 'C4B5FD' : COLORS.line, width: 0.5 },
-        rectRadius: 0.06,
-      });
-
-      // Tool name
-      slide.addText(ms.name, {
-        x: x + 0.1,
-        y: y + 0.07,
-        w: colW - 0.32,
-        h: 0.5,
-        fontSize: 10,
-        bold: true,
-        color: COLORS.ink,
-        fontFace: 'Segoe UI',
-        wrap: true,
-      });
-
-      // Tier label
-      slide.addText(ms.tier, {
-        x: x + colW - 0.32,
-        y: y + 0.07,
-        w: 0.28,
-        h: 0.22,
-        fontSize: 8,
-        bold: true,
-        color: COLORS.surface,
-        fill: { color: tierColor(ms.tier) },
-        align: 'center',
-        fontFace: 'Segoe UI',
-      });
-    });
-
-    // Slide number
-    slide.addText(`${measure.code}`, {
+    // Slide footer code
+    slide.addText(measure.code, {
       x: 12.5,
-      y: 7.1,
+      y: 7.15,
       w: 0.8,
       h: 0.2,
       fontSize: 8,
-      color: COLORS.inkSoft,
+      color: COLORS.inkFaint,
       align: 'right',
       fontFace: 'Segoe UI',
     });

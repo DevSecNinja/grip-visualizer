@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import PptxGenJS from 'pptxgenjs';
 import { exportPDF, exportPPTX } from './export.js';
 import ExportMenu from '../components/ExportMenu.jsx';
 
@@ -18,10 +19,16 @@ describe('exportPDF', () => {
 // ── exportPPTX ───────────────────────────────────────────────────────────────
 
 describe('exportPPTX', () => {
-  it('resolves without throwing for all supported languages', async () => {
+  it('builds and writes a deck for all supported languages', async () => {
+    // Stub writeFile so the test never touches the filesystem.
+    const writeSpy = vi
+      .spyOn(PptxGenJS.prototype, 'writeFile')
+      .mockResolvedValue(undefined);
     for (const lang of ['nl', 'en', 'fr']) {
       await expect(exportPPTX(lang)).resolves.not.toThrow();
     }
+    expect(writeSpy).toHaveBeenCalledTimes(3);
+    writeSpy.mockRestore();
   });
 });
 

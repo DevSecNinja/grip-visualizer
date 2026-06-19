@@ -5,6 +5,7 @@ import JourneyView from './components/JourneyView.jsx';
 import ValueA3A5View from './components/ValueA3A5View.jsx';
 import PrioritizeView from './components/PrioritizeView.jsx';
 import MeasureDetailPanel from './components/MeasureDetailPanel.jsx';
+import PrintDocument from './components/PrintDocument.jsx';
 import { findMeasure, getMeta } from './data/grip.js';
 import { t } from './i18n/strings.js';
 
@@ -254,6 +255,8 @@ export default function App() {
           {t(lang, 'disclaimerPrivacy')}
         </p>
       </section>
+
+      <PrintDocument lang={lang} />
     </div>
   );
 }
