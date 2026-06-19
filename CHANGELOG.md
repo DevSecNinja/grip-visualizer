@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.3.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.2.0...v0.3.0) (2026-06-19)
+
+
+### Features
+
+* add client-side PDF, PowerPoint and Markdown export ([#72](https://github.com/DevSecNinja/grip-visualizer/issues/72)) ([8bf6ce7](https://github.com/DevSecNinja/grip-visualizer/commit/8bf6ce7ccdbe615c08d43474a649fb51b6178b3d))
+* interactive draggable network map (measures ↔ Microsoft products) ([#70](https://github.com/DevSecNinja/grip-visualizer/issues/70)) ([c161ca4](https://github.com/DevSecNinja/grip-visualizer/commit/c161ca4084605615dee39ac71efdb0211a0bc8a8))
+* self-assessment mode (browser-only, with import/export) ([#71](https://github.com/DevSecNinja/grip-visualizer/issues/71)) ([ca8ed29](https://github.com/DevSecNinja/grip-visualizer/commit/ca8ed293d316fbe1b6455b39f5b7fa0dbf62694f))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies [automerge] ([#76](https://github.com/DevSecNinja/grip-visualizer/issues/76)) ([5bf5f81](https://github.com/DevSecNinja/grip-visualizer/commit/5bf5f81a65b1d912b3ef3805afafa91a68461cf6))
+* **site:** auto-scroll detail panel into view on mobile when a measure is selected ([#69](https://github.com/DevSecNinja/grip-visualizer/issues/69)) ([bd07a36](https://github.com/DevSecNinja/grip-visualizer/commit/bd07a36fbcf394f2337b7ba99fac78f0f06f3e02))
+
 ## [0.2.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.1.0...v0.2.0) (2026-06-18)
 
 
