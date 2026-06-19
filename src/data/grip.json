@@ -402,7 +402,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -810,7 +809,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -884,7 +882,6 @@
       "summary_nl": "Classificeer informatie en bepaal prioriteit op basis van waarde en risico.",
       "summary_en": "Classify information and prioritize based on value and risk.",
       "summary_fr": "Classifiez l'information et établissez les priorités en fonction de la valeur et du risque.",
-      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview Information Protection — Sensitivity labels",
@@ -901,9 +898,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/apply-sensitivity-label-automatically",
           "a5Adds": true,
-          "value_nl": "Past labels automatisch toe op basis van regels, gevoelige-informatietypes en trainbare classificaties — zowel client- als serverzijdig — zodat classificatie niet afhankelijk is van handmatige acties.",
-          "value_en": "Applies labels automatically based on rules, sensitive information types and trainable classifiers — both client- and service-side — so classification no longer depends on manual action.",
-          "value_fr": "Applique les étiquettes automatiquement selon des règles, des types d’informations sensibles et des classifieurs entraînables — côté client et côté service — afin que la classification ne dépende plus d’une action manuelle.",
+          "value_nl": "Past labels automatisch toe op basis van regels, gevoelige-informatietypes en trainbare classificaties — zowel client- als serverzijdig — zodat classificatie niet afhankelijk is van handmatige acties. Handmatig labelen schaalt zelden — zeker voor kleinere onderwijsorganisaties met beperkte capaciteit — waardoor deze automatisering de maatregel praktisch haalbaar maakt.",
+          "value_en": "Applies labels automatically based on rules, sensitive information types and trainable classifiers — both client- and service-side — so classification no longer depends on manual action. Manual labelling rarely scales — especially for smaller education organisations with limited staff — so this automation is what makes the measure realistically achievable.",
+          "value_fr": "Applique les étiquettes automatiquement selon des règles, des types d’informations sensibles et des classifieurs entraînables — côté client et côté service — afin que la classification ne dépende plus d’une action manuelle. L'étiquetage manuel passe rarement à l'échelle — surtout pour les petites organisations éducatives aux capacités limitées — de sorte que cette automatisation rend la mesure réellement réalisable.",
           "valueUrl": "https://learn.microsoft.com/purview/apply-sensitivity-label-automatically"
         }
       ]
@@ -919,7 +916,6 @@
       "summary_nl": "Voorzie betrouwbare back-ups; let op het verschil tussen retentie en echte back-up.",
       "summary_en": "Provide reliable backups; mind the difference between retention and true backup.",
       "summary_fr": "Prévoyez des sauvegardes fiables ; attention à la différence entre rétention et véritable sauvegarde.",
-      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview — Data Lifecycle Management (retention)",
@@ -942,9 +938,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically",
           "a5Adds": true,
-          "value_nl": "Past retentielabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt bewaring en verwijdering consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen.",
-          "value_en": "Automatically applies retention labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of relying on manual labeling per item. This enforces retention and deletion consistently and at scale, including on existing content, without users having to choose labels.",
-          "value_fr": "Applique automatiquement des étiquettes de rétention en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La rétention et la suppression sont ainsi appliquées de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes.",
+          "value_nl": "Past retentielabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt bewaring en verwijdering consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen. Handmatig labelen schaalt zelden — zeker voor kleinere onderwijsorganisaties met beperkte capaciteit — waardoor deze automatisering de maatregel praktisch haalbaar maakt.",
+          "value_en": "Automatically applies retention labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of relying on manual labeling per item. This enforces retention and deletion consistently and at scale, including on existing content, without users having to choose labels. Manual labelling rarely scales — especially for smaller education organisations with limited staff — so this automation is what makes the measure realistically achievable.",
+          "value_fr": "Applique automatiquement des étiquettes de rétention en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La rétention et la suppression sont ainsi appliquées de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes. L'étiquetage manuel passe rarement à l'échelle — surtout pour les petites organisations éducatives aux capacités limitées — de sorte que cette automatisation rend la mesure réellement réalisable.",
           "valueUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically"
         }
       ],
@@ -1182,7 +1178,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1286,7 +1281,6 @@
       "summary_nl": "Bepaal bewaartermijnen en vernietig gegevens en toestellen veilig.",
       "summary_en": "Define retention periods and securely destroy data and devices.",
       "summary_fr": "Définissez des durées de conservation et détruisez les données et appareils en toute sécurité.",
-      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview — Data Lifecycle Management",
@@ -1309,9 +1303,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically",
           "a5Adds": true,
-          "value_nl": "Past bewaar- en vernietigingslabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt het bewaar- en vernietigingsbeleid consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen.",
-          "value_en": "Automatically applies retention and disposal labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of manual labeling per item. This enforces the retention and destruction policy consistently and at scale, including on existing content, without users having to choose labels.",
-          "value_fr": "Applique automatiquement des étiquettes de conservation et de destruction en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La politique de conservation et de destruction est ainsi appliquée de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes.",
+          "value_nl": "Past bewaar- en vernietigingslabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt het bewaar- en vernietigingsbeleid consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen. Handmatig labelen schaalt zelden — zeker voor kleinere onderwijsorganisaties met beperkte capaciteit — waardoor deze automatisering de maatregel praktisch haalbaar maakt.",
+          "value_en": "Automatically applies retention and disposal labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of manual labeling per item. This enforces the retention and destruction policy consistently and at scale, including on existing content, without users having to choose labels. Manual labelling rarely scales — especially for smaller education organisations with limited staff — so this automation is what makes the measure realistically achievable.",
+          "value_fr": "Applique automatiquement des étiquettes de conservation et de destruction en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La politique de conservation et de destruction est ainsi appliquée de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes. L'étiquetage manuel passe rarement à l'échelle — surtout pour les petites organisations éducatives aux capacités limitées — de sorte que cette automatisation rend la mesure réellement réalisable.",
           "valueUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically"
         }
       ]
@@ -1401,7 +1395,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1540,7 +1533,6 @@
       "summary_nl": "Versleutel data in rust en onderweg, en pas labelgebaseerde encryptie toe.",
       "summary_en": "Encrypt data at rest and in transit, and apply label-based encryption.",
       "summary_fr": "Chiffrez les données au repos et en transit, et appliquez le chiffrement basé sur les étiquettes.",
-      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "BitLocker via Microsoft Intune",
@@ -1557,9 +1549,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels",
           "a5Adds": true,
-          "value_nl": "Koppelt versleuteling en gebruiksrechten aan een gevoeligheidslabel, zodat de bescherming met het bestand meereist — ook buiten de organisatie.",
-          "value_en": "Ties encryption and usage rights to a sensitivity label, so the protection travels with the file — even outside the organization.",
-          "value_fr": "Associe le chiffrement et les droits d’utilisation à une étiquette de confidentialité, de sorte que la protection suit le fichier — même en dehors de l’organisation.",
+          "value_nl": "Koppelt versleuteling en gebruiksrechten aan een gevoeligheidslabel, zodat de bescherming met het bestand meereist — ook buiten de organisatie. Handmatig labelen schaalt zelden — zeker voor kleinere onderwijsorganisaties met beperkte capaciteit — waardoor automatische labeling (A5) deze bescherming praktisch haalbaar maakt.",
+          "value_en": "Ties encryption and usage rights to a sensitivity label, so the protection travels with the file — even outside the organization. Manual labelling rarely scales — especially for smaller education organisations with limited staff — so automatic labelling (A5) is what makes this protection realistically achievable.",
+          "value_fr": "Associe le chiffrement et les droits d’utilisation à une étiquette de confidentialité, de sorte que la protection suit le fichier — même en dehors de l’organisation. L'étiquetage manuel passe rarement à l'échelle — surtout pour les petites organisations éducatives aux capacités limitées — de sorte que l'étiquetage automatique (A5) rend cette protection réellement réalisable.",
           "valueUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels"
         },
         {
@@ -1673,7 +1665,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1821,7 +1812,6 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
-      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",

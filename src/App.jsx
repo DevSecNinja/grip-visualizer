@@ -196,6 +196,13 @@ export default function App() {
             ))}
           </div>
 
+          <span className="filters__divider" aria-hidden="true" />
+
+          <span className="filters__legend">
+            <span className="filters__legend-swatch" aria-hidden="true" />
+            {t(lang, 'tierOverrideLegend')}
+          </span>
+
           {(typeFilter || tierFilter) && (
             <button
               type="button"

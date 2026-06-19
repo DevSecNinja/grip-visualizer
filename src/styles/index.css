@@ -908,6 +908,21 @@ body {
 .filters__swatch--tech {
   background: var(--tech);
 }
+.filters__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+.filters__legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex: none;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px #f5c518;
+}
 .filters__clear {
   border: 0;
   background: none;
