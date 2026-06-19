@@ -104,6 +104,13 @@ export default function PrintDocument({ lang }) {
                       {item.docsUrl && (
                         <span className="print-mapping__url">{item.docsUrl}</span>
                       )}
+                      {localized(item, 'value', lang) && (
+                        <span className="print-mapping__value">
+                          <strong>{t(lang, 'microsoftValue')}:</strong>{' '}
+                          {localized(item, 'value', lang)}
+                          {item.valueUrl && ` (${item.valueUrl})`}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>

@@ -102,6 +102,11 @@ function measureMarkdown(measure, lang) {
       const tierLabel = `${ms.tier}${ms.a5Adds ? '+' : ''}`;
       const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
       lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
+      const value = localized(ms, 'value', lang);
+      if (value) {
+        const src = ms.valueUrl ? ` ([${t(lang, 'valueSource')}](${ms.valueUrl}))` : '';
+        lines.push(`  - _${t(lang, 'microsoftValue')}:_ ${value}${src}`);
+      }
     });
     lines.push('');
   }

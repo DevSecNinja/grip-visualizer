@@ -1303,7 +1303,11 @@
           "name": "Microsoft Sentinel",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/azure/sentinel/overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Microsoft 365 E5/A5/F5/G5-klanten krijgen een datagift van tot 5 MB per gebruiker per dag om Microsoft 365-data gratis in Sentinel in te laden — o.a. Microsoft Entra ID-aanmeldings- en auditlogs, Defender for Cloud Apps shadow-IT-logs, Purview Information Protection-logs en Microsoft 365 advanced hunting-data.",
+          "value_en": "Microsoft 365 E5/A5/F5/G5 customers receive a data grant of up to 5 MB per user per day to ingest Microsoft 365 data into Sentinel for free — including Microsoft Entra ID sign-in and audit logs, Defender for Cloud Apps shadow-IT logs, Purview Information Protection logs and Microsoft 365 advanced hunting data.",
+          "value_fr": "Les clients Microsoft 365 E5/A5/F5/G5 bénéficient d’une dotation de données pouvant atteindre 5 Mo par utilisateur et par jour pour ingérer gratuitement les données Microsoft 365 dans Sentinel — journaux de connexion et d’audit Microsoft Entra ID, journaux shadow IT de Defender for Cloud Apps, journaux Purview Information Protection et données advanced hunting Microsoft 365.",
+          "valueUrl": "https://azure.microsoft.com/offers/sentinel-microsoft-365-offer/"
         },
         {
           "name": "Microsoft Purview — Audit (Premium)",
