@@ -1,7 +1,9 @@
 ---
 name: E2E
 
-# Runs the Playwright end-to-end + mobile/responsive suite across Chromium,
+# Runs the Playwright end-to-end + mobile/responsive suite. To keep PR feedback
+# fast, pull requests run only the Chromium engine (desktop + emulated mobile);
+# pushes to main and manual runs exercise the full matrix across Chromium,
 # Firefox and WebKit (desktop) plus emulated mobile devices. Unit/component
 # tests (Vitest) run in the Pages workflow; this workflow focuses on real
 # browser flows. See playwright.config.js for projects and the dev web server.
@@ -49,20 +51,66 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Determine browser scope
+        id: scope
+        # PRs validate against the Chromium engine only (desktop + mobile-chrome)
+        # for fast feedback; main / manual runs cover the full browser matrix.
+        run: |-
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            {
+              echo "browsers=chromium"
+              echo "projects=--project=chromium --project=mobile-chrome"
+              echo "label=chromium"
+            } >> "$GITHUB_OUTPUT"
+          else
+            {
+              echo "browsers=chromium firefox webkit"
+              echo "projects="
+              echo "label=all"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve Playwright version
+        id: playwright-version
+        # Key the cache on the resolved Playwright version (stable across
+        # lockfile churn) rather than hashFiles(package-lock.json).
+        run: |-
+          version=$(node -p "require('./package-lock.json').packages['node_modules/@playwright/test'].version")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
       - name: Cache Playwright browsers
         id: playwright-cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |-
-            playwright-${{ runner.os }}-
+          key: >-
+            playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}-${{
+            steps.scope.outputs.label }}
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        env:
+          BROWSERS: ${{ steps.scope.outputs.browsers }}
+        run: |-
+          # shellcheck disable=SC2086  # intentional word splitting into args
+          npx playwright install $BROWSERS --with-deps
+
+      - name: Install Playwright system dependencies
+        # Browser binaries are cached, but apt system libraries are not persisted
+        # across ephemeral runners, so refresh them on a cache hit.
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        env:
+          BROWSERS: ${{ steps.scope.outputs.browsers }}
+        run: |-
+          # shellcheck disable=SC2086  # intentional word splitting into args
+          npx playwright install-deps $BROWSERS
 
       - name: Run Playwright tests
-        run: npm run test:e2e
+        env:
+          PROJECTS: ${{ steps.scope.outputs.projects }}
+        run: |-
+          # shellcheck disable=SC2086  # intentional word splitting into args
+          npm run test:e2e -- $PROJECTS
 
       - name: Upload Playwright report
         if: ${{ !cancelled() }}
