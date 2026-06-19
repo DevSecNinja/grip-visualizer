@@ -155,7 +155,12 @@ export default function MeasureDetailPanel({
             >
               <div className="mapping__top">
                 <span className="mapping__name">{item.name}</span>
-                <LicenseBadge tier={item.tier} a5Adds={item.a5Adds} lang={lang} />
+                <LicenseBadge
+                  tier={item.tier}
+                  a5Adds={item.a5Adds}
+                  addOn={item.addOn}
+                  lang={lang}
+                />
               </div>
               {item.a5Adds && (
                 <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>

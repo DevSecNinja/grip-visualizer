@@ -6,11 +6,21 @@ const TIER_CLASS = {
   A5: 'tier tier--a5',
 };
 
-export default function LicenseBadge({ tier, a5Adds, lang }) {
+export default function LicenseBadge({ tier, a5Adds, addOn, lang }) {
   return (
-    <span className={TIER_CLASS[tier] ?? 'tier'} title={`${t(lang, 'license')}: ${tier}`}>
-      {tier}
-      {a5Adds && <span className="tier__plus" aria-hidden="true">+</span>}
+    <span className="tierwrap">
+      <span
+        className={TIER_CLASS[tier] ?? 'tier'}
+        title={`${t(lang, 'license')}: ${tier}`}
+      >
+        {tier}
+        {a5Adds && !addOn && (
+          <span className="tier__plus" aria-hidden="true">
+            +
+          </span>
+        )}
+      </span>
+      {addOn && <span className="tier tier--addon">{t(lang, 'addOnBadge')}</span>}
     </span>
   );
 }

@@ -804,6 +804,15 @@ body {
 .tier__plus {
   margin-left: 1px;
 }
+.tierwrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+.tier--addon {
+  background: #b45309;
+}
 
 /* ---------- Footer ---------- */
 .app__footer {
@@ -2059,6 +2068,9 @@ body {
   }
   .print-page__tier--a5 {
     background: #7c3aed;
+  }
+  .print-page__tier--addon {
+    background: #b45309;
   }
   .print-page__title {
     font-size: 16pt;

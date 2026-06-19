@@ -99,7 +99,7 @@ function measureMarkdown(measure, lang) {
     lines.push('');
   } else {
     measure.microsoft.forEach((ms) => {
-      const tierLabel = `${ms.tier}${ms.a5Adds ? '+' : ''}`;
+      const tierLabel = `${ms.tier}${ms.addOn ? ' (add-on)' : ms.a5Adds ? '+' : ''}`;
       const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
       lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
       const value = localized(ms, 'value', lang);
@@ -273,7 +273,7 @@ function mappingRuns(measure, lang) {
         options: { bold: true, fontSize: 11, color: COLORS.ink },
       });
       runs.push({
-        text: `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
+        text: `  [${ms.tier}${ms.addOn ? ' (add-on)' : ms.a5Adds ? '+' : ''}]`,
         options: { bold: true, fontSize: 10, color: tierColor(ms.tier), breakLine: true },
       });
       if (ms.docsUrl) {

@@ -2,24 +2,9 @@
   "meta": {
     "source": "Overzicht Groeipad informatieveiligheid en privacy (GRIP) voor het Vlaamse onderwijs",
     "sourceUrl": "https://assets.vlaanderen.be/image/upload/v1770992646/repositories-prd/Overzicht_Groeipad_informatieveiligheid_en_privacy_GRIP_voor_het_Vlaamse_onderwijs_r0a7v2.pdf",
-    "tiers": [
-      "A1",
-      "A3",
-      "A5"
-    ],
-    "basisLevels": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
-    ],
-    "horizons": [
-      "short",
-      "medium",
-      "long"
-    ],
+    "tiers": ["A1", "A3", "A5"],
+    "basisLevels": [1, 2, 3, 4, 5, 6],
+    "horizons": ["short", "medium", "long"],
     "standards": [
       {
         "id": "nis2",
@@ -60,12 +45,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1"]
       },
       "standardsWhy": {
         "nl": "Inzicht in de basisbegrippen van informatieveiligheid en privacy is de basis voor cyberhygiëne en bewustwording die NIS2 21(2)(g) en CIS Control 14 als minimum vragen.",
@@ -103,9 +84,7 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "20"
-        ]
+        "nis2": ["20"]
       },
       "standardsWhy": {
         "nl": "Het benoemen van een DPO en verantwoordelijke rollen is een governancemaatregel: NIS2 art. 20 maakt het bestuur expliciet verantwoordelijk voor het beheer van cyberbeveiligingsrisico's.",
@@ -130,9 +109,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -291,14 +270,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(i)",
-          "21(2)(j)"
-        ],
-        "cisV8": [
-          "6.3",
-          "6.5"
-        ]
+        "nis2": ["21(2)(i)", "21(2)(j)"],
+        "cisV8": ["6.3", "6.5"]
       },
       "standardsWhy": {
         "nl": "Een authenticatiebeleid met (phishingbestendige) MFA realiseert de toegangsbeheer- en MFA-eisen van NIS2 21(2)(i)/(j) en de CIS-safeguards 6.3 en 6.5.",
@@ -360,10 +333,11 @@
           "name": "Microsoft Priva — Subject Rights Requests",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests",
-          "a5Adds": true,
-          "value_nl": "Automatiseert het afhandelen van verzoeken van betrokkenen (inzageverzoeken/DSR’s): vinden, beoordelen en veilig exporteren van persoonsgegevens over Microsoft 365 heen.",
-          "value_en": "Automates handling of data subject rights requests (DSRs): finding, reviewing and securely exporting personal data across Microsoft 365.",
-          "value_fr": "Automatise le traitement des demandes des personnes concernées (DSR) : recherche, examen et export sécurisé des données personnelles dans Microsoft 365.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Automatiseert het afhandelen van verzoeken van betrokkenen (inzageverzoeken/DSR’s): vinden, beoordelen en veilig exporteren van persoonsgegevens over Microsoft 365 heen. Vereist de aparte add-on Priva Subject Rights Requests (op een A3- of A5-basis); niet inbegrepen in de A5-licentie zelf.",
+          "value_en": "Automates handling of data subject rights requests (DSRs): finding, reviewing and securely exporting personal data across Microsoft 365. Requires the separate Priva Subject Rights Requests add-on (on an A3 or A5 base); not included in the A5 licence itself.",
+          "value_fr": "Automatise le traitement des demandes des personnes concernées (DSR) : recherche, examen et export sécurisé des données personnelles dans Microsoft 365. Nécessite le module complémentaire distinct Priva Subject Rights Requests (sur une base A3 ou A5) ; non inclus dans la licence A5 elle-même.",
           "valueUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests"
         },
         {
@@ -375,6 +349,16 @@
           "value_en": "Identifies, preserves (legal hold), searches and exports content across Microsoft 365 for legal cases and investigations.",
           "value_fr": "Identifie, conserve (mise en attente pour litige), recherche et exporte le contenu dans Microsoft 365 pour les affaires juridiques et les investigations.",
           "valueUrl": "https://learn.microsoft.com/purview/ediscovery"
+        },
+        {
+          "name": "Microsoft Purview — eDiscovery (Premium)",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/ediscovery-overview",
+          "a5Adds": true,
+          "value_nl": "Bouwt voort op eDiscovery (Standaard) met een end-to-end onderzoeksworkflow: custodiansbeheer, review sets, analyse en filtering, en machine learning (predictive coding) om relevante inhoud te prioriteren. Vereist een A5-licentie.",
+          "value_en": "Builds on eDiscovery (Standard) with an end-to-end investigation workflow: custodian management, review sets, analytics and filtering, and machine learning (predictive coding) to prioritise relevant content. Requires an A5 licence.",
+          "value_fr": "S’appuie sur eDiscovery (Standard) avec un flux d’investigation de bout en bout : gestion des dépositaires, ensembles de révision, analyses et filtrage, et apprentissage automatique (codage prédictif) pour prioriser le contenu pertinent. Nécessite une licence A5.",
+          "valueUrl": "https://learn.microsoft.com/purview/ediscovery-overview"
         }
       ]
     },
@@ -395,9 +379,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -436,13 +420,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
@@ -470,9 +449,7 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(i)"
-        ]
+        "nis2": ["21(2)(i)"]
       },
       "standardsWhy": {
         "nl": "Een eigen, geverifieerd domein is de basis voor identiteits- en toegangsbeheer, en daarmee voor de toegangsbeheermaatregelen die NIS2 21(2)(i) verwacht.",
@@ -538,12 +515,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(i)"
-        ],
-        "cisV8": [
-          "5.1"
-        ]
+        "nis2": ["21(2)(i)"],
+        "cisV8": ["5.1"]
       },
       "standardsWhy": {
         "nl": "Domeingebonden accounts maken centraal identiteitsbeheer mogelijk (CIS 5.1) en ondersteunen het toegangsbeheer dat NIS2 21(2)(i) verwacht.",
@@ -669,15 +642,16 @@
           "name": "Microsoft Entra ID Governance — Lifecycle Workflows",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows",
-          "a5Adds": true,
-          "value_nl": "Automatiseert het in-, door- en uitstroomproces (joiner/mover/leaver) zodat toegang automatisch wordt toegekend, aangepast of ingetrokken bij wijzigingen in dienstverband.",
-          "value_en": "Automates the joiner/mover/leaver process so access is automatically granted, adjusted or revoked as people join, change roles or leave.",
-          "value_fr": "Automatise le processus d’arrivée/mobilité/départ afin que l’accès soit automatiquement octroyé, ajusté ou révoqué lors des changements de statut.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Automatiseert het in-, door- en uitstroomproces (joiner/mover/leaver) zodat toegang automatisch wordt toegekend, aangepast of ingetrokken bij wijzigingen in dienstverband. Vereist de aparte add-on Microsoft Entra ID Governance (of Entra Suite), bovenop A5.",
+          "value_en": "Automates the joiner/mover/leaver process so access is automatically granted, adjusted or revoked as people join, change roles or leave. Requires the separate Microsoft Entra ID Governance add-on (or Entra Suite), on top of A5.",
+          "value_fr": "Automatise le processus d’arrivée/mobilité/départ afin que l’accès soit automatiquement octroyé, ajusté ou révoqué lors des changements de statut. Nécessite le module complémentaire distinct Microsoft Entra ID Governance (ou Entra Suite), en plus de l’A5.",
           "valueUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows"
         },
         {
           "name": "Microsoft Entra ID — Dynamic groups & provisioning (SDS)",
-          "tier": "A1",
+          "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/schooldatasync/",
           "a5Adds": false
         }
@@ -781,7 +755,7 @@
         },
         {
           "name": "Microsoft Purview — Audit (Standard)",
-          "tier": "A3",
+          "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/purview/audit-solutions-overview",
           "a5Adds": false,
           "value_nl": "Standaard ingeschakeld en doorzoekbaar via de Purview-portal: duizenden gebruikers- en beheeractiviteiten worden 180 dagen bewaard voor onderzoek en opvolging.",
@@ -808,9 +782,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -849,13 +823,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
@@ -886,9 +855,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -907,13 +876,23 @@
       "microsoft": [
         {
           "name": "Microsoft Purview Information Protection — Sensitivity labels",
-          "tier": "A5",
+          "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/sensitivity-labels",
-          "a5Adds": true,
-          "value_nl": "Classificeert en labelt documenten, e-mails en sites en past bescherming zoals versleuteling toe — handmatig, op basis van regels of automatisch (auto-labeling).",
-          "value_en": "Classifies and labels documents, emails and sites and applies protection such as encryption — manually, by rule, or automatically (auto-labeling).",
-          "value_fr": "Classe et étiquette les documents, e-mails et sites et applique une protection comme le chiffrement — manuellement, par règle ou automatiquement (étiquetage automatique).",
+          "a5Adds": false,
+          "value_nl": "Classificeert en labelt documenten, e-mails en sites en past bescherming zoals versleuteling toe via handmatige labeling door gebruikers.",
+          "value_en": "Classifies and labels documents, emails and sites and applies protection such as encryption through manual labeling by users.",
+          "value_fr": "Classe et étiquette les documents, e-mails et sites et applique une protection comme le chiffrement via l’étiquetage manuel par les utilisateurs.",
           "valueUrl": "https://learn.microsoft.com/purview/sensitivity-labels"
+        },
+        {
+          "name": "Microsoft Purview Information Protection — Automatic & policy-based labeling",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/apply-sensitivity-label-automatically",
+          "a5Adds": true,
+          "value_nl": "Past labels automatisch toe op basis van regels, gevoelige-informatietypes en trainbare classificaties — zowel client- als serverzijdig — zodat classificatie niet afhankelijk is van handmatige acties.",
+          "value_en": "Applies labels automatically based on rules, sensitive information types and trainable classifiers — both client- and service-side — so classification no longer depends on manual action.",
+          "value_fr": "Applique les étiquettes automatiquement selon des règles, des types d’informations sensibles et des classifieurs entraînables — côté client et côté service — afin que la classification ne dépende plus d’une action manuelle.",
+          "valueUrl": "https://learn.microsoft.com/purview/apply-sensitivity-label-automatically"
         }
       ]
     },
@@ -947,13 +926,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(c)"
-        ],
-        "cisV8": [
-          "11.1",
-          "11.2"
-        ]
+        "nis2": ["21(2)(c)"],
+        "cisV8": ["11.1", "11.2"]
       },
       "standardsWhy": {
         "nl": "Een geteste back-upprocedure levert de bedrijfscontinuïteit en gegevensherstelcapaciteit van NIS2 21(2)(c) en de CIS-safeguards 11.1 en 11.2.",
@@ -1154,9 +1128,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -1195,13 +1169,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
@@ -1313,10 +1282,11 @@
           "name": "Microsoft Entra — Global Secure Access (segmentation)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access",
-          "a5Adds": true,
-          "value_nl": "Segmenteert toegang via zero-trust netwerktoegang (ZTNA) zodat gebruikers per applicatie verbinding maken in plaats van met het hele netwerk, zonder klassieke VPN.",
-          "value_en": "Segments access through zero-trust network access (ZTNA) so users connect on a per-application basis instead of to the whole network, without a classic VPN.",
-          "value_fr": "Segmente l’accès via l’accès réseau zero-trust (ZTNA) afin que les utilisateurs se connectent par application plutôt qu’à tout le réseau, sans VPN classique.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Segmenteert toegang via zero-trust netwerktoegang (ZTNA) zodat gebruikers per applicatie verbinding maken in plaats van met het hele netwerk, zonder klassieke VPN. Vereist de aparte add-on Microsoft Entra Suite (of standalone Entra Internet Access/Private Access); niet inbegrepen in de A5-licentie zelf.",
+          "value_en": "Segments access through zero-trust network access (ZTNA) so users connect on a per-application basis instead of to the whole network, without a classic VPN. Requires the separate Microsoft Entra Suite add-on (or standalone Entra Internet Access/Private Access); not included in the A5 licence itself.",
+          "value_fr": "Segmente l’accès via l’accès réseau zero-trust (ZTNA) afin que les utilisateurs se connectent par application plutôt qu’à tout le réseau, sans VPN classique. Nécessite le module complémentaire distinct Microsoft Entra Suite (ou Entra Internet Access/Private Access autonome) ; non inclus dans la licence A5 elle-même.",
           "valueUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access"
         }
       ]
@@ -1362,9 +1332,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -1403,13 +1373,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
@@ -1434,9 +1399,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         },
         {
@@ -1491,10 +1456,11 @@
           "name": "Microsoft Sentinel",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/azure/sentinel/overview",
-          "a5Adds": true,
-          "value_nl": "Microsoft 365 E5/A5/F5/G5-klanten krijgen een datagift van tot 5 MB per gebruiker per dag om Microsoft 365-data gratis in Sentinel in te laden — o.a. Microsoft Entra ID-aanmeldings- en auditlogs, Defender for Cloud Apps shadow-IT-logs, Purview Information Protection-logs en Microsoft 365 advanced hunting-data.",
-          "value_en": "Microsoft 365 E5/A5/F5/G5 customers receive a data grant of up to 5 MB per user per day to ingest Microsoft 365 data into Sentinel for free — including Microsoft Entra ID sign-in and audit logs, Defender for Cloud Apps shadow-IT logs, Purview Information Protection logs and Microsoft 365 advanced hunting data.",
-          "value_fr": "Les clients Microsoft 365 E5/A5/F5/G5 bénéficient d’une dotation de données pouvant atteindre 5 Mo par utilisateur et par jour pour ingérer gratuitement les données Microsoft 365 dans Sentinel — journaux de connexion et d’audit Microsoft Entra ID, journaux shadow IT de Defender for Cloud Apps, journaux Purview Information Protection et données advanced hunting Microsoft 365.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Microsoft Sentinel is een aparte Azure-dienst die op basis van verbruik (pay-as-you-go) wordt gefactureerd en niet in de A5-licentie zit. Microsoft 365 E5/A5/F5/G5-klanten krijgen wel een datagift van tot 5 MB per gebruiker per dag om Microsoft 365-data gratis in Sentinel in te laden — o.a. Microsoft Entra ID-aanmeldings- en auditlogs, Defender for Cloud Apps shadow-IT-logs, Purview Information Protection-logs en Microsoft 365 advanced hunting-data.",
+          "value_en": "Microsoft Sentinel is a separate Azure service billed on pay-as-you-go consumption and is not included in the A5 licence. Microsoft 365 E5/A5/F5/G5 customers do receive a data grant of up to 5 MB per user per day to ingest Microsoft 365 data into Sentinel for free — including Microsoft Entra ID sign-in and audit logs, Defender for Cloud Apps shadow-IT logs, Purview Information Protection logs and Microsoft 365 advanced hunting data.",
+          "value_fr": "Microsoft Sentinel est un service Azure distinct facturé à l’usage (pay-as-you-go) et n’est pas inclus dans la licence A5. Les clients Microsoft 365 E5/A5/F5/G5 bénéficient toutefois d’une dotation de données pouvant atteindre 5 Mo par utilisateur et par jour pour ingérer gratuitement les données Microsoft 365 dans Sentinel — journaux de connexion et d’audit Microsoft Entra ID, journaux shadow IT de Defender for Cloud Apps, journaux Purview Information Protection et données advanced hunting Microsoft 365.",
           "valueUrl": "https://azure.microsoft.com/offers/sentinel-microsoft-365-offer/"
         },
         {
@@ -1634,9 +1600,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -1675,13 +1641,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",
@@ -1715,10 +1676,11 @@
           "name": "Microsoft Sentinel — SOAR playbooks",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation",
-          "a5Adds": true,
-          "value_nl": "Automatiseert respons met playbooks (Azure Logic Apps) die bij een incident automatisch acties uitvoeren, zoals een account blokkeren of een ticket aanmaken.",
-          "value_en": "Automates response with playbooks (Azure Logic Apps) that run actions automatically on an incident, such as blocking an account or creating a ticket.",
-          "value_fr": "Automatise la réponse avec des playbooks (Azure Logic Apps) qui exécutent automatiquement des actions lors d’un incident, comme bloquer un compte ou créer un ticket.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Automatiseert respons met playbooks (Azure Logic Apps) die bij een incident automatisch acties uitvoeren, zoals een account blokkeren of een ticket aanmaken. Deze playbooks draaien op Microsoft Sentinel, een aparte Azure-dienst met verbruiksfacturatie (niet inbegrepen in A5).",
+          "value_en": "Automates response with playbooks (Azure Logic Apps) that run actions automatically on an incident, such as blocking an account or creating a ticket. These playbooks run on Microsoft Sentinel, a separate pay-as-you-go Azure service (not included in A5).",
+          "value_fr": "Automatise la réponse avec des playbooks (Azure Logic Apps) qui exécutent automatiquement des actions lors d’un incident, comme bloquer un compte ou créer un ticket. Ces playbooks s’exécutent sur Microsoft Sentinel, un service Azure distinct facturé à l’usage (non inclus dans l’A5).",
           "valueUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation"
         }
       ]
@@ -1784,9 +1746,9 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
           "a5Adds": false,
-          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
-          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
-          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten. Beschikbaar vanaf A1, maar A3 is de praktische ondergrens voor de bredere assessmentsjablonen en het opvolgen van verbeteracties die hier gebruikt worden; premiumsjablonen vereisen A5.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results. Available from A1, but A3 is the practical baseline for the broader assessment templates and improvement-action tracking used here; premium templates require A5.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit. Disponible dès l’A1, mais l’A3 est le seuil pratique pour les modèles d’évaluation plus larges et le suivi des actions d’amélioration utilisés ici ; les modèles premium nécessitent l’A5.",
           "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
@@ -1825,13 +1787,8 @@
         }
       ],
       "standards": {
-        "nis2": [
-          "21(2)(g)"
-        ],
-        "cisV8": [
-          "14.1",
-          "14.2"
-        ]
+        "nis2": ["21(2)(g)"],
+        "cisV8": ["14.1", "14.2"]
       },
       "standardsWhy": {
         "nl": "Doorlopende opleiding en bewustwording voor eindgebruikers is precies de cyberhygiëne- en beveiligingstraining die NIS2 21(2)(g) verplicht en die CIS Control 14 (14.1/14.2) operationaliseert.",

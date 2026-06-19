@@ -99,8 +99,13 @@ export default function PrintDocument({ lang }) {
                         className={`print-page__tier print-page__tier--${item.tier.toLowerCase()}`}
                       >
                         {item.tier}
-                        {item.a5Adds ? '+' : ''}
+                        {item.addOn ? '' : item.a5Adds ? '+' : ''}
                       </span>
+                      {item.addOn && (
+                        <span className="print-page__tier print-page__tier--addon">
+                          {t(lang, 'addOnBadge')}
+                        </span>
+                      )}
                       {item.docsUrl && (
                         <span className="print-mapping__url">{item.docsUrl}</span>
                       )}
