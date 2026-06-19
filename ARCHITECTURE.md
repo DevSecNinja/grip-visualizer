@@ -54,6 +54,7 @@ Every measure in [src/data/grip.json](src/data/grip.json) follows this shape:
   "summary_nl": "...",
   "summary_en": "...",
   "summary_fr": "...",
+  "tierOverride": "A3",      // optional: force the card/chip badge tier
   "microsoft": [
     {
       "name": "Conditional Access",
@@ -88,6 +89,9 @@ Every measure in [src/data/grip.json](src/data/grip.json) follows this shape:
 ### Field reference
 
 - **`horizon`** drives the Prioritize view (effort/timeline, independent of the Basis sequence).
+- **`tierOverride`** is optional; when set (e.g. `"A3"`) it forces the measure card/chip badge to
+  that tier, overriding the computed value. Use it when the core measure is achievable at a lower
+  tier and the higher-tier mappings are only value-adds.
 - **`tier`** is the lowest licence that delivers the capability (`A1` / `A3` / `A5`).
 - **`a5Adds: true`** marks capabilities unlocked specifically by A5 — these feed the A3 vs A5
   view and render an A5 value-add badge.
@@ -114,7 +118,8 @@ Every measure in [src/data/grip.json](src/data/grip.json) follows this shape:
 The licence badge shown on a **measure card/chip** comes from `measureTier()` in
 [src/data/grip.js](src/data/grip.js): it returns the highest real licence tier across the
 mappings, **unless** every mapping is a standalone add-on — in which case it returns the
-"Add-on" badge. The per-mapping badge in the detail panel is rendered by
+"Add-on" badge. An explicit `tierOverride` on the measure wins over both. The per-mapping badge
+in the detail panel is rendered by
 [src/components/LicenseBadge.jsx](src/components/LicenseBadge.jsx) using the
 `tier` / `a5Adds` / `addOn` / `standalone` flags described above.
 

@@ -233,6 +233,7 @@
       "summary_nl": "Bepaal hoe gebruikers zich aanmelden, met sterke authenticatie en MFA.",
       "summary_en": "Define how users sign in, with strong authentication and MFA.",
       "summary_fr": "Définissez la manière dont les utilisateurs se connectent, avec une authentification forte et la MFA.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Entra ID — Multifactor authentication",

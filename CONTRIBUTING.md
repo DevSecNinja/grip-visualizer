@@ -97,6 +97,8 @@ Guidelines when editing mappings:
   licence (e.g. Microsoft Priva, Entra ID Governance). Add `standalone: true` when the add-on
   has **no Microsoft 365 base tier** (a separate service such as Microsoft Sentinel or Entra
   Private Access). See [ARCHITECTURE.md](ARCHITECTURE.md#badge-logic) for how these render.
+- Set `tierOverride` (e.g. `"A3"`) on a measure to force its card/chip badge when the core
+  measure is achievable at a lower tier and the higher-tier mappings are only value-adds.
 - Keep `docsUrl` pointing at current, official Microsoft documentation.
 - The Microsoft mapping is an **informative** starting point, not licensing advice.
 

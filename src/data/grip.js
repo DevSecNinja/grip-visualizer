@@ -66,8 +66,11 @@ export function highestTier(measure) {
 // Tier shown on a measure card/chip. Returns the highest real licence tier
 // across mappings that are not standalone add-ons, or 'ADDON' when every
 // mapping is a standalone add-on (e.g. Sentinel, Entra Private Access) and
-// no base-licence capability is available.
+// no base-licence capability is available. An explicit `tierOverride` on the
+// measure (e.g. "A3") wins — use it when the core measure is achievable at a
+// lower tier and the higher-tier mappings are only value-adds.
 export function measureTier(measure) {
+  if (measure.tierOverride) return measure.tierOverride;
   const base = measure.microsoft.filter((item) => !(item.addOn && item.standalone));
   if (base.length === 0) return 'ADDON';
   return base.reduce((acc, item) => {
