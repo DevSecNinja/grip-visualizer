@@ -74,7 +74,7 @@
           "a5Adds": false
         },
         {
-          "name": "Privileged Identity Management (PIM)",
+          "name": "Microsoft Entra Privileged Identity Management (PIM)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
           "a5Adds": true,
@@ -173,7 +173,7 @@
           "a5Adds": false
         },
         {
-          "name": "Defender for Endpoint — Device inventory",
+          "name": "Microsoft Defender for Endpoint — Device inventory",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview",
           "a5Adds": true,
@@ -204,7 +204,7 @@
           "a5Adds": false
         },
         {
-          "name": "Defender for Cloud Apps — App discovery",
+          "name": "Microsoft Defender for Cloud Apps — App discovery",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-cloud-apps/discovered-apps",
           "a5Adds": true,
@@ -245,7 +245,7 @@
           "a5Adds": false
         },
         {
-          "name": "Conditional Access",
+          "name": "Microsoft Entra Conditional Access",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
           "a5Adds": false,
@@ -404,7 +404,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -586,7 +586,7 @@
           "a5Adds": false
         },
         {
-          "name": "Privileged Identity Management (PIM)",
+          "name": "Microsoft Entra Privileged Identity Management (PIM)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
           "a5Adds": true,
@@ -704,7 +704,7 @@
           "a5Adds": false
         },
         {
-          "name": "Defender for Endpoint Plan 2 (EDR)",
+          "name": "Microsoft Defender for Endpoint Plan 2 (EDR)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint",
           "a5Adds": true,
@@ -811,7 +811,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1017,7 +1017,7 @@
           "valueUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access"
         },
         {
-          "name": "Conditional Access",
+          "name": "Microsoft Entra Conditional Access",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
           "a5Adds": false,
@@ -1082,7 +1082,7 @@
           "valueUrl": "https://learn.microsoft.com/defender-office-365/mdo-about"
         },
         {
-          "name": "Defender SmartScreen / Web content filtering",
+          "name": "Microsoft Defender SmartScreen / Web content filtering",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/web-content-filtering",
           "a5Adds": false
@@ -1180,7 +1180,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1397,7 +1397,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1667,7 +1667,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1814,7 +1814,7 @@
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
       "microsoft": [
         {
-          "name": "Attack Simulation Training (Defender for Office 365)",
+          "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,

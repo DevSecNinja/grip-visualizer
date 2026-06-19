@@ -21,7 +21,9 @@ describe('App', () => {
     render(<App />);
     await user.click(screen.getByRole('button', { name: /O7/ }));
     const panel = screen.getByRole('complementary');
-    expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
+    expect(
+      within(panel).getByText('Microsoft Entra Conditional Access')
+    ).toBeInTheDocument();
   });
 
   it('shows the Microsoft value statement for a mapped product', async () => {
