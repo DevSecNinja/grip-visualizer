@@ -67,7 +67,9 @@ test('opens the detail panel with the Microsoft mapping and references', async (
 
   const panel = page.locator('aside.detail');
   await expect(panel.getByRole('heading', { name: 'Microsoft-koppeling' })).toBeVisible();
-  await expect(panel.getByText('Conditional Access', { exact: true })).toBeVisible();
+  await expect(
+    panel.getByText('Microsoft Entra Conditional Access', { exact: true })
+  ).toBeVisible();
 
   // References / further-reading section (issue #63).
   await expect(panel.getByRole('heading', { name: 'Meer lezen' })).toBeVisible();
