@@ -60,8 +60,10 @@ export const ui = {
     exportLabel: 'Exporteren',
     exportPdf: 'PDF',
     exportPptx: 'PowerPoint',
+    exportMarkdown: 'Markdown',
     exportPdfAria: 'Exporteer als PDF',
     exportPptxAria: 'Exporteer als PowerPoint',
+    exportMarkdownAria: 'Exporteer als Markdown',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
       'Dit is een onafhankelijk, niet-officieel hulpmiddel. Het wordt niet door Microsoft of de Vlaamse overheid ondersteund, goedgekeurd of onderhouden, en er wordt geen enkele garantie gegeven. De koppeling tussen GRIP-maatregelen en Microsoft-producten is een eigen interpretatie, afgeleid van openbare bronnen, en vertegenwoordigt Microsoft noch de Vlaamse overheid.',
@@ -156,8 +158,10 @@ export const ui = {
     exportLabel: 'Export',
     exportPdf: 'PDF',
     exportPptx: 'PowerPoint',
+    exportMarkdown: 'Markdown',
     exportPdfAria: 'Export as PDF',
     exportPptxAria: 'Export as PowerPoint',
+    exportMarkdownAria: 'Export as Markdown',
     disclaimerTitle: 'Disclaimer',
     disclaimerUnofficial:
       'This is an independent, unofficial tool. It is not supported, endorsed or maintained by Microsoft or the Flemish government, and no warranty is given or implied. The mapping between GRIP measures and Microsoft products is our own interpretation, derived from public sources, and represents neither Microsoft nor the Flemish government.',
@@ -254,8 +258,10 @@ export const ui = {
     exportLabel: 'Exporter',
     exportPdf: 'PDF',
     exportPptx: 'PowerPoint',
+    exportMarkdown: 'Markdown',
     exportPdfAria: 'Exporter en PDF',
     exportPptxAria: 'Exporter en PowerPoint',
+    exportMarkdownAria: 'Exporter en Markdown',
     disclaimerTitle: 'Avertissement',
     disclaimerUnofficial:
       "Ceci est un outil indépendant et non officiel. Il n'est ni soutenu, ni approuvé, ni maintenu par Microsoft ou par le gouvernement flamand, et aucune garantie n'est donnée ni implicite. La correspondance entre les mesures GRIP et les produits Microsoft est notre propre interprétation, dérivée de sources publiques, et ne représente ni Microsoft ni le gouvernement flamand.",

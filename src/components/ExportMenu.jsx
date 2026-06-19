@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { t } from '../i18n/strings.js';
-import { exportPDF, exportPPTX } from '../data/export.js';
+import { exportPDF, exportPPTX, exportMarkdown } from '../data/export.js';
 
 export default function ExportMenu({ lang }) {
   const [open, setOpen] = useState(false);
@@ -42,6 +42,11 @@ export default function ExportMenu({ lang }) {
   function handlePdf() {
     setOpen(false);
     exportPDF();
+  }
+
+  function handleMarkdown() {
+    setOpen(false);
+    exportMarkdown(lang);
   }
 
   return (
@@ -171,6 +176,37 @@ export default function ExportMenu({ lang }) {
                 />
               </svg>
               {t(lang, 'exportPptx')}
+            </button>
+          </li>
+          <li role="none">
+            <button
+              type="button"
+              role="menuitem"
+              className="export-menu__item"
+              aria-label={t(lang, 'exportMarkdownAria')}
+              onClick={handleMarkdown}
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
+                <rect
+                  x="1"
+                  y="3"
+                  width="14"
+                  height="10"
+                  rx="1.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                />
+                <path
+                  d="M4 10.5v-5L6 8l2-2.5v5M11 5.5v4M9.5 8l1.5 1.5L12.5 8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              {t(lang, 'exportMarkdown')}
             </button>
           </li>
         </ul>

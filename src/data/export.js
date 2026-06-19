@@ -44,6 +44,138 @@ export function exportPDF() {
   window.print();
 }
 
+// ─── Markdown export ──────────────────────────────────────────────────────────
+
+// Returns the localized BCP-47 locale tag used for the document date.
+function dateLocale(lang) {
+  return { fr: 'fr-BE', en: 'en-GB', nl: 'nl-BE' }[lang] || 'nl-BE';
+}
+
+// Builds the Markdown body for a single measure, mirroring the detail shown in
+// the app and the PDF/PPTX exports.
+function measureMarkdown(measure, lang) {
+  const lines = [];
+  const title = localized(measure, 'title', lang);
+  const typeLabel =
+    measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
+
+  lines.push(`## ${measure.code} — ${title}`);
+  lines.push('');
+  lines.push(
+    `**${typeLabel}** · ${t(lang, 'basis')} ${measure.basis} · ${highestTier(measure)}`
+  );
+  lines.push('');
+  lines.push(localized(measure, 'summary', lang));
+  lines.push('');
+
+  // Practical guidance
+  const guidance = localizedGuidance(measure, lang);
+  if (guidance) {
+    lines.push(`### ${t(lang, 'guidanceTitle')}`);
+    lines.push('');
+    if (guidance.rationale) {
+      lines.push(`**${t(lang, 'guidanceWhy')}:** ${guidance.rationale}`);
+      lines.push('');
+    }
+    if (guidance.do && guidance.do.length > 0) {
+      lines.push(`**${t(lang, 'guidanceDo')}**`);
+      lines.push('');
+      guidance.do.forEach((item) => lines.push(`- ${item}`));
+      lines.push('');
+    }
+    if (guidance.dont && guidance.dont.length > 0) {
+      lines.push(`**${t(lang, 'guidanceDont')}**`);
+      lines.push('');
+      guidance.dont.forEach((item) => lines.push(`- ${item}`));
+      lines.push('');
+    }
+  }
+
+  // Microsoft mapping
+  lines.push(`### ${t(lang, 'microsoftMapping')}`);
+  lines.push('');
+  if (measure.microsoft.length === 0) {
+    lines.push(t(lang, 'noMapping'));
+    lines.push('');
+  } else {
+    measure.microsoft.forEach((ms) => {
+      const tierLabel = `${ms.tier}${ms.a5Adds ? '+' : ''}`;
+      const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
+      lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
+    });
+    lines.push('');
+  }
+
+  // Standards mapping
+  const standards = standardsFor(measure);
+  if (standards.length > 0) {
+    lines.push(`### ${t(lang, 'standardsTitle')}`);
+    lines.push('');
+    const standardsWhy = localizedStandardsWhy(measure, lang);
+    if (standardsWhy) {
+      lines.push(`**${t(lang, 'standardsWhy')}:** ${standardsWhy}`);
+      lines.push('');
+    }
+    standards.forEach((std) => {
+      const label = std.url ? `[${std.label}](${std.url})` : std.label;
+      lines.push(`- **${label}**: ${std.controls.join(', ')}`);
+    });
+    lines.push('');
+    lines.push(`> ${t(lang, 'standardsNote')}`);
+    lines.push('');
+  }
+
+  // Further reading
+  if (measure.references && measure.references.length > 0) {
+    lines.push(`### ${t(lang, 'referencesTitle')}`);
+    lines.push('');
+    measure.references.forEach((ref) => {
+      const label = localized(ref, 'label', lang);
+      lines.push(`- ${ref.url ? `[${label}](${ref.url})` : label}`);
+    });
+    lines.push('');
+  }
+
+  return lines.join('\n');
+}
+
+/**
+ * Builds a Markdown document containing the full GRIP → Microsoft mapping — one
+ * section per measure with the same detail as the PDF/PPTX exports — and
+ * triggers a client-side download. No data leaves the browser.
+ *
+ * @param {string} lang  Active UI language ('nl' | 'en' | 'fr')
+ */
+export function exportMarkdown(lang) {
+  const measures = getMeasures();
+  const today = new Date().toLocaleDateString(dateLocale(lang), {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  const parts = [
+    `# ${t(lang, 'appTitle')}`,
+    '',
+    `_${t(lang, 'appSubtitle')}_`,
+    '',
+    today,
+    '',
+    ...measures.map((measure) => measureMarkdown(measure, lang)),
+  ];
+
+  const markdown = parts.join('\n');
+  const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'GRIP-Visualizer.md';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
 // ─── PPTX export ─────────────────────────────────────────────────────────────
 
 // Builds the stacked text runs for the left "guidance" column.
