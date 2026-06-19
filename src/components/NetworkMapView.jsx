@@ -3,13 +3,20 @@ import { getMeasures, localized, highestTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 
 // ── Simulation constants ──────────────────────────────────────────────────
-const REPULSION = 2200;
-const LINK_DIST = 110;
-const LINK_K = 0.045;
-const CENTER_K = 0.008;
-const DAMPING = 0.78;
-const ALPHA_DECAY = 0.97;
+const REPULSION = 4200;
+const LINK_DIST = 100;
+const LINK_K = 0.05;
+const CENTER_K = 0.018;
+const DAMPING = 0.8;
+const ALPHA_DECAY = 0.978;
 const ALPHA_MIN = 0.001;
+// Stabilizers — without these the O(n²) repulsion blows up (force ∝ 1/dist²)
+// whenever two nodes get very close, flinging them thousands of px away and
+// stranding nodes far from the cluster. The distance floor caps the repulsion
+// force and the speed clamp prevents any single frame from launching a node.
+const MIN_DIST = 34; // repulsion distance floor (px)
+const MAX_V = 24; // max node speed per frame (px)
+const INITIAL_SCALE = 0.9;
 const MEASURE_R = 18;
 const PRODUCT_R = 12; // base radius; main hub products grow with their degree
 const PRODUCT_R_MAX = 26;
@@ -115,7 +122,7 @@ function tick(nodes, links, nodeById, alpha) {
     n.vy += -n.y * CENTER_K * alpha;
   }
 
-  // Charge repulsion — O(n²); n≈117 is perfectly manageable at 60 fps
+  // Charge repulsion — O(n²); n≈90 is perfectly manageable at 60 fps
   for (let i = 0; i < nodes.length; i++) {
     const a = nodes[i];
     for (let j = i + 1; j < nodes.length; j++) {
@@ -126,9 +133,11 @@ function tick(nodes, links, nodeById, alpha) {
         dx = 0.1;
         dy = 0.1;
       }
-      const dist2 = dx * dx + dy * dy;
-      const dist = Math.sqrt(dist2);
-      const strength = (REPULSION * alpha) / dist2;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+      // Floor the distance so the inverse-square force can't explode when two
+      // nodes overlap, which would otherwise fling them off the canvas.
+      if (dist < MIN_DIST) dist = MIN_DIST;
+      const strength = (REPULSION * alpha) / (dist * dist);
       const fx = (dx / dist) * strength;
       const fy = (dy / dist) * strength;
       if (!a.pinned) {
@@ -169,6 +178,12 @@ function tick(nodes, links, nodeById, alpha) {
     if (n.pinned) continue;
     n.vx *= DAMPING;
     n.vy *= DAMPING;
+    // Clamp speed so no single frame can launch a node across the canvas.
+    const speed = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+    if (speed > MAX_V) {
+      n.vx = (n.vx / speed) * MAX_V;
+      n.vy = (n.vy / speed) * MAX_V;
+    }
     n.x += n.vx;
     n.y += n.vy;
   }
@@ -189,7 +204,7 @@ export default function NetworkMapView({
   const [graph] = useState(() => buildGraph());
   const { nodes, links, nodeById } = graph;
 
-  const [transform, setTransformState] = useState({ x: 0, y: 0, scale: 0.55 });
+  const [transform, setTransformState] = useState({ x: 0, y: 0, scale: INITIAL_SCALE });
   const [hoveredId, setHoveredId] = useState(null);
   const [tooltip, setTooltip] = useState(null); // { x, y, text }
   const [, setTick] = useState(0); // incremented each sim frame to trigger re-render
@@ -206,7 +221,7 @@ export default function NetworkMapView({
   const lastMouseRef = useRef({ x: 0, y: 0 });
   // Mirror of transform state — kept current inside the setState updater so
   // event handlers can read the latest value without stale closures.
-  const transformRef = useRef({ x: 0, y: 0, scale: 0.55 });
+  const transformRef = useRef({ x: 0, y: 0, scale: INITIAL_SCALE });
 
   // ── Transform helper (syncs state + ref atomically) ─────────────────────
   const setTransform = useCallback((updater) => {
@@ -223,7 +238,7 @@ export default function NetworkMapView({
     if (!svg) return;
     const { width, height } = svg.getBoundingClientRect();
     if (width > 0 && height > 0) {
-      setTransform({ x: width / 2, y: height / 2, scale: 0.55 });
+      setTransform({ x: width / 2, y: height / 2, scale: INITIAL_SCALE });
     }
   }, [setTransform]);
 

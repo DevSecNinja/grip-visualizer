@@ -1359,7 +1359,14 @@ body {
     align-items: stretch;
   }
   .app-header__controls {
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  /* Let the view tabs wrap within the header width instead of overflowing
+     horizontally and pushing the language switch off-screen. */
+  .app-header__controls .seg {
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .journey__cards {
     grid-template-columns: 1fr;
