@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.3.0...v1.0.0) (2026-06-19)
+
+
+### Features
+
+* add 'Microsoft value' section to fly-over ([#81](https://github.com/DevSecNinja/grip-visualizer/issues/81)) ([22139f9](https://github.com/DevSecNinja/grip-visualizer/commit/22139f9d406e60bdd61e564139df9a9024da5ff5))
+* distinguish add-on licensed Microsoft capabilities ([#83](https://github.com/DevSecNinja/grip-visualizer/issues/83)) ([b7e57fa](https://github.com/DevSecNinja/grip-visualizer/commit/b7e57faa1eae6e0effec3fd1e6e04a9f1519429e))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([4be5e7d](https://github.com/DevSecNinja/grip-visualizer/commit/4be5e7d9b7feeaf2188f70e9396577a0b874b1c1))
+
 ## [0.3.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.2.0...v0.3.0) (2026-06-19)
 
 
