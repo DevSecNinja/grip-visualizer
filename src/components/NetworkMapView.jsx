@@ -13,6 +13,7 @@ const ALPHA_MIN = 0.001;
 const MEASURE_R = 18;
 const PRODUCT_R = 12; // base radius; main hub products grow with their degree
 const PRODUCT_R_MAX = 26;
+const PRODUCT_R_PER_DEGREE = 1.6; // radius added per extra connected measure
 const DRAG_THRESHOLD = 5; // px before a click becomes a drag
 const TIER_RANK = { A1: 0, A3: 1, A5: 2 };
 
@@ -85,7 +86,10 @@ function buildGraph() {
     shortName: shortProductName(name),
     tier: data.tier,
     // Scale radius with degree so main hub products read as the bigger dots.
-    r: Math.min(PRODUCT_R_MAX, PRODUCT_R + ((degree.get(name) || 1) - 1) * 1.6),
+    r: Math.min(
+      PRODUCT_R_MAX,
+      PRODUCT_R + ((degree.get(name) || 1) - 1) * PRODUCT_R_PER_DEGREE
+    ),
     x: Math.cos((i / N_P) * Math.PI * 2) * 370,
     y: Math.sin((i / N_P) * Math.PI * 2) * 370,
     vx: 0,
