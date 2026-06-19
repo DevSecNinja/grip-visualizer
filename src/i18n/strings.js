@@ -14,6 +14,12 @@ export const ui = {
     vName_prioritize: 'Prioriteren',
     vHint_prioritize:
       'Maatregelen gegroepeerd op implementatietermijn: quick wins, projecten en programma\u0027s.',
+    vName_network: 'Netwerk',
+    vHint_network:
+      'Interactieve netwerkkaart van GRIP-maatregelen (grote knopen) en Microsoft-producten (kleine knopen). Klik op een maatregel voor details.',
+    networkLegend: 'Legenda',
+    networkDragHint:
+      'Versleep knopen · Scroll om in/uit te zoomen · Klik op een maatregel voor details',
     hz_short: 'Korte termijn',
     hz_medium: 'Middellange termijn',
     hz_long: 'Lange termijn',
@@ -113,6 +119,11 @@ export const ui = {
     vName_prioritize: 'Prioritize',
     vHint_prioritize:
       'Measures grouped by implementation horizon: quick wins, projects and programmes.',
+    vName_network: 'Network',
+    vHint_network:
+      'Interactive network map of GRIP measures (large nodes) and Microsoft products (small nodes). Click a measure node to see its details.',
+    networkLegend: 'Legend',
+    networkDragHint: 'Drag nodes · Scroll to zoom · Click a measure for details',
     hz_short: 'Short term',
     hz_medium: 'Medium term',
     hz_long: 'Long term',
@@ -211,6 +222,12 @@ export const ui = {
     vName_prioritize: 'Prioriser',
     vHint_prioritize:
       'Mesures regroupées par horizon de mise en œuvre : gains rapides, projets et programmes.',
+    vName_network: 'Réseau',
+    vHint_network:
+      'Carte réseau interactive des mesures GRIP (grands nœuds) et des produits Microsoft (petits nœuds). Cliquez sur une mesure pour afficher ses détails.',
+    networkLegend: 'Légende',
+    networkDragHint:
+      'Faire glisser les nœuds · Défiler pour zoomer · Cliquer sur une mesure pour les détails',
     hz_short: 'Court terme',
     hz_medium: 'Moyen terme',
     hz_long: 'Long terme',

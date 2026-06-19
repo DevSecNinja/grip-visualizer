@@ -4,6 +4,7 @@ import MatrixView from './components/MatrixView.jsx';
 import JourneyView from './components/JourneyView.jsx';
 import ValueA3A5View from './components/ValueA3A5View.jsx';
 import PrioritizeView from './components/PrioritizeView.jsx';
+import NetworkMapView from './components/NetworkMapView.jsx';
 import MeasureDetailPanel from './components/MeasureDetailPanel.jsx';
 import PrintDocument from './components/PrintDocument.jsx';
 import AssessmentScorecard from './components/AssessmentScorecard.jsx';
@@ -43,6 +44,13 @@ const VIEWS = [
     hint: 'vHint_prioritize',
     Component: PrioritizeView,
     filterable: false,
+  },
+  {
+    id: 'network',
+    label: 'vName_network',
+    hint: 'vHint_network',
+    Component: NetworkMapView,
+    filterable: true,
   },
 ];
 
