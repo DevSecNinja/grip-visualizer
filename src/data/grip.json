@@ -212,7 +212,7 @@
           "a5Adds": true
         },
         {
-          "name": "Intune — Discovered apps",
+          "name": "Microsoft Intune — Discovered apps",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/apps/app-discovered-apps",
           "a5Adds": false
@@ -244,7 +244,7 @@
           "a5Adds": false
         },
         {
-          "name": "Entra ID Protection — Risk-based Conditional Access",
+          "name": "Microsoft Entra ID Protection — Risk-based Conditional Access",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks",
           "a5Adds": true
@@ -562,7 +562,7 @@
           "a5Adds": true
         },
         {
-          "name": "Entra ID Governance — Access reviews",
+          "name": "Microsoft Entra ID Governance — Access reviews",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview",
           "a5Adds": true
@@ -582,7 +582,7 @@
       "summary_fr": "Protégez les serveurs, les équipements réseau et les informations sensibles contre l'accès physique.",
       "microsoft": [
         {
-          "name": "BitLocker via Intune (device encryption)",
+          "name": "BitLocker via Microsoft Intune",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
           "a5Adds": false
@@ -602,13 +602,13 @@
       "summary_fr": "Gérez l'accès lors de l'arrivée, des changements et du départ (gestion du cycle de vie).",
       "microsoft": [
         {
-          "name": "Entra ID Governance — Lifecycle Workflows",
+          "name": "Microsoft Entra ID Governance — Lifecycle Workflows",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows",
           "a5Adds": true
         },
         {
-          "name": "Entra ID — Dynamic groups & provisioning (SDS)",
+          "name": "Microsoft Entra ID — Dynamic groups & provisioning (SDS)",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/schooldatasync/",
           "a5Adds": false
@@ -628,7 +628,7 @@
       "summary_fr": "Gérez l'accès Wi-Fi avec des certificats et des politiques ; évitez les mots de passe partagés.",
       "microsoft": [
         {
-          "name": "Intune — Wi-Fi configuration profiles",
+          "name": "Microsoft Intune — Wi-Fi configuration profiles",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/configuration/wi-fi-settings-configure",
           "a5Adds": false
@@ -648,7 +648,7 @@
       "summary_fr": "Assurez une protection des terminaux à jour sur tous les appareils.",
       "microsoft": [
         {
-          "name": "Microsoft Defender Antivirus (via Intune)",
+          "name": "Microsoft Defender Antivirus (via Microsoft Intune)",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-antivirus-windows",
           "a5Adds": false
@@ -674,7 +674,7 @@
       "summary_fr": "Maintenez les systèmes d'exploitation et les applications à jour grâce à une politique de correctifs.",
       "microsoft": [
         {
-          "name": "Intune — Windows Update for Business",
+          "name": "Microsoft Intune — Windows Update for Business",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/windows-update-for-business-configure",
           "a5Adds": false
@@ -930,7 +930,7 @@
       "summary_fr": "Gérez les pare-feux hôtes et réseau adaptés aux besoins de l'école.",
       "microsoft": [
         {
-          "name": "Intune — Microsoft Defender Firewall policy",
+          "name": "Microsoft Intune — Microsoft Defender Firewall policy",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/endpoint-security-firewall-policy",
           "a5Adds": false
@@ -1134,7 +1134,7 @@
           "a5Adds": false
         },
         {
-          "name": "Intune — Device wipe / retire",
+          "name": "Microsoft Intune — Device wipe / retire",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/devices-wipe",
           "a5Adds": false
@@ -1326,7 +1326,7 @@
       "summary_fr": "Chiffrez les données au repos et en transit, et appliquez le chiffrement basé sur les étiquettes.",
       "microsoft": [
         {
-          "name": "BitLocker via Intune",
+          "name": "BitLocker via Microsoft Intune",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
           "a5Adds": false
