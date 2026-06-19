@@ -594,10 +594,11 @@
           "name": "Microsoft Entra ID Governance — Access reviews",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview",
-          "a5Adds": true,
-          "value_nl": "Automatiseert terugkerende toegangsbeoordelingen zodat eigenaars of gebruikers periodiek bevestigen of toegang tot apps, groepen en rollen nog nodig is.",
-          "value_en": "Automates recurring access reviews so owners or users periodically confirm whether access to apps, groups and roles is still needed.",
-          "value_fr": "Automatise les revues d’accès récurrentes afin que les propriétaires ou utilisateurs confirment périodiquement si l’accès aux applications, groupes et rôles reste nécessaire.",
+          "a5Adds": false,
+          "addOn": true,
+          "value_nl": "Automatiseert terugkerende toegangsbeoordelingen zodat eigenaars of gebruikers periodiek bevestigen of toegang tot apps, groepen en rollen nog nodig is. Basis-toegangsbeoordelingen werken met Entra ID P2 (inbegrepen in A5); geavanceerde governance-functies (zoals beoordelingen op inactieve gebruikers of meerdere resources samen) vereisen de aparte add-on Microsoft Entra ID Governance (of Entra Suite).",
+          "value_en": "Automates recurring access reviews so owners or users periodically confirm whether access to apps, groups and roles is still needed. Basic access reviews work with Entra ID P2 (included in A5); advanced governance capabilities (such as reviews of inactive users or multiple resources together) require the separate Microsoft Entra ID Governance add-on (or Entra Suite).",
+          "value_fr": "Automatise les revues d’accès récurrentes afin que les propriétaires ou utilisateurs confirment périodiquement si l’accès aux applications, groupes et rôles reste nécessaire. Les revues d’accès de base fonctionnent avec Entra ID P2 (inclus dans l’A5) ; les fonctionnalités de gouvernance avancées (comme les revues d’utilisateurs inactifs ou de plusieurs ressources ensemble) nécessitent le module complémentaire distinct Microsoft Entra ID Governance (ou Entra Suite).",
           "valueUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview"
         }
       ]
