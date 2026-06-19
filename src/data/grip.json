@@ -195,6 +195,7 @@
       "summary_nl": "Breng alle gebruikte applicaties en cloud-apps in kaart, inclusief shadow IT.",
       "summary_en": "Map all applications and cloud apps in use, including shadow IT.",
       "summary_fr": "Recensez toutes les applications et applications cloud utilisées, y compris le shadow IT.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Entra ID — Enterprise applications",
@@ -331,6 +332,7 @@
       "summary_nl": "Publiceer een privacyverklaring en richt een proces in voor rechten van betrokkenen (DSR).",
       "summary_en": "Publish a privacy statement and set up a process for data subject rights requests (DSR).",
       "summary_fr": "Publiez une déclaration de confidentialité et mettez en place un processus pour les droits des personnes concernées (DSR).",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Priva — Subject Rights Requests",
@@ -400,6 +402,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -693,6 +696,7 @@
       "summary_nl": "Zorg voor actuele endpointbescherming op alle toestellen.",
       "summary_en": "Ensure up-to-date endpoint protection on all devices.",
       "summary_fr": "Assurez une protection des terminaux à jour sur tous les appareils.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Defender Antivirus (via Microsoft Intune)",
@@ -747,6 +751,7 @@
       "summary_nl": "Detecteer, onderzoek en meld datalekken binnen de wettelijke termijn.",
       "summary_en": "Detect, investigate and report data breaches within the legal timeframe.",
       "summary_fr": "Détectez, examinez et signalez les fuites de données dans le délai légal.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Microsoft Defender XDR — Incidents",
@@ -805,6 +810,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -878,6 +884,7 @@
       "summary_nl": "Classificeer informatie en bepaal prioriteit op basis van waarde en risico.",
       "summary_en": "Classify information and prioritize based on value and risk.",
       "summary_fr": "Classifiez l'information et établissez les priorités en fonction de la valeur et du risque.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview Information Protection — Sensitivity labels",
@@ -912,6 +919,7 @@
       "summary_nl": "Voorzie betrouwbare back-ups; let op het verschil tussen retentie en echte back-up.",
       "summary_en": "Provide reliable backups; mind the difference between retention and true backup.",
       "summary_fr": "Prévoyez des sauvegardes fiables ; attention à la différence entre rétention et véritable sauvegarde.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview — Data Lifecycle Management (retention)",
@@ -1065,6 +1073,7 @@
       "summary_nl": "Filter schadelijke websites en e-mail met geavanceerde bescherming.",
       "summary_en": "Filter malicious websites and email with advanced protection.",
       "summary_fr": "Filtrez les sites web et e-mails malveillants grâce à une protection avancée.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Defender for Office 365",
@@ -1173,6 +1182,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1216,6 +1226,7 @@
       "summary_nl": "Houd een actueel register van verwerkingsactiviteiten (art. 30 AVG).",
       "summary_en": "Maintain an up-to-date record of processing activities (GDPR art. 30).",
       "summary_fr": "Tenez à jour un registre des activités de traitement (art. 30 RGPD).",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Priva — Privacy Risk Management",
@@ -1275,6 +1286,7 @@
       "summary_nl": "Bepaal bewaartermijnen en vernietig gegevens en toestellen veilig.",
       "summary_en": "Define retention periods and securely destroy data and devices.",
       "summary_fr": "Définissez des durées de conservation et détruisez les données et appareils en toute sécurité.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Purview — Data Lifecycle Management",
@@ -1389,6 +1401,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1527,6 +1540,7 @@
       "summary_nl": "Versleutel data in rust en onderweg, en pas labelgebaseerde encryptie toe.",
       "summary_en": "Encrypt data at rest and in transit, and apply label-based encryption.",
       "summary_fr": "Chiffrez les données au repos et en transit, et appliquez le chiffrement basé sur les étiquettes.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "BitLocker via Microsoft Intune",
@@ -1659,6 +1673,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
@@ -1806,6 +1821,7 @@
       "summary_nl": "Train medewerkers en leerlingen continu in veilig en privacybewust gedrag.",
       "summary_en": "Continuously train staff and students in secure, privacy-aware behaviour.",
       "summary_fr": "Formez en continu le personnel et les élèves à un comportement sûr et soucieux de la vie privée.",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Attack Simulation Training (Defender for Office 365)",
