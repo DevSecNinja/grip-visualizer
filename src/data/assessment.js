@@ -11,6 +11,14 @@ export const ASSESSMENT_STATUSES = [
 const STATUS_SET = new Set(ASSESSMENT_STATUSES);
 const DEFAULT_STATUS = 'not_started';
 
+// Maximum length of a single free-text note. Imported notes are truncated to
+// this length so a crafted file cannot bloat localStorage past its quota.
+export const MAX_NOTE_LENGTH = 5000;
+
+// Keys that must never be written as object members from untrusted input, to
+// avoid prototype-pollution sinks (e.g. result['__proto__'] = ...).
+const FORBIDDEN_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+
 function isPlainObject(value) {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
@@ -23,20 +31,25 @@ function normalizeStatus(status) {
 // Coerce an arbitrary entry into a safe { status, note } shape.
 function normalizeEntry(entry) {
   const source = isPlainObject(entry) ? entry : {};
+  const note =
+    typeof source.note === 'string' ? source.note.slice(0, MAX_NOTE_LENGTH) : '';
   return {
     status: normalizeStatus(source.status),
-    note: typeof source.note === 'string' ? source.note : '',
+    note,
   };
 }
 
 // Normalize a measures map so every entry has a valid status/note shape.
+// Uses a null-prototype object and skips dangerous keys so untrusted data can
+// never pollute Object.prototype via a '__proto__'/'constructor' member.
 function normalizeMeasures(measures) {
   if (!isPlainObject(measures)) return {};
-  const result = {};
+  const result = Object.create(null);
   for (const code of Object.keys(measures)) {
+    if (FORBIDDEN_KEYS.has(code)) continue;
     result[code] = normalizeEntry(measures[code]);
   }
-  return result;
+  return { ...result };
 }
 
 // Derive a short fingerprint of the current measure set so the localStorage
@@ -168,6 +181,13 @@ export function parseImport(jsonText) {
 
   if (parsed?.schema !== 'grip-assessment') {
     throw new Error('invalidSchema');
+  }
+
+  // Only accept files produced by a schema version we understand. A newer or
+  // unknown version may carry an incompatible shape, so reject it explicitly
+  // instead of importing partially-understood data.
+  if (parsed.version !== undefined && parsed.version !== SCHEMA_VERSION) {
+    throw new Error('invalidVersion');
   }
 
   const importedMeasures = isPlainObject(parsed.measures) ? parsed.measures : {};

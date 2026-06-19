@@ -90,6 +90,8 @@ export const ui = {
     importWarnMissing: 'Maatregelcodes ontbreken in het importbestand',
     importErrorJson: 'Ongeldig JSON-bestand.',
     importErrorSchema: 'Dit is geen geldig GRIP-zelfevaluatiebestand.',
+    importErrorVersion: 'Dit bestand gebruikt een niet-ondersteunde versie.',
+    importErrorTooLarge: 'Het bestand is te groot om te importeren.',
   },
   en: {
     appTitle: 'GRIP Visualizer',
@@ -179,6 +181,8 @@ export const ui = {
     importWarnMissing: 'Measure codes missing from the import file',
     importErrorJson: 'Invalid JSON file.',
     importErrorSchema: 'This is not a valid GRIP self-assessment file.',
+    importErrorVersion: 'This file uses an unsupported version.',
+    importErrorTooLarge: 'The file is too large to import.',
   },
   fr: {
     appTitle: 'GRIP Visualizer',
@@ -270,6 +274,8 @@ export const ui = {
     importWarnMissing: 'Des codes de mesures manquent dans le fichier importé',
     importErrorJson: 'Fichier JSON invalide.',
     importErrorSchema: "Ce n'est pas un fichier d'auto-évaluation GRIP valide.",
+    importErrorVersion: 'Ce fichier utilise une version non prise en charge.',
+    importErrorTooLarge: 'Le fichier est trop volumineux pour être importé.',
   },
 };
 

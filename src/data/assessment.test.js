@@ -1,5 +1,11 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { parseImport, exportAssessment, emptyState, STORAGE_KEY } from './assessment.js';
+import {
+  parseImport,
+  exportAssessment,
+  emptyState,
+  STORAGE_KEY,
+  MAX_NOTE_LENGTH,
+} from './assessment.js';
 
 // Minimal localStorage stub
 const store = {};
@@ -96,6 +102,48 @@ describe('parseImport', () => {
     const { measures, warnings } = parseImport(payload);
     expect(measures).toEqual({});
     expect(warnings.unknown).toHaveLength(0);
+  });
+
+  it('truncates over-long notes to MAX_NOTE_LENGTH', () => {
+    const payload = JSON.stringify({
+      schema: 'grip-assessment',
+      version: 1,
+      measures: {
+        O7: { status: 'done', note: 'a'.repeat(MAX_NOTE_LENGTH + 500) },
+      },
+    });
+    const { measures } = parseImport(payload);
+    expect(measures.O7.note).toHaveLength(MAX_NOTE_LENGTH);
+  });
+
+  it('does not pollute Object.prototype via a __proto__ key', () => {
+    const payload =
+      '{"schema":"grip-assessment","version":1,"measures":' +
+      '{"__proto__":{"status":"done"},"constructor":{"status":"done"},' +
+      '"O7":{"status":"done"}}}';
+    const { measures } = parseImport(payload);
+    expect({}.status).toBeUndefined();
+    expect(Object.prototype.hasOwnProperty.call(measures, '__proto__')).toBe(false);
+    expect(measures).not.toHaveProperty('constructor.status');
+    expect(measures).toHaveProperty('O7');
+  });
+
+  it('throws invalidVersion when the schema version is unsupported', () => {
+    const payload = JSON.stringify({
+      schema: 'grip-assessment',
+      version: 999,
+      measures: {},
+    });
+    expect(() => parseImport(payload)).toThrow('invalidVersion');
+  });
+
+  it('accepts a file without a version field for backward compatibility', () => {
+    const payload = JSON.stringify({
+      schema: 'grip-assessment',
+      measures: { O7: { status: 'done' } },
+    });
+    const { measures } = parseImport(payload);
+    expect(measures.O7.status).toBe('done');
   });
 });
 

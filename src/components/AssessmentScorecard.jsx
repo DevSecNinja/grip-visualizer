@@ -7,6 +7,11 @@ import {
 } from '../data/assessment.js';
 import { t } from '../i18n/strings.js';
 
+// Reject oversized files before reading them into memory. A legitimate export
+// of all 52 measures is a few KB, so 1 MB is a generous ceiling that still
+// guards against a crafted file freezing or OOM-ing the tab.
+const MAX_IMPORT_BYTES = 1024 * 1024;
+
 function countStatuses(measures, state) {
   const counts = Object.fromEntries(ASSESSMENT_STATUSES.map((s) => [s, 0]));
   for (const m of measures) {
@@ -39,6 +44,11 @@ export default function AssessmentScorecard({ lang, state, onImport, onReset }) 
   function handleFileChange(e) {
     const file = e.target.files?.[0];
     if (!file) return;
+    if (file.size > MAX_IMPORT_BYTES) {
+      setImportMsg({ type: 'error', text: t(lang, 'importErrorTooLarge') });
+      e.target.value = '';
+      return;
+    }
     const reader = new FileReader();
     reader.onload = (ev) => {
       try {
@@ -58,7 +68,11 @@ export default function AssessmentScorecard({ lang, state, onImport, onReset }) 
         setImportMsg({ type: 'success', text: parts.join(' ') });
       } catch (err) {
         const key =
-          err.message === 'invalidJson' ? 'importErrorJson' : 'importErrorSchema';
+          err.message === 'invalidJson'
+            ? 'importErrorJson'
+            : err.message === 'invalidVersion'
+              ? 'importErrorVersion'
+              : 'importErrorSchema';
         setImportMsg({ type: 'error', text: t(lang, key) });
       }
       // Reset input so the same file can be re-imported if needed
