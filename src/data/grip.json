@@ -175,9 +175,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview",
           "a5Adds": true,
-          "value_nl": "Bouwt automatisch een actuele inventaris van endpoints met hun risiconiveau, blootgestelde kwetsbaarheden en beveiligingsstatus.",
-          "value_en": "Automatically builds a live inventory of endpoints with their risk level, exposed vulnerabilities and security posture.",
-          "value_fr": "Construit automatiquement un inventaire à jour des points de terminaison avec leur niveau de risque, leurs vulnérabilités exposées et leur posture de sécurité.",
+          "value_nl": "Een basisinventaris van toestellen is al beschikbaar met A3 (Intune en Defender for Endpoint Plan 1). De meerwaarde van A5 (Defender for Endpoint Plan 2) is de verrijking: de inventaris toont per endpoint automatisch het risiconiveau, blootgestelde kwetsbaarheden en beveiligingsstatus, gevoed door EDR en threat & vulnerability management. Zo wordt een statische lijst een actueel, risicogebaseerd overzicht dat helpt prioriteren.",
+          "value_en": "A basic device inventory is already available with A3 (Intune and Defender for Endpoint Plan 1). The A5 value-add (Defender for Endpoint Plan 2) is the enrichment: the inventory automatically shows each endpoint's risk level, exposed vulnerabilities and security posture, powered by EDR and threat & vulnerability management. This turns a static list into a live, risk-based overview that helps prioritise.",
+          "value_fr": "Un inventaire de base des appareils est déjà disponible avec l'A3 (Intune et Defender for Endpoint Plan 1). La valeur ajoutée de l'A5 (Defender for Endpoint Plan 2) est l'enrichissement : l'inventaire affiche automatiquement, pour chaque point de terminaison, le niveau de risque, les vulnérabilités exposées et la posture de sécurité, alimenté par l'EDR et la gestion des menaces et vulnérabilités. Une simple liste devient ainsi un aperçu actualisé et basé sur les risques qui aide à prioriser.",
           "valueUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview"
         }
       ]
