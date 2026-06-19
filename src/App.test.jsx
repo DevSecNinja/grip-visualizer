@@ -14,7 +14,7 @@ describe('App', () => {
     const user = userEvent.setup();
     render(<App />);
     await user.click(screen.getByRole('button', { name: /O7/ }));
-    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    const panel = screen.getByRole('complementary');
     expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
   });
 
@@ -22,7 +22,7 @@ describe('App', () => {
     const user = userEvent.setup();
     render(<App />);
     await user.click(screen.getByRole('button', { name: /O7/ }));
-    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    const panel = screen.getByRole('complementary');
     expect(within(panel).getByText('Koppeling met standaarden')).toBeInTheDocument();
     expect(within(panel).getByText(/CIS Controls v8/)).toBeInTheDocument();
     expect(within(panel).getByText('6.3')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('App', () => {
     const user = userEvent.setup();
     render(<App />);
     await user.click(screen.getByRole('button', { name: /O7/ }));
-    const panel = screen.getByText('Microsoft-koppeling').closest('aside');
+    const panel = screen.getByRole('complementary');
     expect(within(panel).getByText('Praktische richtlijnen')).toBeInTheDocument();
     expect(within(panel).getByText('Wel doen')).toBeInTheDocument();
     expect(within(panel).getByText('Niet doen')).toBeInTheDocument();
