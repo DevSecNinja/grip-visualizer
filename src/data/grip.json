@@ -65,6 +65,7 @@
       "summary_nl": "Wijs rollen en verantwoordelijkheden toe, waaronder een functionaris voor gegevensbescherming (DPO).",
       "summary_en": "Assign roles and responsibilities, including a Data Protection Officer (DPO).",
       "summary_fr": "Attribuez les rôles et responsabilités, y compris un délégué à la protection des données (DPD).",
+      "tierOverride": "A1",
       "microsoft": [
         {
           "name": "Microsoft Entra ID — Roles & administrative units",
@@ -157,6 +158,7 @@
       "summary_nl": "Houd een actueel overzicht bij van alle toestellen die toegang hebben tot informatie.",
       "summary_en": "Maintain an up-to-date overview of all devices that access information.",
       "summary_fr": "Tenez à jour un aperçu de tous les appareils qui accèdent à l'information.",
+      "tierOverride": "A3",
       "microsoft": [
         {
           "name": "Microsoft Intune — Device inventory",

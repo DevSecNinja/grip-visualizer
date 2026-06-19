@@ -5,6 +5,7 @@ import { t } from '../i18n/strings.js';
 export default function MeasureChip({ measure, lang, selected, onSelect }) {
   const tier = measureTier(measure);
   const isAddOn = tier === 'ADDON';
+  const isOverride = Boolean(measure.tierOverride);
   const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
   const tierClass = isAddOn ? 'addon' : tier.toLowerCase();
   return (
@@ -17,7 +18,14 @@ export default function MeasureChip({ measure, lang, selected, onSelect }) {
       title={localized(measure, 'title', lang)}
     >
       <span className="chip__code">{measure.code}</span>
-      <span className={`chip__tier chip__tier--${tierClass}`}>{tierLabel}</span>
+      <span
+        className={`chip__tier chip__tier--${tierClass}${
+          isOverride ? ' chip__tier--override' : ''
+        }`}
+        title={isOverride ? t(lang, 'tierOverrideHint') : undefined}
+      >
+        {tierLabel}
+      </span>
     </button>
   );
 }

@@ -12,6 +12,7 @@ export default function MeasureCard({
   const title = localized(measure, 'title', lang);
   const tier = measureTier(measure);
   const isAddOn = tier === 'ADDON';
+  const isOverride = Boolean(measure.tierOverride);
   const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
   const tierClass = isAddOn ? 'addon' : tier.toLowerCase();
 
@@ -40,7 +41,12 @@ export default function MeasureCard({
               aria-hidden="true"
             />
           )}
-          <span className={`measure-card__tier measure-card__tier--${tierClass}`}>
+          <span
+            className={`measure-card__tier measure-card__tier--${tierClass}${
+              isOverride ? ' measure-card__tier--override' : ''
+            }`}
+            title={isOverride ? t(lang, 'tierOverrideHint') : undefined}
+          >
             {tierLabel}
           </span>
         </span>
