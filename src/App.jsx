@@ -145,76 +145,76 @@ export default function App() {
       </div>
 
       <footer className="app__footer">
-        <div className="filters" role="group" aria-label={t(lang, 'filters')}>
-          <span className="filters__label">
-            <svg className="filters__icon" viewBox="0 0 16 16" aria-hidden="true">
-              <path
-                d="M1.5 3h13M4 8h8M6.5 13h3"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-              />
-            </svg>
-            {t(lang, 'filterLabel')}
-          </span>
+        <div className="filters-wrap">
+          <div className="filters" role="group" aria-label={t(lang, 'filters')}>
+            <span className="filters__label">
+              <svg className="filters__icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M1.5 3h13M4 8h8M6.5 13h3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+              {t(lang, 'filterLabel')}
+            </span>
 
-          <div className="filters__group">
-            <button
-              type="button"
-              className={`filters__chip${typeFilter === 'O' ? ' is-active' : ''}`}
-              aria-pressed={typeFilter === 'O'}
-              onClick={() => setTypeFilter((v) => (v === 'O' ? null : 'O'))}
-            >
-              <span className="filters__swatch filters__swatch--org" />{' '}
-              {t(lang, 'organisational')}
-            </button>
-            <button
-              type="button"
-              className={`filters__chip${typeFilter === 'T' ? ' is-active' : ''}`}
-              aria-pressed={typeFilter === 'T'}
-              onClick={() => setTypeFilter((v) => (v === 'T' ? null : 'T'))}
-            >
-              <span className="filters__swatch filters__swatch--tech" />{' '}
-              {t(lang, 'technical')}
-            </button>
-          </div>
-
-          <span className="filters__divider" aria-hidden="true" />
-
-          <div className="filters__group">
-            {['A1', 'A3', 'A5'].map((tierName) => (
+            <div className="filters__group">
               <button
-                key={tierName}
                 type="button"
-                className={`tier tier--${tierName.toLowerCase()} tier--btn${tierFilter === tierName ? ' is-active' : ''}`}
-                aria-pressed={tierFilter === tierName}
-                onClick={() => setTierFilter((v) => (v === tierName ? null : tierName))}
+                className={`filters__chip${typeFilter === 'O' ? ' is-active' : ''}`}
+                aria-pressed={typeFilter === 'O'}
+                onClick={() => setTypeFilter((v) => (v === 'O' ? null : 'O'))}
               >
-                {tierName}
+                <span className="filters__swatch filters__swatch--org" />{' '}
+                {t(lang, 'organisational')}
               </button>
-            ))}
-          </div>
+              <button
+                type="button"
+                className={`filters__chip${typeFilter === 'T' ? ' is-active' : ''}`}
+                aria-pressed={typeFilter === 'T'}
+                onClick={() => setTypeFilter((v) => (v === 'T' ? null : 'T'))}
+              >
+                <span className="filters__swatch filters__swatch--tech" />{' '}
+                {t(lang, 'technical')}
+              </button>
+            </div>
 
-          <span className="filters__divider" aria-hidden="true" />
+            <span className="filters__divider" aria-hidden="true" />
+
+            <div className="filters__group">
+              {['A1', 'A3', 'A5'].map((tierName) => (
+                <button
+                  key={tierName}
+                  type="button"
+                  className={`tier tier--${tierName.toLowerCase()} tier--btn${tierFilter === tierName ? ' is-active' : ''}`}
+                  aria-pressed={tierFilter === tierName}
+                  onClick={() => setTierFilter((v) => (v === tierName ? null : tierName))}
+                >
+                  {tierName}
+                </button>
+              ))}
+            </div>
+
+            {(typeFilter || tierFilter) && (
+              <button
+                type="button"
+                className="filters__clear"
+                onClick={() => {
+                  setTypeFilter(null);
+                  setTierFilter(null);
+                }}
+              >
+                {t(lang, 'clearFilters')} ×
+              </button>
+            )}
+          </div>
 
           <span className="filters__legend">
             <span className="filters__legend-swatch" aria-hidden="true" />
             {t(lang, 'tierOverrideLegend')}
           </span>
-
-          {(typeFilter || tierFilter) && (
-            <button
-              type="button"
-              className="filters__clear"
-              onClick={() => {
-                setTypeFilter(null);
-                setTierFilter(null);
-              }}
-            >
-              {t(lang, 'clearFilters')} ×
-            </button>
-          )}
         </div>
         <div className="app__meta">
           <a

@@ -1076,9 +1076,9 @@
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/mdo-about",
           "a5Adds": true,
-          "value_nl": "Beschermt e-mail en samenwerking met Safe Links en Safe Attachments, die kwaadaardige URL’s en bijlagen detoneren en blokkeren vóór ze de gebruiker bereiken.",
-          "value_en": "Protects email and collaboration with Safe Links and Safe Attachments, which detonate and block malicious URLs and attachments before they reach the user.",
-          "value_fr": "Protège la messagerie et la collaboration avec Liens fiables et Pièces jointes fiables, qui font détoner et bloquent les URL et pièces jointes malveillantes avant qu’elles n’atteignent l’utilisateur.",
+          "value_nl": "Beschermt e-mail en samenwerking met Safe Links en Safe Attachments, die kwaadaardige URL’s en bijlagen detoneren en blokkeren vóór ze de gebruiker bereiken. De A3-basis (SmartScreen / webcontentfiltering) dekt de maatregel; deze geavanceerde e-mailbescherming is de logische volgende stap naarmate je beveiliging volwassener wordt.",
+          "value_en": "Protects email and collaboration with Safe Links and Safe Attachments, which detonate and block malicious URLs and attachments before they reach the user. The A3 baseline (SmartScreen / web content filtering) covers the measure; this advanced email protection is the natural next step as your security matures.",
+          "value_fr": "Protège la messagerie et la collaboration avec Liens fiables et Pièces jointes fiables, qui font détoner et bloquent les URL et pièces jointes malveillantes avant qu’elles n’atteignent l’utilisateur. La base A3 (SmartScreen / filtrage de contenu web) couvre la mesure ; cette protection avancée de la messagerie est l’étape suivante naturelle à mesure que votre sécurité gagne en maturité.",
           "valueUrl": "https://learn.microsoft.com/defender-office-365/mdo-about"
         },
         {
