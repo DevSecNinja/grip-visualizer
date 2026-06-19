@@ -85,6 +85,15 @@ describe('App', () => {
     expect(new URLSearchParams(window.location.search).get('lang')).toBe('fr');
   });
 
+  it('removes the lang parameter when switching back to Dutch', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'FR' }));
+    expect(new URLSearchParams(window.location.search).get('lang')).toBe('fr');
+    await user.click(screen.getByRole('button', { name: 'NL' }));
+    expect(new URLSearchParams(window.location.search).get('lang')).toBe(null);
+  });
+
   it('renders the Prioritize view with three horizon columns', async () => {
     const user = userEvent.setup();
     render(<App />);

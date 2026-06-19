@@ -77,12 +77,17 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
     // Reflect the active language in the URL so it can be shared as a deep
-    // link. The default language is kept out of a clean first-visit URL.
+    // link. The default language is represented by a clean URL with no
+    // `lang` parameter.
     const url = new URL(window.location.href);
     const current = url.searchParams.get(LANG_PARAM);
     if (current === lang) return;
-    if (lang === DEFAULT_LANG && current === null) return;
-    url.searchParams.set(LANG_PARAM, lang);
+    if (lang === DEFAULT_LANG) {
+      if (current === null) return;
+      url.searchParams.delete(LANG_PARAM);
+    } else {
+      url.searchParams.set(LANG_PARAM, lang);
+    }
     window.history.replaceState(null, '', url);
   }, [lang]);
 
