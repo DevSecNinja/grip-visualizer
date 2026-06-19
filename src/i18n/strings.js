@@ -1,5 +1,20 @@
 export const LANGS = ['nl', 'en', 'fr'];
 
+// Dutch is the source language; the UI falls back to it for missing keys and
+// when no language is requested.
+export const DEFAULT_LANG = 'nl';
+
+// Query-string key used to share a deep link in a specific language
+// (e.g. `?lang=en`).
+export const LANG_PARAM = 'lang';
+
+// Resolve a valid UI language from a URL query string, falling back to Dutch
+// when the `lang` parameter is missing or not a supported language.
+export function langFromSearch(search) {
+  const value = new URLSearchParams(search ?? '').get(LANG_PARAM);
+  return LANGS.includes(value) ? value : DEFAULT_LANG;
+}
+
 export const ui = {
   nl: {
     appTitle: 'GRIP Visualizer',

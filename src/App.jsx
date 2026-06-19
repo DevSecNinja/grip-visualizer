@@ -10,7 +10,7 @@ import PrintDocument from './components/PrintDocument.jsx';
 import AssessmentScorecard from './components/AssessmentScorecard.jsx';
 import { findMeasure, getMeta } from './data/grip.js';
 import { useAssessment } from './data/assessment.js';
-import { t } from './i18n/strings.js';
+import { t, DEFAULT_LANG, LANG_PARAM, langFromSearch } from './i18n/strings.js';
 
 const REPO_URL = 'https://github.com/DevSecNinja/grip-visualizer';
 
@@ -55,7 +55,9 @@ const VIEWS = [
 ];
 
 export default function App() {
-  const [lang, setLang] = useState('nl');
+  const [lang, setLang] = useState(() =>
+    langFromSearch(typeof window === 'undefined' ? '' : window.location.search)
+  );
   const [view, setView] = useState('matrix');
   const [typeFilter, setTypeFilter] = useState(null);
   const [tierFilter, setTierFilter] = useState(null);
@@ -74,6 +76,19 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    // Reflect the active language in the URL so it can be shared as a deep
+    // link. The default language is represented by a clean URL with no
+    // `lang` parameter.
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get(LANG_PARAM);
+    if (current === lang) return;
+    if (lang === DEFAULT_LANG) {
+      if (current === null) return;
+      url.searchParams.delete(LANG_PARAM);
+    } else {
+      url.searchParams.set(LANG_PARAM, lang);
+    }
+    window.history.replaceState(null, '', url);
   }, [lang]);
 
   const selected = selectedCode ? findMeasure(selectedCode) : null;
