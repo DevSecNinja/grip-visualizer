@@ -1,9 +1,15 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App.jsx';
 
 describe('App', () => {
+  afterEach(() => {
+    // Reset any `?lang=` query the app may have written so each test starts
+    // from a clean default-language URL.
+    window.history.replaceState(null, '', '/');
+  });
+
   it('renders the matrix with all six Basis columns by default', () => {
     render(<App />);
     expect(screen.getByRole('region', { name: 'Matrix' })).toBeInTheDocument();
@@ -58,6 +64,25 @@ describe('App', () => {
     render(<App />);
     await user.click(screen.getByRole('button', { name: 'FR' }));
     expect(screen.getByRole('tab', { name: 'Parcours' })).toBeInTheDocument();
+  });
+
+  it('starts in the language requested by the ?lang= URL parameter', () => {
+    window.history.replaceState(null, '', '/?lang=en');
+    render(<App />);
+    expect(screen.getByRole('tab', { name: 'Journey' })).toBeInTheDocument();
+  });
+
+  it('falls back to Dutch for an unknown ?lang= URL parameter', () => {
+    window.history.replaceState(null, '', '/?lang=xx');
+    render(<App />);
+    expect(screen.getByRole('tab', { name: 'Groeitraject' })).toBeInTheDocument();
+  });
+
+  it('reflects the selected language in the URL for sharing', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'FR' }));
+    expect(new URLSearchParams(window.location.search).get('lang')).toBe('fr');
   });
 
   it('renders the Prioritize view with three horizon columns', async () => {
