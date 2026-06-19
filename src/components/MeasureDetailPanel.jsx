@@ -160,6 +160,24 @@ export default function MeasureDetailPanel({
               {item.a5Adds && (
                 <span className="mapping__a5tag">{t(lang, 'a5Badge')}</span>
               )}
+              {localized(item, 'value', lang) && (
+                <p className="mapping__value">
+                  <span className="mapping__value-label">
+                    {t(lang, 'microsoftValue')}:
+                  </span>{' '}
+                  {localized(item, 'value', lang)}
+                  {item.valueUrl && (
+                    <a
+                      className="mapping__value-src"
+                      href={item.valueUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {t(lang, 'valueSource')} ↗
+                    </a>
+                  )}
+                </p>
+              )}
               {item.docsUrl && (
                 <a
                   className="mapping__link"

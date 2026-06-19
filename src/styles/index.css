@@ -727,6 +727,27 @@ body {
   border-radius: 999px;
   padding: 2px 9px;
 }
+.mapping__value {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft, #444);
+}
+.mapping__value-label {
+  font-weight: 700;
+  color: var(--a5);
+}
+.mapping__value-src {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+.mapping__value-src:hover {
+  text-decoration: underline;
+}
 .mapping__link {
   font-size: 12.5px;
   font-weight: 600;
@@ -2112,6 +2133,12 @@ body {
     font-size: 8.5pt;
     color: #5a6478;
     word-break: break-all;
+  }
+  .print-mapping__value {
+    width: 100%;
+    font-size: 9pt;
+    color: #2f3645;
+    line-height: 1.4;
   }
   .print-standards__controls {
     font-size: 9.5pt;

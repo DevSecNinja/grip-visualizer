@@ -24,6 +24,15 @@ describe('App', () => {
     expect(within(panel).getByText('Conditional Access')).toBeInTheDocument();
   });
 
+  it('shows the Microsoft value statement for a mapped product', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: /T11/ }));
+    const panel = screen.getByRole('complementary');
+    expect(within(panel).getAllByText('Microsoft-meerwaarde:').length).toBeGreaterThan(0);
+    expect(within(panel).getByText(/5 MB per gebruiker per dag/)).toBeInTheDocument();
+  });
+
   it('shows the standards mapping for a mapped measure', async () => {
     const user = userEvent.setup();
     render(<App />);
