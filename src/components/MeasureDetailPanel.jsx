@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { t } from '../i18n/strings.js';
 import {
   localized,
@@ -7,10 +8,26 @@ import {
 } from '../data/grip.js';
 import LicenseBadge from './LicenseBadge.jsx';
 
+// Breakpoint at which the layout switches to a single column (matches CSS).
+const MOBILE_BREAKPOINT = 1080;
+
 export default function MeasureDetailPanel({ measure, lang, onClose }) {
+  const panelRef = useRef(null);
+
+  useEffect(() => {
+    if (
+      measure &&
+      panelRef.current &&
+      typeof panelRef.current.scrollIntoView === 'function' &&
+      window.innerWidth <= MOBILE_BREAKPOINT
+    ) {
+      panelRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [measure]);
+
   if (!measure) {
     return (
-      <aside className="detail detail--empty" aria-live="polite">
+      <aside ref={panelRef} className="detail detail--empty" aria-live="polite">
         <h2 className="detail__empty-title">{t(lang, 'selectMeasure')}</h2>
         <p className="detail__empty-hint">{t(lang, 'selectMeasureHint')}</p>
       </aside>
@@ -26,7 +43,7 @@ export default function MeasureDetailPanel({ measure, lang, onClose }) {
     measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
 
   return (
-    <aside className="detail" aria-live="polite">
+    <aside ref={panelRef} className="detail" aria-live="polite">
       <header className="detail__head">
         <div className="detail__head-meta">
           <span className="detail__code">{measure.code}</span>
