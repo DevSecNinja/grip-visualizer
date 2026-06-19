@@ -159,6 +159,7 @@ export default function MeasureDetailPanel({
                   tier={item.tier}
                   a5Adds={item.a5Adds}
                   addOn={item.addOn}
+                  standalone={item.standalone}
                   lang={lang}
                 />
               </div>

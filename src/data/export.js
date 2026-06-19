@@ -100,9 +100,13 @@ function measureMarkdown(measure, lang) {
     lines.push('');
   } else {
     measure.microsoft.forEach((ms) => {
-      const tierLabel = ms.addOn
-        ? t(lang, 'addOnBadge')
-        : `${ms.tier}${ms.a5Adds ? '+' : ''}`;
+      const addOnLabel = ms.addOn ? t(lang, 'addOnBadge') : '';
+      const tierLabel =
+        ms.addOn && ms.standalone
+          ? addOnLabel
+          : ms.addOn
+            ? `${ms.tier} + ${addOnLabel}`
+            : `${ms.tier}${ms.a5Adds ? '+' : ''}`;
       const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
       lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
       const value = localized(ms, 'value', lang);
@@ -276,13 +280,16 @@ function mappingRuns(measure, lang) {
         options: { bold: true, fontSize: 11, color: COLORS.ink },
       });
       runs.push({
-        text: ms.addOn
-          ? `  [${t(lang, 'addOnBadge')}]`
-          : `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
+        text:
+          ms.addOn && ms.standalone
+            ? `  [${t(lang, 'addOnBadge')}]`
+            : ms.addOn
+              ? `  [${ms.tier} + ${t(lang, 'addOnBadge')}]`
+              : `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
         options: {
           bold: true,
           fontSize: 10,
-          color: ms.addOn ? COLORS.addon : tierColor(ms.tier),
+          color: ms.addOn && ms.standalone ? COLORS.addon : tierColor(ms.tier),
           breakLine: true,
         },
       });

@@ -95,16 +95,17 @@ export default function PrintDocument({ lang }) {
                   {measure.microsoft.map((item) => (
                     <li className="print-mapping__item" key={item.name}>
                       <span className="print-mapping__name">{item.name}</span>
-                      {item.addOn ? (
-                        <span className="print-page__tier print-page__tier--addon">
-                          {t(lang, 'addOnBadge')}
-                        </span>
-                      ) : (
+                      {!(item.addOn && item.standalone) && (
                         <span
                           className={`print-page__tier print-page__tier--${item.tier.toLowerCase()}`}
                         >
                           {item.tier}
-                          {item.a5Adds ? '+' : ''}
+                          {item.a5Adds && !item.addOn ? '+' : ''}
+                        </span>
+                      )}
+                      {item.addOn && (
+                        <span className="print-page__tier print-page__tier--addon">
+                          {t(lang, 'addOnBadge')}
                         </span>
                       )}
                       {item.docsUrl && (
