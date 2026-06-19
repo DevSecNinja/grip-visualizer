@@ -2,9 +2,17 @@ import { BASIS_LEVELS, measuresByBasis, highestTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 import MeasureCard from './MeasureCard.jsx';
 
-export default function JourneyView({ lang, selectedCode, onSelect, typeFilter, tierFilter }) {
+export default function JourneyView({
+  lang,
+  selectedCode,
+  onSelect,
+  typeFilter,
+  tierFilter,
+  getAssessmentStatus,
+}) {
   const isDimmed = (m) =>
-    (typeFilter && m.type !== typeFilter) || (tierFilter && highestTier(m) !== tierFilter);
+    (typeFilter && m.type !== typeFilter) ||
+    (tierFilter && highestTier(m) !== tierFilter);
 
   return (
     <div className="journey" role="region" aria-label={t(lang, 'viewJourney')}>
@@ -34,6 +42,7 @@ export default function JourneyView({ lang, selectedCode, onSelect, typeFilter, 
                     selected={m.code === selectedCode}
                     dimmed={isDimmed(m)}
                     onSelect={onSelect}
+                    status={getAssessmentStatus ? getAssessmentStatus(m.code) : null}
                   />
                 ))}
               </div>

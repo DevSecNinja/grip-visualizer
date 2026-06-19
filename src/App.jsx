@@ -5,7 +5,9 @@ import JourneyView from './components/JourneyView.jsx';
 import ValueA3A5View from './components/ValueA3A5View.jsx';
 import PrioritizeView from './components/PrioritizeView.jsx';
 import MeasureDetailPanel from './components/MeasureDetailPanel.jsx';
+import AssessmentScorecard from './components/AssessmentScorecard.jsx';
 import { findMeasure, getMeta } from './data/grip.js';
+import { useAssessment } from './data/assessment.js';
 import { t } from './i18n/strings.js';
 
 const REPO_URL = 'https://github.com/DevSecNinja/grip-visualizer';
@@ -49,6 +51,17 @@ export default function App() {
   const [typeFilter, setTypeFilter] = useState(null);
   const [tierFilter, setTierFilter] = useState(null);
   const [selectedCode, setSelectedCode] = useState(null);
+  const [assessmentMode, setAssessmentMode] = useState(false);
+
+  const {
+    state: assessmentState,
+    setStatus,
+    setNote,
+    reset,
+    importMeasures,
+    getStatus,
+    getEntry,
+  } = useAssessment();
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -68,9 +81,20 @@ export default function App() {
         views={VIEWS}
         view={view}
         setView={setView}
+        assessmentMode={assessmentMode}
+        onToggleAssessment={() => setAssessmentMode((v) => !v)}
       />
 
       <p className="app__hint">{t(lang, activeView.hint)}</p>
+
+      {assessmentMode && (
+        <AssessmentScorecard
+          lang={lang}
+          state={assessmentState}
+          onImport={importMeasures}
+          onReset={reset}
+        />
+      )}
 
       <div className="app__body">
         <main className="app__main">
@@ -80,6 +104,7 @@ export default function App() {
             onSelect={setSelectedCode}
             typeFilter={filterable ? typeFilter : null}
             tierFilter={filterable ? tierFilter : null}
+            getAssessmentStatus={assessmentMode ? getStatus : null}
           />
         </main>
 
@@ -87,6 +112,11 @@ export default function App() {
           measure={selected}
           lang={lang}
           onClose={() => setSelectedCode(null)}
+          assessmentEntry={
+            assessmentMode && selected ? getEntry(selected.code) : undefined
+          }
+          onStatusChange={assessmentMode ? setStatus : undefined}
+          onNoteChange={assessmentMode ? setNote : undefined}
         />
       </div>
 
