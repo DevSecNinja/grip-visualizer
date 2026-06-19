@@ -2,7 +2,7 @@ import PptxGenJS from 'pptxgenjs';
 import {
   getMeasures,
   localized,
-  highestTier,
+  measureTier,
   standardsFor,
   localizedStandardsWhy,
   localizedGuidance,
@@ -63,7 +63,9 @@ function measureMarkdown(measure, lang) {
   lines.push(`## ${measure.code} — ${title}`);
   lines.push('');
   lines.push(
-    `**${typeLabel}** · ${t(lang, 'basis')} ${measure.basis} · ${highestTier(measure)}`
+    `**${typeLabel}** · ${t(lang, 'basis')} ${measure.basis} · ${
+      measureTier(measure) === 'ADDON' ? t(lang, 'addOnBadge') : measureTier(measure)
+    }`
   );
   lines.push('');
   lines.push(localized(measure, 'summary', lang));
@@ -444,7 +446,9 @@ export async function exportPPTX(lang) {
     slide.background = { color: COLORS.surface };
 
     const typeColor = measure.type === 'T' ? COLORS.tech : COLORS.org;
-    const tier = highestTier(measure);
+    const tier = measureTier(measure);
+    const isAddOn = tier === 'ADDON';
+    const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
 
     // Top accent bar
     slide.addShape(pptx.ShapeType.rect, {
@@ -488,7 +492,7 @@ export async function exportPPTX(lang) {
     );
 
     // Tier badge (top-right)
-    slide.addText(tier, {
+    slide.addText(tierLabel, {
       x: 12.4,
       y: 0.2,
       w: 0.6,
@@ -496,7 +500,7 @@ export async function exportPPTX(lang) {
       fontSize: 11,
       bold: true,
       color: COLORS.surface,
-      fill: { color: tierColor(tier) },
+      fill: { color: isAddOn ? COLORS.addon : tierColor(tier) },
       align: 'center',
       valign: 'middle',
       shape: pptx.ShapeType.roundRect,

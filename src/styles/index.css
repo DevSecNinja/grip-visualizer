@@ -361,6 +361,9 @@ body {
 .measure-card__tier--a5 {
   background: var(--a5);
 }
+.measure-card__tier--addon {
+  background: #b45309;
+}
 .measure-card__title {
   font-size: 12.5px;
   line-height: 1.35;
@@ -1473,6 +1476,9 @@ body {
 }
 .chip__tier--a5 {
   background: var(--a5);
+}
+.chip__tier--addon {
+  background: #b45309;
 }
 
 /* View 1 — A3 vs A5 */

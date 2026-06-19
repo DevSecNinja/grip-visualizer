@@ -925,6 +925,16 @@
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/sharepoint/retention-and-deletion",
           "a5Adds": false
+        },
+        {
+          "name": "Microsoft Purview — Auto-apply retention labels",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically",
+          "a5Adds": true,
+          "value_nl": "Past retentielabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt bewaring en verwijdering consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen.",
+          "value_en": "Automatically applies retention labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of relying on manual labeling per item. This enforces retention and deletion consistently and at scale, including on existing content, without users having to choose labels.",
+          "value_fr": "Applique automatiquement des étiquettes de rétention en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La rétention et la suppression sont ainsi appliquées de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes.",
+          "valueUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically"
         }
       ],
       "standards": {
@@ -1008,6 +1018,16 @@
           "value_en": "Evaluates every sign-in against signals such as user, device, location and risk, then grants, blocks or requires extra verification (e.g. MFA) based on policy.",
           "value_fr": "Évalue chaque connexion selon des signaux tels que l’utilisateur, l’appareil, l’emplacement et le risque, puis autorise, bloque ou exige une vérification supplémentaire (p. ex. MFA) selon la stratégie.",
           "valueUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview"
+        },
+        {
+          "name": "Microsoft Entra ID Protection — Risk-based Conditional Access",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-policies",
+          "a5Adds": true,
+          "value_nl": "Voegt realtime risicodetectie toe aan toegang op afstand: Entra ID Protection berekent gebruikers- en aanmeldingsrisico op basis van Microsofts dreigingsinformatie (bv. onmogelijke reizen, anonieme IP's, gelekte inloggegevens). Risk-based Conditional Access dwingt dan automatisch stappen af zoals MFA of een wachtwoordreset bij verhoogd risico, of blokkeert riskante aanmeldingen — zonder dat een beheerder handmatig hoeft in te grijpen.",
+          "value_en": "Adds real-time risk detection to remote access: Entra ID Protection scores user and sign-in risk using Microsoft's threat intelligence (e.g. impossible travel, anonymous IPs, leaked credentials). Risk-based Conditional Access then automatically enforces steps such as MFA or a password reset when risk is elevated, or blocks risky sign-ins — without an admin having to intervene manually.",
+          "value_fr": "Ajoute une détection des risques en temps réel à l'accès à distance : Entra ID Protection évalue le risque d'utilisateur et de connexion à l'aide du renseignement sur les menaces de Microsoft (p. ex. voyage impossible, adresses IP anonymes, identifiants divulgués). L'accès conditionnel basé sur le risque applique alors automatiquement des étapes telles que la MFA ou la réinitialisation du mot de passe en cas de risque élevé, ou bloque les connexions à risque — sans intervention manuelle d'un administrateur.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-protection/overview-identity-protection"
         }
       ]
     },
@@ -1268,6 +1288,16 @@
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/remote-actions/devices-wipe",
           "a5Adds": false
+        },
+        {
+          "name": "Microsoft Purview — Auto-apply retention labels",
+          "tier": "A5",
+          "docsUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically",
+          "a5Adds": true,
+          "value_nl": "Past bewaar- en vernietigingslabels automatisch toe op basis van inhoud — getrainde classifiers, gevoelige-informatietypes of trefwoorden/zinnen — in plaats van handmatig per item. Zo wordt het bewaar- en vernietigingsbeleid consistent en op schaal afgedwongen, ook op bestaande inhoud, zonder dat gebruikers labels hoeven te kiezen.",
+          "value_en": "Automatically applies retention and disposal labels based on content — trainable classifiers, sensitive information types or keywords/phrases — instead of manual labeling per item. This enforces the retention and destruction policy consistently and at scale, including on existing content, without users having to choose labels.",
+          "value_fr": "Applique automatiquement des étiquettes de conservation et de destruction en fonction du contenu — classifieurs entraînables, types d'informations sensibles ou mots-clés/expressions — au lieu d'un étiquetage manuel par élément. La politique de conservation et de destruction est ainsi appliquée de manière cohérente et à grande échelle, y compris sur le contenu existant, sans que les utilisateurs aient à choisir des étiquettes.",
+          "valueUrl": "https://learn.microsoft.com/purview/apply-retention-labels-automatically"
         }
       ]
     },
