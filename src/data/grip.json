@@ -95,7 +95,11 @@
           "name": "Privileged Identity Management (PIM)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Vervangt permanente beheerdersrechten door just-in-time, tijdsgebonden en op goedkeuring gebaseerde activering, zodat gebruikers verhoogde rechten alleen krijgen wanneer nodig.",
+          "value_en": "Replaces standing admin rights with just-in-time, time-bound and approval-based activation, so users only hold elevated privileges when they actually need them.",
+          "value_fr": "Remplace les droits d’administration permanents par une activation juste-à-temps, limitée dans le temps et soumise à approbation, afin que les utilisateurs ne disposent de privilèges élevés que lorsqu’ils en ont besoin.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure"
         }
       ],
       "standards": {
@@ -125,7 +129,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -145,7 +153,11 @@
           "name": "Microsoft Purview Compliance Manager — Improvement actions",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-improvement-actions",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Vertaalt regelgeving naar concrete, geprioriteerde verbeteracties met implementatie- en testinstructies, en telt elke voltooide actie mee in je compliancescore.",
+          "value_en": "Translates regulations into concrete, prioritized improvement actions with implementation and testing guidance, and counts each completed action toward your compliance score.",
+          "value_fr": "Traduit les réglementations en actions d’amélioration concrètes et priorisées avec des instructions d’implémentation et de test, et comptabilise chaque action réalisée dans votre score de conformité.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager-improvement-actions"
         },
         {
           "name": "Microsoft Planner / Microsoft 365",
@@ -183,7 +195,11 @@
           "name": "Defender for Endpoint — Device inventory",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Bouwt automatisch een actuele inventaris van endpoints met hun risiconiveau, blootgestelde kwetsbaarheden en beveiligingsstatus.",
+          "value_en": "Automatically builds a live inventory of endpoints with their risk level, exposed vulnerabilities and security posture.",
+          "value_fr": "Construit automatiquement un inventaire à jour des points de terminaison avec leur niveau de risque, leurs vulnérabilités exposées et leur posture de sécurité.",
+          "valueUrl": "https://learn.microsoft.com/defender-endpoint/machines-view-overview"
         }
       ]
     },
@@ -209,13 +225,21 @@
           "name": "Defender for Cloud Apps — App discovery",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-cloud-apps/discovered-apps",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Ontdekt schaduw-IT door cloud-apps in gebruik in kaart te brengen en beoordeelt hun risico, zodat je niet-goedgekeurde diensten kunt opvolgen of blokkeren.",
+          "value_en": "Discovers shadow IT by mapping the cloud apps in use and scoring their risk, so you can follow up on or block unsanctioned services.",
+          "value_fr": "Détecte le shadow IT en cartographiant les applications cloud utilisées et en évaluant leur risque, afin de suivre ou bloquer les services non approuvés.",
+          "valueUrl": "https://learn.microsoft.com/defender-cloud-apps/what-is-defender-for-cloud-apps"
         },
         {
           "name": "Microsoft Intune — Discovered apps",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/apps/app-discovered-apps",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Inventariseert automatisch alle apps die op beheerde toestellen zijn geïnstalleerd, als basis voor opvolging van niet-goedgekeurde of kwetsbare software.",
+          "value_en": "Automatically inventories all apps installed on managed devices, as a basis for following up on unsanctioned or vulnerable software.",
+          "value_fr": "Inventorie automatiquement toutes les applications installées sur les appareils gérés, comme base pour le suivi des logiciels non approuvés ou vulnérables.",
+          "valueUrl": "https://learn.microsoft.com/mem/intune/apps/app-discovered-apps"
         }
       ]
     },
@@ -241,13 +265,21 @@
           "name": "Conditional Access",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Beoordeelt elke aanmelding op signalen zoals gebruiker, apparaat, locatie en risico, en verleent, blokkeert of vereist extra controle (bv. MFA) op basis van beleid.",
+          "value_en": "Evaluates every sign-in against signals such as user, device, location and risk, then grants, blocks or requires extra verification (e.g. MFA) based on policy.",
+          "value_fr": "Évalue chaque connexion selon des signaux tels que l’utilisateur, l’appareil, l’emplacement et le risque, puis autorise, bloque ou exige une vérification supplémentaire (p. ex. MFA) selon la stratégie.",
+          "valueUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview"
         },
         {
           "name": "Microsoft Entra ID Protection — Risk-based Conditional Access",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Detecteert risicovolle aanmeldingen en gebruikers met machine learning en kan automatisch reageren — bijvoorbeeld MFA afdwingen of de toegang blokkeren bij verhoogd risico.",
+          "value_en": "Detects risky sign-ins and users with machine learning and can respond automatically — for example enforcing MFA or blocking access when risk is elevated.",
+          "value_fr": "Détecte les connexions et utilisateurs à risque grâce au machine learning et peut réagir automatiquement — par exemple imposer la MFA ou bloquer l’accès en cas de risque élevé.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-protection/overview-identity-protection"
         }
       ],
       "references": [
@@ -328,13 +360,21 @@
           "name": "Microsoft Priva — Subject Rights Requests",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Automatiseert het afhandelen van verzoeken van betrokkenen (inzageverzoeken/DSR’s): vinden, beoordelen en veilig exporteren van persoonsgegevens over Microsoft 365 heen.",
+          "value_en": "Automates handling of data subject rights requests (DSRs): finding, reviewing and securely exporting personal data across Microsoft 365.",
+          "value_fr": "Automatise le traitement des demandes des personnes concernées (DSR) : recherche, examen et export sécurisé des données personnelles dans Microsoft 365.",
+          "valueUrl": "https://learn.microsoft.com/privacy/priva/subject-rights-requests"
         },
         {
           "name": "Microsoft Purview — eDiscovery",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/ediscovery",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Identificeert, bewaart (legal hold), doorzoekt en exporteert inhoud over Microsoft 365 heen voor juridische zaken en onderzoeken.",
+          "value_en": "Identifies, preserves (legal hold), searches and exports content across Microsoft 365 for legal cases and investigations.",
+          "value_fr": "Identifie, conserve (mise en attente pour litige), recherche et exporte le contenu dans Microsoft 365 pour les affaires juridiques et les investigations.",
+          "valueUrl": "https://learn.microsoft.com/purview/ediscovery"
         }
       ]
     },
@@ -354,7 +394,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -374,13 +418,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {
@@ -559,13 +611,21 @@
           "name": "Privileged Identity Management (PIM)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Vervangt permanente beheerdersrechten door just-in-time, tijdsgebonden en op goedkeuring gebaseerde activering, zodat gebruikers verhoogde rechten alleen krijgen wanneer nodig.",
+          "value_en": "Replaces standing admin rights with just-in-time, time-bound and approval-based activation, so users only hold elevated privileges when they actually need them.",
+          "value_fr": "Remplace les droits d’administration permanents par une activation juste-à-temps, limitée dans le temps et soumise à approbation, afin que les utilisateurs ne disposent de privilèges élevés que lorsqu’ils en ont besoin.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-configure"
         },
         {
           "name": "Microsoft Entra ID Governance — Access reviews",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Automatiseert terugkerende toegangsbeoordelingen zodat eigenaars of gebruikers periodiek bevestigen of toegang tot apps, groepen en rollen nog nodig is.",
+          "value_en": "Automates recurring access reviews so owners or users periodically confirm whether access to apps, groups and roles is still needed.",
+          "value_fr": "Automatise les revues d’accès récurrentes afin que les propriétaires ou utilisateurs confirment périodiquement si l’accès aux applications, groupes et rôles reste nécessaire.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-governance/access-reviews-overview"
         }
       ]
     },
@@ -585,7 +645,11 @@
           "name": "BitLocker via Microsoft Intune",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Schakelt stille schijfversleuteling met BitLocker in op beheerde Windows-toestellen en bewaart de herstelsleutels automatisch in Microsoft Entra ID.",
+          "value_en": "Enables silent BitLocker drive encryption on managed Windows devices and automatically escrows the recovery keys in Microsoft Entra ID.",
+          "value_fr": "Active le chiffrement de disque silencieux BitLocker sur les appareils Windows gérés et sauvegarde automatiquement les clés de récupération dans Microsoft Entra ID.",
+          "valueUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices"
         }
       ]
     },
@@ -605,7 +669,11 @@
           "name": "Microsoft Entra ID Governance — Lifecycle Workflows",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Automatiseert het in-, door- en uitstroomproces (joiner/mover/leaver) zodat toegang automatisch wordt toegekend, aangepast of ingetrokken bij wijzigingen in dienstverband.",
+          "value_en": "Automates the joiner/mover/leaver process so access is automatically granted, adjusted or revoked as people join, change roles or leave.",
+          "value_fr": "Automatise le processus d’arrivée/mobilité/départ afin que l’accès soit automatiquement octroyé, ajusté ou révoqué lors des changements de statut.",
+          "valueUrl": "https://learn.microsoft.com/entra/id-governance/what-are-lifecycle-workflows"
         },
         {
           "name": "Microsoft Entra ID — Dynamic groups & provisioning (SDS)",
@@ -657,7 +725,11 @@
           "name": "Defender for Endpoint Plan 2 (EDR)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Voegt endpoint detection and response toe met gedragsgebaseerde detectie en geautomatiseerd onderzoek en herstel van bedreigingen op Windows, macOS, Linux, iOS en Android.",
+          "value_en": "Adds endpoint detection and response with behavior-based detection and automated investigation and remediation of threats across Windows, macOS, Linux, iOS and Android.",
+          "value_fr": "Ajoute la détection et réponse sur les points de terminaison avec détection comportementale et investigation et correction automatisées des menaces sur Windows, macOS, Linux, iOS et Android.",
+          "valueUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint"
         }
       ]
     },
@@ -677,7 +749,11 @@
           "name": "Microsoft Intune — Windows Update for Business",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/windows-update-for-business-configure",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Beheert Windows-updates centraal via update-ringen en beleid, zodat beveiligingsupdates gefaseerd en gecontroleerd worden uitgerold op beheerde toestellen.",
+          "value_en": "Centrally manages Windows updates through update rings and policies, so security updates roll out to managed devices in a phased, controlled way.",
+          "value_fr": "Gère de manière centralisée les mises à jour Windows via des anneaux de mise à jour et des stratégies, afin que les mises à jour de sécurité soient déployées de façon progressive et contrôlée sur les appareils gérés.",
+          "valueUrl": "https://learn.microsoft.com/mem/intune/protect/windows-update-for-business-configure"
         }
       ]
     },
@@ -697,13 +773,21 @@
           "name": "Microsoft Defender XDR — Incidents",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Correleert signalen uit e-mail, identiteiten, endpoints en cloud-apps automatisch tot één incident met het volledige aanvalsverhaal, wat losse alerts en handmatig correleren vermindert.",
+          "value_en": "Automatically correlates signals from email, identities, endpoints and cloud apps into a single incident with the full attack story, reducing isolated alerts and manual correlation.",
+          "value_fr": "Corrèle automatiquement les signaux de la messagerie, des identités, des points de terminaison et des applications cloud en un seul incident retraçant toute l’attaque, réduisant les alertes isolées et la corrélation manuelle.",
+          "valueUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview"
         },
         {
           "name": "Microsoft Purview — Audit (Standard)",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/audit-solutions-overview",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Standaard ingeschakeld en doorzoekbaar via de Purview-portal: duizenden gebruikers- en beheeractiviteiten worden 180 dagen bewaard voor onderzoek en opvolging.",
+          "value_en": "Enabled by default and searchable in the Purview portal: thousands of user and admin activities are retained for 180 days for investigation and follow-up.",
+          "value_fr": "Activé par défaut et interrogeable dans le portail Purview : des milliers d’activités utilisateur et administrateur sont conservées pendant 180 jours pour l’investigation et le suivi.",
+          "valueUrl": "https://learn.microsoft.com/purview/audit-solutions-overview"
         }
       ]
     },
@@ -723,7 +807,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -743,13 +831,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {
@@ -789,7 +885,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -809,7 +909,11 @@
           "name": "Microsoft Purview Information Protection — Sensitivity labels",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/sensitivity-labels",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Classificeert en labelt documenten, e-mails en sites en past bescherming zoals versleuteling toe — handmatig, op basis van regels of automatisch (auto-labeling).",
+          "value_en": "Classifies and labels documents, emails and sites and applies protection such as encryption — manually, by rule, or automatically (auto-labeling).",
+          "value_fr": "Classe et étiquette les documents, e-mails et sites et applique une protection comme le chiffrement — manuellement, par règle ou automatiquement (étiquetage automatique).",
+          "valueUrl": "https://learn.microsoft.com/purview/sensitivity-labels"
         }
       ]
     },
@@ -829,7 +933,11 @@
           "name": "Microsoft Purview — Data Lifecycle Management (retention)",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Past retentielabels en -beleid toe om inhoud automatisch te bewaren zolang nodig en daarna te verwijderen, op basis van bewaartermijnen.",
+          "value_en": "Applies retention labels and policies to automatically keep content for as long as required and delete it afterwards, based on retention periods.",
+          "value_fr": "Applique des étiquettes et stratégies de rétention pour conserver automatiquement le contenu aussi longtemps que nécessaire puis le supprimer, selon les durées de conservation.",
+          "valueUrl": "https://learn.microsoft.com/purview/data-lifecycle-management"
         },
         {
           "name": "SharePoint/OneDrive retention & versioning",
@@ -907,13 +1015,21 @@
           "name": "Microsoft Entra Private Access",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/concept-private-access",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Biedt zero-trust toegang per applicatie (ZTNA) zodat gebruikers alleen specifieke interne apps bereiken in plaats van het hele netwerk, zonder klassieke VPN.",
+          "value_en": "Provides per-application zero-trust access (ZTNA) so users reach only specific internal apps instead of the whole network, without a classic VPN.",
+          "value_fr": "Fournit un accès zero-trust par application (ZTNA) afin que les utilisateurs n’atteignent que des applications internes spécifiques plutôt que tout le réseau, sans VPN classique.",
+          "valueUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access"
         },
         {
           "name": "Conditional Access",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Beoordeelt elke aanmelding op signalen zoals gebruiker, apparaat, locatie en risico, en verleent, blokkeert of vereist extra controle (bv. MFA) op basis van beleid.",
+          "value_en": "Evaluates every sign-in against signals such as user, device, location and risk, then grants, blocks or requires extra verification (e.g. MFA) based on policy.",
+          "value_fr": "Évalue chaque connexion selon des signaux tels que l’utilisateur, l’appareil, l’emplacement et le risque, puis autorise, bloque ou exige une vérification supplémentaire (p. ex. MFA) selon la stratégie.",
+          "valueUrl": "https://learn.microsoft.com/entra/identity/conditional-access/overview"
         }
       ]
     },
@@ -953,7 +1069,11 @@
           "name": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/mdo-about",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Beschermt e-mail en samenwerking met Safe Links en Safe Attachments, die kwaadaardige URL’s en bijlagen detoneren en blokkeren vóór ze de gebruiker bereiken.",
+          "value_en": "Protects email and collaboration with Safe Links and Safe Attachments, which detonate and block malicious URLs and attachments before they reach the user.",
+          "value_fr": "Protège la messagerie et la collaboration avec Liens fiables et Pièces jointes fiables, qui font détoner et bloquent les URL et pièces jointes malveillantes avant qu’elles n’atteignent l’utilisateur.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/mdo-about"
         },
         {
           "name": "Defender SmartScreen / Web content filtering",
@@ -985,7 +1105,11 @@
           "name": "Content explorer / Activity explorer",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/data-classification-content-explorer",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Geeft inzicht in waar gevoelige en gelabelde gegevens zich bevinden (Content explorer) en welke acties erop worden uitgevoerd (Activity explorer), als basis voor databescherming.",
+          "value_en": "Shows where sensitive and labeled data resides (Content explorer) and what actions are taken on it (Activity explorer), as a basis for data protection.",
+          "value_fr": "Montre où se trouvent les données sensibles et étiquetées (Explorateur de contenu) et quelles actions y sont effectuées (Explorateur d’activités), comme base de la protection des données.",
+          "valueUrl": "https://learn.microsoft.com/purview/data-classification-content-explorer"
         }
       ]
     },
@@ -1005,7 +1129,11 @@
           "name": "Microsoft Defender Vulnerability Management",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-vulnerability-management/defender-vulnerability-management",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Ontdekt continu en agentloos software, certificaten en kwetsbaarheden en prioriteert ze risicogebaseerd, ook wanneer apparaten niet met het bedrijfsnetwerk zijn verbonden.",
+          "value_en": "Continuously and agentlessly discovers software, certificates and vulnerabilities and prioritizes them by risk, even when devices aren’t connected to the corporate network.",
+          "value_fr": "Découvre en continu et sans agent les logiciels, certificats et vulnérabilités et les priorise selon le risque, même lorsque les appareils ne sont pas connectés au réseau d’entreprise.",
+          "valueUrl": "https://learn.microsoft.com/defender-vulnerability-management/defender-vulnerability-management"
         }
       ]
     },
@@ -1025,7 +1153,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -1045,13 +1177,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {
@@ -1085,13 +1225,21 @@
           "name": "Microsoft Priva — Privacy Risk Management",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/privacy/priva/risk-management",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Detecteert privacyrisico’s zoals overmatige blootstelling, data-hoarding en overdracht van persoonsgegevens en biedt beleidsregels om ze te beperken.",
+          "value_en": "Detects privacy risks such as data overexposure, hoarding and transfers of personal data and offers policies to mitigate them.",
+          "value_fr": "Détecte les risques de confidentialité tels que la surexposition, l’accumulation et les transferts de données personnelles et propose des stratégies pour les atténuer.",
+          "valueUrl": "https://learn.microsoft.com/privacy/priva/risk-management"
         },
         {
           "name": "Microsoft Purview — Records management",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/records-management",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Past retentielabels toe die items als record markeren, zodat ze niet kunnen worden gewijzigd of verwijderd tijdens de bewaarperiode, met bewijs van vernietiging achteraf.",
+          "value_en": "Applies retention labels that mark items as records so they can’t be altered or deleted during the retention period, with proof of disposal afterwards.",
+          "value_fr": "Applique des étiquettes de rétention qui marquent les éléments comme enregistrements afin qu’ils ne puissent être modifiés ou supprimés pendant la période de rétention, avec preuve d’élimination ensuite.",
+          "valueUrl": "https://learn.microsoft.com/purview/records-management"
         }
       ]
     },
@@ -1111,7 +1259,11 @@
           "name": "Microsoft Purview Compliance Manager — Assessments",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-assessments",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Bevat kant-en-klare assessmentsjablonen voor talrijke normen en regelgevingen waarmee je je naleving meet en opvolgt tegenover een specifiek kader.",
+          "value_en": "Includes prebuilt assessment templates for numerous standards and regulations to measure and track your compliance against a specific framework.",
+          "value_fr": "Inclut des modèles d’évaluation prêts à l’emploi pour de nombreuses normes et réglementations afin de mesurer et suivre votre conformité à un référentiel précis.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager-assessments"
         }
       ]
     },
@@ -1131,7 +1283,11 @@
           "name": "Microsoft Purview — Data Lifecycle Management",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/data-lifecycle-management",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Past retentielabels en -beleid toe om inhoud automatisch te bewaren zolang nodig en daarna te verwijderen, op basis van bewaartermijnen.",
+          "value_en": "Applies retention labels and policies to automatically keep content for as long as required and delete it afterwards, based on retention periods.",
+          "value_fr": "Applique des étiquettes et stratégies de rétention pour conserver automatiquement le contenu aussi longtemps que nécessaire puis le supprimer, selon les durées de conservation.",
+          "valueUrl": "https://learn.microsoft.com/purview/data-lifecycle-management"
         },
         {
           "name": "Microsoft Intune — Device wipe / retire",
@@ -1157,7 +1313,11 @@
           "name": "Microsoft Entra — Global Secure Access (segmentation)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Segmenteert toegang via zero-trust netwerktoegang (ZTNA) zodat gebruikers per applicatie verbinding maken in plaats van met het hele netwerk, zonder klassieke VPN.",
+          "value_en": "Segments access through zero-trust network access (ZTNA) so users connect on a per-application basis instead of to the whole network, without a classic VPN.",
+          "value_fr": "Segmente l’accès via l’accès réseau zero-trust (ZTNA) afin que les utilisateurs se connectent par application plutôt qu’à tout le réseau, sans VPN classique.",
+          "valueUrl": "https://learn.microsoft.com/entra/global-secure-access/overview-what-is-global-secure-access"
         }
       ]
     },
@@ -1177,7 +1337,11 @@
           "name": "Microsoft EU Data Boundary",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/privacy/eudb/eu-data-boundary-learn",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Slaat klant- en persoonsgegevens van Microsoft 365 op en verwerkt ze binnen de EU- en EVA-regio’s, wat helpt bij Europese vereisten rond gegevenslokalisatie.",
+          "value_en": "Stores and processes Microsoft 365 customer and personal data within the EU and EFTA regions, helping meet European data-localization requirements.",
+          "value_fr": "Stocke et traite les données client et personnelles de Microsoft 365 au sein des régions de l’UE et de l’AELE, ce qui aide à répondre aux exigences européennes de localisation des données.",
+          "valueUrl": "https://learn.microsoft.com/privacy/eudb/eu-data-boundary-learn"
         }
       ]
     },
@@ -1197,7 +1361,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -1217,13 +1385,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {
@@ -1257,13 +1433,21 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         },
         {
           "name": "Microsoft Secure Score",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/defender-xdr/microsoft-secure-score",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Geeft een meetbare beveiligingsscore met geprioriteerde, concrete verbeteracties en laat je de voortgang in de tijd en t.o.v. vergelijkbare organisaties volgen.",
+          "value_en": "Provides a measurable security score with prioritized, concrete improvement actions and lets you track progress over time and against comparable organizations.",
+          "value_fr": "Fournit un score de sécurité mesurable avec des actions d’amélioration concrètes et priorisées et permet de suivre la progression dans le temps et par rapport à des organisations comparables.",
+          "valueUrl": "https://learn.microsoft.com/defender-xdr/microsoft-secure-score"
         }
       ]
     },
@@ -1283,7 +1467,11 @@
           "name": "Microsoft Priva",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/privacy/priva/priva-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Helpt privacyrisico’s rond persoonsgegevens proactief beheren en het afhandelen van verzoeken van betrokkenen automatiseren over Microsoft 365 heen.",
+          "value_en": "Helps proactively manage privacy risks around personal data and automate handling of data subject rights requests across Microsoft 365.",
+          "value_fr": "Aide à gérer de manière proactive les risques de confidentialité liés aux données personnelles et à automatiser le traitement des demandes des personnes concernées dans Microsoft 365.",
+          "valueUrl": "https://learn.microsoft.com/privacy/priva/priva-overview"
         }
       ]
     },
@@ -1313,7 +1501,11 @@
           "name": "Microsoft Purview — Audit (Premium)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/audit-premium",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Bewaart auditlogs van Microsoft Entra ID, Exchange, OneDrive en SharePoint standaard één jaar in plaats van 180 dagen, met aangepaste bewaarbeleidsregels tot tien jaar en intelligente inzichten zoals toegang tot mailitems voor forensisch onderzoek.",
+          "value_en": "Retains Microsoft Entra ID, Exchange, OneDrive and SharePoint audit logs for one year by default instead of 180 days, with custom retention policies up to ten years and intelligent insights such as mail-item access events for forensic investigations.",
+          "value_fr": "Conserve par défaut les journaux d’audit Microsoft Entra ID, Exchange, OneDrive et SharePoint pendant un an au lieu de 180 jours, avec des stratégies de rétention personnalisées jusqu’à dix ans et des informations intelligentes comme l’accès aux éléments de courrier pour les investigations.",
+          "valueUrl": "https://learn.microsoft.com/purview/audit-solutions-overview"
         }
       ]
     },
@@ -1333,19 +1525,31 @@
           "name": "BitLocker via Microsoft Intune",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Schakelt stille schijfversleuteling met BitLocker in op beheerde Windows-toestellen en bewaart de herstelsleutels automatisch in Microsoft Entra ID.",
+          "value_en": "Enables silent BitLocker drive encryption on managed Windows devices and automatically escrows the recovery keys in Microsoft Entra ID.",
+          "value_fr": "Active le chiffrement de disque silencieux BitLocker sur les appareils Windows gérés et sauvegarde automatiquement les clés de récupération dans Microsoft Entra ID.",
+          "valueUrl": "https://learn.microsoft.com/mem/intune/protect/encrypt-devices"
         },
         {
           "name": "Microsoft Purview — Encryption with sensitivity labels",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Koppelt versleuteling en gebruiksrechten aan een gevoeligheidslabel, zodat de bescherming met het bestand meereist — ook buiten de organisatie.",
+          "value_en": "Ties encryption and usage rights to a sensitivity label, so the protection travels with the file — even outside the organization.",
+          "value_fr": "Associe le chiffrement et les droits d’utilisation à une étiquette de confidentialité, de sorte que la protection suit le fichier — même en dehors de l’organisation.",
+          "valueUrl": "https://learn.microsoft.com/purview/encryption-sensitivity-labels"
         },
         {
           "name": "Double Key Encryption (DKE)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/double-key-encryption",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Versleutelt de meest gevoelige gegevens met twee sleutels: één bij Microsoft en één die je volledig zelf beheert, zodat Microsoft de inhoud nooit alleen kan ontsleutelen.",
+          "value_en": "Encrypts your most sensitive data with two keys: one held by Microsoft and one you fully control, so Microsoft can never decrypt the content on its own.",
+          "value_fr": "Chiffre vos données les plus sensibles avec deux clés : l’une détenue par Microsoft et l’autre entièrement sous votre contrôle, de sorte que Microsoft ne peut jamais déchiffrer le contenu seul.",
+          "valueUrl": "https://learn.microsoft.com/purview/double-key-encryption"
         }
       ]
     },
@@ -1385,7 +1589,11 @@
           "name": "Microsoft Purview Compliance Manager — DPIA templates",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager-templates",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Biedt assessmentsjablonen rond gegevensbescherming (zoals AVG/GDPR) die helpen om een gegevensbeschermingseffectbeoordeling (DPIA) gestructureerd uit te voeren.",
+          "value_en": "Provides data-protection assessment templates (such as GDPR) that help you carry out a data protection impact assessment (DPIA) in a structured way.",
+          "value_fr": "Fournit des modèles d’évaluation liés à la protection des données (comme le RGPD) qui aident à réaliser une analyse d’impact relative à la protection des données (AIPD) de façon structurée.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager-templates"
         }
       ]
     },
@@ -1425,7 +1633,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -1445,13 +1657,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {
@@ -1485,13 +1705,21 @@
           "name": "Microsoft Defender XDR — Incident response",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Bundelt gecorreleerde alerts in één incident en ondersteunt geautomatiseerd onderzoek en herstel, zodat responsteams sneller de volledige aanval kunnen inperken.",
+          "value_en": "Groups correlated alerts into a single incident and supports automated investigation and remediation, so response teams can contain the full attack faster.",
+          "value_fr": "Regroupe les alertes corrélées en un seul incident et prend en charge l’investigation et la correction automatisées, pour que les équipes de réponse contiennent plus vite l’attaque complète.",
+          "valueUrl": "https://learn.microsoft.com/defender-xdr/incidents-overview"
         },
         {
           "name": "Microsoft Sentinel — SOAR playbooks",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Automatiseert respons met playbooks (Azure Logic Apps) die bij een incident automatisch acties uitvoeren, zoals een account blokkeren of een ticket aanmaken.",
+          "value_en": "Automates response with playbooks (Azure Logic Apps) that run actions automatically on an incident, such as blocking an account or creating a ticket.",
+          "value_fr": "Automatise la réponse avec des playbooks (Azure Logic Apps) qui exécutent automatiquement des actions lors d’un incident, comme bloquer un compte ou créer un ticket.",
+          "valueUrl": "https://learn.microsoft.com/azure/sentinel/automation/automation"
         }
       ]
     },
@@ -1511,7 +1739,11 @@
           "name": "Microsoft Defender XDR — Advanced hunting",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-xdr/advanced-hunting-overview",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Doorzoekt proactief tot 30 dagen ruwe gebeurtenisdata met de KQL-querytaal om bedreigingen en zwakke plekken op te sporen vóór er een alert ontstaat.",
+          "value_en": "Proactively queries up to 30 days of raw event data with the KQL query language to hunt for threats and weak spots before an alert is raised.",
+          "value_fr": "Interroge de manière proactive jusqu’à 30 jours de données d’événements brutes avec le langage KQL pour traquer menaces et faiblesses avant qu’une alerte ne soit déclenchée.",
+          "valueUrl": "https://learn.microsoft.com/defender-xdr/advanced-hunting-overview"
         }
       ]
     },
@@ -1551,7 +1783,11 @@
           "name": "Microsoft Purview Compliance Manager",
           "tier": "A3",
           "docsUrl": "https://learn.microsoft.com/purview/compliance-manager",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Levert een risicogebaseerde compliancescore en kant-en-klare assessmentsjablonen voor courante normen en regelgeving (zoals AVG/GDPR en ISO 27001), met stapsgewijze verbeteracties — inclusief door Microsoft beheerde acties met implementatiedetails en auditresultaten.",
+          "value_en": "Provides a risk-based compliance score and prebuilt assessment templates for common standards and regulations (such as GDPR and ISO 27001), with step-by-step improvement actions — including Microsoft-managed actions with implementation details and audit results.",
+          "value_fr": "Fournit un score de conformité basé sur les risques et des modèles d’évaluation prêts à l’emploi pour les normes et réglementations courantes (RGPD, ISO 27001…), avec des actions d’amélioration étape par étape — y compris des actions gérées par Microsoft avec détails d’implémentation et résultats d’audit.",
+          "valueUrl": "https://learn.microsoft.com/purview/compliance-manager"
         }
       ]
     },
@@ -1571,13 +1807,21 @@
           "name": "Attack Simulation Training (Defender for Office 365)",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
-          "a5Adds": true
+          "a5Adds": true,
+          "value_nl": "Onderdeel van Defender for Office 365 Plan 2 (inbegrepen in A5): voer realistische phishingsimulaties uit en wijs automatisch gerichte training toe aan gebruikers die erin trappen.",
+          "value_en": "Part of Defender for Office 365 Plan 2 (included in A5): run realistic phishing simulations and automatically assign targeted training to users who fall for them.",
+          "value_fr": "Inclus dans Defender for Office 365 Plan 2 (compris dans A5) : lancez des simulations de hameçonnage réalistes et attribuez automatiquement des formations ciblées aux utilisateurs qui se font piéger.",
+          "valueUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started"
         },
         {
           "name": "Viva Learning",
           "tier": "A1",
           "docsUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning",
-          "a5Adds": false
+          "a5Adds": false,
+          "value_nl": "Brengt leerinhoud — waaronder beveiligings- en compliancetrainingen — rechtstreeks in Microsoft Teams, zodat medewerkers in hun gewone werkomgeving kunnen leren.",
+          "value_en": "Brings learning content — including security and compliance training — directly into Microsoft Teams, so staff can learn within their normal flow of work.",
+          "value_fr": "Intègre du contenu d’apprentissage — y compris des formations à la sécurité et à la conformité — directement dans Microsoft Teams, pour que le personnel se forme dans son environnement de travail habituel.",
+          "valueUrl": "https://learn.microsoft.com/viva/learning/overview-viva-learning"
         }
       ],
       "standards": {

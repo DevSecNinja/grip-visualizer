@@ -23,7 +23,7 @@ describe('App', () => {
     render(<App />);
     await user.click(screen.getByRole('button', { name: /T11/ }));
     const panel = screen.getByRole('complementary');
-    expect(within(panel).getByText('Microsoft-meerwaarde:')).toBeInTheDocument();
+    expect(within(panel).getAllByText('Microsoft-meerwaarde:').length).toBeGreaterThan(0);
     expect(within(panel).getByText(/5 MB per gebruiker per dag/)).toBeInTheDocument();
   });
 
