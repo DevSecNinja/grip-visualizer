@@ -1,11 +1,15 @@
 # GRIP Visualizer
 
 Interactive website that maps the Flemish **GRIP** growth path (_Groeipad informatieveiligheid
-en privacy voor het Vlaamse onderwijs_) to the **Microsoft A3/A5** stack. Built for webinars with
-EDU **Microsoft Elevate** customers in Flanders, and reusable across organisations.
+en privacy voor het Vlaamse onderwijs_) to the **Microsoft A3/A5** stack. Built for education
+organisations in Flanders, and reusable beyond it.
 
-> The Microsoft mapping is an **informative** starting point for webinars, **not licensing
-> advice**. Always validate capability/tier availability against current Microsoft licensing.
+**Live site: [grip.ravensberg.org](https://grip.ravensberg.org/)**
+
+![Screenshot of GRIP Visualizer showing the Matrix view with a measure detail panel open](assets/screenshot.jpg)
+
+> The Microsoft mapping is an **informative** starting point, **not licensing advice**. Always
+> validate capability/tier availability against current Microsoft licensing.
 
 ## What it does
 

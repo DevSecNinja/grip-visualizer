@@ -158,7 +158,7 @@ export const ui = {
     basis: 'Basis',
     organisational: 'Organisational',
     technical: 'Technical',
-    license: 'License',
+    license: 'Licence',
     a5Badge: 'A5 value-add',
     addOnBadge: 'Add-on',
     tierOverrideHint: 'Manually adjusted licence tier',
@@ -185,7 +185,7 @@ export const ui = {
     filterLabel: 'Filter',
     clearFilters: 'Clear',
     sourcePdf: 'Source: official GRIP matrix (PDF)',
-    m365MapsLink: 'M365 Maps: license comparison',
+    m365MapsLink: 'M365 Maps: licence comparison',
     repoLink: 'Source code on GitHub',
     licenseMit: 'MIT licensed',
     releaseVersionAria: 'Release version on GitHub:',
@@ -202,7 +202,7 @@ export const ui = {
     disclaimerUnofficial:
       'This is an independent, unofficial tool. It is not supported, endorsed or maintained by Microsoft or the Flemish government, and no warranty is given or implied. The mapping between GRIP measures and Microsoft products is our own interpretation, derived from public sources, and represents neither Microsoft nor the Flemish government.',
     disclaimerAi:
-      'This website was created with the help of AI (GitHub Copilot with Claude Opus 4.8). Always verify the content, the product mappings and the license requirements (A1/A3/A5) yourself against the current official Microsoft and GRIP documentation.',
+      'This website was created with the help of AI (GitHub Copilot with Claude Opus 4.8). Always verify the content, the product mappings and the licence requirements (A1/A3/A5) yourself against the current official Microsoft and GRIP documentation.',
     disclaimerAdvice:
       'Always work with your Microsoft account team or an authorised reseller before making a purchasing decision.',
     disclaimerTranslation:
