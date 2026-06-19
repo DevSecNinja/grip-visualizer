@@ -1,4 +1,4 @@
-import { BASIS_LEVELS, measuresByBasis, highestTier } from '../data/grip.js';
+import { BASIS_LEVELS, measuresByBasis, measureTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 import MeasureCard from './MeasureCard.jsx';
 
@@ -12,7 +12,7 @@ export default function MatrixView({
 }) {
   const isDimmed = (m) =>
     (typeFilter && m.type !== typeFilter) ||
-    (tierFilter && highestTier(m) !== tierFilter);
+    (tierFilter && measureTier(m) !== tierFilter);
 
   return (
     <div className="matrix" role="region" aria-label={t(lang, 'viewMatrix')}>

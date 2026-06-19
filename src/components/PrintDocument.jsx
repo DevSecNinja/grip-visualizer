@@ -2,7 +2,7 @@ import { t } from '../i18n/strings.js';
 import {
   getMeasures,
   localized,
-  highestTier,
+  measureTier,
   standardsFor,
   localizedStandardsWhy,
   localizedGuidance,
@@ -24,7 +24,10 @@ export default function PrintDocument({ lang }) {
       {measures.map((measure) => {
         const title = localized(measure, 'title', lang);
         const summary = localized(measure, 'summary', lang);
-        const tier = highestTier(measure);
+        const tier = measureTier(measure);
+        const isAddOn = tier === 'ADDON';
+        const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
+        const tierClass = isAddOn ? 'addon' : tier.toLowerCase();
         const guidance = localizedGuidance(measure, lang);
         const standards = standardsFor(measure);
         const standardsWhy = localizedStandardsWhy(measure, lang);
@@ -45,10 +48,8 @@ export default function PrintDocument({ lang }) {
               <span className="print-page__meta">
                 {t(lang, 'basis')} {measure.basis}
               </span>
-              <span
-                className={`print-page__tier print-page__tier--${tier.toLowerCase()}`}
-              >
-                {tier}
+              <span className={`print-page__tier print-page__tier--${tierClass}`}>
+                {tierLabel}
               </span>
             </header>
 
@@ -95,12 +96,19 @@ export default function PrintDocument({ lang }) {
                   {measure.microsoft.map((item) => (
                     <li className="print-mapping__item" key={item.name}>
                       <span className="print-mapping__name">{item.name}</span>
-                      <span
-                        className={`print-page__tier print-page__tier--${item.tier.toLowerCase()}`}
-                      >
-                        {item.tier}
-                        {item.a5Adds ? '+' : ''}
-                      </span>
+                      {!(item.addOn && item.standalone) && (
+                        <span
+                          className={`print-page__tier print-page__tier--${item.tier.toLowerCase()}`}
+                        >
+                          {item.tier}
+                          {item.a5Adds && !item.addOn ? '+' : ''}
+                        </span>
+                      )}
+                      {item.addOn && (
+                        <span className="print-page__tier print-page__tier--addon">
+                          {t(lang, 'addOnBadge')}
+                        </span>
+                      )}
                       {item.docsUrl && (
                         <span className="print-mapping__url">{item.docsUrl}</span>
                       )}

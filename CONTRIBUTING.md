@@ -25,6 +25,9 @@ deployed as a static site.
 - **Styles** — `src/styles/index.css`
 - **Tests** — `src/**/*.test.{js,jsx}`
 
+For the tech stack, project layout, data model and deployment, see
+[ARCHITECTURE.md](ARCHITECTURE.md).
+
 ## Getting started
 
 The quickest path is a **Dev Container / GitHub Codespaces** (config in `.devcontainer/`),
@@ -61,7 +64,9 @@ under the `ui` object. The project ships three languages: **Dutch (`nl`)**, **En
 
 ## Mapping data
 
-Measures live in [`src/data/grip.json`](src/data/grip.json). Each measure looks like:
+Measures live in [`src/data/grip.json`](src/data/grip.json). The full schema (every field, the
+`a5Adds` / `addOn` / `standalone` badge flags, standards and guidance) is documented in
+[ARCHITECTURE.md](ARCHITECTURE.md#data-model). A measure looks like:
 
 ```jsonc
 {
@@ -88,6 +93,12 @@ Guidelines when editing mappings:
 - Set `tier` to the lowest licence that delivers the capability (`A1` / `A3` / `A5`).
 - Use `a5Adds: true` for capabilities unlocked specifically by A5 (these feed the A3 vs A5
   view).
+- Use `addOn: true` for capabilities that need a **separate paid add-on** on top of the base
+  licence (e.g. Microsoft Priva, Entra ID Governance). Add `standalone: true` when the add-on
+  has **no Microsoft 365 base tier** (a separate service such as Microsoft Sentinel or Entra
+  Private Access). See [ARCHITECTURE.md](ARCHITECTURE.md#badge-logic) for how these render.
+- Set `tierOverride` (e.g. `"A3"`) on a measure to force its card/chip badge when the core
+  measure is achievable at a lower tier and the higher-tier mappings are only value-adds.
 - Keep `docsUrl` pointing at current, official Microsoft documentation.
 - The Microsoft mapping is an **informative** starting point, not licensing advice.
 

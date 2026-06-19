@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { getMeasures, localized, highestTier } from '../data/grip.js';
+import { getMeasures, localized, measureTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 
 // ── Simulation constants ──────────────────────────────────────────────────
@@ -385,7 +385,7 @@ export default function NetworkMapView({
       const m = node.measure;
       const passes =
         !(typeFilter && m.type !== typeFilter) &&
-        !(tierFilter && highestTier(m) !== tierFilter);
+        !(tierFilter && measureTier(m) !== tierFilter);
       if (passes) passId.add(node.id);
     }
     for (const link of links) {

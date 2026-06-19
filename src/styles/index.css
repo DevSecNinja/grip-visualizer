@@ -361,6 +361,13 @@ body {
 .measure-card__tier--a5 {
   background: var(--a5);
 }
+.measure-card__tier--addon {
+  background: #b45309;
+}
+.measure-card__tier--override {
+  box-shadow: inset 0 0 0 1.5px #f5c518;
+  cursor: help;
+}
 .measure-card__title {
   font-size: 12.5px;
   line-height: 1.35;
@@ -804,6 +811,15 @@ body {
 .tier__plus {
   margin-left: 1px;
 }
+.tierwrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+.tier--addon {
+  background: #b45309;
+}
 
 /* ---------- Footer ---------- */
 .app__footer {
@@ -817,6 +833,12 @@ body {
   justify-content: space-between;
 }
 /* Filter bar (footer) */
+.filters-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+}
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -891,6 +913,22 @@ body {
 }
 .filters__swatch--tech {
   background: var(--tech);
+}
+.filters__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--ink-soft);
+  padding-left: 10px;
+}
+.filters__legend-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex: none;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px #f5c518;
 }
 .filters__clear {
   border: 0;
@@ -1464,6 +1502,13 @@ body {
 }
 .chip__tier--a5 {
   background: var(--a5);
+}
+.chip__tier--addon {
+  background: #b45309;
+}
+.chip__tier--override {
+  box-shadow: inset 0 0 0 1.5px #f5c518;
+  cursor: help;
 }
 
 /* View 1 — A3 vs A5 */
@@ -2059,6 +2104,9 @@ body {
   }
   .print-page__tier--a5 {
     background: #7c3aed;
+  }
+  .print-page__tier--addon {
+    background: #b45309;
   }
   .print-page__title {
     font-size: 16pt;

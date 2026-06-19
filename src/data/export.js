@@ -2,7 +2,7 @@ import PptxGenJS from 'pptxgenjs';
 import {
   getMeasures,
   localized,
-  highestTier,
+  measureTier,
   standardsFor,
   localizedStandardsWhy,
   localizedGuidance,
@@ -17,6 +17,7 @@ const COLORS = {
   a1: '64748B',
   a3: '2F6DF6',
   a5: '7C3AED',
+  addon: 'B45309',
   org: '0EA5A3',
   tech: 'F5871F',
   ink: '1A2233',
@@ -62,7 +63,9 @@ function measureMarkdown(measure, lang) {
   lines.push(`## ${measure.code} — ${title}`);
   lines.push('');
   lines.push(
-    `**${typeLabel}** · ${t(lang, 'basis')} ${measure.basis} · ${highestTier(measure)}`
+    `**${typeLabel}** · ${t(lang, 'basis')} ${measure.basis} · ${
+      measureTier(measure) === 'ADDON' ? t(lang, 'addOnBadge') : measureTier(measure)
+    }`
   );
   lines.push('');
   lines.push(localized(measure, 'summary', lang));
@@ -99,7 +102,13 @@ function measureMarkdown(measure, lang) {
     lines.push('');
   } else {
     measure.microsoft.forEach((ms) => {
-      const tierLabel = `${ms.tier}${ms.a5Adds ? '+' : ''}`;
+      const addOnLabel = ms.addOn ? t(lang, 'addOnBadge') : '';
+      const tierLabel =
+        ms.addOn && ms.standalone
+          ? addOnLabel
+          : ms.addOn
+            ? `${ms.tier} + ${addOnLabel}`
+            : `${ms.tier}${ms.a5Adds ? '+' : ''}`;
       const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
       lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
       const value = localized(ms, 'value', lang);
@@ -273,8 +282,18 @@ function mappingRuns(measure, lang) {
         options: { bold: true, fontSize: 11, color: COLORS.ink },
       });
       runs.push({
-        text: `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
-        options: { bold: true, fontSize: 10, color: tierColor(ms.tier), breakLine: true },
+        text:
+          ms.addOn && ms.standalone
+            ? `  [${t(lang, 'addOnBadge')}]`
+            : ms.addOn
+              ? `  [${ms.tier} + ${t(lang, 'addOnBadge')}]`
+              : `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
+        options: {
+          bold: true,
+          fontSize: 10,
+          color: ms.addOn && ms.standalone ? COLORS.addon : tierColor(ms.tier),
+          breakLine: true,
+        },
       });
       if (ms.docsUrl) {
         runs.push({
@@ -427,7 +446,9 @@ export async function exportPPTX(lang) {
     slide.background = { color: COLORS.surface };
 
     const typeColor = measure.type === 'T' ? COLORS.tech : COLORS.org;
-    const tier = highestTier(measure);
+    const tier = measureTier(measure);
+    const isAddOn = tier === 'ADDON';
+    const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
 
     // Top accent bar
     slide.addShape(pptx.ShapeType.rect, {
@@ -471,7 +492,7 @@ export async function exportPPTX(lang) {
     );
 
     // Tier badge (top-right)
-    slide.addText(tier, {
+    slide.addText(tierLabel, {
       x: 12.4,
       y: 0.2,
       w: 0.6,
@@ -479,7 +500,7 @@ export async function exportPPTX(lang) {
       fontSize: 11,
       bold: true,
       color: COLORS.surface,
-      fill: { color: tierColor(tier) },
+      fill: { color: isAddOn ? COLORS.addon : tierColor(tier) },
       align: 'center',
       valign: 'middle',
       shape: pptx.ShapeType.roundRect,

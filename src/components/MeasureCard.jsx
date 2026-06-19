@@ -1,4 +1,5 @@
-import { highestTier, localized } from '../data/grip.js';
+import { measureTier, localized } from '../data/grip.js';
+import { t } from '../i18n/strings.js';
 
 export default function MeasureCard({
   measure,
@@ -9,7 +10,11 @@ export default function MeasureCard({
   status,
 }) {
   const title = localized(measure, 'title', lang);
-  const tier = highestTier(measure);
+  const tier = measureTier(measure);
+  const isAddOn = tier === 'ADDON';
+  const isOverride = Boolean(measure.tierOverride);
+  const tierLabel = isAddOn ? t(lang, 'addOnBadge') : tier;
+  const tierClass = isAddOn ? 'addon' : tier.toLowerCase();
 
   const classes = [
     'measure-card',
@@ -37,9 +42,12 @@ export default function MeasureCard({
             />
           )}
           <span
-            className={`measure-card__tier measure-card__tier--${tier.toLowerCase()}`}
+            className={`measure-card__tier measure-card__tier--${tierClass}${
+              isOverride ? ' measure-card__tier--override' : ''
+            }`}
+            title={isOverride ? t(lang, 'tierOverrideHint') : undefined}
           >
-            {tier}
+            {tierLabel}
           </span>
         </span>
       </span>
