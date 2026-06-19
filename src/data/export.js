@@ -17,6 +17,7 @@ const COLORS = {
   a1: '64748B',
   a3: '2F6DF6',
   a5: '7C3AED',
+  addon: 'B45309',
   org: '0EA5A3',
   tech: 'F5871F',
   ink: '1A2233',
@@ -99,7 +100,9 @@ function measureMarkdown(measure, lang) {
     lines.push('');
   } else {
     measure.microsoft.forEach((ms) => {
-      const tierLabel = `${ms.tier}${ms.addOn ? ' (add-on)' : ms.a5Adds ? '+' : ''}`;
+      const tierLabel = ms.addOn
+        ? t(lang, 'addOnBadge')
+        : `${ms.tier}${ms.a5Adds ? '+' : ''}`;
       const docs = ms.docsUrl ? ` — [${t(lang, 'openDocs')}](${ms.docsUrl})` : '';
       lines.push(`- **${ms.name}** (${tierLabel})${docs}`);
       const value = localized(ms, 'value', lang);
@@ -273,8 +276,15 @@ function mappingRuns(measure, lang) {
         options: { bold: true, fontSize: 11, color: COLORS.ink },
       });
       runs.push({
-        text: `  [${ms.tier}${ms.addOn ? ' (add-on)' : ms.a5Adds ? '+' : ''}]`,
-        options: { bold: true, fontSize: 10, color: tierColor(ms.tier), breakLine: true },
+        text: ms.addOn
+          ? `  [${t(lang, 'addOnBadge')}]`
+          : `  [${ms.tier}${ms.a5Adds ? '+' : ''}]`,
+        options: {
+          bold: true,
+          fontSize: 10,
+          color: ms.addOn ? COLORS.addon : tierColor(ms.tier),
+          breakLine: true,
+        },
       });
       if (ms.docsUrl) {
         runs.push({

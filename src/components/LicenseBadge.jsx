@@ -7,6 +7,13 @@ const TIER_CLASS = {
 };
 
 export default function LicenseBadge({ tier, a5Adds, addOn, lang }) {
+  if (addOn) {
+    return (
+      <span className="tierwrap">
+        <span className="tier tier--addon">{t(lang, 'addOnBadge')}</span>
+      </span>
+    );
+  }
   return (
     <span className="tierwrap">
       <span
@@ -14,13 +21,12 @@ export default function LicenseBadge({ tier, a5Adds, addOn, lang }) {
         title={`${t(lang, 'license')}: ${tier}`}
       >
         {tier}
-        {a5Adds && !addOn && (
+        {a5Adds && (
           <span className="tier__plus" aria-hidden="true">
             +
           </span>
         )}
       </span>
-      {addOn && <span className="tier tier--addon">{t(lang, 'addOnBadge')}</span>}
     </span>
   );
 }
