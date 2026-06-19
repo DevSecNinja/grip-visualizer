@@ -1,7 +1,15 @@
 import { t, LANGS } from '../i18n/strings.js';
 import ExportMenu from './ExportMenu.jsx';
 
-export default function AppHeader({ lang, setLang, views, view, setView }) {
+export default function AppHeader({
+  lang,
+  setLang,
+  views,
+  view,
+  setView,
+  assessmentMode,
+  onToggleAssessment,
+}) {
   return (
     <header className="app-header">
       <div className="app-header__brand">
@@ -53,6 +61,15 @@ export default function AppHeader({ lang, setLang, views, view, setView }) {
             </button>
           ))}
         </div>
+
+        <label
+          className={`switch${assessmentMode ? ' switch--checked' : ''}`}
+          title={t(lang, 'assessmentModeHint')}
+        >
+          <input type="checkbox" checked={assessmentMode} onChange={onToggleAssessment} />
+          <span className="switch__track" />
+          {t(lang, 'assessmentMode')}
+        </label>
 
         <div className="seg seg--lang" role="group" aria-label={t(lang, 'langLabel')}>
           {LANGS.map((l) => (

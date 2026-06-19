@@ -1010,6 +1010,340 @@ body {
   border-radius: 6px;
 }
 
+/* ---------- Assessment status colors ---------- */
+:root {
+  --status-in-progress: #f59e0b;
+  --status-done: #10b981;
+  --status-na: var(--ink-faint);
+  /* Darker variants used as backgrounds behind white text so the selected
+     status buttons meet WCAG AA contrast (>= 4.5:1). */
+  --status-not-started-strong: #5a6478;
+  --status-in-progress-strong: #b45309;
+  --status-done-strong: #047857;
+  --status-na-strong: #5a6478;
+}
+
+/* Status dot on measure cards */
+.measure-card__head-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.measure-card__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+.measure-card__status-dot--not-started {
+  background: var(--line-strong);
+}
+.measure-card__status-dot--in-progress {
+  background: var(--status-in-progress);
+}
+.measure-card__status-dot--done {
+  background: var(--status-done);
+}
+.measure-card__status-dot--not-applicable {
+  background: var(--status-na);
+}
+
+/* ---------- Assessment entry in detail panel ---------- */
+.assessment-entry {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.assessment-entry .detail__section-title {
+  margin-bottom: 10px;
+}
+.assessment-entry__statuses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.assessment-status-btn {
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+.assessment-status-btn:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.assessment-status-btn--not-started.is-active {
+  background: var(--status-not-started-strong);
+  border-color: var(--status-not-started-strong);
+  color: #fff;
+}
+.assessment-status-btn--in-progress.is-active {
+  background: var(--status-in-progress-strong);
+  border-color: var(--status-in-progress-strong);
+  color: #fff;
+}
+.assessment-status-btn--done.is-active {
+  background: var(--status-done-strong);
+  border-color: var(--status-done-strong);
+  color: #fff;
+}
+.assessment-status-btn--not-applicable.is-active {
+  background: var(--status-na-strong);
+  border-color: var(--status-na-strong);
+  color: #fff;
+}
+.assessment-entry__note-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+.assessment-entry__note {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  resize: vertical;
+  color: var(--ink);
+}
+.assessment-entry__note:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* ---------- Assessment scorecard ---------- */
+.scorecard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+.scorecard__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.scorecard__title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.scorecard__browser-notice {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 60ch;
+}
+.scorecard__lock-icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  color: var(--accent-ink);
+}
+.scorecard__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.scorecard__btn {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+.scorecard__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.scorecard__btn--danger:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+.scorecard__file-input {
+  display: none;
+}
+.scorecard__msg {
+  font-size: 12.5px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+.scorecard__msg--success {
+  background: #dcfce7;
+  color: #15803d;
+}
+.scorecard__msg--error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.scorecard__overall {
+  margin-bottom: 14px;
+}
+.scorecard__progress-bar {
+  height: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 8px;
+}
+.scorecard__progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+.scorecard__progress-fill--done {
+  background: var(--status-done);
+}
+.scorecard__progress-fill--in-progress {
+  background: var(--status-in-progress);
+}
+.scorecard__overall-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.scorecard__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.scorecard__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+.scorecard__dot--done {
+  background: var(--status-done);
+}
+.scorecard__dot--in-progress {
+  background: var(--status-in-progress);
+}
+.scorecard__dot--not-applicable {
+  background: var(--status-na);
+}
+.scorecard__basis-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.scorecard__basis-item {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+.scorecard__basis-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.scorecard__basis-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.scorecard__basis-item--b1 .scorecard__basis-num {
+  background: var(--b1);
+}
+.scorecard__basis-item--b2 .scorecard__basis-num {
+  background: var(--b2);
+}
+.scorecard__basis-item--b3 .scorecard__basis-num {
+  background: var(--b3);
+}
+.scorecard__basis-item--b4 .scorecard__basis-num {
+  background: var(--b4);
+}
+.scorecard__basis-item--b5 .scorecard__basis-num {
+  background: var(--b5);
+}
+.scorecard__basis-item--b6 .scorecard__basis-num {
+  background: var(--b6);
+}
+.scorecard__basis-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.scorecard__basis-bar {
+  height: 6px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 4px;
+}
+.scorecard__basis-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+.scorecard__basis-fill--done {
+  background: var(--status-done);
+}
+.scorecard__basis-fill--in-progress {
+  background: var(--status-in-progress);
+}
+.scorecard__basis-counts {
+  font-size: 11px;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
+/* Switch — checked state label color */
+.switch--checked {
+  color: var(--a5);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .app__body {
@@ -1029,6 +1363,9 @@ body {
   }
   .journey__cards {
     grid-template-columns: 1fr;
+  }
+  .scorecard__basis-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
