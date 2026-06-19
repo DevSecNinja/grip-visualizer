@@ -1,4 +1,5 @@
 import { t, LANGS } from '../i18n/strings.js';
+import ExportMenu from './ExportMenu.jsx';
 
 export default function AppHeader({
   lang,
@@ -83,6 +84,8 @@ export default function AppHeader({
             </button>
           ))}
         </div>
+
+        <ExportMenu lang={lang} />
       </div>
     </header>
   );
