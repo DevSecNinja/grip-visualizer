@@ -47,7 +47,7 @@ const VIEWS = [
     label: 'vName_network',
     hint: 'vHint_network',
     Component: NetworkMapView,
-    filterable: false,
+    filterable: true,
   },
 ];
 

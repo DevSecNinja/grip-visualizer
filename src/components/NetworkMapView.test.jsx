@@ -72,4 +72,21 @@ describe('NetworkMapView', () => {
     await user.click(label);
     expect(onSelect).toHaveBeenCalledWith(null);
   });
+
+  it('dims measures that do not match the active type filter', () => {
+    render(
+      <NetworkMapView
+        lang="nl"
+        selectedCode={null}
+        onSelect={() => {}}
+        typeFilter="O"
+        tierFilter={null}
+      />
+    );
+    // O1 is organisational → stays visible; T1 is technical → dimmed
+    const orgGroup = screen.getByText('O1').closest('.nm-node');
+    const techGroup = screen.getByText('T1').closest('.nm-node');
+    expect(Number(orgGroup.style.opacity)).toBe(1);
+    expect(Number(techGroup.style.opacity)).toBeLessThan(1);
+  });
 });

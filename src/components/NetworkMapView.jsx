@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { getMeasures, localized } from '../data/grip.js';
+import { getMeasures, localized, highestTier } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 
 // ── Simulation constants ──────────────────────────────────────────────────
@@ -11,15 +11,23 @@ const DAMPING = 0.78;
 const ALPHA_DECAY = 0.97;
 const ALPHA_MIN = 0.001;
 const MEASURE_R = 18;
-const PRODUCT_R = 11;
+const PRODUCT_R = 12; // base radius; main hub products grow with their degree
+const PRODUCT_R_MAX = 26;
 const DRAG_THRESHOLD = 5; // px before a click becomes a drag
 const TIER_RANK = { A1: 0, A3: 1, A5: 2 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────
 
+// A product entry's name may carry a " — sub-feature" suffix (e.g.
+// "Microsoft Purview Compliance Manager — DPIA templates"). Collapse those onto
+// the main product so the graph shows one node per product.
+function mainProductName(name) {
+  return name.split(/\s+—\s+/)[0];
+}
+
 function shortProductName(name) {
-  // Strip "Microsoft " prefix (appears in many names) and sub-feature after " — "
-  return name.replace(/^Microsoft\s+/, '').replace(/\s+—\s+.*$/, '');
+  // Strip the "Microsoft " prefix (appears in many names) for a compact label.
+  return name.replace(/^Microsoft\s+/, '');
 }
 
 // ── Graph construction ────────────────────────────────────────────────────
@@ -27,14 +35,29 @@ function shortProductName(name) {
 function buildGraph() {
   const measures = getMeasures();
 
-  // Collect unique products, keeping the highest tier per product name
+  // Collect unique *main* products, keeping the highest tier per product.
   const productMap = new Map();
   for (const m of measures) {
     for (const item of m.microsoft) {
-      const prev = productMap.get(item.name);
+      const name = mainProductName(item.name);
+      const prev = productMap.get(name);
       if (!prev || TIER_RANK[item.tier] > TIER_RANK[prev.tier]) {
-        productMap.set(item.name, item);
+        productMap.set(name, { name, tier: item.tier });
       }
+    }
+  }
+
+  // Build links (one per measure↔main-product pair) and count product degree.
+  const links = [];
+  const degree = new Map();
+  for (const m of measures) {
+    const seen = new Set();
+    for (const item of m.microsoft) {
+      const name = mainProductName(item.name);
+      if (seen.has(name)) continue; // de-dupe sub-features within one measure
+      seen.add(name);
+      links.push({ source: `m:${m.code}`, target: `p:${name}` });
+      degree.set(name, (degree.get(name) || 0) + 1);
     }
   }
 
@@ -61,7 +84,8 @@ function buildGraph() {
     name,
     shortName: shortProductName(name),
     tier: data.tier,
-    r: PRODUCT_R,
+    // Scale radius with degree so main hub products read as the bigger dots.
+    r: Math.min(PRODUCT_R_MAX, PRODUCT_R + ((degree.get(name) || 1) - 1) * 1.6),
     x: Math.cos((i / N_P) * Math.PI * 2) * 370,
     y: Math.sin((i / N_P) * Math.PI * 2) * 370,
     vx: 0,
@@ -73,13 +97,6 @@ function buildGraph() {
     ...measureNodes.map((n) => [n.id, n]),
     ...productNodes.map((n) => [n.id, n]),
   ]);
-
-  const links = [];
-  for (const m of measures) {
-    for (const item of m.microsoft) {
-      links.push({ source: `m:${m.code}`, target: `p:${item.name}` });
-    }
-  }
 
   return { nodes: [...measureNodes, ...productNodes], links, nodeById };
 }
@@ -155,7 +172,13 @@ function tick(nodes, links, nodeById, alpha) {
 
 // ── Component ─────────────────────────────────────────────────────────────
 
-export default function NetworkMapView({ lang, selectedCode, onSelect }) {
+export default function NetworkMapView({
+  lang,
+  selectedCode,
+  onSelect,
+  typeFilter,
+  tierFilter,
+}) {
   // ── State (read during render) ──────────────────────────────────────────
   // Graph is initialized once via lazy useState; its node positions are
   // mutated in-place by the simulation and re-renders are triggered via setTick.
@@ -332,6 +355,26 @@ export default function NetworkMapView({ lang, selectedCode, onSelect }) {
   }
   const hasHover = hoveredId !== null;
 
+  // ── Derived filter data (footer type/tier filters) ──────────────────────
+  // A measure passes the filters using the same semantics as the Matrix and
+  // Journey views. Products stay visible when linked to a passing measure.
+  const hasFilter = Boolean(typeFilter || tierFilter);
+  const passId = new Set();
+  if (hasFilter) {
+    for (const node of nodes) {
+      if (node.kind !== 'measure') continue;
+      const m = node.measure;
+      const passes =
+        !(typeFilter && m.type !== typeFilter) &&
+        !(tierFilter && highestTier(m) !== tierFilter);
+      if (passes) passId.add(node.id);
+    }
+    for (const link of links) {
+      if (passId.has(link.source)) passId.add(link.target);
+    }
+  }
+  const isFilteredOut = (id) => hasFilter && !passId.has(id);
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
@@ -366,6 +409,14 @@ export default function NetworkMapView({ lang, selectedCode, onSelect }) {
               const b = nodeById.get(link.target);
               if (!a || !b) return null;
               const isHi = connectedLinkIndices.has(i);
+              const edgeFilteredOut = isFilteredOut(link.source);
+              const edgeOpacity = edgeFilteredOut
+                ? 0.03
+                : hasHover
+                  ? isHi
+                    ? 0.7
+                    : 0.04
+                  : 0.2;
               return (
                 <line
                   key={i}
@@ -374,7 +425,7 @@ export default function NetworkMapView({ lang, selectedCode, onSelect }) {
                   x2={b.x}
                   y2={b.y}
                   className={`nm-edge${isHi ? ' nm-edge--hi' : ''}`}
-                  style={{ opacity: hasHover ? (isHi ? 0.7 : 0.04) : 0.2 }}
+                  style={{ opacity: edgeOpacity }}
                 />
               );
             })}
@@ -387,7 +438,9 @@ export default function NetworkMapView({ lang, selectedCode, onSelect }) {
               const isSelected = isMeasure && node.measure.code === selectedCode;
               const isHovered = node.id === hoveredId;
               const isConnected = connectedIds.has(node.id);
-              const dimmed = hasHover && !isConnected;
+              const filteredOut = isFilteredOut(node.id);
+              const dimmed = filteredOut || (hasHover && !isConnected);
+              const nodeOpacity = dimmed ? (filteredOut ? 0.06 : 0.12) : 1;
 
               const circleClass = [
                 'nm-circle',
@@ -410,7 +463,7 @@ export default function NetworkMapView({ lang, selectedCode, onSelect }) {
                   transform={`translate(${node.x},${node.y})`}
                   className={`nm-node${isMeasure ? ' nm-node--measure' : ' nm-node--product'}`}
                   style={{
-                    opacity: dimmed ? 0.12 : 1,
+                    opacity: nodeOpacity,
                     cursor: isMeasure ? 'pointer' : 'grab',
                   }}
                   onMouseEnter={(e) => {
