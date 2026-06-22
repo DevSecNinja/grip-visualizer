@@ -1,4 +1,4 @@
-import { getMeasures, highestTier } from './grip.js';
+import { getMeasures, highestTier, productNodeName } from './grip.js';
 
 export { highestTier };
 
@@ -16,6 +16,20 @@ export function splitCapabilityName(name) {
   return { base: name.trim(), label: null };
 }
 
+// The variant label shown under a capability card: the part of the full name
+// that distinguishes it from its grouping product. Handles the three naming
+// forms — "Base — Sub", "Feature (Base)" (explicit parentProduct), and
+// "Base remainder" — and returns null when the name *is* the base product.
+export function capabilityLabel(name, base) {
+  if (name === base) return null;
+  const paren = ` (${base})`;
+  if (name.endsWith(paren)) return name.slice(0, -paren.length).trim();
+  const dash = splitCapabilityName(name);
+  if (dash.base === base) return dash.label;
+  if (name.startsWith(`${base} `)) return name.slice(base.length).trim();
+  return name;
+}
+
 export function a3a5Split() {
   const a3 = [];
   const a5 = [];
@@ -23,22 +37,31 @@ export function a3a5Split() {
     if (highestTier(m) === 'A5') a5.push(m);
     else a3.push(m);
   }
-  // Distinct A5-only capabilities, grouped by base product. Sub-features of
-  // the same product are merged into one card with per-variant labels.
+  // Distinct A5-only capabilities, grouped by their product (parentProduct-aware
+  // so e.g. Attack Simulation Training collapses onto Microsoft Defender for
+  // Office 365). Sub-features of the same product merge into one card with
+  // per-variant labels.
   const groups = new Map();
   for (const m of getMeasures()) {
     for (const item of m.microsoft) {
       if (item.tier === 'A5' || item.a5Adds) {
-        const { base, label } = splitCapabilityName(item.name);
+        const base = productNodeName(item);
+        const label = capabilityLabel(item.name, base);
         if (!groups.has(base)) {
-          groups.set(base, { name: base, docsUrl: item.docsUrl, variants: new Map(), measures: new Set() });
+          groups.set(base, {
+            name: base,
+            docsUrl: item.docsUrl,
+            variants: new Map(),
+            measures: new Set(),
+          });
         }
         const group = groups.get(base);
         group.measures.add(m.code);
         // Prefer the general (label-less) entry's docs link for the card.
         if (!label) group.docsUrl = item.docsUrl;
         const key = label ?? '';
-        if (!group.variants.has(key)) group.variants.set(key, { label, codes: new Set() });
+        if (!group.variants.has(key))
+          group.variants.set(key, { label, codes: new Set() });
         group.variants.get(key).codes.add(m.code);
       }
     }

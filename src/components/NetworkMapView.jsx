@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { getMeasures, localized, measureTier, productNodeName } from '../data/grip.js';
+import { getMeasures, localized, measureTier, productRootForItem } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 
 // ── Simulation constants ──────────────────────────────────────────────────
@@ -36,11 +36,12 @@ function shortProductName(name) {
 function buildGraph() {
   const measures = getMeasures();
 
-  // Collect unique *main* products, keeping the highest tier per product.
+  // Collect unique *root* products (sub-features and sub-products collapse onto
+  // their root brand via the product hierarchy), keeping the highest tier.
   const productMap = new Map();
   for (const m of measures) {
     for (const item of m.microsoft) {
-      const name = productNodeName(item);
+      const name = productRootForItem(item);
       const prev = productMap.get(name);
       if (!prev || TIER_RANK[item.tier] > TIER_RANK[prev.tier]) {
         productMap.set(name, { name, tier: item.tier });
@@ -54,7 +55,7 @@ function buildGraph() {
   for (const m of measures) {
     const seen = new Set();
     for (const item of m.microsoft) {
-      const name = productNodeName(item);
+      const name = productRootForItem(item);
       if (seen.has(name)) continue; // de-dupe sub-features within one measure
       seen.add(name);
       links.push({ source: `m:${m.code}`, target: `p:${name}` });

@@ -32,15 +32,55 @@ export function localizedStandardsWhy(measure, lang) {
   return measure.standardsWhy[lang] || measure.standardsWhy.nl || null;
 }
 
-// The product a Microsoft mapping rolls up to when products are grouped into a
-// single node (e.g. the Network view). A capability that is really a feature of
-// a larger product can declare its parent explicitly via `parentProduct`
-// (preferred — robust against naming). Otherwise we fall back to stripping a
-// trailing " — sub-feature" suffix (e.g.
-// "Microsoft Purview — eDiscovery (Premium)" → "Microsoft Purview").
+// The immediate product a Microsoft mapping rolls up to. A capability that is
+// really a feature of a larger product can declare its parent explicitly via
+// `parentProduct` (preferred — robust against naming). Otherwise we fall back
+// to stripping a trailing " — sub-feature" suffix (e.g.
+// "Microsoft Purview — eDiscovery (Premium)" → "Microsoft Purview"). This is
+// the grouping used where the distinct product matters (e.g. the A3 vs A5
+// value view).
 export function productNodeName(item) {
   if (item.parentProduct) return item.parentProduct;
   return item.name.split(/\s+—\s+/)[0];
+}
+
+// Optional multi-level product hierarchy: a registry mapping a product (or
+// feature) name to its parent, chainable up to a root brand — e.g. Conditional
+// Access → Microsoft Entra ID → Microsoft Entra. Defined in
+// meta.productHierarchy. Lets views roll capabilities up to whichever level
+// they need without baking the taxonomy into product names.
+export function getProductHierarchy() {
+  return grip.meta.productHierarchy ?? {};
+}
+
+// Walk the hierarchy from a product name up to its root brand, returning the
+// full ancestry chain [name, …, root]. Guards against cycles.
+export function productAncestry(name) {
+  const hierarchy = getProductHierarchy();
+  const chain = [name];
+  let current = name;
+  const seen = new Set([current]);
+  while (hierarchy[current]) {
+    current = hierarchy[current];
+    if (seen.has(current)) break; // cycle guard
+    seen.add(current);
+    chain.push(current);
+  }
+  return chain;
+}
+
+// The root brand a product collapses onto (topmost ancestor), or the product
+// itself when it has no parent. Used where one node per product family is
+// wanted (e.g. the Network view).
+export function rootProductName(name) {
+  const chain = productAncestry(name);
+  return chain[chain.length - 1];
+}
+
+// The root brand for a Microsoft mapping: resolves the immediate product first
+// (parentProduct / "—" split), then walks the hierarchy to its root.
+export function productRootForItem(item) {
+  return rootProductName(productNodeName(item));
 }
 
 export function measuresByBasis(basis) {

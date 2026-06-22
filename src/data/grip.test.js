@@ -6,6 +6,9 @@ import {
   findMeasure,
   highestTier,
   productNodeName,
+  productAncestry,
+  rootProductName,
+  productRootForItem,
 } from './grip.js';
 
 describe('GRIP dataset integrity', () => {
@@ -95,5 +98,46 @@ describe('productNodeName', () => {
       nodeNames.has('Attack Simulation Training (Microsoft Defender for Office 365)')
     ).toBe(false);
     expect(nodeNames.has('Microsoft Defender for Office 365')).toBe(true);
+  });
+});
+
+describe('product hierarchy', () => {
+  it('walks a multi-level chain up to the root brand', () => {
+    expect(productAncestry('Microsoft Entra Conditional Access')).toEqual([
+      'Microsoft Entra Conditional Access',
+      'Microsoft Entra ID',
+      'Microsoft Entra',
+    ]);
+    expect(rootProductName('Microsoft Entra Conditional Access')).toBe('Microsoft Entra');
+  });
+
+  it('returns the name itself when it has no parent', () => {
+    expect(productAncestry('Microsoft Sentinel')).toEqual(['Microsoft Sentinel']);
+    expect(rootProductName('Microsoft Sentinel')).toBe('Microsoft Sentinel');
+  });
+
+  it('resolves a mapping item to its root brand (parentProduct + hierarchy)', () => {
+    // Attack Simulation Training → Defender for Office 365 → Microsoft Defender
+    expect(
+      productRootForItem({
+        name: 'Attack Simulation Training (Microsoft Defender for Office 365)',
+        parentProduct: 'Microsoft Defender for Office 365',
+      })
+    ).toBe('Microsoft Defender');
+    // "—" sub-feature → Defender for Endpoint → Microsoft Defender
+    expect(
+      productRootForItem({ name: 'Microsoft Defender Vulnerability Management' })
+    ).toBe('Microsoft Defender');
+  });
+
+  it('collapses the Entra and Defender families onto single root nodes', () => {
+    const roots = new Set();
+    for (const m of getMeasures()) {
+      for (const item of m.microsoft) roots.add(productRootForItem(item));
+    }
+    expect(roots.has('Microsoft Entra')).toBe(true);
+    expect(roots.has('Microsoft Entra Conditional Access')).toBe(false);
+    expect(roots.has('Microsoft Defender')).toBe(true);
+    expect(roots.has('Microsoft Defender for Office 365')).toBe(false);
   });
 });
