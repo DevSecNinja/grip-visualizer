@@ -493,6 +493,12 @@ body {
   color: var(--ink-faint);
   border-style: dashed;
   box-shadow: none;
+  position: relative;
+}
+.detail__close--floating {
+  position: absolute;
+  top: 14px;
+  right: 14px;
 }
 .detail__empty-title {
   font-size: 16px;

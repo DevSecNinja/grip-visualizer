@@ -62,6 +62,7 @@ export default function App() {
   const [typeFilter, setTypeFilter] = useState(null);
   const [tierFilter, setTierFilter] = useState(null);
   const [selectedCode, setSelectedCode] = useState(null);
+  const [showMeasureCard, setShowMeasureCard] = useState(true);
   const [assessmentMode, setAssessmentMode] = useState(false);
 
   const {
@@ -97,6 +98,22 @@ export default function App() {
   const ActiveComponent = activeView.Component;
   const filterable = activeView.filterable;
 
+  // Selecting a measure (re)opens the detail card if it was hidden.
+  const handleSelect = (code) => {
+    setShowMeasureCard(true);
+    setSelectedCode(code);
+  };
+
+  // A single X control handles two steps: first deselect the measure, then
+  // (when nothing is selected) hide the whole card.
+  const handleCloseOrHide = () => {
+    if (selected) {
+      setSelectedCode(null);
+    } else {
+      setShowMeasureCard(false);
+    }
+  };
+
   return (
     <div className="app">
       <AppHeader
@@ -126,23 +143,25 @@ export default function App() {
           <ActiveComponent
             lang={lang}
             selectedCode={selectedCode}
-            onSelect={setSelectedCode}
+            onSelect={handleSelect}
             typeFilter={filterable ? typeFilter : null}
             tierFilter={filterable ? tierFilter : null}
             getAssessmentStatus={assessmentMode ? getStatus : null}
           />
         </main>
 
-        <MeasureDetailPanel
-          measure={selected}
-          lang={lang}
-          onClose={() => setSelectedCode(null)}
-          assessmentEntry={
-            assessmentMode && selected ? getEntry(selected.code) : undefined
-          }
-          onStatusChange={assessmentMode ? setStatus : undefined}
-          onNoteChange={assessmentMode ? setNote : undefined}
-        />
+        {showMeasureCard && (
+          <MeasureDetailPanel
+            measure={selected}
+            lang={lang}
+            onClose={handleCloseOrHide}
+            assessmentEntry={
+              assessmentMode && selected ? getEntry(selected.code) : undefined
+            }
+            onStatusChange={assessmentMode ? setStatus : undefined}
+            onNoteChange={assessmentMode ? setNote : undefined}
+          />
+        )}
       </div>
 
       <footer className="app__footer">

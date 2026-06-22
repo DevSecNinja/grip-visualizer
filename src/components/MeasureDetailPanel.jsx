@@ -36,6 +36,14 @@ export default function MeasureDetailPanel({
   if (!measure) {
     return (
       <aside ref={panelRef} className="detail detail--empty" aria-live="polite">
+        <button
+          type="button"
+          className="detail__close detail__close--floating"
+          onClick={onClose}
+          aria-label={t(lang, 'hideMeasures')}
+        >
+          ×
+        </button>
         <h2 className="detail__empty-title">{t(lang, 'selectMeasure')}</h2>
         <p className="detail__empty-hint">{t(lang, 'selectMeasureHint')}</p>
       </aside>
