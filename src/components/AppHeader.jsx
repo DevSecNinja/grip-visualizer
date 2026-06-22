@@ -9,6 +9,7 @@ export default function AppHeader({
   setView,
   assessmentMode,
   onToggleAssessment,
+  assessmentState,
 }) {
   return (
     <header className="app-header">
@@ -85,7 +86,7 @@ export default function AppHeader({
           ))}
         </div>
 
-        <ExportMenu lang={lang} />
+        <ExportMenu lang={lang} assessment={assessmentState} />
       </div>
     </header>
   );

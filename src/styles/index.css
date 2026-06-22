@@ -2132,6 +2132,11 @@ body {
     margin: 0 0 8px;
     line-height: 1.45;
   }
+  .print-self-eval__status,
+  .print-self-eval__note {
+    margin: 0 0 6px;
+    line-height: 1.45;
+  }
   .print-section__muted {
     margin: 6px 0 0;
     font-size: 9pt;

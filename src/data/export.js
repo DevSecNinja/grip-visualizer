@@ -8,6 +8,7 @@ import {
   localizedGuidance,
 } from './grip.js';
 import { t } from '../i18n/strings.js';
+import { entryForCode, hasSelfEvaluation } from './assessment.js';
 
 // ─── Colour palette (mirrors CSS variables) ──────────────────────────────────
 const COLORS = {
@@ -53,8 +54,10 @@ function dateLocale(lang) {
 }
 
 // Builds the Markdown body for a single measure, mirroring the detail shown in
-// the app and the PDF/PPTX exports.
-function measureMarkdown(measure, lang) {
+// the app and the PDF/PPTX exports. When an assessment state is supplied the
+// user's self-evaluation (status + note) is rendered just below the summary,
+// matching the on-screen ordering.
+function measureMarkdown(measure, lang, assessment) {
   const lines = [];
   const title = localized(measure, 'title', lang);
   const typeLabel =
@@ -70,6 +73,26 @@ function measureMarkdown(measure, lang) {
   lines.push('');
   lines.push(localized(measure, 'summary', lang));
   lines.push('');
+
+  // Self-evaluation (user-provided status + note)
+  if (assessment) {
+    const entry = entryForCode(assessment, measure.code);
+    lines.push(`### ${t(lang, 'selfEvaluationTitle')}`);
+    lines.push('');
+    if (hasSelfEvaluation(entry)) {
+      lines.push(
+        `**${t(lang, 'assessmentStatusLabel')}:** ${t(lang, `status_${entry.status}`)}`
+      );
+      lines.push('');
+      if (entry.note && entry.note.trim() !== '') {
+        lines.push(`**${t(lang, 'assessmentNoteLabel')}:** ${entry.note.trim()}`);
+        lines.push('');
+      }
+    } else {
+      lines.push(`_${t(lang, 'selfEvaluationNone')}_`);
+      lines.push('');
+    }
+  }
 
   // Practical guidance
   const guidance = localizedGuidance(measure, lang);
@@ -159,8 +182,10 @@ function measureMarkdown(measure, lang) {
  * triggers a client-side download. No data leaves the browser.
  *
  * @param {string} lang  Active UI language ('nl' | 'en' | 'fr')
+ * @param {object} [assessment]  Optional self-evaluation state (state.measures
+ *   keyed by measure code) whose status/note are rendered per measure.
  */
-export function exportMarkdown(lang) {
+export function exportMarkdown(lang, assessment) {
   const measures = getMeasures();
   const today = new Date().toLocaleDateString(dateLocale(lang), {
     year: 'numeric',
@@ -175,7 +200,7 @@ export function exportMarkdown(lang) {
     '',
     today,
     '',
-    ...measures.map((measure) => measureMarkdown(measure, lang)),
+    ...measures.map((measure) => measureMarkdown(measure, lang, assessment)),
   ];
 
   const markdown = parts.join('\n');
@@ -255,6 +280,57 @@ function guidanceRuns(measure, lang) {
         text: item,
         options: { fontSize: 10.5, color: COLORS.ink, bullet: true, breakLine: true },
       });
+    });
+  }
+
+  return runs;
+}
+
+// Builds the stacked text runs for the self-evaluation block (status + note).
+function selfEvaluationRuns(entry, lang) {
+  const runs = [
+    {
+      text: t(lang, 'selfEvaluationTitle'),
+      options: {
+        bold: true,
+        fontSize: 13,
+        color: COLORS.accentInk,
+        breakLine: true,
+        paraSpaceBefore: 8,
+      },
+    },
+  ];
+
+  if (!hasSelfEvaluation(entry)) {
+    runs.push({
+      text: t(lang, 'selfEvaluationNone'),
+      options: { italic: true, fontSize: 11, color: COLORS.inkFaint, breakLine: true },
+    });
+    return runs;
+  }
+
+  runs.push({
+    text: `${t(lang, 'assessmentStatusLabel')}: `,
+    options: { bold: true, fontSize: 11, color: COLORS.ink },
+  });
+  runs.push({
+    text: t(lang, `status_${entry.status}`),
+    options: {
+      fontSize: 11,
+      color: COLORS.inkSoft,
+      breakLine: true,
+      paraSpaceAfter: 4,
+    },
+  });
+
+  if (entry.note && entry.note.trim() !== '') {
+    runs.push({
+      text: `${t(lang, 'assessmentNoteLabel')}: `,
+      options: { bold: true, fontSize: 11, color: COLORS.ink },
+    });
+    runs.push({
+      text: entry.note.trim(),
+      options: { fontSize: 11, color: COLORS.inkSoft, breakLine: true },
     });
   }
 
@@ -382,8 +458,10 @@ function mappingRuns(measure, lang) {
  * documentation links, and the standards mapping with control references.
  *
  * @param {string} lang  Active UI language ('nl' | 'en' | 'fr')
+ * @param {object} [assessment]  Optional self-evaluation state (state.measures
+ *   keyed by measure code) whose status/note are rendered per measure slide.
  */
-export async function exportPPTX(lang) {
+export async function exportPPTX(lang, assessment) {
   const measures = getMeasures();
   const pptx = new PptxGenJS();
 
@@ -535,8 +613,12 @@ export async function exportPPTX(lang) {
       fit: 'shrink',
     });
 
-    // Left column — practical guidance
-    slide.addText(guidanceRuns(measure, lang), {
+    // Left column — practical guidance (plus self-evaluation when present)
+    const leftRuns = guidanceRuns(measure, lang);
+    if (assessment) {
+      leftRuns.push(...selfEvaluationRuns(entryForCode(assessment, measure.code), lang));
+    }
+    slide.addText(leftRuns, {
       x: 0.35,
       y: 2.12,
       w: 6.1,

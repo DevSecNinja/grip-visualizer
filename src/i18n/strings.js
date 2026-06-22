@@ -110,6 +110,8 @@ export const ui = {
     assessmentStatusLabel: 'Voortgang',
     assessmentNoteLabel: 'Notitie',
     assessmentNotePlaceholder: 'Voeg een notitie toe...',
+    selfEvaluationTitle: 'Zelfevaluatie',
+    selfEvaluationNone: 'Geen zelfevaluatie ingevuld',
     scorecardTitle: 'Voortgangsoverzicht',
     scorecardBrowserOnly:
       'Alle evaluatiegegevens blijven uitsluitend in je browser opgeslagen. Er worden geen gegevens verzonden.',
@@ -218,6 +220,8 @@ export const ui = {
     assessmentStatusLabel: 'Progress',
     assessmentNoteLabel: 'Note',
     assessmentNotePlaceholder: 'Add a note...',
+    selfEvaluationTitle: 'Self-assessment',
+    selfEvaluationNone: 'No self-assessment provided',
     scorecardTitle: 'Progress overview',
     scorecardBrowserOnly:
       'All assessment data is stored exclusively in your browser. Nothing is ever sent to a server.',
@@ -329,6 +333,8 @@ export const ui = {
     assessmentStatusLabel: 'Avancement',
     assessmentNoteLabel: 'Note',
     assessmentNotePlaceholder: 'Ajouter une note...',
+    selfEvaluationTitle: 'Auto-évaluation',
+    selfEvaluationNone: 'Aucune auto-évaluation fournie',
     scorecardTitle: "Vue d'ensemble",
     scorecardBrowserOnly:
       "Toutes les données d'évaluation sont stockées exclusivement dans votre navigateur. Rien n'est jamais envoyé à un serveur.",
