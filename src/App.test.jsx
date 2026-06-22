@@ -133,6 +133,7 @@ describe('App', () => {
     // Second X click (nothing selected) hides the whole card.
     await user.click(within(panel).getByRole('button', { name: 'Paneel verbergen' }));
     expect(screen.queryByRole('complementary')).not.toBeInTheDocument();
+    expect(document.querySelector('.app__body')).toHaveClass('app__body--full');
 
     // Clicking a measure reopens the card and shows the selection.
     await user.click(screen.getByRole('button', { name: /O7/ }));

@@ -138,7 +138,7 @@ export default function App() {
         />
       )}
 
-      <div className="app__body">
+      <div className={`app__body${showMeasureCard ? '' : ' app__body--full'}`}>
         <main className="app__main">
           <ActiveComponent
             lang={lang}

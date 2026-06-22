@@ -223,6 +223,9 @@ body {
   align-items: start;
   flex: 1;
 }
+.app__body--full {
+  grid-template-columns: 1fr;
+}
 .app__main {
   min-width: 0;
 }
@@ -488,7 +491,7 @@ body {
 .detail--empty {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   color: var(--ink-faint);
   border-style: dashed;
