@@ -37,11 +37,31 @@ describe('PrintDocument', () => {
     expect(scoped.getByText(/learn\.microsoft\.com/)).toBeInTheDocument();
   });
 
-  it('localizes the cover to English', () => {
-    const { container } = render(<PrintDocument lang="en" />);
+  it('renders the self-evaluation status and note when assessment data is provided', () => {
+    const assessment = {
+      measures: {
+        T1: { status: 'done', note: 'Implemented and reviewed.' },
+      },
+    };
+    const { container } = render(<PrintDocument lang="en" assessment={assessment} />);
     const t1Page = Array.from(container.querySelectorAll('.print-page')).find((page) =>
       within(page).queryByText('T1')
     );
-    expect(within(t1Page).getByText('Practical guidance')).toBeInTheDocument();
+    const scoped = within(t1Page);
+    expect(scoped.getByText('Self-assessment')).toBeInTheDocument();
+    expect(scoped.getByText('Implemented and reviewed.')).toBeInTheDocument();
+
+    // A measure without an entry shows the empty-state placeholder.
+    const otherPage = Array.from(container.querySelectorAll('.print-page')).find((page) =>
+      within(page).queryByText('O1')
+    );
+    expect(
+      within(otherPage).getByText('No self-assessment provided')
+    ).toBeInTheDocument();
+  });
+
+  it('omits the self-evaluation section when no assessment is provided', () => {
+    const { container } = render(<PrintDocument lang="en" />);
+    expect(container.querySelector('.print-self-eval')).toBeNull();
   });
 });

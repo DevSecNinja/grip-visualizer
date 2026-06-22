@@ -7,11 +7,12 @@ import {
   localizedStandardsWhy,
   localizedGuidance,
 } from '../data/grip.js';
+import { entryForCode, hasSelfEvaluation } from '../data/assessment.js';
 
 // Hidden on screen; revealed only when printing (see @media print in index.css).
 // Renders one full page per GRIP measure so the browser "Save as PDF" output
 // mirrors the PPTX export: every measure with all of its detail.
-export default function PrintDocument({ lang }) {
+export default function PrintDocument({ lang, assessment }) {
   const measures = getMeasures();
 
   return (
@@ -33,6 +34,7 @@ export default function PrintDocument({ lang }) {
         const standardsWhy = localizedStandardsWhy(measure, lang);
         const typeLabel =
           measure.type === 'T' ? t(lang, 'technical') : t(lang, 'organisational');
+        const selfEval = assessment ? entryForCode(assessment, measure.code) : null;
 
         return (
           <article className="print-page" key={measure.code}>
@@ -55,6 +57,28 @@ export default function PrintDocument({ lang }) {
 
             <h2 className="print-page__title">{title}</h2>
             <p className="print-page__summary">{summary}</p>
+
+            {selfEval && (
+              <section className="print-section print-self-eval">
+                <h3 className="print-section__title">{t(lang, 'selfEvaluationTitle')}</h3>
+                {hasSelfEvaluation(selfEval) ? (
+                  <>
+                    <p className="print-self-eval__status">
+                      <strong>{t(lang, 'assessmentStatusLabel')}:</strong>{' '}
+                      {t(lang, `status_${selfEval.status}`)}
+                    </p>
+                    {selfEval.note && selfEval.note.trim() !== '' && (
+                      <p className="print-self-eval__note">
+                        <strong>{t(lang, 'assessmentNoteLabel')}:</strong>{' '}
+                        {selfEval.note.trim()}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <p className="print-section__muted">{t(lang, 'selfEvaluationNone')}</p>
+                )}
+              </section>
+            )}
 
             {guidance && (
               <section className="print-section">

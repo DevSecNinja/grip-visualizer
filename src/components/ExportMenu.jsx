@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { t } from '../i18n/strings.js';
 import { exportPDF, exportPPTX, exportMarkdown } from '../data/export.js';
 
-export default function ExportMenu({ lang }) {
+export default function ExportMenu({ lang, assessment }) {
   const [open, setOpen] = useState(false);
   const [exporting, setExporting] = useState(false);
   const menuRef = useRef(null);
@@ -33,7 +33,7 @@ export default function ExportMenu({ lang }) {
     setOpen(false);
     setExporting(true);
     try {
-      await exportPPTX(lang);
+      await exportPPTX(lang, assessment);
     } finally {
       setExporting(false);
     }
@@ -46,7 +46,7 @@ export default function ExportMenu({ lang }) {
 
   function handleMarkdown() {
     setOpen(false);
-    exportMarkdown(lang);
+    exportMarkdown(lang, assessment);
   }
 
   return (

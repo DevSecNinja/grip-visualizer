@@ -147,6 +147,21 @@ export function useAssessment() {
   return { state, setStatus, setNote, reset, importMeasures, getStatus, getEntry };
 }
 
+// Returns the normalized self-evaluation entry ({ status, note }) for a measure
+// code from a state object (as produced by useAssessment / parseImport). Safe
+// for missing or empty state so export code can call it unconditionally.
+export function entryForCode(state, code) {
+  return normalizeEntry(state?.measures?.[code]);
+}
+
+// True when an entry carries meaningful self-evaluation: a non-default status
+// or a non-empty note. Used to decide whether to render self-evaluation detail
+// in exports.
+export function hasSelfEvaluation(entry) {
+  if (!entry) return false;
+  return entry.status !== DEFAULT_STATUS || (entry.note ?? '').trim() !== '';
+}
+
 // Trigger a browser download of the current assessment as a JSON file.
 export function exportAssessment(state) {
   const payload = {

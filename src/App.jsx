@@ -107,6 +107,7 @@ export default function App() {
         setView={setView}
         assessmentMode={assessmentMode}
         onToggleAssessment={() => setAssessmentMode((v) => !v)}
+        assessmentState={assessmentState}
       />
 
       <p className="app__hint">{t(lang, activeView.hint)}</p>
@@ -316,7 +317,7 @@ export default function App() {
         </p>
       </section>
 
-      <PrintDocument lang={lang} />
+      <PrintDocument lang={lang} assessment={assessmentState} />
     </div>
   );
 }

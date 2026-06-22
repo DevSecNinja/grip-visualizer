@@ -30,6 +30,20 @@ describe('exportPPTX', () => {
     expect(writeSpy).toHaveBeenCalledTimes(3);
     writeSpy.mockRestore();
   });
+
+  it('builds a deck that includes self-evaluation data without throwing', async () => {
+    const writeSpy = vi
+      .spyOn(PptxGenJS.prototype, 'writeFile')
+      .mockResolvedValue(undefined);
+    const assessment = {
+      measures: {
+        O1: { status: 'in_progress', note: 'Rolling this out across teams.' },
+      },
+    };
+    await expect(exportPPTX('en', assessment)).resolves.not.toThrow();
+    expect(writeSpy).toHaveBeenCalledTimes(1);
+    writeSpy.mockRestore();
+  });
 });
 
 // ── exportMarkdown ───────────────────────────────────────────────────────────
@@ -78,6 +92,27 @@ describe('exportMarkdown', () => {
     expect(text).toContain('Koppeling met standaarden');
     // Standards link with a control reference (NIS2)
     expect(text).toContain('NIS2 Directive (EU) 2022/2555');
+  });
+
+  it('omits the self-evaluation section when no assessment is provided', async () => {
+    exportMarkdown('en');
+    const text = await lastBlob.text();
+    expect(text).not.toContain('### Self-assessment');
+  });
+
+  it('includes the self-evaluation status and note for measures with data', async () => {
+    const assessment = {
+      measures: {
+        O1: { status: 'done', note: 'We finished this measure last quarter.' },
+      },
+    };
+    exportMarkdown('en', assessment);
+    const text = await lastBlob.text();
+    expect(text).toContain('### Self-assessment');
+    expect(text).toContain('**Progress:** Done');
+    expect(text).toContain('**Note:** We finished this measure last quarter.');
+    // A measure without an entry falls back to the empty-state placeholder.
+    expect(text).toContain('No self-assessment provided');
   });
 });
 
