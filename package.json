@@ -1,7 +1,7 @@
 {
   "name": "grip-visualizer",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Interactive visualizer mapping the Flemish GRIP information security & privacy growth path to the Microsoft A3/A5 stack.",
   "scripts": {
