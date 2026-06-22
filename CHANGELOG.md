@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.0.0...v1.1.0) (2026-06-22)
+
+
+### Features
+
+* **deps:** update dependency wrangler ( 4.101.0 ➔ 4.102.0 ) [automerge] ([#86](https://github.com/DevSecNinja/grip-visualizer/issues/86)) ([39f5db7](https://github.com/DevSecNinja/grip-visualizer/commit/39f5db71572b5adb6c67b41dff8f04198c2c4a4f))
+* **export:** include self-evaluation data in PDF/PPTX/Markdown exports ([#90](https://github.com/DevSecNinja/grip-visualizer/issues/90)) ([87352bb](https://github.com/DevSecNinja/grip-visualizer/commit/87352bb7db47bdd549df8c7d508103b728880d2e))
+
 ## [1.0.0](https://github.com/DevSecNinja/grip-visualizer/compare/v0.3.0...v1.0.0) (2026-06-19)
 
 
