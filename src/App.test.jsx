@@ -131,7 +131,7 @@ describe('App', () => {
     expect(within(panel).getByText('Selecteer een maatregel')).toBeInTheDocument();
 
     // Second X click (nothing selected) hides the whole card.
-    await user.click(within(panel).getByRole('button', { name: 'Kaart verbergen' }));
+    await user.click(within(panel).getByRole('button', { name: 'Paneel verbergen' }));
     expect(screen.queryByRole('complementary')).not.toBeInTheDocument();
 
     // Clicking a measure reopens the card and shows the selection.
