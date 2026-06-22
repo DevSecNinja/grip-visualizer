@@ -139,5 +139,7 @@ describe('product hierarchy', () => {
     expect(roots.has('Microsoft Entra Conditional Access')).toBe(false);
     expect(roots.has('Microsoft Defender')).toBe(true);
     expect(roots.has('Microsoft Defender for Office 365')).toBe(false);
+    expect(roots.has('Microsoft Purview')).toBe(true);
+    expect(roots.has('Microsoft Purview Information Protection')).toBe(false);
   });
 });

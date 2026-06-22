@@ -22,10 +22,13 @@ export function splitCapabilityName(name) {
 // "Base remainder" — and returns null when the name *is* the base product.
 export function capabilityLabel(name, base) {
   if (name === base) return null;
+  // "Feature (Base)" — explicit parentProduct form (e.g. Attack Simulation Training).
   const paren = ` (${base})`;
   if (name.endsWith(paren)) return name.slice(0, -paren.length).trim();
+  // "Base — Sub" — the legacy em-dash separator.
   const dash = splitCapabilityName(name);
   if (dash.base === base) return dash.label;
+  // "Base remainder" — base is a prefix (e.g. "… Plan 2 (EDR)").
   if (name.startsWith(`${base} `)) return name.slice(base.length).trim();
   return name;
 }
