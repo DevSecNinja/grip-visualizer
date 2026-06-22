@@ -1,0 +1,12 @@
+{
+  "schema": "grip-assessment",
+  "version": 1,
+  "exportedAt": "2025-01-01T00:00:00.000Z",
+  "dataFingerprint": "e2e-fixture",
+  "measures": {
+    "O1": { "status": "done", "note": "E2E fixture note — no real data." },
+    "O2": { "status": "done", "note": "" },
+    "O7": { "status": "in_progress", "note": "E2E fixture in-progress note." },
+    "T1": { "status": "not_applicable", "note": "" }
+  }
+}

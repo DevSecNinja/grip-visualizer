@@ -52,8 +52,39 @@ Other useful commands:
 npm run build     # production build into dist/
 npm run preview   # preview the production build
 npm run lint      # eslint
-npm test          # vitest
+npm test          # vitest (unit/component tests)
+npm run test:e2e  # playwright end-to-end tests (headless)
 ```
+
+## End-to-end & privacy tests
+
+[Playwright](https://playwright.dev/) drives the app in a real browser to cover the primary user
+flows. The specs live in [`e2e/`](e2e/) and run against the Vite dev server (started automatically
+by Playwright — see [`playwright.config.js`](playwright.config.js)).
+
+```bash
+npx playwright install --with-deps   # one-time: download browser binaries
+npm run test:e2e                     # run the full suite headless
+npm run test:e2e:ui                  # run with the interactive Playwright UI
+npm run test:e2e -- --project=chromium e2e/privacy.spec.js   # a single project/spec
+```
+
+The same suite runs in CI on every pull request and on pushes to `main`
+([`.github/workflows/e2e.yml`](.github/workflows/e2e.yml)): PRs validate against Chromium (desktop
++ emulated mobile) for fast feedback, while `main`/manual runs exercise the full Chromium, Firefox
+and WebKit matrix.
+
+### Privacy assertion
+
+[`e2e/privacy.spec.js`](e2e/privacy.spec.js) is a regression guard for the app's core promise —
+**"All your data stays in your browser."** It exercises the data-handling flows (entering a
+self-evaluation, importing a local JSON file via the file picker, rendering the result, and
+exporting/downloading) while recording every outbound network request. The test **fails if any
+request leaves the app's own origin**, so an accidentally introduced analytics call, upload
+endpoint or third-party request would break the build. The client-side downloads (`blob:`/`data:`
+URLs) and same-origin asset/dataset requests are expected and allowed. It is deterministic and
+needs no external network access — the only fixture is the small, data-free
+[`e2e/fixtures/assessment.json`](e2e/fixtures/assessment.json).
 
 ## Documentation
 
