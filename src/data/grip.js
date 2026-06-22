@@ -32,6 +32,17 @@ export function localizedStandardsWhy(measure, lang) {
   return measure.standardsWhy[lang] || measure.standardsWhy.nl || null;
 }
 
+// The product a Microsoft mapping rolls up to when products are grouped into a
+// single node (e.g. the Network view). A capability that is really a feature of
+// a larger product can declare its parent explicitly via `parentProduct`
+// (preferred — robust against naming). Otherwise we fall back to stripping a
+// trailing " — sub-feature" suffix (e.g.
+// "Microsoft Purview — eDiscovery (Premium)" → "Microsoft Purview").
+export function productNodeName(item) {
+  if (item.parentProduct) return item.parentProduct;
+  return item.name.split(/\s+—\s+/)[0];
+}
+
 export function measuresByBasis(basis) {
   return grip.measures.filter((m) => m.basis === basis);
 }

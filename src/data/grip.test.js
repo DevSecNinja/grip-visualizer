@@ -1,6 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import grip from './grip.json';
-import { getMeasures, measuresByBasis, findMeasure, highestTier } from './grip.js';
+import {
+  getMeasures,
+  measuresByBasis,
+  findMeasure,
+  highestTier,
+  productNodeName,
+} from './grip.js';
 
 describe('GRIP dataset integrity', () => {
   const measures = getMeasures();
@@ -56,5 +62,38 @@ describe('selectors', () => {
 
   it('computes the highest tier', () => {
     expect(highestTier(findMeasure('O7'))).toBe('A5');
+  });
+});
+
+describe('productNodeName', () => {
+  it('uses an explicit parentProduct when present', () => {
+    expect(
+      productNodeName({
+        name: 'Attack Simulation Training (Microsoft Defender for Office 365)',
+        parentProduct: 'Microsoft Defender for Office 365',
+      })
+    ).toBe('Microsoft Defender for Office 365');
+  });
+
+  it('falls back to stripping a " — sub-feature" suffix', () => {
+    expect(productNodeName({ name: 'Microsoft Purview — eDiscovery (Premium)' })).toBe(
+      'Microsoft Purview'
+    );
+  });
+
+  it('returns the name unchanged when there is no parent or suffix', () => {
+    expect(productNodeName({ name: 'Microsoft Sentinel' })).toBe('Microsoft Sentinel');
+  });
+
+  it('collapses every parenthetical sub-feature onto a known product node', () => {
+    const nodeNames = new Set();
+    for (const m of getMeasures()) {
+      for (const item of m.microsoft) nodeNames.add(productNodeName(item));
+    }
+    // Attack Simulation Training must not be its own node.
+    expect(
+      nodeNames.has('Attack Simulation Training (Microsoft Defender for Office 365)')
+    ).toBe(false);
+    expect(nodeNames.has('Microsoft Defender for Office 365')).toBe(true);
   });
 });

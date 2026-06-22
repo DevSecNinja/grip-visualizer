@@ -405,6 +405,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -705,6 +706,7 @@
         },
         {
           "name": "Microsoft Defender for Endpoint Plan 2 (EDR)",
+          "parentProduct": "Microsoft Defender for Endpoint",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint",
           "a5Adds": true,
@@ -812,6 +814,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1181,6 +1184,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1398,6 +1402,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1556,6 +1561,7 @@
         },
         {
           "name": "Double Key Encryption (DKE)",
+          "parentProduct": "Microsoft Purview Information Protection",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/double-key-encryption",
           "a5Adds": true,
@@ -1668,6 +1674,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1815,6 +1822,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { getMeasures, localized, measureTier } from '../data/grip.js';
+import { getMeasures, localized, measureTier, productNodeName } from '../data/grip.js';
 import { t } from '../i18n/strings.js';
 
 // ── Simulation constants ──────────────────────────────────────────────────
@@ -26,13 +26,6 @@ const TIER_RANK = { A1: 0, A3: 1, A5: 2 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────
 
-// A product entry's name may carry a " — sub-feature" suffix (e.g.
-// "Microsoft Purview Compliance Manager — DPIA templates"). Collapse those onto
-// the main product so the graph shows one node per product.
-function mainProductName(name) {
-  return name.split(/\s+—\s+/)[0];
-}
-
 function shortProductName(name) {
   // Strip the "Microsoft " prefix (appears in many names) for a compact label.
   return name.replace(/^Microsoft\s+/, '');
@@ -47,7 +40,7 @@ function buildGraph() {
   const productMap = new Map();
   for (const m of measures) {
     for (const item of m.microsoft) {
-      const name = mainProductName(item.name);
+      const name = productNodeName(item);
       const prev = productMap.get(name);
       if (!prev || TIER_RANK[item.tier] > TIER_RANK[prev.tier]) {
         productMap.set(name, { name, tier: item.tier });
@@ -61,7 +54,7 @@ function buildGraph() {
   for (const m of measures) {
     const seen = new Set();
     for (const item of m.microsoft) {
-      const name = mainProductName(item.name);
+      const name = productNodeName(item);
       if (seen.has(name)) continue; // de-dupe sub-features within one measure
       seen.add(name);
       links.push({ source: `m:${m.code}`, target: `p:${name}` });

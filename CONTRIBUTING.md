@@ -99,6 +99,13 @@ Guidelines when editing mappings:
   Private Access). See [ARCHITECTURE.md](ARCHITECTURE.md#badge-logic) for how these render.
 - Set `tierOverride` (e.g. `"A3"`) on a measure to force its card/chip badge when the core
   measure is achievable at a lower tier and the higher-tier mappings are only value-adds.
+- Use `parentProduct` when a mapping is really a **feature of a larger product** that should
+  collapse onto it where products are grouped into one node (e.g. the Network view). For
+  example, _Attack Simulation Training_ is part of _Microsoft Defender for Office 365_, so it
+  carries `"parentProduct": "Microsoft Defender for Office 365"`. Keep the full, human-readable
+  capability in `name` (it is still shown in the measure detail panel) — `parentProduct` only
+  controls grouping. Prefer this over baking the parent into `name`; the legacy
+  `"Product — sub-feature"` separator is still honoured as a fallback.
 - Keep `docsUrl` pointing at current, official Microsoft documentation.
 - The Microsoft mapping is an **informative** starting point, not licensing advice.
 
