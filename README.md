@@ -71,8 +71,8 @@ npm run test:e2e -- --project=chromium e2e/privacy.spec.js   # a single project/
 
 The same suite runs in CI on every pull request and on pushes to `main`
 ([`.github/workflows/e2e.yml`](.github/workflows/e2e.yml)): PRs validate against Chromium (desktop
-+ emulated mobile) for fast feedback, while `main`/manual runs exercise the full Chromium, Firefox
-and WebKit matrix.
+and emulated mobile) for fast feedback, while `main`/manual runs exercise the full Chromium,
+Firefox and WebKit matrix.
 
 ### Privacy assertion
 
