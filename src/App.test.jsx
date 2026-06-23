@@ -113,4 +113,33 @@ describe('App', () => {
     expect(screen.getByText('Middellange termijn')).toBeInTheDocument();
     expect(screen.getByText('Lange termijn')).toBeInTheDocument();
   });
+
+  it('hides the measure card with a two-step X and reopens it on measure click', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    // Select a measure: the detail panel shows it.
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    let panel = screen.getByRole('complementary');
+    expect(
+      within(panel).getByText('Microsoft Entra Conditional Access')
+    ).toBeInTheDocument();
+
+    // First X click deselects the measure but keeps the card open.
+    await user.click(within(panel).getByRole('button', { name: 'Sluiten' }));
+    panel = screen.getByRole('complementary');
+    expect(within(panel).getByText('Selecteer een maatregel')).toBeInTheDocument();
+
+    // Second X click (nothing selected) hides the whole card.
+    await user.click(within(panel).getByRole('button', { name: 'Paneel verbergen' }));
+    expect(screen.queryByRole('complementary')).not.toBeInTheDocument();
+    expect(document.querySelector('.app__body')).toHaveClass('app__body--full');
+
+    // Clicking a measure reopens the card and shows the selection.
+    await user.click(screen.getByRole('button', { name: /O7/ }));
+    panel = screen.getByRole('complementary');
+    expect(
+      within(panel).getByText('Microsoft Entra Conditional Access')
+    ).toBeInTheDocument();
+  });
 });

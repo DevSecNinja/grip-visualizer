@@ -70,6 +70,7 @@ export const ui = {
       'Indicatieve koppeling met veelgebruikte controlekaders; geen 1-op-1-relatie en niet uitputtend.',
     openDocs: 'Documentatie openen',
     close: 'Sluiten',
+    hideMeasures: 'Paneel verbergen',
     selectMeasure: 'Selecteer een maatregel',
     selectMeasureHint:
       'Kies een GRIP-maatregel om de bijpassende Microsoft-oplossingen te zien.',
@@ -181,6 +182,7 @@ export const ui = {
       'Indicative mapping to common control frameworks; not a 1:1 relationship and not exhaustive.',
     openDocs: 'Open documentation',
     close: 'Close',
+    hideMeasures: 'Hide panel',
     selectMeasure: 'Select a measure',
     selectMeasureHint: 'Pick a GRIP measure to see the matching Microsoft solutions.',
     filters: 'Filters',
@@ -293,6 +295,7 @@ export const ui = {
       'Correspondance indicative avec des cadres de contrôle courants ; relation non biunivoque et non exhaustive.',
     openDocs: 'Ouvrir la documentation',
     close: 'Fermer',
+    hideMeasures: 'Masquer le panneau',
     selectMeasure: 'Sélectionnez une mesure',
     selectMeasureHint:
       'Choisissez une mesure GRIP pour voir les solutions Microsoft correspondantes.',
