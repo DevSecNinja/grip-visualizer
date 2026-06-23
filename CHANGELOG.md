@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.1.0...v1.2.0) (2026-06-23)
+
+
+### Features
+
+* two-step X to hide the measure detail panel, reopening on measure click ([#95](https://github.com/DevSecNinja/grip-visualizer/issues/95)) ([bfb468e](https://github.com/DevSecNinja/grip-visualizer/commit/bfb468e417f504a94c5dda11d7f2d8e9a1a79e2c))
+
 ## [1.1.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.0.0...v1.1.0) (2026-06-22)
 
 
