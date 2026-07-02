@@ -59,8 +59,15 @@ describe('exportPPTX', () => {
 
     const { default: JSZip } = await import('jszip');
     const zip = await JSZip.loadAsync(bytes);
-    const titleSlide = await zip.file('ppt/slides/slide1.xml').async('string');
-    const measureSlide = await zip.file('ppt/slides/slide2.xml').async('string');
+    const titleEntry = zip.file('ppt/slides/slide1.xml');
+    const measureEntry = zip.file('ppt/slides/slide2.xml');
+    expect(titleEntry, 'title slide (slide1.xml) missing from deck').toBeTruthy();
+    expect(
+      measureEntry,
+      'first measure slide (slide2.xml) missing from deck'
+    ).toBeTruthy();
+    const titleSlide = await titleEntry.async('string');
+    const measureSlide = await measureEntry.async('string');
 
     // Gradient accent bar on the title slide (A3 → A5 colours).
     expect(titleSlide).toContain('<a:gradFill');
