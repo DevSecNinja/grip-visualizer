@@ -1,4 +1,4 @@
-import PptxGenJS from 'pptxgenjs';
+import PptxGenJS from '@jsamuel1/pptxgenjs';
 import {
   getMeasures,
   localized,
@@ -472,13 +472,23 @@ export async function exportPPTX(lang, assessment) {
   // ── Title slide ─────────────────────────────────────────────────────────────
   const titleSlide = pptx.addSlide();
   titleSlide.background = { color: COLORS.bg };
+  titleSlide.transition = { type: 'fade', duration: 500 };
 
+  // Left accent bar — gradient from the A3 tier colour to the A5 tier colour,
+  // mirroring the A3 → A5 growth path the visualiser is about.
   titleSlide.addShape(pptx.ShapeType.rect, {
     x: 0,
     y: 0,
     w: 0.18,
     h: '100%',
-    fill: { color: COLORS.accent },
+    fill: {
+      type: 'gradient',
+      direction: 'vertical',
+      stops: [
+        { position: 0, color: COLORS.a3 },
+        { position: 100, color: COLORS.a5 },
+      ],
+    },
   });
 
   titleSlide.addText(t(lang, 'appTitle'), {
@@ -522,6 +532,18 @@ export async function exportPPTX(lang, assessment) {
   for (const measure of measures) {
     const slide = pptx.addSlide();
     slide.background = { color: COLORS.surface };
+    slide.transition = { type: 'fade', duration: 400 };
+
+    // Native slide number (bottom-left), balancing the measure code footer.
+    slide.slideNumber = {
+      x: 0.35,
+      y: 7.15,
+      w: 0.8,
+      h: 0.2,
+      fontSize: 8,
+      color: COLORS.inkFaint,
+      fontFace: 'Segoe UI',
+    };
 
     const typeColor = measure.type === 'T' ? COLORS.tech : COLORS.org;
     const tier = measureTier(measure);
