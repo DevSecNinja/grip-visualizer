@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.3.0...v1.4.0) (2026-07-02)
+
+
+### Features
+
+* **export:** migrate PPTX export to maintained @jsamuel1/pptxgenjs fork ([#110](https://github.com/DevSecNinja/grip-visualizer/issues/110)) ([1efb63d](https://github.com/DevSecNinja/grip-visualizer/commit/1efb63d0fa3ceaed675c2de79261632ef86d4eea))
+
 ## [1.3.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.2.0...v1.3.0) (2026-07-02)
 
 
