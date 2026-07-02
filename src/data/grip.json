@@ -16,7 +16,25 @@
         "label": "CIS Controls v8",
         "url": "https://www.cisecurity.org/controls/v8"
       }
-    ]
+    ],
+    "productHierarchy": {
+      "Microsoft Entra ID": "Microsoft Entra",
+      "Microsoft Entra Conditional Access": "Microsoft Entra ID",
+      "Microsoft Entra ID Protection": "Microsoft Entra ID",
+      "Microsoft Entra Privileged Identity Management (PIM)": "Microsoft Entra ID",
+      "Microsoft Entra ID Governance": "Microsoft Entra ID",
+      "Microsoft Entra Private Access": "Microsoft Entra",
+      "Microsoft Defender for Endpoint": "Microsoft Defender",
+      "Microsoft Defender for Office 365": "Microsoft Defender",
+      "Microsoft Defender for Cloud Apps": "Microsoft Defender",
+      "Microsoft Defender XDR": "Microsoft Defender",
+      "Microsoft Defender Vulnerability Management": "Microsoft Defender for Endpoint",
+      "Microsoft Defender Antivirus (via Microsoft Intune)": "Microsoft Defender for Endpoint",
+      "Microsoft Defender SmartScreen / Web content filtering": "Microsoft Defender for Endpoint",
+      "Microsoft Purview Information Protection": "Microsoft Purview",
+      "Microsoft Purview Compliance Manager": "Microsoft Purview",
+      "Content explorer / Activity explorer": "Microsoft Purview Information Protection"
+    }
   },
   "measures": [
     {
@@ -405,6 +423,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -705,6 +724,7 @@
         },
         {
           "name": "Microsoft Defender for Endpoint Plan 2 (EDR)",
+          "parentProduct": "Microsoft Defender for Endpoint",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-endpoint/microsoft-defender-endpoint",
           "a5Adds": true,
@@ -812,6 +832,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1181,6 +1202,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1398,6 +1420,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1556,6 +1579,7 @@
         },
         {
           "name": "Double Key Encryption (DKE)",
+          "parentProduct": "Microsoft Purview Information Protection",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/purview/double-key-encryption",
           "a5Adds": true,
@@ -1668,6 +1692,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
@@ -1815,6 +1840,7 @@
       "microsoft": [
         {
           "name": "Attack Simulation Training (Microsoft Defender for Office 365)",
+          "parentProduct": "Microsoft Defender for Office 365",
           "tier": "A5",
           "docsUrl": "https://learn.microsoft.com/defender-office-365/attack-simulation-training-get-started",
           "a5Adds": true,
