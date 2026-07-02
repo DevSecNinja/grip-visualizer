@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import PptxGenJS from 'pptxgenjs';
+import PptxGenJS from '@jsamuel1/pptxgenjs';
 import { exportPDF, exportPPTX, exportMarkdown } from './export.js';
 import ExportMenu from '../components/ExportMenu.jsx';
 
@@ -42,6 +42,34 @@ describe('exportPPTX', () => {
     };
     await expect(exportPPTX('en', assessment)).resolves.not.toThrow();
     expect(writeSpy).toHaveBeenCalledTimes(1);
+    writeSpy.mockRestore();
+  });
+
+  it('leverages the fork features: slide transitions, a gradient title bar and slide numbers', async () => {
+    // Capture the generated deck bytes instead of touching the filesystem.
+    let bytes;
+    const writeSpy = vi
+      .spyOn(PptxGenJS.prototype, 'writeFile')
+      .mockImplementation(async function writeFileStub() {
+        bytes = await this.write({ outputType: 'nodebuffer' });
+        return 'GRIP-Visualizer.pptx';
+      });
+
+    await exportPPTX('en');
+
+    const { default: JSZip } = await import('jszip');
+    const zip = await JSZip.loadAsync(bytes);
+    const titleSlide = await zip.file('ppt/slides/slide1.xml').async('string');
+    const measureSlide = await zip.file('ppt/slides/slide2.xml').async('string');
+
+    // Gradient accent bar on the title slide (A3 → A5 colours).
+    expect(titleSlide).toContain('<a:gradFill');
+    // Fade transitions applied per slide.
+    expect(measureSlide).toContain('<p:transition');
+    expect(measureSlide).toContain('<p:fade');
+    // Native slide-number placeholder on measure slides.
+    expect(measureSlide).toContain('type="sldNum"');
+
     writeSpy.mockRestore();
   });
 });
