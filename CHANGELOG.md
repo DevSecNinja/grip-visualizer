@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.2.0...v1.3.0) (2026-07-02)
+
+
+### Features
+
+* change dev container image and update extensions ([609219e](https://github.com/DevSecNinja/grip-visualizer/commit/609219ea087cfab9b163e98e1516d3a710bcf761))
+* **deps:** update dependency globals ( 17.6.0 ➔ 17.7.0 ) [automerge] ([#99](https://github.com/DevSecNinja/grip-visualizer/issues/99)) ([e54d793](https://github.com/DevSecNinja/grip-visualizer/commit/e54d793b2112ee74e1b4650ec1e9a0c0a5db8c57))
+* **deps:** update dependency wrangler ( 4.102.0 ➔ 4.103.0 ) [automerge] ([#100](https://github.com/DevSecNinja/grip-visualizer/issues/100)) ([fcfb8a5](https://github.com/DevSecNinja/grip-visualizer/commit/fcfb8a56c3c16abe858738cb8ae108328c2da252))
+* **deps:** update dependency wrangler ( 4.103.0 ➔ 4.104.0 ) [automerge] ([#103](https://github.com/DevSecNinja/grip-visualizer/issues/103)) ([5b1b830](https://github.com/DevSecNinja/grip-visualizer/commit/5b1b83009b2d1cde2bb831133e2557d47a1681e5))
+* **deps:** update dependency wrangler ( 4.104.0 ➔ 4.105.0 ) [automerge] ([#106](https://github.com/DevSecNinja/grip-visualizer/issues/106)) ([02af58f](https://github.com/DevSecNinja/grip-visualizer/commit/02af58fad75625624ddffbcfb42a93e6793d6812))
+* **deps:** update vite [automerge] ([#101](https://github.com/DevSecNinja/grip-visualizer/issues/101)) ([db919ff](https://github.com/DevSecNinja/grip-visualizer/commit/db919ff711c45cf31a031bd7992f158753ba7c28))
+
+
+### Bug Fixes
+
+* **deps:** replace abandoned eslint-plugin-react, unblock ESLint 10 ([#107](https://github.com/DevSecNinja/grip-visualizer/issues/107)) ([3c7c156](https://github.com/DevSecNinja/grip-visualizer/commit/3c7c156db1485941bfd2cd4646dc636213fa2b04))
+* **deps:** update dependency @playwright/test ( 1.61.0 ➔ 1.61.1 ) [automerge] ([#104](https://github.com/DevSecNinja/grip-visualizer/issues/104)) ([a9aceb2](https://github.com/DevSecNinja/grip-visualizer/commit/a9aceb291651c92d7d140dccf158087bf825db2c))
+
 ## [1.2.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.1.0...v1.2.0) (2026-06-23)
 
 
