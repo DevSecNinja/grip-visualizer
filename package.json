@@ -16,7 +16,7 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "@jsamuel1/pptxgenjs": "5.0.8",
+    "@jsamuel1/pptxgenjs": "5.0.9",
     "react": "19.2.7",
     "react-dom": "19.2.7"
   },
