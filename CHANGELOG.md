@@ -1,5 +1,64 @@
 # Changelog
 
+## [1.5.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.4.0...v1.5.0) (2026-07-24)
+
+
+### Features
+
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.10.1 ➔ 5.11.3 ) [automerge] ([#130](https://github.com/DevSecNinja/grip-visualizer/issues/130)) ([6a35e21](https://github.com/DevSecNinja/grip-visualizer/commit/6a35e2151f6d14ac5ea744c52e2bb6ad86e78315))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.11.3 ➔ 5.12.0 ) [automerge] ([#138](https://github.com/DevSecNinja/grip-visualizer/issues/138)) ([48d25a9](https://github.com/DevSecNinja/grip-visualizer/commit/48d25a99337823083ecda80a964ab41b3151d0ca))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.12.1 ➔ 5.13.1 ) [automerge] ([#142](https://github.com/DevSecNinja/grip-visualizer/issues/142)) ([b2548aa](https://github.com/DevSecNinja/grip-visualizer/commit/b2548aa3e0c5833953b46a01c3dd06da07e2949c))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.13.2 ➔ 5.14.8 ) [automerge] ([#149](https://github.com/DevSecNinja/grip-visualizer/issues/149)) ([ade9567](https://github.com/DevSecNinja/grip-visualizer/commit/ade95677ff8ee064bbee1252662fbd86bead8638))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.14.10 ➔ 5.16.1 ) [automerge] ([#157](https://github.com/DevSecNinja/grip-visualizer/issues/157)) ([abd80b5](https://github.com/DevSecNinja/grip-visualizer/commit/abd80b52f18e37437676b68a4e27fabe08f11e29))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.16.1 ➔ 5.17.3 ) [automerge] ([#165](https://github.com/DevSecNinja/grip-visualizer/issues/165)) ([df2da6c](https://github.com/DevSecNinja/grip-visualizer/commit/df2da6cc3f5884c7e58de28be358f8f6ac45b51c))
+* **deps:** update dependency eslint ( 10.6.0 ➔ 10.7.0 ) [automerge] ([#150](https://github.com/DevSecNinja/grip-visualizer/issues/150)) ([7ee93a8](https://github.com/DevSecNinja/grip-visualizer/commit/7ee93a805bd04e2e19f9d661965251aebab90305))
+* **deps:** update dependency prettier ( 3.8.4 ➔ 3.9.4 ) [automerge] ([#113](https://github.com/DevSecNinja/grip-visualizer/issues/113)) ([79908c3](https://github.com/DevSecNinja/grip-visualizer/commit/79908c34f2064a2e76107beee929dd5fe944b13b))
+* **deps:** update dependency typescript-eslint ( 8.62.1 ➔ 8.63.0 ) [automerge] ([#131](https://github.com/DevSecNinja/grip-visualizer/issues/131)) ([c169364](https://github.com/DevSecNinja/grip-visualizer/commit/c169364248c12a1187eb53fac95cfab09ed08f4c))
+* **deps:** update dependency typescript-eslint ( 8.63.0 ➔ 8.64.0 ) [automerge] ([#151](https://github.com/DevSecNinja/grip-visualizer/issues/151)) ([c95b8e5](https://github.com/DevSecNinja/grip-visualizer/commit/c95b8e52a93aba0a5c9812c81b06801b456632db))
+* **deps:** update dependency typescript-eslint ( 8.64.0 ➔ 8.65.0 ) [automerge] ([#166](https://github.com/DevSecNinja/grip-visualizer/issues/166)) ([4562c75](https://github.com/DevSecNinja/grip-visualizer/commit/4562c75afe60910c036c2b7ad656c6f55fbe06b5))
+* **deps:** update dependency wrangler ( 4.105.0 ➔ 4.106.0 ) [automerge] ([#118](https://github.com/DevSecNinja/grip-visualizer/issues/118)) ([4d02a25](https://github.com/DevSecNinja/grip-visualizer/commit/4d02a2519c5f15c28a47b8c6f784a596583db125))
+* **deps:** update dependency wrangler ( 4.106.0 ➔ 4.107.0 ) [automerge] ([#123](https://github.com/DevSecNinja/grip-visualizer/issues/123)) ([3af6b6e](https://github.com/DevSecNinja/grip-visualizer/commit/3af6b6e574a239a5b391d46bd6184454067f59f8))
+* **deps:** update dependency wrangler ( 4.107.1 ➔ 4.110.0 ) [automerge] ([#153](https://github.com/DevSecNinja/grip-visualizer/issues/153)) ([88e42eb](https://github.com/DevSecNinja/grip-visualizer/commit/88e42eb6d2108c98bbc753714c6f1e5553eac9ee))
+* **deps:** update dependency wrangler ( 4.110.0 ➔ 4.111.0 ) [automerge] ([#156](https://github.com/DevSecNinja/grip-visualizer/issues/156)) ([f113eb3](https://github.com/DevSecNinja/grip-visualizer/commit/f113eb36784e8d5cdd09fd0927a0992c585ffc99))
+* **deps:** update dependency wrangler ( 4.111.0 ➔ 4.113.0 ) [automerge] ([#168](https://github.com/DevSecNinja/grip-visualizer/issues/168)) ([7f6c3b2](https://github.com/DevSecNinja/grip-visualizer/commit/7f6c3b2e5b02aeaee2e1ee5aef261b7457d11b4f))
+* **github-release:** update release jdx/mise ( v2026.6.14 ➔ v2026.7.0 ) [automerge] ([#154](https://github.com/DevSecNinja/grip-visualizer/issues/154)) ([fd5221c](https://github.com/DevSecNinja/grip-visualizer/commit/fd5221ccae9648f2c26528326cd91b31c3f85779))
+* **mise:** update tool dprint ( 0.54.0 ➔ 0.55.0 ) [automerge] ([#140](https://github.com/DevSecNinja/grip-visualizer/issues/140)) ([1e8ce0b](https://github.com/DevSecNinja/grip-visualizer/commit/1e8ce0b6b412b62a868a1589e61c6e00999cae57))
+* **mise:** update tool node ( 24.17.0 ➔ 24.18.0 ) [automerge] ([#132](https://github.com/DevSecNinja/grip-visualizer/issues/132)) ([68f382a](https://github.com/DevSecNinja/grip-visualizer/commit/68f382ae8eaea309b40206ae036bc341f2e846d0))
+* **mise:** update tool trivy ( 0.71.2 ➔ 0.72.0 ) [automerge] ([#155](https://github.com/DevSecNinja/grip-visualizer/issues/155)) ([2343879](https://github.com/DevSecNinja/grip-visualizer/commit/23438792cf79bf1a6943c10b21a547ade7a75c56))
+* **mise:** update tool zizmor ( 1.25.2 ➔ 1.26.1 ) [automerge] ([#121](https://github.com/DevSecNinja/grip-visualizer/issues/121)) ([54b6dab](https://github.com/DevSecNinja/grip-visualizer/commit/54b6dabf0f24c4c124f49c1416e632da91a6c61c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.10.0 ➔ 5.10.1 ) [automerge] ([#122](https://github.com/DevSecNinja/grip-visualizer/issues/122)) ([cac5b28](https://github.com/DevSecNinja/grip-visualizer/commit/cac5b28d6d683bb47bd742099b63c7a040f83c7c))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.12.0 ➔ 5.12.1 ) [automerge] ([#139](https://github.com/DevSecNinja/grip-visualizer/issues/139)) ([440b57a](https://github.com/DevSecNinja/grip-visualizer/commit/440b57ab20d96271a5d8247b14850b09c27f3b34))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.13.1 ➔ 5.13.2 ) [automerge] ([#144](https://github.com/DevSecNinja/grip-visualizer/issues/144)) ([666ea8d](https://github.com/DevSecNinja/grip-visualizer/commit/666ea8d219e80666f861edb3d58843586122212c))
+* **deps:** update dependency @eslint-react/eslint-plugin ( 5.14.8 ➔ 5.14.10 ) [automerge] ([#152](https://github.com/DevSecNinja/grip-visualizer/issues/152)) ([dec91b5](https://github.com/DevSecNinja/grip-visualizer/commit/dec91b5855fbc4c81228c16b7dc622966a83092c))
+* **deps:** update dependency @jsamuel1/pptxgenjs ( 5.0.8 ➔ 5.0.9 ) [automerge] ([#137](https://github.com/DevSecNinja/grip-visualizer/issues/137)) ([b103597](https://github.com/DevSecNinja/grip-visualizer/commit/b103597a8a6f09c1b299e93a4986e9cac70d8663))
+* **deps:** update dependency prettier ( 3.9.4 ➔ 3.9.5 ) [automerge] ([#145](https://github.com/DevSecNinja/grip-visualizer/issues/145)) ([94f28bc](https://github.com/DevSecNinja/grip-visualizer/commit/94f28bc4518a824b324ed141a13665c70e6b1068))
+* **deps:** update dependency prettier ( 3.9.5 ➔ 3.9.6 ) [automerge] ([#163](https://github.com/DevSecNinja/grip-visualizer/issues/163)) ([a8ba2f3](https://github.com/DevSecNinja/grip-visualizer/commit/a8ba2f3d30e549691ef5208c0e9f4ff9ffafcb9b))
+* **deps:** update dependency vite ( 8.1.0 ➔ 8.1.2 ) [automerge] ([#116](https://github.com/DevSecNinja/grip-visualizer/issues/116)) ([f7fe79e](https://github.com/DevSecNinja/grip-visualizer/commit/f7fe79ecb300ef5e6e4db72a61359ae48d184d7e))
+* **deps:** update dependency vite ( 8.1.2 ➔ 8.1.3 ) [automerge] ([#120](https://github.com/DevSecNinja/grip-visualizer/issues/120)) ([ef75506](https://github.com/DevSecNinja/grip-visualizer/commit/ef755068a7f5435ff9948e164671b04a5c3faac0))
+* **deps:** update dependency vite ( 8.1.3 ➔ 8.1.4 ) [automerge] ([#141](https://github.com/DevSecNinja/grip-visualizer/issues/141)) ([a27d634](https://github.com/DevSecNinja/grip-visualizer/commit/a27d634daedae8b0e49444841030aa29e8a1e4cf))
+* **deps:** update dependency vite ( 8.1.4 ➔ 8.1.5 ) [automerge] ([#158](https://github.com/DevSecNinja/grip-visualizer/issues/158)) ([ba5b869](https://github.com/DevSecNinja/grip-visualizer/commit/ba5b869a1004a16f40ed345e94727adb7fde077b))
+* **deps:** update dependency vitest ( 4.1.9 ➔ 4.1.10 ) [automerge] ([#125](https://github.com/DevSecNinja/grip-visualizer/issues/125)) ([9f26aeb](https://github.com/DevSecNinja/grip-visualizer/commit/9f26aebfb49eccb0bfe23b725d3607a2aa7b4d7f))
+* **deps:** update dependency wrangler ( 4.107.0 ➔ 4.107.1 ) [automerge] ([#135](https://github.com/DevSecNinja/grip-visualizer/issues/135)) ([4979cdd](https://github.com/DevSecNinja/grip-visualizer/commit/4979cdd375b9c5920e6cfddabda54114cc527572))
+* **deps:** update react monorepo ( 19.2.7 ➔ 19.2.8 ) [automerge] ([#167](https://github.com/DevSecNinja/grip-visualizer/issues/167)) ([f259510](https://github.com/DevSecNinja/grip-visualizer/commit/f259510156b4965786abc08051d34eccb1452145))
+* **github-release:** update release jdx/mise ( v2026.6.11 ➔ v2026.6.14 ) [automerge] ([#126](https://github.com/DevSecNinja/grip-visualizer/issues/126)) ([4a1ee79](https://github.com/DevSecNinja/grip-visualizer/commit/4a1ee794bfbb62dc4b2a93bc979f3cf161b5fb58))
+* **github-release:** update release jdx/mise ( v2026.7.0 ➔ v2026.7.5 ) [automerge] ([#159](https://github.com/DevSecNinja/grip-visualizer/issues/159)) ([5f4973a](https://github.com/DevSecNinja/grip-visualizer/commit/5f4973aff62c632c6ce242e639fd07b6434bf282))
+* **mise:** update tool dprint ( 0.55.0 ➔ 0.55.1 ) [automerge] ([#143](https://github.com/DevSecNinja/grip-visualizer/issues/143)) ([6c56b19](https://github.com/DevSecNinja/grip-visualizer/commit/6c56b197155282862f783275ec6b3ec2c6858fa4))
+* **mise:** update tool lefthook ( 2.1.9 ➔ 2.1.10 ) [automerge] ([#160](https://github.com/DevSecNinja/grip-visualizer/issues/160)) ([3d04059](https://github.com/DevSecNinja/grip-visualizer/commit/3d040599637a36b40f0666d9b43d827389c5e4ab))
+* **mise:** update tool pipx:checkov ( 3.3.1 ➔ 3.3.2 ) [automerge] ([#127](https://github.com/DevSecNinja/grip-visualizer/issues/127)) ([423328e](https://github.com/DevSecNinja/grip-visualizer/commit/423328ec234fc28723cba859403fe4bdd8d6fc7d))
+* **mise:** update tool pipx:checkov ( 3.3.2 ➔ 3.3.6 ) [automerge] ([#146](https://github.com/DevSecNinja/grip-visualizer/issues/146)) ([7fc0588](https://github.com/DevSecNinja/grip-visualizer/commit/7fc05886500c29fa67a3869c32a3a6d70cca0bbb))
+* **mise:** update tool pipx:checkov ( 3.3.6 ➔ 3.3.8 ) [automerge] ([#161](https://github.com/DevSecNinja/grip-visualizer/issues/161)) ([a03cd33](https://github.com/DevSecNinja/grip-visualizer/commit/a03cd3350b72ac468a2ad74fe279d194ab5fc52c))
+* **mise:** update tool trivy ( 0.71.1 ➔ 0.71.2 ) [automerge] ([#117](https://github.com/DevSecNinja/grip-visualizer/issues/117)) ([aceadfe](https://github.com/DevSecNinja/grip-visualizer/commit/aceadfe65ce8e16a513ad84db3a6f829571b9388))
+* **mise:** update tool uv ( 0.11.21 ➔ 0.11.22 ) [automerge] ([#112](https://github.com/DevSecNinja/grip-visualizer/issues/112)) ([5c7c916](https://github.com/DevSecNinja/grip-visualizer/commit/5c7c916c96724f2746df5f986aa23f1921da0923))
+* **mise:** update tool uv ( 0.11.22 ➔ 0.11.23 ) [automerge] ([#119](https://github.com/DevSecNinja/grip-visualizer/issues/119)) ([256e6e5](https://github.com/DevSecNinja/grip-visualizer/commit/256e6e5e42dd2656a6d31520d384f1bb6b8e34b4))
+* **mise:** update tool uv ( 0.11.23 ➔ 0.11.24 ) [automerge] ([#128](https://github.com/DevSecNinja/grip-visualizer/issues/128)) ([d3d3619](https://github.com/DevSecNinja/grip-visualizer/commit/d3d361919a5d2f0390803337ed2b669987e8c9a2))
+* **mise:** update tool uv ( 0.11.24 ➔ 0.11.25 ) [automerge] ([#136](https://github.com/DevSecNinja/grip-visualizer/issues/136)) ([8f8b6f9](https://github.com/DevSecNinja/grip-visualizer/commit/8f8b6f9656cea151e686491189a7d072a01098cf))
+* **mise:** update tool uv ( 0.11.25 ➔ 0.11.26 ) [automerge] ([#147](https://github.com/DevSecNinja/grip-visualizer/issues/147)) ([040c781](https://github.com/DevSecNinja/grip-visualizer/commit/040c78142e1b69352edc0f685fa4ed2019af20fd))
+* **mise:** update tool uv ( 0.11.26 ➔ 0.11.28 ) [automerge] ([#162](https://github.com/DevSecNinja/grip-visualizer/issues/162)) ([d37b956](https://github.com/DevSecNinja/grip-visualizer/commit/d37b956d9c66f72dd077058a0fded31a500f15a2))
+
 ## [1.4.0](https://github.com/DevSecNinja/grip-visualizer/compare/v1.3.0...v1.4.0) (2026-07-02)
 
 
