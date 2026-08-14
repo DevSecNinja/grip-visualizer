@@ -3,7 +3,7 @@ min_version = "2026.7.18"
 
 [tools]
 # renovate: datasource=node-version depName=node
-node = "24.18.0"
+node = "24.18.1"
 actionlint = "1.7.12"
 dprint = "0.55.2"
 gitleaks = "8.30.1"
