@@ -16,6 +16,12 @@ on:
 permissions:
   contents: read
 
+# Cancel superseded link-check runs when a branch is re-pushed. Scheduled and
+# PR runs use distinct refs, so the weekly link-rot job is unaffected.
+concurrency:
+  group: links-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   links:
     runs-on: ubuntu-latest
