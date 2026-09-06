@@ -25,7 +25,7 @@ jobs:
       # renovate: datasource=github-releases depName=jdx/mise
       mise-version: "2026.8.10"
       # renovate: datasource=github-releases depName=golangci/golangci-lint
-      golangci-lint-version: "v2.12.2"
+      golangci-lint-version: "v2.13.1"
       lint-go: false
       # No shell scripts in this repo; skip shell linters that otherwise fail
       # when invoked with zero files.
