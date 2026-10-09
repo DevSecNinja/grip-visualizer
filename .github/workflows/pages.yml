@@ -20,6 +20,14 @@ on:
 permissions:
   contents: read
 
+# Cancel superseded PR preview builds when a branch is re-pushed (common with
+# Renovate automerge and bot PRs). Grouping by ref keeps production deploys on
+# main isolated; cancel-in-progress is limited to pull requests so an in-flight
+# production deploy is never interrupted.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   pages:
     uses: DevSecNinja/.github/.github/workflows/pages.yml@27fd66740c629ea38380dcd3bf93e7bc74c54247 # v1.9.0
