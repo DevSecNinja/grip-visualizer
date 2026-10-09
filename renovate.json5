@@ -13,13 +13,4 @@
     "github>DevSecNinja/.github//.renovate/packageRules.json5",
     "github>DevSecNinja/.github//.renovate/semanticCommits.json5",
   ],
-  packageRules: [
-    {
-      // @testing-library/user-event is feature-complete and actively part of the
-      // Testing Library org; the abandonment flag is a false positive, so keep it
-      // and silence the warning rather than replacing a stable dependency.
-      matchPackageNames: ["@testing-library/user-event"],
-      abandonmentThreshold: "5 years",
-    },
-  ],
 }
