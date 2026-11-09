@@ -97,6 +97,20 @@ Guidelines when editing mappings:
   licence (e.g. Microsoft Priva, Entra ID Governance). Add `standalone: true` when the add-on
   has **no Microsoft 365 base tier** (a separate service such as Microsoft Sentinel or Entra
   Private Access). See [ARCHITECTURE.md](ARCHITECTURE.md#badge-logic) for how these render.
+- Use `parentProduct` when a mapping is really a **feature of a larger product** that should
+  collapse onto it where products are grouped (e.g. the A3 vs A5 value cards and the Network
+  view). For example, _Attack Simulation Training_ is part of _Microsoft Defender for Office
+  365_, so it carries `"parentProduct": "Microsoft Defender for Office 365"`. Keep the full,
+  human-readable capability in `name` (it is still shown in the measure detail panel) —
+  `parentProduct` only controls grouping. Prefer this over baking the parent into `name`; the
+  legacy `"Product — sub-feature"` separator is still honoured as a fallback.
+- For deeper, multi-level families, declare parent → child relationships in
+  `meta.productHierarchy` (a `"child": "parent"` registry, chainable up to a root brand). The
+  Network view rolls capabilities all the way up to their **root brand** via this registry, so
+  e.g. _Microsoft Entra Conditional Access → Microsoft Entra ID → Microsoft Entra_ renders as a
+  single _Microsoft Entra_ node. The A3 vs A5 view groups at the **immediate product** level
+  (`parentProduct`) to keep distinct value-adds visible. Keep the taxonomy aligned with the
+  official Microsoft Learn product families.
 - Set `tierOverride` (e.g. `"A3"`) on a measure to force its card/chip badge when the core
   measure is achievable at a lower tier and the higher-tier mappings are only value-adds.
 - Keep `docsUrl` pointing at current, official Microsoft documentation.
