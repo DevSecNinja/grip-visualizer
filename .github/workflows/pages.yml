@@ -22,7 +22,7 @@ permissions:
 
 jobs:
   pages:
-    uses: DevSecNinja/.github/.github/workflows/pages.yml@27fd66740c629ea38380dcd3bf93e7bc74c54247 # v1.9.0
+    uses: DevSecNinja/.github/.github/workflows/pages.yml@0ade604cb8c4e8c3e34911374613ca7b91c2128f # v4.11.0
     permissions:
       contents: read
       deployments: write
@@ -37,7 +37,9 @@ jobs:
       # renovate: datasource=npm depName=wrangler
       wrangler-version: "4.164.0"
       install-command: npm ci
-      test-command: npm test
+      test-command: npm test -- --reporter=default --reporter=junit --outputFile.junit=test-results.xml
+      test-report-paths: test-results.xml
+      test-report-title: vitest
       build-command: npm run build
       artifact-path: dist
       github-pages: false
