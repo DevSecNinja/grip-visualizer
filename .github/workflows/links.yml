@@ -49,7 +49,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: |
+        run: |-
           # gh issue create fails on a missing label, so create them first.
           for label in broken-links automated; do
             gh label create "${label}" >/dev/null 2>&1 || true
